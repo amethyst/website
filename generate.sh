@@ -3,7 +3,7 @@
 # Rebuilds the website, blog, book, and API documentation from scratch.
 
 echo "Cleaning up workspace..."
-rm -rf doc blog book
+rm -rf _posts doc blog blog.css book cover.css index.html
 
 git clone https://github.com/ebkalderon/amethyst
 cd amethyst
