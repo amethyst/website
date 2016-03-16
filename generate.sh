@@ -14,3 +14,7 @@ cp -r amethyst/book/html/ book
 cp -r amethyst/book/images/ book/images
 cp -r amethyst/target/doc/ .
 echo '<meta http-equiv="refresh" content="0; url=amethyst/index.html" />' > doc/index.html
+
+git add --all
+git commit -m "Regenerate website content"
+git push -u origin master
