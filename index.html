@@ -31,7 +31,7 @@
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
                   <li><a href="./book">Book</a></li>
-                  <li><a href="./doc/amethyst">Doc</a></li>
+                  <li><a href="./doc">Doc</a></li>
                   <li><a href="https://github.com/ebkalderon/amethyst">Github</a></li>
                 </ul>
               </nav>
