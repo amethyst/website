@@ -17,8 +17,8 @@ cp -r amethyst/book/images/ book/images
 cp -r amethyst/target/doc/ .
 echo '<meta http-equiv="refresh" content="0; url=amethyst/" />' > doc/index.html
 
-echo "Building blog..."
-cobalt build -s blog/
+echo "Building website from source..."
+cobalt build -s src/
 
 git add --all
 git commit -m "Regenerate website"
