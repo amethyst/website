@@ -2,7 +2,8 @@
 
 # Rebuilds the website, blog, book, and API documentation from scratch.
 
-rm -rf doc book
+echo "Cleaning up workspace..."
+rm -rf doc blog book
 
 git clone https://github.com/ebkalderon/amethyst
 cd amethyst
@@ -10,6 +11,10 @@ cargo doc --no-deps -p amethyst -p amethyst_engine
 mdbook build book
 cd ..
 
+echo "Building blog..."
+cobalt build -s blog -d .
+
+echo "Copying files..."
 cp -r amethyst/book/html/ book
 cp -r amethyst/book/images/ book/images
 cp -r amethyst/target/doc/ .
