@@ -11,5 +11,5 @@ mdbook build book
 cd ..
 
 cp -r amethyst/book/html/ book
-cp -r amethyst/book/images/ .
+cp -r amethyst/book/images/ book/images
 cp -r amethyst/target/doc/ .
