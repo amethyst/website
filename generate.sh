@@ -12,7 +12,7 @@ mdbook build book
 cd ..
 
 echo "Building blog..."
-cobalt build -s blog -d .
+cobalt build -s blog
 
 echo "Copying files..."
 cp -r amethyst/book/html/ book
