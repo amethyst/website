@@ -10,6 +10,6 @@ cargo doc --no-deps -p amethyst -p amethyst_engine
 mdbook build book
 cd ..
 
-cp -r amethyst/book/html/ amethyst/target/doc/ .
-mv html book
-rm -rf amethyst
+cp -r amethyst/book/html/ book
+cp -r amethyst/book/images/ .
+cp -r amethyst/target/doc/ .
