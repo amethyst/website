@@ -20,8 +20,3 @@ echo '<meta http-equiv="refresh" content="0; url=amethyst/" />' > doc/index.html
 
 echo "Building website from source..."
 cobalt build -s src/
-
-echo "Done!"
-git add --all
-git commit -m "Regenerate website"
-git push -u origin master
