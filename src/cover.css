@@ -158,8 +158,27 @@ body {
  * Cover
  */
 
+.banner {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.cover-container {
+  width: 100%;
+  background-image: url("banner.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0%;
+}
+
 .cover {
+  z-index: 1;
   padding: 5em 0;
+  text-shadow: #000 0px 0px 7px, #000 0px 0px 4px, #000 0px 0px 2px;
 }
 .cover .btn-lg {
   padding: 10px 20px;
@@ -208,7 +227,7 @@ body {
 @media (min-width: 840px) {
   .inner,
   .mastfoot,
-  .cover-container {
+  .cover {
     width: 700px;
   }
 
