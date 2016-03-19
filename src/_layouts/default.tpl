@@ -19,7 +19,6 @@
     <body>
 
     <div class="site-wrapper">
-
       <div class="site-wrapper-inner">
 
         <div class="masthead clearfix">
@@ -29,28 +28,16 @@
               <ul class="nav masthead-nav">
                 <li class="active"><a href="#">Home<hr /></a></li>
                 <li><a href="./book">Book<hr /></a></li>
-                <li><a href="./doc">Doc<hr /></a></li>
+                <li><a href="./doc">Docs<hr /></a></li>
                 <li><a href="https://github.com/ebkalderon/amethyst">GitHub<hr /></a></li>
               </ul>
             </nav>
           </div>
         </div>
 
-        <div class="cover-container">
-          <div class="inner cover">
-            <h1 class="cover-heading">Vison</h1>
-            <p class="lead">Amethyst aims to be a fast, data-oriented, and data-driven game engine suitable for rapid prototyping and iteration.</p>
-            <p class="lead">
-              <a href="https://github.com/ebkalderon/amethyst#vision" class="btn btn-lg btn-default">Learn more</a>
-            </p>
-          </div>
-        </div>
+        {{ content }}
 
       </div>
-
-    </div>
-    <div>
-      {{ content }}
     </div>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
