@@ -96,7 +96,6 @@ body {
 .masthead-nav > li {
   display: inline-block;
   width: 6em;
-  float: left;
 }
 
 .masthead-nav > li > a {
@@ -237,5 +236,9 @@ body {
 
   .masthead-nav {
     float: right;
+  }
+
+  .masthead-nav > li {
+    float: left;
   }
 }
