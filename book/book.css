@@ -9,32 +9,9 @@ body {
 .right {
   float: right;
 }
-.hidden {
-  display: none;
-}
 h2,
 h3 {
   margin-top: 2.5em;
-}
-h4,
-h5 {
-  margin-top: 2em;
-}
-.header + .header h3,
-.header + .header h4,
-.header + .header h5 {
-  margin-top: 1em;
-}
-table {
-  margin: 0 auto;
-  border-collapse: collapse;
-}
-table td {
-  padding: 3px 20px;
-  border: 1px solid;
-}
-table thead td {
-  font-weight: 700;
 }
 .sidebar {
   position: absolute;
@@ -59,9 +36,6 @@ table thead td {
   .sidebar {
     left: -300px;
   }
-}
-.sidebar code {
-  line-height: 2em;
 }
 .sidebar-hidden .sidebar {
   left: -300px;
@@ -248,12 +222,11 @@ table thead td {
   left: 0;
 }
 .next {
-  right: 15px;
+  right: 0;
 }
 .theme-popup {
-  position: relative;
-  left: 10px;
-  z-index: 1000;
+  position: fixed;
+  left: -40px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
   font-size: 0.7em;
@@ -264,15 +237,6 @@ table thead td {
   line-height: 25px;
   white-space: nowrap;
 }
-.theme-popup .theme:hover:first-child {
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-}
-.theme-popup .theme:hover:last-child {
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
-}
-
 @media only screen and (max-width: 1250px) {
   .nav-chapters {
     display: none;
@@ -308,16 +272,6 @@ table thead td {
 .light {
   color: #333;
   background-color: #fff;
-/* Inline code */
-}
-.light .content .header:link,
-.light .content .header:visited {
-  color: #333;
-  pointer: cursor;
-}
-.light .content .header:link:hover,
-.light .content .header:visited:hover {
-  text-decoration: none;
 }
 .light .sidebar {
   background-color: #fafafa;
@@ -338,11 +292,8 @@ table thead td {
   background-color: #f4f4f4;
 }
 .light .menu-bar,
-.light .menu-bar:visited,
 .light .nav-chapters,
-.light .nav-chapters:visited,
-.light .mobile-nav-chapters,
-.light .mobile-nav-chapters:visited {
+.light .mobile-nav-chapters {
   color: #ccc;
 }
 .light .menu-bar i:hover,
@@ -356,83 +307,19 @@ table thead td {
 .light .mobile-nav-chapters {
   background-color: #fafafa;
 }
-.light .content a:link,
-.light a:visited {
+.light .content a {
   color: #4183c4;
 }
 .light .theme-popup {
-  color: #333;
   background: #fafafa;
   border: 1px solid #ccc;
 }
 .light .theme-popup .theme:hover {
   background-color: #e6e6e6;
 }
-.light .theme-popup .default {
-  color: #ccc;
-}
-.light blockquote {
-  margin: 20px 0;
-  padding: 0 20px;
-  color: #333;
-  background-color: #f2f7f9;
-  border-top: 0.1em solid #e1edf1;
-  border-bottom: 0.1em solid #e1edf1;
-}
-.light table td {
-  border-color: #f2f2f2;
-}
-.light table tbody tr:nth-child(2n) {
-  background: #f7f7f7;
-}
-.light table thead {
-  background: #ccc;
-}
-.light table thead td {
-  border: none;
-}
-.light table thead tr {
-  border: 1px #ccc solid;
-}
-.light :not(pre) > .hljs {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0.1em 0.3em;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-.light pre {
-  position: relative;
-}
-.light pre > .buttons {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  color: #364149;
-  cursor: pointer;
-}
-.light pre > .buttons :hover {
-  color: #008cff;
-}
-.light pre > .buttons i {
-  margin-left: 8px;
-}
-.light pre > .result {
-  margin-top: 10px;
-}
 .coal {
   color: #98a3ad;
   background-color: #141617;
-/* Inline code */
-}
-.coal .content .header:link,
-.coal .content .header:visited {
-  color: #98a3ad;
-  pointer: cursor;
-}
-.coal .content .header:link:hover,
-.coal .content .header:visited:hover {
-  text-decoration: none;
 }
 .coal .sidebar {
   background-color: #292c2f;
@@ -453,11 +340,8 @@ table thead td {
   background-color: #393939;
 }
 .coal .menu-bar,
-.coal .menu-bar:visited,
 .coal .nav-chapters,
-.coal .nav-chapters:visited,
-.coal .mobile-nav-chapters,
-.coal .mobile-nav-chapters:visited {
+.coal .mobile-nav-chapters {
   color: #43484d;
 }
 .coal .menu-bar i:hover,
@@ -471,83 +355,19 @@ table thead td {
 .coal .mobile-nav-chapters {
   background-color: #292c2f;
 }
-.coal .content a:link,
-.coal a:visited {
+.coal .content a {
   color: #2b79a2;
 }
 .coal .theme-popup {
-  color: #98a3ad;
   background: #141617;
   border: 1px solid #43484d;
 }
 .coal .theme-popup .theme:hover {
   background-color: #1f2124;
 }
-.coal .theme-popup .default {
-  color: #43484d;
-}
-.coal blockquote {
-  margin: 20px 0;
-  padding: 0 20px;
-  color: #98a3ad;
-  background-color: #242637;
-  border-top: 0.1em solid #2c2f44;
-  border-bottom: 0.1em solid #2c2f44;
-}
-.coal table td {
-  border-color: #1f2223;
-}
-.coal table tbody tr:nth-child(2n) {
-  background: #1b1d1e;
-}
-.coal table thead {
-  background: #3f4649;
-}
-.coal table thead td {
-  border: none;
-}
-.coal table thead tr {
-  border: 1px #3f4649 solid;
-}
-.coal :not(pre) > .hljs {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0.1em 0.3em;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-.coal pre {
-  position: relative;
-}
-.coal pre > .buttons {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  color: #a1adb8;
-  cursor: pointer;
-}
-.coal pre > .buttons :hover {
-  color: #3473ad;
-}
-.coal pre > .buttons i {
-  margin-left: 8px;
-}
-.coal pre > .result {
-  margin-top: 10px;
-}
 .navy {
   color: #bcbdd0;
   background-color: #161923;
-/* Inline code */
-}
-.navy .content .header:link,
-.navy .content .header:visited {
-  color: #bcbdd0;
-  pointer: cursor;
-}
-.navy .content .header:link:hover,
-.navy .content .header:visited:hover {
-  text-decoration: none;
 }
 .navy .sidebar {
   background-color: #282d3f;
@@ -568,11 +388,8 @@ table thead td {
   background-color: #2d334f;
 }
 .navy .menu-bar,
-.navy .menu-bar:visited,
 .navy .nav-chapters,
-.navy .nav-chapters:visited,
-.navy .mobile-nav-chapters,
-.navy .mobile-nav-chapters:visited {
+.navy .mobile-nav-chapters {
   color: #737480;
 }
 .navy .menu-bar i:hover,
@@ -586,83 +403,19 @@ table thead td {
 .navy .mobile-nav-chapters {
   background-color: #282d3f;
 }
-.navy .content a:link,
-.navy a:visited {
+.navy .content a {
   color: #2b79a2;
 }
 .navy .theme-popup {
-  color: #bcbdd0;
   background: #161923;
   border: 1px solid #737480;
 }
 .navy .theme-popup .theme:hover {
   background-color: #282e40;
 }
-.navy .theme-popup .default {
-  color: #737480;
-}
-.navy blockquote {
-  margin: 20px 0;
-  padding: 0 20px;
-  color: #bcbdd0;
-  background-color: #262933;
-  border-top: 0.1em solid #2f333f;
-  border-bottom: 0.1em solid #2f333f;
-}
-.navy table td {
-  border-color: #1f2331;
-}
-.navy table tbody tr:nth-child(2n) {
-  background: #1b1f2b;
-}
-.navy table thead {
-  background: #39415b;
-}
-.navy table thead td {
-  border: none;
-}
-.navy table thead tr {
-  border: 1px #39415b solid;
-}
-.navy :not(pre) > .hljs {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0.1em 0.3em;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-.navy pre {
-  position: relative;
-}
-.navy pre > .buttons {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  color: #c8c9db;
-  cursor: pointer;
-}
-.navy pre > .buttons :hover {
-  color: #2b79a2;
-}
-.navy pre > .buttons i {
-  margin-left: 8px;
-}
-.navy pre > .result {
-  margin-top: 10px;
-}
 .rust {
   color: #262625;
   background-color: #e1e1db;
-/* Inline code */
-}
-.rust .content .header:link,
-.rust .content .header:visited {
-  color: #262625;
-  pointer: cursor;
-}
-.rust .content .header:link:hover,
-.rust .content .header:visited:hover {
-  text-decoration: none;
 }
 .rust .sidebar {
   background-color: #3b2e2a;
@@ -683,11 +436,8 @@ table thead td {
   background-color: #45373a;
 }
 .rust .menu-bar,
-.rust .menu-bar:visited,
 .rust .nav-chapters,
-.rust .nav-chapters:visited,
-.rust .mobile-nav-chapters,
-.rust .mobile-nav-chapters:visited {
+.rust .mobile-nav-chapters {
   color: #737480;
 }
 .rust .menu-bar i:hover,
@@ -701,67 +451,13 @@ table thead td {
 .rust .mobile-nav-chapters {
   background-color: #3b2e2a;
 }
-.rust .content a:link,
-.rust a:visited {
+.rust .content a {
   color: #2b79a2;
 }
 .rust .theme-popup {
-  color: #262625;
   background: #e1e1db;
   border: 1px solid #b38f6b;
 }
 .rust .theme-popup .theme:hover {
   background-color: #99908a;
-}
-.rust .theme-popup .default {
-  color: #737480;
-}
-.rust blockquote {
-  margin: 20px 0;
-  padding: 0 20px;
-  color: #262625;
-  background-color: #c1c1bb;
-  border-top: 0.1em solid #b8b8b1;
-  border-bottom: 0.1em solid #b8b8b1;
-}
-.rust table td {
-  border-color: #d7d7cf;
-}
-.rust table tbody tr:nth-child(2n) {
-  background: #dbdbd4;
-}
-.rust table thead {
-  background: #b3a497;
-}
-.rust table thead td {
-  border: none;
-}
-.rust table thead tr {
-  border: 1px #b3a497 solid;
-}
-.rust :not(pre) > .hljs {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0.1em 0.3em;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-.rust pre {
-  position: relative;
-}
-.rust pre > .buttons {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  color: #c8c9db;
-  cursor: pointer;
-}
-.rust pre > .buttons :hover {
-  color: #e69f67;
-}
-.rust pre > .buttons i {
-  margin-left: 8px;
-}
-.rust pre > .result {
-  margin-top: 10px;
 }
