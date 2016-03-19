@@ -170,15 +170,15 @@ body {
 .cover-container {
   width: 100%;
   background-image: url("banner.png");
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: 0%;
 }
 
 .cover {
   z-index: 1;
-  padding: 5em 0;
-  text-shadow: #000 0px 0px 7px, #000 0px 0px 4px, #000 0px 0px 2px;
+  padding: 3em 0;
+  text-shadow: #000 0px 0px 15px;
 }
 .cover .btn-lg {
   padding: 10px 20px;
