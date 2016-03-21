@@ -37,10 +37,9 @@ a:hover {
 
 html,
 body {
+  font-family: 'Raleway', sans-serif;
   height: 100%;
-  background-color: #fff;
-}
-body {
+  background-color: #eee;
   color: #444;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
@@ -87,7 +86,7 @@ hr {
  * Header
  */
 .masthead {
-  background-color: #fefefe;
+  background-color: #eee;
   width: 100%;
 }
 
@@ -126,7 +125,7 @@ hr {
   //color: rgba(255,255,255,.75);
   vertical-align: middle;
   text-align: center;
-  text-shadow: 0 0 1px #4D577A;
+  text-shadow: none;
 
   -webkit-transition: color .25s ease-out;
   -moz-transition: color .25s ease-out;
