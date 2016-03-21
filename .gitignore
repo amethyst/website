@@ -1,6 +1,9 @@
 # Unwanted files
 amethyst
 Cargo.lock
+build
+cobalt.rs
+target
 
 # Backup files
 .DS_Store
