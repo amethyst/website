@@ -6,7 +6,7 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: #444;
 }
 
 /* Custom default button */
@@ -38,10 +38,10 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #373737;
+  background-color: #fff;
 }
 body {
-  color: #fff;
+  color: #444;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
@@ -87,13 +87,15 @@ hr {
  * Header
  */
 .masthead {
-  background-color: #333;
+  background-color: #fefefe;
   width: 100%;
 }
 
 .masthead-brand {
   margin-top: 0;
   margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 0 0 4px #4D577A, 0 0 3px #4D577A, 0 0 1px #4D577A, 0 0 1px #4D577A;
 }
 
 .masthead-brand > img {
@@ -120,10 +122,11 @@ hr {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
+  color: #4D577A; /* IE8 proofing */
+  //color: rgba(255,255,255,.75);
   vertical-align: middle;
   text-align: center;
+  text-shadow: 0 0 1px #4D577A;
 
   -webkit-transition: color .25s ease-out;
   -moz-transition: color .25s ease-out;
@@ -134,15 +137,15 @@ hr {
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
-  color: #fff;
-  color: rgba(255,255,255,.75);
+  color: #C28BF9;
+  //color: rgba(255,255,255,.75);
 }
 
 .masthead-nav > li > a > hr {
   position: relative;
   height: 2px;
   bottom: 10px;
-  background: #888;
+  background: #4D577A;
   border: 0px;
   width: 0px;
 
@@ -155,19 +158,20 @@ hr {
 
 .masthead-nav > li > a:hover > hr,
 .masthead-nav > li > a:focus > hr {
+  background-color: #C28BF9;
   width: 4em;
 }
 
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
-  color: #fff;
+  color: #6097FF;
 }
 
 .masthead-nav > .active > a > hr,
 .masthead-nav > .active > a:hover > hr,
 .masthead-nav > .active > a:focus > hr{
-  background-color: #fff;
+  background-color: #6097FF;
   width: 4em;
 }
 
@@ -186,6 +190,7 @@ hr {
 }
 
 .cover-container {
+  color: #fff;
   width: 100%;
   background-image: url("banner.png");
   background-size: 100% 100%;
@@ -209,8 +214,10 @@ hr {
  */
 
 .mastfoot {
+  width: 100%;
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
+  background-color: #fefefe;
 }
 
 
@@ -226,7 +233,7 @@ hr {
   }
 
   .mastfoot {
-    position: fixed;
+    position: relative;
     bottom: 0;
   }
 
@@ -236,7 +243,6 @@ hr {
   }
 
   /* Handle the widths */
-  .mastfoot,
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
@@ -244,7 +250,6 @@ hr {
 
 @media (min-width: 840px) {
   .inner,
-  .mastfoot,
   .cover {
     width: 700px;
   }

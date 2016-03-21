@@ -37,6 +37,10 @@
 
         {{ content }}
 
+        <div class="mastfoot">
+          <!-- privacy stuff, back to top? -->
+        </div>
+
       </div>
     </div>
 

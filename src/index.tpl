@@ -26,3 +26,19 @@ extends: default.tpl
   <h2>Test</h2>
   <p>Content</p>
 </div>
+
+
+<div>
+  <h2>Test</h2>
+  <p>Content</p>
+</div>
+
+<div>
+  <h2>Test</h2>
+  <p>Content</p>
+</div>
+
+<div>
+  <h2>Test</h2>
+  <p>Content</p>
+</div>
