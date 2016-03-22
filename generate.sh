@@ -26,4 +26,4 @@ git reset --hard f8c6034 # This keeps it on the current version, it can be updat
 cargo build --release
 cd ..
 
-./cobalt.rs/target/release/cobalt build -s src -d ./build
+./cobalt.rs/target/release/cobalt build -s src -d ./build --config src/.cobalt.yml
