@@ -1,13 +1,13 @@
 # Unwanted files
 amethyst
-Cargo.lock
 build
+Cargo.lock
 cobalt.rs
 target
 
 # Backup files
 .DS_Store
-thumbs.db
 *~
 *.rs.bk
 *.swp
+thumbs.db
