@@ -4,7 +4,7 @@ title: This Week in Amethyst ###
 date: Month ##, ####
 ---
 
-> News for `MMM DD`, YYYY` – `MMM DD, YYYY`
+> News for `MMM DD, YYYY` – `MMM DD, YYYY`
 
 Hello and welcome to the `###th` issue of *This Week in Amethyst*, a blog
 bringing you the latest changes and updates regarding the Amethyst game engine
