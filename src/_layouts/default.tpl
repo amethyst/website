@@ -42,7 +42,7 @@
 
         <div class="mastfoot">
           <!-- privacy stuff, back to top? -->
-          <p class="license">This website and the Amethyst logo are licensed under a Creative Commons Attribution-ShareAlike 4.0 License.</p>
+          <p class="license">This website and the Amethyst logo are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 License.</a></p>
         </div>
 
       </div>

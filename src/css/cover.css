@@ -3,10 +3,21 @@
  */
 
 /* Links */
-a,
-a:focus,
-a:hover {
+a {
   color: #444;
+  text-decoration: none;
+
+  -webkit-transition: color .3s;
+  -moz-transition: color .3s;
+  -o-transition: color .3s;
+  -ms-transition: color .3s;
+  transition: color .3s;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #C28BF9;
 }
 
 /* Custom default button */
@@ -221,6 +232,7 @@ hr {
 .mastfoot {
   width: 100%;
   color: #555;
+  font-size: small;
   background-color: #fff;
   padding: 2.5em 0 1em 0;
 }
