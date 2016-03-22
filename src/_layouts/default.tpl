@@ -40,8 +40,6 @@
 
         {{ content }}
 
-
-
       </div>
     </div>
 
@@ -49,6 +47,13 @@
       <!-- privacy stuff, back to top? -->
       <p class="license">This website and the Amethyst logo are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 License.</a></p>
     </div>
+
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'ebkalderon/amethyst'
+    };
+  </script>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
   </body>
 </html>
