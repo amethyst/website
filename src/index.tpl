@@ -21,24 +21,3 @@ extends: default.tpl
     {% endfor %}
   <ul>
 </div>
-
-<div>
-  <h2>Test</h2>
-  <p>Content</p>
-</div>
-
-
-<div>
-  <h2>Test</h2>
-  <p>Content</p>
-</div>
-
-<div>
-  <h2>Test</h2>
-  <p>Content</p>
-</div>
-
-<div>
-  <h2>Test</h2>
-  <p>Content</p>
-</div>
