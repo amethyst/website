@@ -3,7 +3,8 @@
 # Rebuilds the website, blog, book, and API documentation from scratch.
 
 echo "Cleaning up workspace..."
-rm -rf _posts doc blog.css book cover.css index.html
+rm -rf build amethyst cobalt.rs
+mkdir build
 
 echo "Generating book and API docs..."
 git clone https://github.com/ebkalderon/amethyst
@@ -13,15 +14,16 @@ mdbook build book
 cd ..
 
 echo "Copying files over..."
-cp -r amethyst/book/html/ book
-cp -r amethyst/book/images/ book/images
-cp -r amethyst/target/doc/ .
-echo '<meta http-equiv="refresh" content="0; url=amethyst/" />' > doc/index.html
+cp -r amethyst/book/html/ build/book
+cp -r amethyst/book/images/ build/book/images
+cp -r amethyst/target/doc/ build/doc
+#echo '<meta http-equiv="refresh" content="0; url=amethyst/" />' > web/doc/index.html
 
 echo "Building website from source..."
-cobalt build -s src/
+git clone https://github.com/cobalt-org/cobalt.rs
+cd cobalt.rs
+git reset --hard f8c6034 # This keeps it on the current version, it can be updated when needed
+cargo build --release
+cd ..
 
-echo "Done!"
-git add --all
-git commit -m "Regenerate website"
-git push -u origin master
+./cobalt.rs/target/release/cobalt build -s src -d ./build

@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta charset="utf-8">
+      <meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Amethyst</title>
+
+      <title>Amethyst | Data-oriented and Data-driven Game Engine</title>
+      <link rel="icon" type="image/x-icon" href="./assets/amethyst.ico" />
 
 	<!-- Latest compiled and minified CSS -->
      	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
       	<!-- Optional theme -->
-     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-      <link rel="stylesheet" href="./cover.css" />
+     	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
+      <link rel="stylesheet" href="./css/cover.css" />
+      <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       	<!-- Latest compiled and minified JavaScript -->
      	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -19,42 +22,33 @@
     <body>
 
     <div class="site-wrapper">
-
       <div class="site-wrapper-inner">
 
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Amethyst</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="./book">Book</a></li>
-                  <li><a href="./doc">Doc</a></li>
-                  <li><a href="https://github.com/ebkalderon/amethyst">GitHub</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading">Vison</h1>
-            <p class="lead">Amethyst aims to be a fast, data-oriented, and data-driven game engine suitable for rapid prototyping and iteration.</p>
-            <p class="lead">
-              <a href="https://github.com/ebkalderon/amethyst#vision" class="btn btn-lg btn-default">Learn more</a>
-            </p>
+        <div class="masthead clearfix">
+          <div class="inner">
+            <h3 class="masthead-brand"><img src="./assets/amethyst.svg">Amethyst</h3>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="#">Home<hr /></a></li>
+                <li><a href="./book">Book<hr /></a></li>
+                <li><a href="./doc/amethyst/index.html">Docs<hr /></a></li>
+                <li><a href="https://github.com/ebkalderon/amethyst">GitHub<hr /></a></li>
+              </ul>
+            </nav>
           </div>
         </div>
 
+        {{ content }}
+
+
+
       </div>
-
-    </div>
-    <div>
-      {{ content }}
     </div>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    </body>
+    <div class="mastfoot">
+      <!-- privacy stuff, back to top? -->
+      <p class="license">This website and the Amethyst logo are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 License.</a></p>
+    </div>
+
+  </body>
 </html>
