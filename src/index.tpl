@@ -11,7 +11,7 @@ extends: default.tpl
 </div>
 
 <div>
-  <h2>This Week in Amethyst</h2>
+  <h2>What's new?</h2>
   <br />
   <ul>
     {% for post in posts %}

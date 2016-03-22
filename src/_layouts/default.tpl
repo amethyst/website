@@ -5,7 +5,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>Amethyst</title>
+      <title>Amethyst | Data-oriented and Data-driven Game Engine</title>
       <link rel="icon" type="image/x-icon" href="./assets/amethyst.ico" />
 
 	<!-- Latest compiled and minified CSS -->
@@ -42,6 +42,7 @@
 
         <div class="mastfoot">
           <!-- privacy stuff, back to top? -->
+          <p class="license">This website and the Amethyst logo are licensed under a Creative Commons Attribution-ShareAlike 4.0 License.</p>
         </div>
 
       </div>

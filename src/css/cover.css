@@ -220,9 +220,15 @@ hr {
 
 .mastfoot {
   width: 100%;
-  color: #999; /* IE8 proofing */
-  color: rgba(255,255,255,.5);
-  background-color: #fefefe;
+  color: #555;
+  background-color: #fff;
+  padding: 2.5em 0 1em 0;
+}
+
+.license {
+  position: relative;
+  bottom: 0;
+  margin: 0;
 }
 
 
