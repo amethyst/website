@@ -45,10 +45,10 @@ html,
 body {
   font-family: 'Raleway', sans-serif;
   height: 100%;
-  background-color: #eee;
+  background-color: #fff;
   color: #444;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  text-shadow: none;
 }
 hr {
   border: 0;
@@ -92,7 +92,7 @@ hr {
  * Header
  */
 .masthead {
-  background-color: #eee;
+  background-color: #fff;
   width: 100%;
 }
 
