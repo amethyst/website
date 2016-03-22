@@ -4,8 +4,10 @@
 
 /* Links */
 a {
-  color: #444;
+  color: #685CBB;
+  //color: #444;
   text-decoration: none;
+  font-weight: bold;
 
   -webkit-transition: color .3s;
   -moz-transition: color .3s;
@@ -17,6 +19,8 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
+  //color: #C28BF9;
+  //color: #685CBB;
   color: #C28BF9;
 }
 
