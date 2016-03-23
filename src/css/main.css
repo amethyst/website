@@ -271,6 +271,16 @@ hr {
  * Affix and center
  */
 
+@media (max-width: 25em) {
+  .masthead-nav > li {
+    width: 4em;
+  }
+
+  .masthead-nav > li > a > hr {
+    max-width: 3em;
+  }
+}
+
 @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
