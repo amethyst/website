@@ -1,7 +1,7 @@
 extends: post.tpl
 
 title: This Week in Amethyst 5
-date: February 15, 2016
+date: 15 February 2016 13:04 -0500
 ---
 
 > News from Feb 08, 2016 – Feb 15, 2016
