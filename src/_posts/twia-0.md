@@ -1,7 +1,7 @@
 extends: post.tpl
 
 title: This Week in Amethyst 0
-date: January 14, 2016
+date: 14 January 2016 21:00:30 -0500
 ---
 
 > Welcome to this new series! The first issue will come Jan 18, 2016.
