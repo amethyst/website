@@ -20,9 +20,8 @@ cp -r amethyst/target/doc/ build/doc
 #echo '<meta http-equiv="refresh" content="0; url=amethyst/" />' > web/doc/index.html
 
 echo "Building website from source..."
-git clone https://github.com/cobalt-org/cobalt.rs
+git clone https://github.com/johannhof/cobalt.rs
 cd cobalt.rs
-git reset --hard f8c6034 # This keeps it on the current version, it can be updated when needed
 cargo build --release
 cd ..
 
