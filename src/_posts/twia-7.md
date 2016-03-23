@@ -1,7 +1,7 @@
 extends: post.tpl
 
 title: These Weeks in Amethyst 7
-date: 13 March 2016 16:23 -0500
+date: 13 March 2016 16:23:00 -0500
 ---
 
 > News from Feb 22, 2016 – Mar 13, 2016
