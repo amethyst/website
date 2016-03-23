@@ -350,6 +350,10 @@ hr {
     width: 100%;
 }
 
+.blog-post-date {
+    margin-right: 10px;
+}
+
 @media (min-width: 840px) {
   .blog-post-container {
     width: 700px;

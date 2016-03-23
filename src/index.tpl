@@ -16,7 +16,17 @@ extends: default.tpl
   <ul class="list-unstyled">
     {% for post in posts %}
       <li>
-        <h4><a href="{{post.path}}">{{ post.title }}</a></h4>
+        <h4><span class="{{post.title}} blog-post-date"></span><a href="{{post.path}}">{{ post.title }}</a></h4>
+		  <script>
+	            var date = new Date("{{post.date}}");
+		    var Month = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+		    var title = new String("{{post.title}}").split(" ");
+		    var number = title[title.length - 1];
+
+		    var date_str = date.getDate() + " " + Month[date.getMonth()] + " " + date.getFullYear();
+		    // console.log(date_str, number);
+		   document.getElementsByClassName(number)[0].innerText = date_str;
+		</script>
       </li>
     {% endfor %}
   <ul>
