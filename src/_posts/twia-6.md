@@ -6,12 +6,11 @@ date: 22 February 2016 20:00:00 -0500
 
 > News from Feb 15, 2016 – Feb 22, 2016
 
-Hello and welcome to the `sixth` issue of *This Week in Amethyst*, a blog
-bringing you the latest changes and updates regarding the Amethyst game engine
-every week. If you have any suggestions or ideas, feel free to voice them
-[on GitHub][gh] or [the Gitter chat][gc].
+Hello and welcome to the sixth issue of *This Week in Amethyst*, a blog bringing
+you the latest changes and updates regarding the Amethyst game engine every
+week. If you have any suggestions or ideas, feel free to call me out on
+[Gitter][gc].
 
-[gh]: https://github.com/amethyst/website
 [gc]: https://gitter.im/ebkalderon/amethyst
 
 No new pull requests landed this week.
