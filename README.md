@@ -1,5 +1,7 @@
 # Amethyst Website
 
+[![Join the chat at https://gitter.im/amethyst/website](https://badges.gitter.im/amethyst/website.svg)](https://gitter.im/amethyst/website?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status][s1]][tc] [![CC BY-SA License][s2]][cc]
 
 [s1]: https://travis-ci.org/amethyst/website.svg?branch=master
