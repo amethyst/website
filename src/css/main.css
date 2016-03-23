@@ -271,7 +271,7 @@ hr {
  * Affix and center
  */
 
-@media (max-width: 350px) {
+@media (max-width: 25em) {
   .masthead-nav > li {
     width: 4em;
   }
