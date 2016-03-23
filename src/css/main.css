@@ -328,3 +328,20 @@ hr {
 .gitter-open-chat-button:hover {
     background-color: #685CBB;
 }
+
+/*
+ * Blog Post Style
+ */
+.blog-post-body {
+    text-align: left;
+}
+
+.blog-post-container{
+    width: 100%;
+}
+
+@media (min-width: 840px) {
+  .blog-post-container {
+    width: 700px;
+  }
+}

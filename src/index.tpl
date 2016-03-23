@@ -13,10 +13,10 @@ extends: default.tpl
 <div>
   <h2>What's new?</h2>
   <br />
-  <ul>
+  <ul class="list-unstyled">
     {% for post in posts %}
       <li>
-        <a href="{{post.path}}">{{ post.title }}</a>
+        <h4><a href="{{post.path}}">{{ post.title }}</a></h4>
       </li>
     {% endfor %}
   <ul>
