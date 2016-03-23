@@ -6,14 +6,14 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 
       <title>Amethyst | Data-oriented and Data-driven Game Engine</title>
-      <link rel="icon" type="image/x-icon" href="/assets/amethyst.ico" />
+      <link rel="icon" type="image/x-icon" href="./assets/amethyst.ico" />
 
 	<!-- Latest compiled and minified CSS -->
      	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
       	<!-- Optional theme -->
      	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
-      <link rel="stylesheet" href="/css/main.css" />
+      <link rel="stylesheet" href="./css/main.css" />
       <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       	<!-- Latest compiled and minified JavaScript -->
