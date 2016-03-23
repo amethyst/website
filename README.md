@@ -35,7 +35,6 @@ Generated API Documentation          | [`amethyst/src/`][ds]     | `/doc/`
 To generate a local copy of the website, do:
 
 ```
-$ cargo install mdbook
 $ ./generate.sh
 ```
 

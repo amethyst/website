@@ -6,10 +6,13 @@ echo "Cleaning up workspace..."
 rm -rf build amethyst cobalt.rs
 mkdir build
 
-echo "Generating book and API docs..."
+echo "Generating API docs..."
 git clone https://github.com/ebkalderon/amethyst
 cd amethyst
 cargo doc --no-deps -p amethyst -p amethyst_engine
+
+echo "Generating book..."
+cargo install mdbook
 mdbook build book
 cd ..
 

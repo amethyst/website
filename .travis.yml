@@ -4,7 +4,6 @@ rust:
     - stable
 
 script:
-    - cargo install mdbook
     - ./generate.sh
     - touch build/.nojekyll
     - echo "www.amethyst.rs" > build/CNAME
