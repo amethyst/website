@@ -6,9 +6,9 @@ date: February 22, 2016
 
 > News from Feb 15, 2016 – Feb 22, 2016
 
-Hello and welcome to the fourth issue of *This Week in Amethyst*, a blog
-bringing you the latest changes and updates regarding the Amethyst game engine
-every week. If you have any suggestions or ideas, feel free to call me out on
+Hello and welcome to the sixth issue of *This Week in Amethyst*, a blog bringing
+you the latest changes and updates regarding the Amethyst game engine every
+week. If you have any suggestions or ideas, feel free to call me out on
 [Gitter][gc].
 
 [gc]: https://gitter.im/ebkalderon/amethyst
