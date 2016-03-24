@@ -10,11 +10,14 @@ echo "Generating API docs..."
 git clone https://github.com/ebkalderon/amethyst
 cd amethyst
 cargo doc --no-deps -p amethyst -p amethyst_engine
+cd ..
 
 echo "Generating book..."
-cargo install mdbook
-mdbook build book
+git clone https://github.com/azerupi/mdBook
+cd mdBook
+cargo build --release
 cd ..
+./mdBook/target/release/mdbook build amethyst/book
 
 echo "Copying files over..."
 cp -r amethyst/book/html/ build/book
