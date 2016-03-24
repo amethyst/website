@@ -15,6 +15,7 @@ cd ..
 echo "Generating book..."
 git clone https://github.com/azerupi/mdBook
 cd mdBook
+git reset --hard 925939e26720e1998796a1735c296048c99ee7f8
 cargo build --release
 cd ..
 ./mdBook/target/release/mdbook build amethyst/book
