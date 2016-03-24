@@ -1,14 +1,14 @@
 # Amethyst Website
 
-[![Join the chat at https://gitter.im/amethyst/website](https://badges.gitter.im/amethyst/website.svg)](https://gitter.im/amethyst/website?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-[![Build Status][s1]][tc] [![CC BY-SA License][s2]][cc]
+[![Build Status][s1]][tc] [![CC BY-SA License][s2]][cc] [![Join the chat][s3]][gc]
 
 [s1]: https://travis-ci.org/amethyst/website.svg?branch=master
 [s2]: https://img.shields.io/badge/license-CC%20BY--SA-blue.svg
+[s3]: https://badges.gitter.im/amethyst/website.svg
 
 [tc]: https://travis-ci.org/amethyst/website
 [cc]: ./LICENSE.md
+[gc]: https://gitter.im/amethyst/website?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badgeontent=badge
 
 This is the source code for the Amethyst website and blog, accessible from
 either http://amethyst.github.io/website/ or http://www.amethyst.rs/. The HTML
