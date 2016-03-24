@@ -1,4 +1,4 @@
-extends: post.tpl
+extends: post.liquid
 
 title: This Week in Amethyst 3
 date: 01 February 2016 20:00:00 -0500
