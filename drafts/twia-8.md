@@ -1,25 +1,25 @@
 extends: post.tpl
 
-title: This Week in Amethyst ###
-date: %dd %Mon %YYYY %HH:%MM:%SS %zzzz
+title: These Weeks in Amethyst 8
+date: 27 March 2016 %HH:%MM:%SS -0500
 ---
 
-> News from `MMM DD, YYYY` – `MMM DD, YYYY`
+> News from Mar 13, 2016 – Mar 27, 2016
 
-Hello and welcome to the `###th` issue of *This Week in Amethyst*, a blog
+Hello and welcome to the eighth issue of *This Week in Amethyst*, a blog
 bringing you the latest changes and updates regarding the Amethyst game engine
-every week. If you have any suggestions or ideas, feel free to voice them
-[on GitHub][gh] or [the Gitter chat][gc].
+every week (or two). If you have any suggestions or ideas, feel free to voice
+them [on GitHub][gh] or [the Gitter chat][gc].
 
 [gh]: https://github.com/amethyst/website
 [gc]: https://gitter.im/orgs/amethyst/rooms
 
-`###` pull requests, [`###` in the engine][ep], [`###` in the tools][tp], and
-[`###` in the website][wp], landed this week.
+27 pull requests, [four in the engine][ep], [three in the tools][tp], and
+[twenty in the website][wp], landed over these weeks.
 
-[ep]: https://github.com/amethyst/amethyst/pulls?q=is:pr+closed:YYYY-MM-DD..YYYY-MM-DD
-[tp]: https://github.com/amethyst/tools/pulls?q=is:pr+closed:YYYY-MM-DD..YYYY-MM-DD
-[wp]: https://github.com/amethyst/website/pulls?q=is:pr+closed:YYYY-MM-DD..YYYY-MM-DD
+[ep]: https://github.com/amethyst/amethyst/pulls?q=is:pr+closed:2016-03-13..2016-03-27
+[tp]: https://github.com/amethyst/tools/pulls?q=is:pr+closed:2016-03-13..2016-03-27
+[wp]: https://github.com/amethyst/website/pulls?q=is:pr+closed:2016-03-13..2016-03-27
 
 ## What's cooking on master?
 

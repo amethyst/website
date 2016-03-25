@@ -3,6 +3,7 @@ amethyst
 build
 Cargo.lock
 cobalt.rs
+mdBook
 target
 
 # Backup files
