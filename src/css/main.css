@@ -244,7 +244,7 @@ hr {
   font-size: small;
   background-color: #4E5879;
   padding: 0 0 0 0;
-  height: 5em;
+  height: 8em;
   margin-top: -5em;
   overflow: hidden;
 
@@ -266,6 +266,26 @@ hr {
 .license > a:hover {
   color: #C28BF9;
 }
+
+.footer-list {
+  width: 40%;
+}
+
+.footer-list > a {
+  font-weight: normal;
+  color: #fff;
+}
+
+.footer-list > .left {
+  margin-right: 30em;
+}
+
+@media (max-width: 25em) {
+  .mastfoot {
+    height: 12em;
+  }
+}
+
 
 /*
  * Affix and center
