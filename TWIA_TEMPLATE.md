@@ -21,6 +21,10 @@ every week. If you have any suggestions or ideas, feel free to voice them
 [tp]: https://github.com/amethyst/tools/pulls?q=is:pr+closed:YYYY-MM-DD..YYYY-MM-DD
 [wp]: https://github.com/amethyst/website/pulls?q=is:pr+closed:YYYY-MM-DD..YYYY-MM-DD
 
+## Announcements
+
+`List project news and call attention to ongoing tasks here.`
+
 ## What's cooking on master?
 
 ### Notable additions
@@ -31,6 +35,10 @@ every week. If you have any suggestions or ideas, feel free to voice them
 
 * `List breaking changes here. If none, delete this section.`
 
+## New contributors
+
+No new people have joined this week!
+
 ## New issues
 
 * Engine
@@ -39,11 +47,3 @@ every week. If you have any suggestions or ideas, feel free to voice them
   * `List new issues here. If none, delete the Tools bullet.`
 * Website
   * `List new issues here. If none, delete the Website bullet.`
-
-## New contributors
-
-No new people have joined this week!
-
-## Other announcements
-
-`List miscellaneous announcements or call attention to ongoing tasks here.`
