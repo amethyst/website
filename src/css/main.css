@@ -105,6 +105,27 @@ hr {
   height: 300px;
 }
 
+.blog-post-container {
+  padding: 0 .5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.blog-post-body {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-post-link {
+  text-align: right;
+}
+
+.blog-post-date {
+  text-align: left;
+  padding-right: 3em;
+}
+
 /*
  * Header
  */
