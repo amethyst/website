@@ -14,12 +14,11 @@ them [on GitHub][gh] or [the Gitter chat][gc].
 [gh]: https://github.com/amethyst/website
 [gc]: https://gitter.im/orgs/amethyst/rooms
 
-28 pull requests, [four in the engine][ep], [three in the tools][tp], and
-[twenty one in the website][wp], landed over these weeks.
+Seven pull requests, [four in the engine][ep] and [three in the tools][tp],
+landed over these weeks.
 
 [ep]: https://github.com/amethyst/amethyst/pulls?q=is:pr+closed:2016-03-13..2016-03-27
 [tp]: https://github.com/amethyst/tools/pulls?q=is:pr+closed:2016-03-13..2016-03-27
-[wp]: https://github.com/amethyst/website/pulls?q=is:pr+closed:2016-03-13..2016-03-27
 
 ## What's cooking on master?
 
@@ -70,19 +69,6 @@ them [on GitHub][gh] or [the Gitter chat][gc].
 * Tools
   * [Implement deploy subcommand (issue #22)][t22]
   * [Determine if project is amethyst or not (issue #26)][t26]
-* Website
-  * [Rewrite all TWIA posts in Markdown (issue #5)][w5]
-  * [Gitter chat box obscures text on narrow displays (issue #8)][w8]
-  * [Move mdbooks install to script (issue #11)][w11]
-  * [Use CloudFlare (issue #12)][w12]
-  * [Github menu link disappears on iPhone 5 (issue #13)][w13]
-  * [TWIA post order not correct (issue #14)][w14]
-  * [Show hamburger menu on narrow displays (issue #20)][w20]
-  * [Commit 46d6de3 breaks CSS][w22]
-  * [Display publication date next to post in "What's New?" (issue #23)][w23]
-  * [Expose RSS feed and test that it works (issue #24)][w24]
-  * [Update Gitter Chat on website (issue #28)][w28]
-  * [Overflowing issue on mobile (issue #35)][w35]
 
 [e28]: https://github.com/amethyst/amethyst/issues/28
 [e29]: https://github.com/amethyst/amethyst/issues/29
@@ -90,19 +76,6 @@ them [on GitHub][gh] or [the Gitter chat][gc].
 
 [t22]: https://github.com/amethyst/tools/issues/22
 [t26]: https://github.com/amethyst/tools/issues/26
-
-[w5]: https://github.com/amethyst/website/issues/5
-[w8]: https://github.com/amethyst/website/issues/8
-[w11]: https://github.com/amethyst/website/issues/11
-[w12]: https://github.com/amethyst/website/issues/12
-[w13]: https://github.com/amethyst/website/issues/13
-[w14]: https://github.com/amethyst/website/issues/14
-[w20]: https://github.com/amethyst/website/issues/20
-[w22]: https://github.com/amethyst/website/issues/22
-[w23]: https://github.com/amethyst/website/issues/23
-[w24]: https://github.com/amethyst/website/issues/24
-[w28]: https://github.com/amethyst/website/issues/28
-[w35]: https://github.com/amethyst/website/issues/35
 
 ## New contributors
 
