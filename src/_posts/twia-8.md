@@ -1,7 +1,7 @@
 extends: post.tpl
 
 title: These Weeks in Amethyst 8
-date: 27 March 2016 %HH:%MM:%SS -0500
+date: 28 March 2016 01:59:30 -0500
 ---
 
 > News from Mar 13, 2016 – Mar 27, 2016
