@@ -35,7 +35,7 @@ them [on GitHub][gh] or [the Gitter chat][gc].
   repositories have been transferred to this new organization, and
   [the wiki][wi] is now completely open for collaborators to edit.
 * [The Gitter chat has been split into multiple rooms][gc] to help keep
-  conversations organized and reduce overall noise. Thanks for th e
+  conversations organized and reduce overall noise. Looks much nicer!
 
 [gp]: https://pages.github.com/
 [co]: https://github.com/cobalt-org/cobalt.rs
