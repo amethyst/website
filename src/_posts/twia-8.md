@@ -1,4 +1,4 @@
-extends: post.tpl
+extends: post.liquid
 
 title: These Weeks in Amethyst 8
 date: 28 March 2016 01:59:30 -0500
