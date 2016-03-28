@@ -1,4 +1,4 @@
-extends: post.tpl
+extends: post.liquid
 
 title: This Week in Amethyst ###
 date: %dd %Mon %YYYY %HH:%MM:%SS %zzzz
