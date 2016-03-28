@@ -59,7 +59,7 @@ summarizing our ideas so far. Check it out!
 
 ### Notable additions
 
-* Integration tests for `amethyst tools` can now be run with `cargo test`
+* Integration tests for `amethyst_tools` can now be run with `cargo test`
   (pull request [#21][t21] by @[LucioFranco][lf]).
 * The `amethyst` build tool's subcommands API got a refactor (pull request
   [#24][t24] by @[White-Oak][wo]).
