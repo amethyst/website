@@ -39,7 +39,7 @@ room on Gitter and we'll go fix it!
 [wg]: https://gitter.im/amethyst/website
 
 [The old WordPress blog][ob] is being discontinued in favor of this website.
-we will keep it up for the forseeable future to keep old links intact, but it
+We will keep it up for the forseeable future to keep old links intact, but it
 will no longer be updated. Please update your bookmarks and [RSS feeds][rf]!
 
 [ob]: https://blog.amethyst.rs/
