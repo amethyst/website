@@ -80,6 +80,7 @@ hr {
   height: 100%; /* For at least Firefox */
   min-height: 100%;
   padding-bottom: 5em;
+  overflow: hidden;
 }
 
 .site-wrapper-inner {
@@ -110,6 +111,7 @@ hr {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  overflow: hidden;
 }
 
 .blog-post-body {
@@ -119,11 +121,24 @@ hr {
 
 .blog-post-link {
   text-align: right;
+  float: left;
+  width: 50%;
 }
 
 .blog-post-date {
   text-align: left;
-  padding-right: 3em;
+  float: left;
+  width: 50%;
+  margin-right: 0px !important; // Something was overriding this with an !important tag
+}
+
+@media (max-width: 30em) {
+  .blog-post-date,
+  .blog-post-link {
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+  }
 }
 
 /*
@@ -273,6 +288,7 @@ hr {
 }
 
 .license {
+  overflow: hidden;
   position: relative;
   bottom: 0;
   margin: 0;
@@ -289,6 +305,7 @@ hr {
 }
 
 .footer-list {
+  overflow: hidden;
   width: 40%;
 }
 

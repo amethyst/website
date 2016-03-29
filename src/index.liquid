@@ -13,15 +13,11 @@ extends: default.liquid
 <div class="blog-post-container">
   <h2>What's new?</h2>
   <!--<br />-->
-  <table class="blog-post-body">
+  <div class="blog-post-body">
     {% for post in posts limit:3 %}
-      <tr>
-        <td class="blog-post-date">
-          <h4><span class="{{post.title}}"></span></h4>
-        </td>
-        <td class="blog-post-link">
-          <h4><a href="{{post.path}}">{{ post.title }}</a></h4>
-        </td>
+      <div class="blog-post">
+        <h4 class="blog-post-date {{post.title}}"></h4>
+        <h4 class="blog-post-link"><a href="{{post.path}}">{{ post.title }}</a></h4>
   		  <script>
           var date = new Date("{{post.date}}");
   		    var Month = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
@@ -31,8 +27,8 @@ extends: default.liquid
   		    var date_str = date.getDate() + " " + Month[date.getMonth()] + " " + date.getFullYear();
   		    document.getElementsByClassName(number)[0].innerText = date_str;
   		  </script>
-      </tr>
+      </div>
 
     {% endfor %}
-  </table>
+  </div>
 </div>
