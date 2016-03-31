@@ -7,9 +7,9 @@ rm -rf build amethyst cobalt.rs
 mkdir build
 
 echo "Generating API docs..."
-git clone https://github.com/ebkalderon/amethyst
+git clone https://github.com/amethyst/amethyst
 cd amethyst
-cargo doc --no-deps -p amethyst -p amethyst_engine
+cargo doc --no-deps -p amethyst -p amethyst_ecs -p amethyst_engine -p amethyst_renderer
 cd ..
 
 echo "Generating book..."
