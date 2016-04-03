@@ -14,7 +14,7 @@ extends: default.liquid
   <h2>What's new?</h2>
   <!--<br />-->
   <div class="blog-post-body">
-    {% for post in posts limit:3 %}
+    {% for post in posts %}
       <div class="blog-post">
         <h4 class="blog-post-date {{post.title}}"></h4>
         <h4 class="blog-post-link"><a href="{{post.path}}">{{ post.title }}</a></h4>
