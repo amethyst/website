@@ -24,61 +24,54 @@ No new pull requests landed this week.
   * The `amethyst` command-line tool now supports the `--release` flag in the
     same manner as Cargo ([#19][t19]). Thanks for the pull request,
     [@LucioFranco][lf]!
-
-[t19]: https://github.com/ebkalderon/amethyst_tools/issues/19
-[lf]: https://github.com/LucioFranco
-
   * The package was re-published to work with the latest version of Cargo
     ([#17][t17]).
-
-[t17]: https://github.com/ebkalderon/amethyst_tools/issues/17
-
   * Creating a new game project no longer reports "bad file descriptor" on
     affected systems ([#18][t18]). Thanks again to [@LucioFranco][lf]!
-
-[t18]: https://github.com/ebkalderon/amethyst_tools/issues/18
-
   * Cargo's exit status is now reported back to the shell rather than dropped.
     This resolves certain issues with our integration tests reporting certain
     faulty tests as successful ([#13][t13]). This bugfix was made by
     [@White-Oak][wo] back in [issue 5 of *TWIA*][i5], but was delayed due to
     testing.
-
-[t13]: https://github.com/ebkalderon/amethyst_tools/issues/13
-[i5]: /_posts/twia-5.html
-
 * The ECS design and implementation has been undergoing heavy churn lately. Feel
   free to drop in and contribute on our [Gitter][gc] channel.
   * On the ecs branch, both `Simulation` and `SimBuilder` were prototyped (see
     the [wiki page][ed] for the design proposal).
     [`Processor` error handling got a little Rustier][e25], using `Result`
     instead of `Option`.
-
-[ed]: https://github.com/ebkalderon/amethyst/wiki/ECS-Design
-[e25]: https://github.com/ebkalderon/amethyst/pull/25
-
   * [@Oflor][of] has been working on his own external multi-threaded ECS library
     called [Zircon][zi] that aims to easily integrate with Amethyst. Check it
     out!
-
-[of]: https://github.com/Oflor
-[zi]: https://github.com/Oflor/zircon
-
 * [The release guidelines have been codified in the wiki.][rg] Though we already
   follow [Semantic Versioning][sv], there are certain cases not covered by the
   standard that needed to be defined explicitly (how to treat major/minor
   changes in the tools vs. in the engine, when to increment meta-package version
   numbers, etc). This should enforce consistency and keep breakage to a minimum,
   which will be especially important after 1.0.
-
-[rg]: https://github.com/ebkalderon/amethyst/wiki/Releases
-[sv]: http://semver.org/
-
 * Along with this, the project may also adopt a more uniform Git branching
   workflow, possibly [Git Flow][gf] by Vincent Driessen (suggestion by
   [@LucioFranco][lf]). Stale branches and merge conflicts need to be kept at
   bay, and this looks like an effective way to keep our repositories clean and
   iterate more quickly.
+
+[t19]: https://github.com/ebkalderon/amethyst_tools/issues/19
+[lf]: https://github.com/LucioFranco
+
+[t17]: https://github.com/ebkalderon/amethyst_tools/issues/17
+
+[t18]: https://github.com/ebkalderon/amethyst_tools/issues/18
+
+[t13]: https://github.com/ebkalderon/amethyst_tools/issues/13
+[i5]: /_posts/twia-5.html
+
+[ed]: https://github.com/ebkalderon/amethyst/wiki/ECS-Design
+[e25]: https://github.com/ebkalderon/amethyst/pull/25
+
+[of]: https://github.com/Oflor
+[zi]: https://github.com/Oflor/zircon
+
+[rg]: https://github.com/ebkalderon/amethyst/wiki/Releases
+[sv]: http://semver.org/
 
 [gf]: http://nvie.com/posts/a-successful-git-branching-model/
 

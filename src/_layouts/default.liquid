@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <!-- Social Site Meta Properties -->
+      <meta property="og:title" content="Amethyst">
+      <meta property="og:image" content="https://www.amethyst.rs/assets/amethyst.png">
+      <meta property="og:site_name" content="Amethyst">
+      <meta property="og:description" content="A data-oriented and data-driven game engine.">
+      <meta property="og:url" content="https://www.amethyst.rs/">
+      <meta property="og:type" content="website">
+
       <meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>Amethyst | Data-oriented and Data-driven Game Engine</title>
+      <meta name="description" content="A data-oriented and data-driven game engine.">
+      <meta name="keywords" content="game,engine,data-oriented,data-driven,rust,amethyst">
+
+      <title>Amethyst | Data-oriented and data-driven game engine</title>
       <link rel="icon" type="image/x-icon" href="/assets/amethyst.ico" />
 
 	<!-- Latest compiled and minified CSS -->
@@ -32,10 +43,13 @@
 
         <div class="masthead clearfix">
           <div class="inner">
-            <h3 class="masthead-brand"><img src="./assets/amethyst.svg">Amethyst</h3>
+            <a href="/">
+              <h3 class="masthead-brand"><img src="/assets/amethyst.svg">Amethyst</h3>
+            </a>
+
             <nav>
               <ul class="nav masthead-nav">
-                <li class="active"><a href="#">Home<hr /></a></li>
+                <li class="active"><a href="/">Home<hr /></a></li>
                 <li><a href="/book">Book<hr /></a></li>
                 <li><a href="/doc/amethyst/index.html">Docs<hr /></a></li>
                 <li><a href="https://github.com/amethyst">GitHub<hr /></a></li>
@@ -65,10 +79,13 @@
 
   <script>
     ((window.gitter = {}).chat = {}).options = {
-        room: 'amethyst/general'
+        room: 'amethyst/general',
     };
   </script>
-  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+  <!-- Adds appendElementTo for style -->
+  <script src="/assets/sidecar.js" async defer></script>
+  <!--<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>-->
 
   </body>
 </html>

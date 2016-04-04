@@ -1,6 +1,6 @@
 extends: post.liquid
 
-title: This Week in Amethyst ###
+title: This Week in Amethyst 10
 date: %dd %Mon %YYYY %HH:%MM:%SS %zzzz
 ---
 
