@@ -43,8 +43,11 @@
             </nav>
           </div>
         </div>
-
-        {{ content }}
+        {% if is_post %}
+          {% include src/_layouts/post.liquid %}
+        {% else %}
+          {{ content }}
+        {% endif %}
 
       </div>
     </div>

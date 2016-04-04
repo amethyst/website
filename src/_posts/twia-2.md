@@ -1,4 +1,4 @@
-extends: post.liquid
+extends: default.liquid
 
 title: This Week in Amethyst 2
 date: 25 January 2016 20:00:00 -0500
