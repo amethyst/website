@@ -15,8 +15,11 @@
 
       <meta name="description" content="A data-oriented and data-driven game engine.">
       <meta name="keywords" content="game,engine,data-oriented,data-driven,rust,amethyst">
-
-      <title>Amethyst | Data-oriented and data-driven game engine</title>
+      {% if is_post %}
+        <title>{{ title }}</title>
+      {% else %}
+        <title>Amethyst | Data-oriented and data-driven game engine</title>
+      {% endif %}
       <link rel="icon" type="image/x-icon" href="/assets/amethyst.ico" />
 
 	    <!-- Latest compiled and minified CSS -->
