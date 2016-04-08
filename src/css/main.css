@@ -377,27 +377,6 @@ hr {
 }
 
 /*
- * Gitter Sidecar button
- */
-
-.gitter-open-chat-button,
-.gitter-open-chat-button:visited {
-  color: #FFFFFF;
-  background-color: #867CC8;
-  //background-color: #685CBB;
-  font-family: "Raleway", sans-serif;
-  padding-top: 9px;
-  padding-bottom: 7px;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.gitter-open-chat-button:focus,
-.gitter-open-chat-button:hover {
-    background-color: #685CBB;
-}
-
-/*
  * Blog Post Style
  */
 .blog-post-body {
