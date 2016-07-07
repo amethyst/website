@@ -2,3 +2,4 @@ rss: rss.xml
 name: Amethyst
 description: Everything should be made as simple as possible, but no simpler.
 link: https://amethyst.rs
+posts: _posts
