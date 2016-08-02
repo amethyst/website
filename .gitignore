@@ -1,5 +1,6 @@
 # Unwanted files
 amethyst
+amethyst_dev
 build
 Cargo.lock
 cobalt.rs
