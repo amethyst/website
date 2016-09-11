@@ -62,8 +62,10 @@ There are no breaking changes!
 ## New contributors
 
 * [nchashch](nc)
-* [bjadamson](https://github.com/bjadamson)
 * [Emilgardis](https://github.com/Emilgardis)
+* [serprex](https://github.com/serprex)
+* [palodequeso](https://github.com/palodequeso)
+* [bjadamson](https://github.com/bjadamson)
 
 ## Call for Participation
 * [Easy] [Add more content to the book](i50)
