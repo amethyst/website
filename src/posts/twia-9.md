@@ -37,7 +37,7 @@ With that out of the way, what have we been up to in the past few months? Well, 
 
 * [GFX based renderer](gfx) has been implemented! Thanks to [@csherratt](cs)!
 
-* The base for [YAML Config](p61) loading has been done. Thanks to [@Aceeri](ac).
+* The base for [YAML configuration](p61) loading has been done. Thanks to [@Aceeri](ac).
 
 * More work has gone into the glue for all the components in the [`amethyst_context`](p63). Thanks [@nchashch](nc).
 
