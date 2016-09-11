@@ -39,7 +39,7 @@ With that out of the way, what have we been up to in the past few months? Well, 
 
 * The base for [YAML Config](p61) loading has been done. Thanks to [@Aceeri](ac).
 
-* More work has gone into the glue for all the components in the [amethyst_context crate](p63) thanks [@nchashch](nc).
+* More work has gone into the glue for all the components in the [`amethyst_context`](p63). Thanks [@nchashch](nc).
 
 * The [default renderer processor](p85) has been merged. This includes the new pong example. Thanks again to [@nchashch](nc) brilliant work!
 
