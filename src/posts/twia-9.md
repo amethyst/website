@@ -6,12 +6,10 @@ date: 11 September 2016 10:00:00 -0600
 
 > News from Mar 27, 2016 – Sep 11, 2016
 
-Hello and welcome to the ninth issue of *This Week in Amethyst* or actually *These Months in Amethyst*, a blog
+Hello and welcome to the ninth issue of *This Week in Amethyst* or actually (*These Months in Amethyst*), a blog
 bringing you the latest changes and updates regarding the Amethyst game engine
-every week(or months). If you have any suggestions or ideas, feel free to voice them
+every week (or months). If you have any suggestions or ideas, feel free to voice them
 [on GitHub][gh] or [the Gitter chat][gc].
-
-
 
 [lf]: (https://github.com/LucioFranco)
 [eb]: (https://github.com/ebkalderon)
@@ -29,9 +27,7 @@ landed these past few months.
 
 We have halted the *This Week in Amethyst* due to some slow progress and not having much to show. We will move to a more monthly basis now as more pieces are coming into place.
 
-With that out of the way. What have we been up too in the past few months? Well, a lot. The most notable thing is that we finally have a few working examples including a version of [pong](https://github.com/amethyst/amethyst/tree/develop/examples/04_pong).
-
-
+With that out of the way, what have we been up too in the past few months? Well, a lot. The most notable thing is that we finally have a few working examples including a version of [pong](https://github.com/amethyst/amethyst/tree/develop/examples/04_pong).
 
 ## What's cooking on develop?
 
@@ -57,7 +53,7 @@ With that out of the way. What have we been up too in the past few months? Well,
 
 ### Breaking changes
 
-There are no breaking changes!
+* The `amethyst_engine` crate has been deprecated and moved to the `amethyst` crate.
 
 ## New contributors
 
@@ -67,7 +63,7 @@ There are no breaking changes!
 * [palodequeso](https://github.com/palodequeso)
 * [bjadamson](https://github.com/bjadamson)
 
-## Call for Participation
+## Call for participation
 * [Easy] [Add more content to the book](i50)
 * [Moderate] [Transform Processor](https://github.com/amethyst/amethyst/issues/53)
 * [Moderate] [Audio Processor](i60)
