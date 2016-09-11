@@ -17,7 +17,7 @@ every week (or months). If you have any suggestions or ideas, feel free to voice
 [gh]: https://github.com/amethyst/website
 [gc]: https://gitter.im/orgs/amethyst/rooms
 
-Forty pull requests, [Forty in the engine][ep] and [Zero in the tools][tp],
+Forty pull requests, [forty in the engine][ep] and [zero in the tools][tp],
 landed these past few months.
 
 [ep]: https://github.com/amethyst/amethyst/pulls?q=is:pr+closed:2016-04-27..2016-09-11
@@ -35,7 +35,7 @@ With that out of the way, what have we been up too in the past few months? Well,
 
 * [Specs](specs) and [gfx-rs](gfx) have both been integrated into Amethyst.
 
-* [GFX based renerer] has been implemented! Thanks to [@csherratt](cs)!
+* [GFX based renderer](gfx) has been implemented! Thanks to [@csherratt](cs)!
 
 * The base for [YAML Config](p61) loading has been done. Thanks to [@Aceeri](ac).
 
