@@ -21,13 +21,13 @@ Forty pull requests, [forty in the engine][ep] and [zero in the tools][tp],
 landed these past few months.
 
 [ep]: https://github.com/amethyst/amethyst/pulls?q=is:pr+closed:2016-04-27..2016-09-11
-[tp]: https://github.com/amethyst/tools/pulls?q=is:pr+closed:2016-04-27..2016-00-11
+[tp]: https://github.com/amethyst/tools/pulls?q=is:pr+closed:2016-04-27..2016-09-11
 
 ## Announcements
 
 We have halted the *This Week in Amethyst* due to some slow progress and not having much to show. We will move to a more monthly basis now as more pieces are coming into place.
 
-With that out of the way, what have we been up too in the past few months? Well, a lot. The most notable thing is that we finally have a few working examples including a version of [pong](https://github.com/amethyst/amethyst/tree/develop/examples/04_pong).
+With that out of the way, what have we been up to in the past few months? Well, a lot. The most notable thing is that we finally have a few working examples including a version of [pong](https://github.com/amethyst/amethyst/tree/develop/examples/04_pong).
 
 ## What's cooking on develop?
 
@@ -68,10 +68,11 @@ With that out of the way, what have we been up too in the past few months? Well,
 All of these issues have mentors available. Just let us know in a comment on the issue that you are working on it!
 
 * [Easy] [Add more content to the book](i50)
-* [Moderate] [Transform Processor](https://github.com/amethyst/amethyst/issues/53)
+* [Moderate] [Transform Processor](i53)
 * [Moderate] [Audio Processor](i60)
 
 [i60]: (https://github.com/amethyst/amethyst/issues/60)
 [i50]: (https://github.com/amethyst/amethyst/issues/50)
+[i53]: (https://github.com/amethyst/amethyst/issues/53)
 
 This edition was edited and written by [@LucioFranco](lf) and [@ebkalderon](eb).
