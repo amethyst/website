@@ -25,9 +25,12 @@ landed these past few months.
 
 ## Announcements
 
-We have halted the *This Week in Amethyst* due to some slow progress and not having much to show. We will move to a more monthly basis now as more pieces are coming into place.
+From this edition onward *This Week in Amethyst* will be changed to *This Month in Amethyst*. Lately, progress has been coming in sporadic bursts with long periods of
+silence, so we thought a monthly format might suit us better.
 
-With that out of the way, what have we been up to in the past few months? Well, a lot. The most notable thing is that we finally have a few working examples including a version of [pong](https://github.com/amethyst/amethyst/tree/develop/examples/04_pong).
+With that out of the way, what have we been up to in the past few months? Well, a lot. The most notable thing is that we finally have a few working examples including a version of [pong](https://github.com/amethyst/amethyst/tree/develop/examples/04_pong). The long awaited ["Pong Clone"](pc) chapter will be added soon to the book.
+
+[pc]: (https://www.amethyst.rs/book/simple_application.html)
 
 ## What's cooking on develop?
 
@@ -41,10 +44,15 @@ With that out of the way, what have we been up to in the past few months? Well, 
 
 * More work has gone into the glue for all the components in the [`amethyst_context`](p63). Thanks [@nchashch](nc).
 
+* [Keyboard input](p67) is now supported for [Gultin](gl) with more windowing systems to come. Thanks [@nchashch](nc)!
+
 * The [default renderer processor](p85) has been merged. This includes the new pong example. Thanks again to [@nchashch](nc) brilliant work!
+
+[gl]: (https://github.com/tomaka/glutin)
 
 [p61]: (https://github.com/amethyst/amethyst/pull/61)
 [p63]: (https://github.com/amethyst/amethyst/pull/63)
+[p67]: (https://github.com/amethyst/amethyst/pull/67)
 [p85]: (https://github.com/amethyst/amethyst/pull/85)
 
 [nc]: (https://github.com/nchashch)
