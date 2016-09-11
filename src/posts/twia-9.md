@@ -64,6 +64,9 @@ With that out of the way, what have we been up too in the past few months? Well,
 * [bjadamson](https://github.com/bjadamson)
 
 ## Call for participation
+
+All of these issues have mentors available. Just let us know in a comment on the issue that you are working on it!
+
 * [Easy] [Add more content to the book](i50)
 * [Moderate] [Transform Processor](https://github.com/amethyst/amethyst/issues/53)
 * [Moderate] [Audio Processor](i60)
