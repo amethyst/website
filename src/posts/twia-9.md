@@ -6,7 +6,7 @@ date: 11 September 2016 10:00:00 -0600
 
 > News from Mar 27, 2016 – Sep 11, 2016
 
-Hello and welcome to the ninth issue of *This Week in Amethyst* or actually (*These Months in Amethyst*), a blog
+Hello and welcome to the ninth issue of *This Week in Amethyst* (or actually *These Months in Amethyst*), a blog
 bringing you the latest changes and updates regarding the Amethyst game engine
 every week (or months). If you have any suggestions or ideas, feel free to voice them
 [on GitHub][gh] or [the Gitter chat][gc].
