@@ -25,7 +25,7 @@ trigger a rebuild and republish of the site through [Travis CI][tc].
 Content                              | Source Path               | Website Path
 -------------------------------------|---------------------------|-------------
 Main Content                         | `src/`                    | `/`
-Newsletter (*This Week In Amethyst*) | `src/_posts/`             | `/_posts/`
+Newsletter (*This Week In Amethyst*) | `src/posts/`             | `/posts/`
 Amethyst Book                        | [`amethyst/book/src`][bs] | `/book/`
 Generated API Documentation          | [`amethyst/src/`][ds]     | `/doc/`
 
