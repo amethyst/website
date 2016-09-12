@@ -24,7 +24,7 @@ landed this week.
 
 `List project news and call attention to ongoing tasks here.`
 
-## What's cooking on master?
+## What's cooking on develop?
 
 ### Notable additions
 
