@@ -11,17 +11,14 @@ bringing you the latest changes and updates regarding the Amethyst game engine
 every week (or months). If you have any suggestions or ideas, feel free to voice them
 [on GitHub][gh] or [the Gitter chat][gc].
 
-[lf]: (https://github.com/LucioFranco)
-[eb]: (https://github.com/ebkalderon)
-
 [gh]: https://github.com/amethyst/website
 [gc]: https://gitter.im/orgs/amethyst/rooms
 
 Forty pull requests, [forty in the engine][ep] and [zero in the tools][tp],
 landed these past few months.
 
-[ep]: https://github.com/amethyst/amethyst/pulls?q=is:pr+closed:2016-04-27..2016-09-11
-[tp]: https://github.com/amethyst/tools/pulls?q=is:pr+closed:2016-04-27..2016-09-11
+[ep]: https://github.com/amethyst/amethyst/pulls?q=is:pr+closed:2016-03-27..2016-09-11
+[tp]: https://github.com/amethyst/tools/pulls?q=is:pr+closed:2016-03-27..2016-09-11
 
 ## Announcements
 
@@ -84,3 +81,6 @@ All of these issues have mentors available. Just let us know in a comment on the
 [i53]: (https://github.com/amethyst/amethyst/issues/53)
 
 This edition was edited and written by [@LucioFranco](lf) and [@ebkalderon](eb).
+
+[lf]: (https://github.com/LucioFranco)
+[eb]: (https://github.com/ebkalderon)
