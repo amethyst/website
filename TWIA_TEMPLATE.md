@@ -24,7 +24,7 @@ landed this week.
 
 `List project news and call attention to ongoing tasks here.`
 
-## What's cooking on master?
+## What's cooking on develop?
 
 ### Notable additions
 
@@ -33,6 +33,10 @@ landed this week.
 ### Breaking changes
 
 * `List breaking changes here. If none, delete this section.`
+
+## Calls for participation
+
+* `List ongoing tasks that are seeking help from the community here.`
 
 ## New contributors
 
