@@ -34,6 +34,10 @@ landed this week.
 
 * `List breaking changes here. If none, delete this section.`
 
+## Calls for participation
+
+* `List ongoing tasks that are seeking help from the community here.`
+
 ## New contributors
 
 No new people have joined this week!
