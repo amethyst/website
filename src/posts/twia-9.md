@@ -90,7 +90,7 @@ ECS libraries in Rust. See the [ecs_bench][eb] repo for more details.
 
 [t25]: https://github.com/amethyst/tools/pull/25
 [t28]: https://github.com/amethyst/tools/pull/28
-[e34]: https://github.com/amethyst/issues/34
+[e34]: https://github.com/amethyst/amethyst/issues/34
 
 ### Breaking changes
 
