@@ -53,7 +53,7 @@ ECS libraries in Rust. See the [ecs_bench][eb] repo for more details.
   implemented. Great job, [@csherratt][cs]!
 * Basic [YAML configuration][e61] loading has been written, courtesy of
   [@Aceeri][ac].
-* The `[amethyst_context][e63]` crate has been introduced, which holds a
+* The [amethyst_context][e63] crate has been introduced, which holds a
   collection of common resources that can be passed around different parts of
   the engine. Credit goes to [@nchashch][nc].
 * [Event handling][e67] for keyboard input and window events is now supported
