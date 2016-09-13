@@ -49,7 +49,7 @@ ECS libraries in Rust. See the [ecs_bench][eb] repo for more details.
 
 * Both [Specs][sp] and [GFX][gf] have been fully integrated into Amethyst,
   starting with version 0.4.0.
-* We have first light! A flexible [GFX-based renderer][p49] has been
+* We have first light! A flexible [GFX-based renderer][e49] has been
   implemented. Great job, [@csherratt][cs]!
 * Basic [YAML configuration][e61] loading has been written, courtesy of
   [@Aceeri][ac].
