@@ -2,37 +2,40 @@
 
 # Rebuilds the website, blog, book, and API documentation from scratch.
 
+branches=( master develop )
+branch_length=${#branches[@]}
+
 echo "Cleaning up workspace..."
 rm -rf build amethyst cobalt.rs
-mkdir build
+mkdir -p src/book/
+mkdir -p src/doc/
+mkdir -p src/amethyst/
 
-echo "Generating API docs..."
-echo "  Generating master branch docs"
-git clone https://github.com/amethyst/amethyst --branch master
-cd amethyst
-  cargo doc --no-deps -p amethyst -p amethyst_config -p amethyst_renderer
-cd ..
+echo "Installing dependencies"
+cargo install mdbook --force
+cargo install cobalt-bin --force
 
-echo "  Generating develop branch docs"
-git clone -b develop https://github.com/amethyst/amethyst amethyst_dev
-cd amethyst_dev
-  cargo doc --no-deps -p amethyst -p amethyst_config -p amethyst_renderer
-cd ..
+for (( i=0; i<${#branches[@]}; i++ ));
+do
+    echo "Generating '${branches[$i]}' branch docs"
+    git clone https://github.com/amethyst/amethyst --branch ${branches[$i]} src/amethyst/${branches[$i]}
 
-echo "Compiling the book..."
-cargo install mdbook
-mdbook build amethyst/book
+    cd src/amethyst/${branches[$i]}
+    cargo doc --no-deps -p amethyst -p amethyst_renderer
+    
+    echo "Compiling '${branches[$i]}' branch book"
+    mdbook build book
 
-echo "Copying files over..."
-cp -r amethyst/book/html/ build/book
-cp -r amethyst/book/images/ build/book/images
+    cd ../../../
 
-mkdir -p build/doc
-cp -r amethyst/target/doc/ build/doc/master
-cp -r amethyst_dev/target/doc build/doc/develop
-#echo '<meta http-equiv="refresh" content="0; url=amethyst/" />' > web/doc/index.html
+    echo "Moving '${branches[$i]}' branch documentation and book to /build/"
+    mkdir -p src/doc/${branches[$i]}
+    cp -r src/amethyst/${branches[$i]}/target/doc/ src/doc/${branches[$i]}/
+
+    mkdir -p build/book/${branches[$i]}
+    cp -r src/amethyst/${branches[$i]}/book/html/ src/book/${branches[$i]}/html/
+    cp -r src/amethyst/${branches[$i]}/book/images/ src/book/${branches[$i]}/images/
+done
 
 echo "Building website from source..."
-cargo install cobalt-bin
-
-cobalt build
+jekyll build --source src/ --destination build/

@@ -1,0 +1,398 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a {
+  color: #685CBB;
+  //color: #444;
+  text-decoration: none;
+  font-weight: bold;
+
+  -webkit-transition: color .3s;
+  -moz-transition: color .3s;
+  -o-transition: color .3s;
+  -ms-transition: color .3s;
+  transition: color .3s;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  //color: #C28BF9;
+  //color: #685CBB;
+  color: #C28BF9;
+}
+
+/* Custom default button */
+.btn-default {
+  color: #fff;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #fff;
+  //box-shadow: 0px 0px 0px #333;
+  outline: none;
+
+  -webkit-transition: border .3s, color .3s;
+  -moz-transition: border .3s, color .3s;
+  -o-transition: border .3s, color .3s;
+  -ms-transition: border .3s, color .3s;
+  transition: border .3s, color .3s;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default:active:hover {
+  outline: none;
+  color: #C28BF9;
+  border: 1px solid #C28BF9;
+  background-color: rgba(0, 0, 0, 0);
+  //box-shadow: 0px 0px 10px #333;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  font-family: 'Raleway', sans-serif;
+  height: 100%;
+  background-color: #fff;
+  color: #444;
+  text-align: center;
+  text-shadow: none;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #555;
+  width: 90%;
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  padding-bottom: 5em;
+  overflow: hidden;
+}
+
+.site-wrapper-inner {
+  vertical-align: top;
+}
+
+.inner,
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 25px 0 10px 0;
+}
+
+/*
+ * Post list
+ */
+
+.post-list {
+  height: 300px;
+}
+
+.blog-post-container {
+  padding: 0 .5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.blog-post-body {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-post-link {
+  text-align: right;
+  float: left;
+  width: 50%;
+}
+
+.blog-post-date {
+  text-align: left;
+  float: left;
+  width: 50%;
+  margin-right: 0px !important; // Something was overriding this with an !important tag
+}
+
+@media (max-width: 30em) {
+  .blog-post-date,
+  .blog-post-link {
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+  }
+}
+
+/*
+ * Header
+ */
+.masthead {
+  background-color: #fff;
+  width: 100%;
+}
+
+.masthead-brand {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 0 0 8px #4D577A, 0 0 4px #4D577A, 0 0 3px #4D577A, 0 0 1px #4D577A, 0 0 1px #4D577A;
+}
+
+.masthead-brand > img {
+  width: 2.5em;
+  padding: 0em 0.4em;
+}
+
+.masthead-nav {
+  overflow: hidden;
+  padding: 0em;
+  height: 4.5em;
+  list-style: none;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+  width: 6em;
+}
+
+.masthead-nav > li > a {
+  text-decoration: none;
+  outline: none;
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #4D577A; /* IE8 proofing */
+  //color: rgba(255,255,255,.75);
+  vertical-align: middle;
+  text-align: center;
+  text-shadow: none;
+
+  -webkit-transition: color .25s ease-out;
+  -moz-transition: color .25s ease-out;
+  -o-transition: color .25s ease-out;
+  -ms-transition: color .25s ease-out;
+  transition: color .25s ease-out;
+}
+
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  color: #C28BF9;
+  //color: rgba(255,255,255,.75);
+}
+
+.masthead-nav > li > a > hr {
+  position: relative;
+  height: 2px;
+  bottom: 10px;
+  background: #4D577A;
+  border: 0px;
+  width: 0px;
+
+  -webkit-transition: width .25s, background .25s;
+  -moz-transition: width .25s, background .25s;
+  -o-transition: width .25s, background .25s;
+  -ms-transition: width .25s, background .25s;
+  transition: width .25s, background .25s;
+}
+
+.masthead-nav > li > a:hover > hr,
+.masthead-nav > li > a:focus > hr {
+  background-color: #C28BF9;
+  width: 4em;
+}
+
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #6097FF;
+}
+
+.masthead-nav > .active > a > hr,
+.masthead-nav > .active > a:hover > hr,
+.masthead-nav > .active > a:focus > hr{
+  background-color: #6097FF;
+  width: 4em;
+}
+
+
+/*
+ * Cover
+ */
+
+.banner {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.cover-container {
+  color: #fff;
+  width: 100%;
+  background-image: url("../assets/banner.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .15) inset, 0px -2px 5px 0px rgba(0, 0, 0, .15) inset;
+}
+
+.cover {
+  z-index: 1;
+  padding: 3em 0;
+  text-shadow: #000 0px 0px 15px;
+}
+
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  width: 100%;
+  color: #fff;
+  font-size: small;
+  background-color: #4E5879;
+  padding: 0 0 0 0;
+  height: 8em;
+  margin-top: -5em;
+  overflow: hidden;
+
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .15) inset;
+}
+
+.license {
+  overflow: hidden;
+  position: relative;
+  bottom: 0;
+  margin: 0;
+  padding: 2em 0 1.5em 0;
+}
+
+.license > a {
+  font-weight: normal;
+  color: #fff;
+}
+
+.license > a:hover {
+  color: #C28BF9;
+}
+
+.footer-list {
+  overflow: hidden;
+  width: 40%;
+}
+
+.footer-list > a {
+  font-weight: normal;
+  color: #fff;
+}
+
+.footer-list > .left {
+  margin-right: 30em;
+}
+
+@media (max-width: 25em) {
+  .mastfoot {
+    height: 12em;
+  }
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (max-width: 25em) {
+  .masthead-nav > li {
+    width: 4em;
+  }
+
+  .masthead-nav > li > a > hr {
+    max-width: 3em;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: relative;
+    top: 0;
+  }
+
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+
+  /* Handle the widths */
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 840px) {
+  .inner,
+  .cover {
+    width: 700px;
+  }
+
+  .masthead-brand {
+    float: left;
+  }
+
+  .masthead-nav {
+    float: right;
+  }
+
+  .masthead-nav > li {
+    float: left;
+  }
+}
+
+/*
+ * Blog Post Style
+ */
+.blog-post-body {
+    text-align: left;
+}
+
+.blog-post-container{
+    width: 100%;
+}
+
+.blog-post-date {
+    margin-right: 10px;
+}
+
+@media (min-width: 840px) {
+  .blog-post-container {
+    width: 700px;
+  }
+}

@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<div class="ui vertical stripe segment">
+    <h2 class="ui center aligned header">
+        Amethyst is a data-oriented, data-driven game engine written in Rust.
+    </h2>
+</div>
+
+<div class="ui vertical stripe segment">
+    <div class="ui stackable very relaxed center aligned grid container">
+        <div class="eight wide left aligned column">
+            <h2 class="ui dividing header">
+                <i class="middle aligned large newspaper icon"></i>
+                <div class="content">
+                    News
+                </div>
+                <a class="spanning link" href="/posts/"></a>
+            </h2>
+            <div class="ui relaxed divided list">
+                {% for post in site.posts %}
+                    <div class="item">
+                        <div class="content">
+                            <a class="news header" href="{{ post.url }}">{{ post.title }}</a>
+                            <div class="date description">
+                                Published
+
+                                {% assign d = post.date | date: "%-d" %} 
+                                {% assign m = post.date | date: "%B" %} 
+
+                                {% case m %}
+                                    {% when 'April' or 'May' or 'June' or 'July' %}{{ m }}
+                                    {% when 'September' %}Sept.
+                                    {% else %}{{ post.date | date: "%b" }}.
+                                    {% endcase %}
+                                {% case d %}
+                                    {% when '1' or '21' or '31' %}{{ d }}st
+                                    {% when '2' or '22' %}{{ d }}nd
+                                    {% when '3' or '23' %}{{ d }}rd
+                                    {% else %}{{ d }}th
+                                    {% endcase %}, 
+                                {{ post.date | date: "%Y" }}
+                            </div>
+                            {% if post.small %}
+                            <div class="post excerpt">
+                                {{ post.small }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="eight wide left aligned column">
+        </div>
+
+    </div>
+</div>

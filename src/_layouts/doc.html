@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="ui simple dropdown">
+    <div text="text">{{ page.branch }}</div>
+    <div class="menu">
+        <a class="item" href="/doc/master">master</div>
+        <a class="item" href="/doc/develop">develop</div>
+    </div>
+</div>
+
+<div class="ui center aligned segment">
+    <div class="ui left aligned container">
+        <div class="ui header">Learn</div>
+        <div class="ui list">
+            <p>
+                <a class="ui item" href="/book/{{ page.branch }}/html/index.html">The Amethyst Book</a>. 
+                Describes how to use Amethyst along with various tutorials and in depth descriptions of the various modules.
+            </p>
+        </div>
+
+        <div class="ui header">Documentation</div>
+        <div class="ui list">
+            <a class="ui item" href="/doc/{{ page.branch }}/doc/amethyst/index.html">API Reference</a>
+        </div>
+    </div>
+</div>

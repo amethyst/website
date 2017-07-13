@@ -7,6 +7,14 @@ cobalt.rs
 mdBook
 target
 
+# semantic ui
+node_modules
+
+# jekyll
+_site
+.sass-cache
+.jekyll-metadata
+
 # Backup files
 .DS_Store
 *~
