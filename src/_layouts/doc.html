@@ -1,15 +1,18 @@
 ---
 layout: default
 ---
-<div class="ui simple dropdown">
-    <div text="text">{{ page.branch }}</div>
-    <div class="menu">
-        <a class="item" href="/doc/master">master</div>
-        <a class="item" href="/doc/develop">develop</div>
+
+<div class="ui center aligned vertical segment">
+    <div class="ui horizontal branch menu">
+        <div class="item"><strong>Branch</strong></div>
+
+        <!-- Normal links for people without js enabled -->
+        <a class="item active" href="/doc/master">master</a>
+        <a class="item" href="/doc/develop">develop</a>
     </div>
 </div>
 
-<div class="ui center aligned segment">
+<div class="ui center aligned vertical segment">
     <div class="ui left aligned container">
         <div class="ui header">Learn</div>
         <div class="ui list">
