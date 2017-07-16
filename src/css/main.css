@@ -30,6 +30,16 @@
     font-size: 12px;
 }
 
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.main.container {
+    flex: 1;
+}
+
 .spanning.link {
     border-radius: .28571429rem;
     position: absolute;
