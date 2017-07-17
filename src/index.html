@@ -1,13 +1,13 @@
 ---
 layout: default
 ---
-<div class="ui vertical stripe segment">
+<div class="ui vertical push far segment">
     <h2 class="ui center aligned header">
         Amethyst is a data-oriented, data-driven game engine written in Rust.
     </h2>
 </div>
 
-<div class="ui vertical stripe segment">
+<div class="ui vertical stripe push segment">
     <div class="ui stackable very relaxed center aligned grid container">
         <div class="eight wide left aligned column">
             <h2 class="ui dividing header">
@@ -17,37 +17,37 @@ layout: default
                 </div>
                 <a class="spanning link" href="/posts/"></a>
             </h2>
-            <div class="ui relaxed divided list">
+            <div class="ui divided relaxed selection list">
                 {% for post in site.posts %}
-                    <div class="item">
-                        <div class="content">
-                            <a class="news header" href="{{ post.url }}">{{ post.title }}</a>
-                            <div class="date description">
-                                Published
+                <a class="item" href="{{ post.url }}">
+                    <div class="content" href="{{ post.url}}">
+                        <div class="news header">{{ post.title }}</div>
+                        <div class="date description">
+                            Published
 
-                                {% assign d = post.date | date: "%-d" %} 
-                                {% assign m = post.date | date: "%B" %} 
+                            {% assign d = post.date | date: "%-d" %} 
+                            {% assign m = post.date | date: "%B" %} 
 
-                                {% case m %}
-                                    {% when 'April' or 'May' or 'June' or 'July' %}{{ m }}
-                                    {% when 'September' %}Sept.
-                                    {% else %}{{ post.date | date: "%b" }}.
-                                    {% endcase %}
-                                {% case d %}
-                                    {% when '1' or '21' or '31' %}{{ d }}st
-                                    {% when '2' or '22' %}{{ d }}nd
-                                    {% when '3' or '23' %}{{ d }}rd
-                                    {% else %}{{ d }}th
-                                    {% endcase %}, 
-                                {{ post.date | date: "%Y" }}
-                            </div>
-                            {% if post.small %}
-                            <div class="post excerpt">
-                                {{ post.small }}
-                            </div>
-                            {% endif %}
+                            {% case m %}
+                                {% when 'April' or 'May' or 'June' or 'July' %}{{ m }}
+                                {% when 'September' %}Sept.
+                                {% else %}{{ post.date | date: "%b" }}.
+                                {% endcase %}
+                            {% case d %}
+                                {% when '1' or '21' or '31' %}{{ d }}st
+                                {% when '2' or '22' %}{{ d }}nd
+                                {% when '3' or '23' %}{{ d }}rd
+                                {% else %}{{ d }}th
+                                {% endcase %}, 
+                            {{ post.date | date: "%Y" }}
                         </div>
+                        {% if post.small %}
+                        <div class="post excerpt">
+                            {{ post.small }}
+                        </div>
+                        {% endif %}
                     </div>
+                </a>
                 {% endfor %}
             </div>
         </div>

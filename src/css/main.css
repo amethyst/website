@@ -3,6 +3,16 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.push {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.push.far {
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
 .site {
     display: flex;
     min-height: 100vh;
@@ -40,6 +50,22 @@
 .missing.container {
     padding-top: 6em;
     padding-bottom: 6em;
+}
+
+.ui.menu {
+    box-shadow: 0 0 0 0;
+    border-radius: 0px;
+}
+
+.post.prompt {
+    border-radius: 0px !important;
+    border-bottom-width: 0px !important;
+    border-top-width: 0px !important;
+    border-right-width: 0px !important;
+}
+
+.post.prompt:focus {
+    border-left-color: rgba(34, 36, 38, 0.15) !important;
 }
 
 .spanning.link {
