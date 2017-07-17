@@ -1,6 +1,10 @@
 
-* {
-    font-family: 'Open Sans', sans-serif !important;
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header, h1, h2, h3, h4, h5, h6, b {
+    font-family: 'Rajdhani', sans-serif !important;
 }
 
 i.icon {
@@ -40,7 +44,7 @@ i.icon {
 }
 
 .news.header {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .ui.header {
