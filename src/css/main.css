@@ -4,7 +4,7 @@ body {
 }
 
 .header, h1, h2, h3, h4, h5, h6, b {
-    font-family: 'Rajdhani', sans-serif !important;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 i.icon {
@@ -25,6 +25,10 @@ i.icon {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+}
+
+.amethyst {
+    padding: 0 !important;
 }
 
 .following.bar {
@@ -77,18 +81,20 @@ i.icon {
 }
 
 .spanning.link {
-    border-radius: .28571429rem;
     position: absolute;
-    top: -5px;
-    left: -5px;
-    width: calc(100% + 7px);
-    height: calc(100% + 5px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     margin: 0;
-    transition: background .1s ease, box shadow .1s ease, color .1s ease;
 }
 
 .spanning.link:hover {
-    background: rgba(0.0, 0.0, 0.0, 0.06);
+    background: rgba(0.0, 0.0, 0.0, 0.04);
+}
+
+.item {
+    transition: color 0s ease, padding-left 0s ease, background-color 0s ease !important;
 }
 
 blockquote {
