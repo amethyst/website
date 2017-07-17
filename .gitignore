@@ -7,6 +7,11 @@ cobalt.rs
 mdBook
 target
 
+# ignore all files in the /src/doc/ subfolder
+/src/doc/*
+# except index.html
+!/src/doc/index.html
+
 # semantic ui
 node_modules
 

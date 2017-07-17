@@ -7,6 +7,9 @@ branch_length=${#branches[@]}
 
 echo "Cleaning up workspace..."
 rm -rf build amethyst cobalt.rs
+rm -r src/doc/ !(index.html)
+
+echo "Recreating base folders"
 mkdir -p src/book/
 mkdir -p src/doc/
 mkdir -p src/amethyst/
@@ -35,6 +38,8 @@ do
     mkdir -p build/book/${branches[$i]}
     cp -r src/amethyst/${branches[$i]}/book/html/ src/book/${branches[$i]}/html/
     cp -r src/amethyst/${branches[$i]}/book/images/ src/book/${branches[$i]}/images/
+
+    echo "---\nlayout:default\nbranch:${branches[$i]}\n---" > src/doc/${branches[$i]}.html
 done
 
 echo "Building website from source..."
