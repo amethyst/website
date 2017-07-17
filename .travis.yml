@@ -5,9 +5,12 @@ rust:
 
 before_install:
     - gem install jekyll
+    - gem install jekyll-feed
 
 script:
     - ./generate.sh
+    - echo "Directory Structure:"
+    - ls -1ap
     - echo "www.amethyst.rs" > build/CNAME
 
 sudo: true
