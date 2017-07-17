@@ -13,7 +13,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="A data-oriented, data-driven game engine written in Rust.">
+        <meta name="description" content="{{ page.description }}">
         <meta name="keywords" content="game,engine,data-oriented,data-driven,rust,amethyst">
 
         <title>{{ page.title }}</title>
@@ -22,17 +22,17 @@
 
         <!-- Semantic UI -->
         <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
-        <script
+        <!--<script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
-        <script src="/semantic/semantic.min.js"></script>
+        <script src="/semantic/semantic.min.js"></script>-->
 
         <!-- Stylesheets -->
         <link rel="stylesheet" type="text/css" href="/css/main.css">
 
         <!-- Scripts -->
-        <script src="/main.js"></script>
+        <!-- <script src="/main.js"></script> -->
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
@@ -52,8 +52,9 @@
                         </h3> 
                     </a>
 
-                    <!-- Documentation -->
                     <a class="item" href="/doc/">Documentation</a>
+
+                    <a class="item" href="/community/">Community</a>
 
                     <!-- Github link -->
                     <div class="ui right item">
@@ -62,28 +63,6 @@
                         </a>
                     </div>
 
-                    <!--
-                    <div class="ui pointing dropdown item">
-                        <a class="text" href="/doc/">Documentation</a>
-                        <i class="dropdown icon"></i>
-                        <div class="menu">
-                            <a class="item" href="/book/">Book</a>
-                            <div class="ui right dropdown item" href="/doc/master/doc/amethyst">
-                                <a class="text" href="/doc/master/doc/amethyst">API Documentation</a>
-                                <div class="menu">
-                                    <a class="item" href="/doc/master/doc/amethyst">master</a>
-                                    <a class="item" href="/doc/develop/doc/amethyst">develop</a>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <div class="ui right item">
-                        <a class="item" href="https://github.com/amethyst/amethyst">
-                            <img class="ui mini image" src="/assets/mark-github.svg" />
-                        </a>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>
@@ -105,7 +84,7 @@
                     <div class="six wide center aligned column">
                         <h4 class="ui inverted header">Community</h4>
                         <div class="ui inverted link list">
-                            <a class="item" href="/rss.xml">RSS Feed</a>
+                            <a class="item" href="/feed.xml">RSS Feed</a>
                             <a class="item" href="https://gitter.im/amethyst/general">Gitter Chat</a>
                         </div>
                     </div>

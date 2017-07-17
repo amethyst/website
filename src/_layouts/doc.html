@@ -3,28 +3,35 @@ layout: default
 ---
 
 <div class="ui center aligned vertical segment">
-    <div class="ui horizontal branch menu">
+    <div class="ui horizontal menu">
         <div class="item"><strong>Branch</strong></div>
 
         <!-- Normal links for people without js enabled -->
-        <a class="item active" href="/doc/master">master</a>
-        <a class="item" href="/doc/develop">develop</a>
+        <a class="branch link item {% if page.branch == "master" %} active {% endif %}" href="/doc/master">master</a>
+        <a class="branch link item {% if page.branch == "develop" %} active {% endif %}" href="/doc/develop">develop</a>
     </div>
 </div>
 
 <div class="ui center aligned vertical segment">
-    <div class="ui left aligned container">
+    <div class="ui left aligned branch container">
         <div class="ui header">Learn</div>
         <div class="ui list">
             <p>
-                <a class="ui item" href="/book/{{ page.branch }}/html/index.html">The Amethyst Book</a>. 
-                Describes how to use Amethyst along with various tutorials and in depth descriptions of the various modules.
+                <a class="ui branch modify item" href="/book/{{ page.branch }}/html/index.html">The Amethyst Book</a>. 
+                Describes how to use Amethyst along with various tutorials and in depth descriptions of the various modules. Built with mdBook.
             </p>
         </div>
 
         <div class="ui header">Documentation</div>
         <div class="ui list">
-            <a class="ui item" href="/doc/{{ page.branch }}/doc/amethyst/index.html">API Reference</a>
+            <p>
+                <a class="ui branch modify item" href="/doc/{{ page.branch }}/doc/amethyst/index.html">API Reference</a>.
+                Source documentation using `cargo doc`.
+            </p>
+            <p>
+                <a class="ui branch modify item" href="/doc/{{ page.branch }}/doc/amethyst/index.html">Example Games</a>. 
+                Various examples ranging from simply creating a window to a snake clone.
+            </p>
         </div>
     </div>
 </div>
