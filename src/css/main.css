@@ -1,6 +1,10 @@
 
 * {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+i.icon {
+    font-family: "Icons" !important;
 }
 
 .push {
@@ -81,6 +85,17 @@
 
 .spanning.link:hover {
     background: rgba(0.0, 0.0, 0.0, 0.06);
+}
+
+blockquote {
+    border-left-color: rgba(238, 238, 238);
+    border-left-style: solid;
+    border-left-width: 5px !important;
+    margin: 0px 0px 15px 3px;
+    padding-left: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 16px;
 }
 
 /* Prevent annoying highlighting */
