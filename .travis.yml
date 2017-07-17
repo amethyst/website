@@ -3,9 +3,11 @@ language: rust
 rust:
     - stable
 
+before_install:
+    - gem install jekyll
+
 script:
     - ./generate.sh
-    - touch build/.nojekyll
     - echo "www.amethyst.rs" > build/CNAME
 
 sudo: true

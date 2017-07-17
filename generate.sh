@@ -6,8 +6,7 @@ branches=( master develop )
 branch_length=${#branches[@]}
 
 echo "Cleaning up workspace..."
-rm -rf build amethyst cobalt.rs
-rm -r src/doc/ !(index.html)
+rm -rf build src/amethyst src/doc/
 
 echo "Recreating base folders"
 mkdir -p src/book/
@@ -16,7 +15,13 @@ mkdir -p src/amethyst/
 
 echo "Installing dependencies"
 cargo install mdbook --force
-cargo install cobalt-bin --force
+
+docs_branch () {
+    echo -e "---\nlayout: default\nbranch: $1\n---" > $2
+}
+
+# Output the `index.html` for the documentation page.
+docs_branch ${branches[0]} src/doc/index.html
 
 for (( i=0; i<${#branches[@]}; i++ ));
 do
@@ -32,15 +37,17 @@ do
     cd ../../../
 
     echo "Moving '${branches[$i]}' branch documentation and book to /build/"
-    mkdir -p src/doc/${branches[$i]}
+    mkdir -p src/doc/${branches[$i]}/
     cp -r src/amethyst/${branches[$i]}/target/doc/ src/doc/${branches[$i]}/
 
-    mkdir -p build/book/${branches[$i]}
-    cp -r src/amethyst/${branches[$i]}/book/html/ src/book/${branches[$i]}/html/
-    cp -r src/amethyst/${branches[$i]}/book/images/ src/book/${branches[$i]}/images/
+    mkdir -p src/book/${branches[$i]}/
+    cp -r src/amethyst/${branches[$i]}/book/html/ src/book/${branches[$i]}/
+    cp -r src/amethyst/${branches[$i]}/book/images/ src/book/${branches[$i]}/
 
-    echo "---\nlayout:default\nbranch:${branches[$i]}\n---" > src/doc/${branches[$i]}.html
+    # Create branch documentation pages.
+    docs_branch ${branches[$i]} src/doc/${branches[$i]}.html
 done
 
 echo "Building website from source..."
 jekyll build --source src/ --destination build/
+
