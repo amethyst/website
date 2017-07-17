@@ -6,7 +6,7 @@ branches=( master develop )
 branch_length=${#branches[@]}
 
 echo "Cleaning up workspace..."
-rm -rf build src/amethyst src/doc/
+rm -rf build src/amethyst src/book/ src/doc/
 
 echo "Recreating base folders"
 mkdir -p src/book/
