@@ -17,7 +17,7 @@ echo "Installing dependencies"
 cargo install mdbook --force
 
 docs_branch () {
-    echo -e "---\nlayout: default\nbranch: $1\n---" > $2
+    echo -e "---\nlayout: doc\nbranch: $1\n---" > $2
 }
 
 # Output the `index.html` for the documentation page.
