@@ -1,6 +1,5 @@
 
 title: "Amethyst | Data-oriented, data-driven game engine"
-#email: your-email@example.com
 description: "A data-oriented, data-driven game engine written in Rust."
 baseurl: ""
 url: "https://amethyst.rs"
@@ -8,9 +7,10 @@ github_username: amethyst
 
 # Build settings
 markdown: kramdown
-#theme: minima
 plugins:
   - jekyll-feed
+
+exclude:
 
 defaults:
   -

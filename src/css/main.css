@@ -3,12 +3,53 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+a {
+    color: #9b45bf;
+}
+
+a:hover {
+    color: #de31de;
+}
+
+.hero.image {
+    position: relative;
+    background:
+        linear-gradient(
+            to bottom right,
+            rgba(163, 3, 171, 0.9),
+            rgba(62, 1, 154, 0.9)
+        ),
+        url('/assets/amethyst.svg');
+    border: 0;
+    left: -30vw;
+    width: 130vw;
+    height: 300px;
+}
+
+.vertically.centered {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .header, h1, h2, h3, h4, h5, h6, b {
     font-family: 'Rajdhani', sans-serif;
 }
 
+.head {
+    background-color: #ffffff;
+}
+
 i.icon {
     font-family: "Icons" !important;
+}
+
+.ui.menu .item {
+    margin: 0 .1em !important;
+}
+
+.item > .icon {
+    padding-top: 0.1em;
 }
 
 .push {
@@ -16,8 +57,18 @@ i.icon {
     padding-bottom: 2em;
 }
 
+.push.bottom {
+    padding-top: 0em;
+    padding-bottom: 2em;
+}
+
 .push.far {
     padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+.push.bottom.far {
+    padding-top: 0em;
     padding-bottom: 4em;
 }
 
@@ -34,6 +85,7 @@ i.icon {
 .following.bar {
     border-bottom: 1px solid #DDDDDD;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.04);
+    z-index: 10;
 }
 
 .main.container {
@@ -90,15 +142,19 @@ i.icon {
 }
 
 .spanning.link:hover {
-    background: rgba(0.0, 0.0, 0.0, 0.04);
+    background: rgba(0.0, 0.0, 0.0, 0.08);
 }
 
 .item {
     transition: color 0s ease, padding-left 0s ease, background-color 0s ease !important;
 }
 
+.selection.list > .item:hover {
+    background-color: rgba(0.0, 0.0, 0.0, 0.08) !important; 
+}
+
 blockquote {
-    border-left-color: rgba(238, 238, 238);
+    border-left-color: rgba(220, 220, 220);
     border-left-style: solid;
     border-left-width: 5px !important;
     margin: 0px 0px 15px 3px;
