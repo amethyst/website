@@ -11,12 +11,29 @@ a:hover {
     color: #de31de;
 }
 
-.menu a.item:hover {
+a.item:hover,
+a.item:hover > h3 > .amethyst.content,
+a.item:hover > .content > .news.header {
     color: #9b45bf !important;
 }
 
+a.wireframe.column {
+    background-color: transparent; 
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75) inset !important;
+    border-radius: .28571429rem;
+    margin: 0 1em;
+    padding: 1em 0 0 0 !important;
+    width: 8em !important;
+    height: 2.25em !important;
+    -webkit-transition: box-shadow 0.1s, color 0.1s;
+    transition: box-shadow 0.1s, color 0.1s;
+}
+
+a.wireframe.column:hover {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 1.0) inset !important;
+}
+
 .hero.image {
-    position: relative;
     background:
         linear-gradient(
             to bottom right,
@@ -25,9 +42,11 @@ a:hover {
         ),
         url('/assets/amethyst.svg');
     border: 0;
-    left: -30vw;
-    width: 130vw;
-    height: 300px;
+    width: 100vw;
+}
+
+.hero.container {
+    margin: 8em 0.5em 8em 0.5em;
 }
 
 .vertically.centered {
@@ -176,6 +195,21 @@ blockquote {
 }
 
 /* Mobile */
+
+@media only screen and (max-width: 542px) {
+  .ui.menu.bar { 
+    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+  }
+
+  .ui.menu.bar > .ui.right.item {
+    position: absolute;
+    right: -1em;
+    top: -1em;
+  }
+}
 
 @media only screen and (max-width: 767px) {
   .ui.container {

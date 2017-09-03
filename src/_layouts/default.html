@@ -31,7 +31,7 @@
     <body class="site">
         <div class="ui following bar light fixed head">
             <div class="ui container">
-                <div class="ui large secondary left menu">
+                <div class="ui large secondary menu bar">
                     <!-- Header logo -->
                     <a class="item" href="/">
                         <h3 class="ui medium header">
@@ -63,6 +63,7 @@
             </div>
         </div>
 
+        {{ page.pre_contained }}
         <div class="ui main container">
             {{ content }}
         </div>
