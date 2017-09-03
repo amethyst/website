@@ -5,9 +5,7 @@ layout: default
 <div class="ui center aligned vertical segment">
     <div class="ui horizontal menu">
         <div class="item"><strong>Branch</strong></div>
-
-        <!-- Normal links for people without js enabled -->
-        <a class="branch link item {% if page.branch == "master" %} active {% endif %}" href="/doc/master.html">master</a>
+        <a class="branch link item {% if page.branch == "master" %} invert {% endif %}" href="/doc/master.html">master</a>
         <a class="branch link item {% if page.branch == "develop" %} active {% endif %}" href="/doc/develop.html">develop</a>
     </div>
 </div>

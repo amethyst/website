@@ -11,6 +11,10 @@ a:hover {
     color: #de31de;
 }
 
+.menu a.item:hover {
+    color: #9b45bf !important;
+}
+
 .hero.image {
     position: relative;
     background:
@@ -44,12 +48,8 @@ i.icon {
     font-family: "Icons" !important;
 }
 
-.ui.menu .item {
-    margin: 0 .1em !important;
-}
-
 .item > .icon {
-    padding-top: 0.1em;
+    padding-top: 0.25em;
 }
 
 .push {
