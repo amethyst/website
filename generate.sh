@@ -29,7 +29,7 @@ do
     git clone https://github.com/amethyst/amethyst --branch ${branches[$i]} src/amethyst/${branches[$i]}
 
     cd src/amethyst/${branches[$i]}
-    cargo doc --no-deps -p amethyst -p amethyst_renderer
+    cargo doc
     
     echo "Compiling '${branches[$i]}' branch book"
     mdbook build book
