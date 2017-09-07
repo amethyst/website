@@ -20,14 +20,38 @@ pre_contained: >
 ---
 <div class="ui vertical stripe push segment">
     <div class="ui stackable very relaxed center aligned grid container">
-        <div class="six wide left floated left aligned column">
-            <h2 class="ui dividing header">
+        <div class="sixteen wide column">
+            <div class="ui stackable very relaxed center aligned grid" style="padding:1.5em 0;">
+                <div class="four wide column">
+                    <img class="ui small centered image" src="/assets/gears-icon.png" />
+                    <div class="ui large header">For Teams</div>
+                    Scenes are described in easy to read text files.
+                </div>
+
+                <div class="four wide column">
+                    <img class="ui small centered image" src="/assets/rust-logo.png" />
+                    <div class="ui large header">For Performance</div>
+                    Engine written entirely in Rust and able to utilize multithreading to its fullest. 
+                </div>
+
+                <div class="four wide column">
+                    <img class="ui small centered image" src="/assets/fork-logo.png" />
+                    <div class="ui large header">For Community</div>
+                    Completely open source under a MIT/Apache2 dual license.
+                </div>
+            </div>
+        </div>
+
+        <div class="ui sixteen wide column divider"></div>
+
+        <div class="eight wide left aligned column">
+            <h2 class="ui horizontal divider header">
                 <i class="middle aligned large newspaper icon"></i>
                 <div class="content">
                     What's New?
                 </div>
-                <a class="spanning link" href="/posts/"></a>
             </h2>
+
             <div class="ui divided relaxed selection list">
                 {% for post in site.posts %}
                 <a class="item" href="{{ post.url }}">
@@ -62,10 +86,5 @@ pre_contained: >
                 {% endfor %}
             </div>
         </div>
-
-        <div class="six wide right floated left aligned column">
-
-        </div>
-
     </div>
 </div>
