@@ -49,7 +49,7 @@ do
 
     mkdir -p src/book/${branches[$i]}/
     cp -r src/amethyst/${branches[$i]}/book/html/ src/book/${branches[$i]}/
-    cp -r src/amethyst/${branches[$i]}/book/images/ src/book/${branches[$i]}/
+    cp -r src/amethyst/${branches[$i]}/book/images/ src/book/${branches[$i]}/html/
 
     # Create branch documentation pages.
     docs_branch ${branches[$i]} src/doc/${branches[$i]}.html
