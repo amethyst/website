@@ -36,7 +36,7 @@ do
     git clone https://github.com/amethyst/amethyst --branch ${branches[$i]} src/amethyst/${branches[$i]}
 
     cd src/amethyst/${branches[$i]}
-    doc
+    $doc
     
     echo "Compiling '${branches[$i]}' branch book"
     mdbook build book
@@ -55,6 +55,10 @@ do
     docs_branch ${branches[$i]} src/doc/${branches[$i]}.html
 done
 
-echo "Building website from source..."
+echo "Building website from source"
 jekyll build --source src/ --destination build/
+
+echo "Cleaning up binaries"
+rm -r build/amethyst/
+
 

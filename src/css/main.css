@@ -51,6 +51,10 @@ a.wireframe.column:hover {
     margin: 8em 0.5em 8em 0.5em;
 }
 
+.branch.item.active {
+    font-weight: 600;
+}
+
 .vertically.centered {
     position: relative;
     top: 50%;
@@ -135,6 +139,30 @@ i.icon {
 .missing.container {
     padding-top: 6em;
     padding-bottom: 6em;
+}
+
+.ui.menu .branch.active.item {
+    font-weight: 600 !important;
+    background-color: #e0e0e0;
+}
+
+/* Changing input placeholder text color to something easier to see */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #777 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #777 !important;
+    opacity: 1 !important;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #777 !important;
+    opacity: 1 !important;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #777 !important;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #777 !important;
 }
 
 .ui.menu {
