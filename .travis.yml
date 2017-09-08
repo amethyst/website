@@ -3,9 +3,14 @@ language: rust
 rust:
     - stable
 
+before_install:
+    - gem install jekyll
+    - gem install jekyll-feed
+
 script:
     - ./generate.sh
-    - touch build/.nojekyll
+    - echo "Directory Structure:"
+    - ls -1ap
     - echo "www.amethyst.rs" > build/CNAME
 
 sudo: true

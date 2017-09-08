@@ -5,7 +5,20 @@ build
 Cargo.lock
 cobalt.rs
 mdBook
-target
+/src/target
+/src/doc/
+/src/book/
+/book/
+
+# semantic ui
+node_modules
+
+# jekyll
+_site
+.sass-cache
+.jekyll-metadata
+Gemfile
+Gemfile.lock
 
 # Backup files
 .DS_Store

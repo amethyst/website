@@ -2,37 +2,63 @@
 
 # Rebuilds the website, blog, book, and API documentation from scratch.
 
+branches=( master develop )
+subcrates=( amethyst_config amethyst_renderer amethyst_assets amethyst_input )
+doc="cargo doc --no-deps"
+
+# Create cargo doc command
+for (( i=0; i<${#subcrates[@]}; i++ ));
+do
+    doc="$doc -p ${subcrates[$i]}"
+done
+
 echo "Cleaning up workspace..."
-rm -rf build amethyst cobalt.rs
-mkdir build
+rm -rf build src/amethyst src/book/ src/doc/
 
-echo "Generating API docs..."
-echo "  Generating master branch docs"
-git clone https://github.com/amethyst/amethyst --branch master
-cd amethyst
-  cargo doc --no-deps -p amethyst -p amethyst_config -p amethyst_renderer
-cd ..
+echo "Recreating base folders"
+mkdir -p src/book/
+mkdir -p src/doc/
+mkdir -p src/amethyst/
 
-echo "  Generating develop branch docs"
-git clone -b develop https://github.com/amethyst/amethyst amethyst_dev
-cd amethyst_dev
-  cargo doc --no-deps -p amethyst -p amethyst_config -p amethyst_renderer
-cd ..
+echo "Installing dependencies"
+cargo install mdbook --force
 
-echo "Compiling the book..."
-cargo install mdbook
-mdbook build amethyst/book
+docs_branch () {
+    echo -e "---\nlayout: doc\nbranch: $1\n---" > $2
+}
 
-echo "Copying files over..."
-cp -r amethyst/book/html/ build/book
-cp -r amethyst/book/images/ build/book/images
+# Output the `index.html` for the documentation page.
+docs_branch ${branches[0]} src/doc/index.html
 
-mkdir -p build/doc
-cp -r amethyst/target/doc/ build/doc/master
-cp -r amethyst_dev/target/doc build/doc/develop
-#echo '<meta http-equiv="refresh" content="0; url=amethyst/" />' > web/doc/index.html
+for (( i=0; i<${#branches[@]}; i++ ));
+do
+    echo "Generating '${branches[$i]}' branch docs"
+    git clone https://github.com/amethyst/amethyst --branch ${branches[$i]} src/amethyst/${branches[$i]}
 
-echo "Building website from source..."
-cargo install cobalt-bin
+    cd src/amethyst/${branches[$i]}
+    $doc
+    
+    echo "Compiling '${branches[$i]}' branch book"
+    mdbook build book
 
-cobalt build
+    cd ../../../
+
+    echo "Moving '${branches[$i]}' branch documentation and book to /build/"
+    mkdir -p src/doc/${branches[$i]}/
+    cp -r src/amethyst/${branches[$i]}/target/doc/ src/doc/${branches[$i]}/
+
+    mkdir -p src/book/${branches[$i]}/
+    cp -r src/amethyst/${branches[$i]}/book/html/ src/book/${branches[$i]}/
+    cp -r src/amethyst/${branches[$i]}/book/images/ src/book/${branches[$i]}/html/
+
+    # Create branch documentation pages.
+    docs_branch ${branches[$i]} src/doc/${branches[$i]}.html
+done
+
+echo "Building website from source"
+jekyll build --source src/ --destination build/
+
+echo "Cleaning up binaries"
+rm -r build/amethyst/
+
+

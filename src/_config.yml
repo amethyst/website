@@ -1,0 +1,22 @@
+
+title: "Amethyst | Data-oriented, data-driven game engine"
+description: "A data-oriented, data-driven game engine written in Rust."
+baseurl: ""
+url: "https://amethyst.rs"
+github_username: amethyst
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+exclude:
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      title: "Amethyst | Data-oriented and data-driven game engine"
+      description: "A data-oriented, data-driven game engine."

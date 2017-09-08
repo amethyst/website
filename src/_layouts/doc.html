@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="ui center aligned vertical segment">
+    <div class="ui horizontal menu">
+        <div class="item"><strong>Branch</strong></div>
+        <a class="branch link item {% if page.branch == "master" %} active {% endif %}" href="/doc/master.html">master</a>
+        <a class="branch link item {% if page.branch == "develop" %} active {% endif %}" href="/doc/develop.html">develop</a>
+    </div>
+</div>
+
+<div class="ui center aligned vertical segment">
+    <div class="ui left aligned branch container">
+        <div class="ui header">Learn</div>
+        <div class="ui list">
+            <p>
+                <a class="ui branch modify item" href="/book/{{ page.branch }}/html/index.html">The Amethyst Book</a>. 
+                Describes how to use Amethyst along with various tutorials and in depth descriptions of the various modules. Built with mdBook.
+            </p>
+        </div>
+
+        <div class="ui header">References</div>
+        <div class="ui list">
+            <p>
+                <a class="ui branch modify item" href="/doc/{{ page.branch }}/doc/amethyst/index.html">API Reference</a>.
+                Source documentation using <span class="command">cargo doc</span>.
+            </p>
+            <p>
+                <a class="ui branch modify item" href="https://github.com/amethyst/amethyst/tree/{{ page.branch }}">Source</a>. 
+                Source code of the engine.
+            </p>
+            <p>
+                <!-- TODO: Have actual pages related to the set up and what these examples are doing -->
+                <a class="ui branch modify item" href="https://github.com/amethyst/amethyst/tree/{{ page.branch }}/examples">Example Games</a>. 
+                Various examples ranging from simply creating a window to a snake clone.
+            </p>
+        </div>
+    </div>
+</div>
