@@ -3,13 +3,13 @@
 # Rebuilds the website, blog, book, and API documentation from scratch.
 
 branches=( master develop )
-subcrates=( amethyst_config amethyst_renderer amethyst_assets amethyst_input )
+crates=( amethyst amethyst_config amethyst_renderer amethyst_assets amethyst_input )
 doc="cargo doc --no-deps"
 
 # Create cargo doc command
-for (( i=0; i<${#subcrates[@]}; i++ ));
+for (( i=0; i<${#crates[@]}; i++ ));
 do
-    doc="$doc -p ${subcrates[$i]}"
+    doc="$doc -p ${crates[$i]}"
 done
 
 echo "Cleaning up workspace..."
