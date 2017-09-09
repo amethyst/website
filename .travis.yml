@@ -4,16 +4,15 @@ dist: trusty
 language: rust
 
 rust:
-    - nightly
+    - stable
 
 before_install:
+    - sudo apt-get install libasound2-dev
     - gem install jekyll
     - gem install jekyll-feed
 
 script:
     - ./generate.sh
-    - echo "Directory Structure:"
-    - ls -1ap
     - echo "www.amethyst.rs" > build/CNAME
 
 after_success: |
