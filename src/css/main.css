@@ -52,7 +52,6 @@ a.wireframe.column:hover {
         ),
         url('/assets/amethyst.svg');
     border: 0;
-    width: 100vw;
 }
 
 .hero.container {

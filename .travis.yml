@@ -1,7 +1,10 @@
+
+sudo: required
+dist: trusty
 language: rust
 
 rust:
-    - stable
+    - nightly
 
 before_install:
     - gem install jekyll
@@ -12,8 +15,6 @@ script:
     - echo "Directory Structure:"
     - ls -1ap
     - echo "www.amethyst.rs" > build/CNAME
-
-sudo: true
 
 after_success: |
     [ $TRAVIS_BRANCH = master ] &&
