@@ -6,20 +6,8 @@ language: rust
 rust:
     - stable
 
-# Force third-party crates to persist from previous builds and update only when
-# needed.
-cache: cargo
-
-# This improves the boot time of the machine
-sudo: false
-
-# Install ALSA development libraries before compiling on Linux.
-addons:
-  apt:
-    packages:
-      - libasound2-dev
-
 before_install:
+    - sudo apt-get install libasound2-dev
     - gem install jekyll
     - gem install jekyll-feed
 
@@ -30,7 +18,7 @@ script:
 after_success: |
     [ $TRAVIS_BRANCH = master ] &&
     [ $TRAVIS_PULL_REQUEST = false ] &&
-    pip install ghp-import &&
+    sudo pip install ghp-import &&
     ghp-import -n build/ &&
     git config user.name "Travis CI Worker" &&
     git config user.email "name@example.com" &&
