@@ -13,15 +13,17 @@ do
 done
 
 echo "Cleaning up workspace..."
-rm -rf build src/amethyst src/book/ src/doc/
+rm -rf build src/book/ src/doc/
 
-echo "Recreating base folders"
+echo "Recreating base folders (if needed)"
 mkdir -p src/book/
 mkdir -p src/doc/
 mkdir -p src/amethyst/
 
 echo "Installing dependencies"
-cargo install mdbook --force
+cargo install-update --version || cargo install cargo-update;
+mdbook --version || cargo install mdbook;
+cargo install-update -a;
 
 docs_branch () {
     echo -e "---\nlayout: doc\nbranch: $1\n---" > $2
@@ -33,11 +35,17 @@ docs_branch ${branches[0]} src/doc/index.html
 for (( i=0; i<${#branches[@]}; i++ ));
 do
     echo "Generating '${branches[$i]}' branch docs"
-    git clone https://github.com/amethyst/amethyst --branch ${branches[$i]} src/amethyst/${branches[$i]}
+    if [ -d src/amethyst/${branches[$i]} ]
+    then
+      cd src/amethyst/${branches[$i]}
+      git fetch origin && git reset --hard origin/${branches[$i]}
+    else
+      git clone https://github.com/amethyst/amethyst --branch ${branches[$i]} src/amethyst/${branches[$i]}
+      cd src/amethyst/${branches[$i]}
+    fi
 
-    cd src/amethyst/${branches[$i]}
     $doc
-    
+
     echo "Compiling '${branches[$i]}' branch book"
     mdbook build book
 
@@ -60,5 +68,3 @@ jekyll build --source src/ --destination build/
 
 echo "Cleaning up binaries"
 rm -r build/amethyst/
-
-

@@ -1,13 +1,22 @@
 
 sudo: required
-dist: trusty
 language: rust
 
 rust:
     - stable
 
+cache:
+  - cargo
+  - directories:
+      - src/amethyst/
+
+addons:
+  apt:
+    packages:
+      - libasound2-dev
+      - cmake
+
 before_install:
-    - sudo apt-get install libasound2-dev
     - gem install jekyll
     - gem install jekyll-feed
 
