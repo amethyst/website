@@ -10,9 +10,6 @@ rust:
 # needed.
 cache: cargo
 
-# This improves the boot time of the machine
-sudo: false
-
 # Install ALSA development libraries before compiling on Linux.
 addons:
   apt:
