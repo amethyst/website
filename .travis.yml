@@ -27,8 +27,8 @@ script:
 after_success: |
     [ $TRAVIS_BRANCH = master ] &&
     [ $TRAVIS_PULL_REQUEST = false ] &&
-    pip install ghp-import &&
-    ghp-import -n build/ &&
+    cargo install ghp &&
+    ghp build &&
     git config user.name "Travis CI Worker" &&
     git config user.email "name@example.com" &&
     git push -f https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
