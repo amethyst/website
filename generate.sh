@@ -39,6 +39,7 @@ do
     then
       cd src/amethyst/${branches[$i]}
       git fetch origin && git reset --hard origin/${branches[$i]}
+      cargo update
     else
       git clone https://github.com/amethyst/amethyst --branch ${branches[$i]} src/amethyst/${branches[$i]}
       cd src/amethyst/${branches[$i]}
