@@ -3,14 +3,6 @@
 # Rebuilds the website, blog, book, and API documentation from scratch.
 
 branches=( master develop )
-crates=( amethyst amethyst_config amethyst_renderer amethyst_assets amethyst_input )
-doc="cargo doc --no-deps"
-
-# Create cargo doc command
-for (( i=0; i<${#crates[@]}; i++ ));
-do
-    doc="$doc -p ${crates[$i]}"
-done
 
 echo "Cleaning up workspace..."
 rm -rf build src/book/ src/doc/
@@ -45,7 +37,7 @@ do
       cd src/amethyst/${branches[$i]}
     fi
 
-    $doc
+    cargo doc --all --no-deps;
 
     echo "Compiling '${branches[$i]}' branch book"
     mdbook build book
