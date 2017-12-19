@@ -5,6 +5,15 @@ language: rust
 rust:
     - stable
 
+deploy:
+  local_dir: build
+  fqdn: www.amethyst.rs
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
+
 cache:
   - timeout: 360
   - cargo
@@ -23,15 +32,6 @@ before_install:
 
 script:
     - ./generate.sh
-    - echo "www.amethyst.rs" > build/CNAME
-
-after_success: |
-    [ $TRAVIS_BRANCH = master ] &&
-    [ $TRAVIS_PULL_REQUEST = false ] &&
-    git config user.name "Travis CI Worker" &&
-    git config user.email "name@example.com" &&
-    sudo -H pip install ghp-import &&
-    ghp-import -n -p -f -s -m "Building website" build/
 
 notifications:
     webhooks:
