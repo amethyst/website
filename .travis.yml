@@ -27,6 +27,7 @@ script:
 after_success: |
     [ $TRAVIS_BRANCH = master ] &&
     [ $TRAVIS_PULL_REQUEST = false ] &&
+    sudo -H pip install urllib3[secure] &&
     sudo -H pip install ghp-import &&
     ghp-import -n build/ &&
     git config user.name "Travis CI Worker" &&
