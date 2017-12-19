@@ -6,6 +6,7 @@ rust:
     - stable
 
 cache:
+  - timeout: 360
   - cargo
   - directories:
       - src/amethyst/
@@ -27,12 +28,10 @@ script:
 after_success: |
     [ $TRAVIS_BRANCH = master ] &&
     [ $TRAVIS_PULL_REQUEST = false ] &&
-    sudo -H pip install urllib3[secure] &&
-    sudo -H pip install ghp-import &&
-    ghp-import -n build/ &&
     git config user.name "Travis CI Worker" &&
     git config user.email "name@example.com" &&
-    git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
+    sudo -H pip install ghp-import &&
+    ghp-import -n -p -f -s -m "Building website" build/
 
 notifications:
     webhooks:
