@@ -61,3 +61,5 @@ jekyll build --source src/ --destination build/
 
 echo "Cleaning up binaries"
 rm -r build/amethyst/
+
+find src/amethyst
