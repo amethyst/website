@@ -5,6 +5,12 @@ language: rust
 rust:
     - stable
 
+branches:
+  only:
+    - staging
+    - trying
+    - master
+
 deploy:
   local_dir: build
   fqdn: www.amethyst.rs
