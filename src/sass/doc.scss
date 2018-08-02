@@ -1,0 +1,133 @@
+@import 'main';
+
+#content {
+    flex: 1 0 auto;
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
+    padding-top: $vertical-padding - 1.3em;
+    padding-bottom: $vertical-padding;
+}
+
+#head {
+    font-size: 40px;
+    text-align: center;
+}
+
+#head-desc {
+    margin-top: 10px;
+    width: 75%;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#container > div {
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    width: 50%;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    /*box-shadow:
+        inset 0 30px 30px -30px rgba(0, 0, 0, 0.35),
+        inset 0 -20px 30px -30px rgba(0, 0, 0, 0.35);*/
+}
+
+#master {
+    margin-right: 20px;
+    background-color: $master-color;
+}
+
+#develop {
+    margin-left: 20px;
+    background-color: $develop-color;
+}
+
+.branch-title {
+    text-align: center;
+    font-size: 30px;
+    font-family: $title-font-family;
+    width: 100%;
+}
+
+.branch-desc {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.button {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    border-radius: 10px 10px 10px 10px;
+    margin-bottom: 20px;
+}
+
+.button-develop {
+    background-color: $develop-button-color;
+}
+
+.button-develop:hover {
+    background-color: $develop-button-hover-color;
+}
+
+.develop-title {
+    color: $develop-title-color;
+}
+
+.develop-link {
+    color: $develop-button-hover-color;
+}
+
+.develop-link:hover {
+    color: $develop-button-color;
+}
+
+.button-master {
+    background-color: $master-button-color;
+}
+
+.button-master:hover {
+    background-color: $master-button-hover-color;
+}
+
+.master-title {
+    color: $master-title-color;
+}
+
+.master-link {
+    color: $master-button-hover-color;
+}
+
+.master-link:hover {
+    color: $master-button-color;
+}
+
+@media screen and (max-width: $mobile-interface-thresold) {    
+    #container {
+        flex-wrap: wrap;
+    }
+
+    #container > div {
+        margin: 0px;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    #head-desc {
+        line-height: 32px;
+    }
+}

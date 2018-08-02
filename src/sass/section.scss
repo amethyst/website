@@ -1,0 +1,93 @@
+@import 'main';
+
+#content {
+    flex: 1 0 auto;
+    padding-left: $horizontal-padding-news;
+    padding-right: $horizontal-padding-news;
+    padding-top: $vertical-padding - 1.3em;
+    padding-bottom: $vertical-padding - 1.5em;
+}
+
+#head {
+    padding-bottom: 1em;
+    text-align: center;
+    font-size: 40px;
+}
+
+#container {
+    display: grid;
+    align-content: center;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(auto, auto);
+}
+
+#container > .article {
+    min-height: 120px;
+    padding: 35px;
+    border-radius: 10px 10px 10px 10px;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+    color: black;
+    /*box-shadow:
+        inset 0 30px 30px -30px rgba(0, 0, 0, 0.35),
+        inset 0 -20px 30px -30px rgba(0, 0, 0, 0.35);*/
+}
+
+#container > .article:hover {
+    transform: scale(1.05);
+}
+
+#container > .article:not(:nth-child(1)) {
+    margin-top: 30px;
+}
+
+#container > .article:nth-child(2n+1) {
+    background-color: $color-news-two;//$color-news-one;
+} 
+
+#container > .article:nth-child(2n+2) {
+    background-color: $color-news-two;
+} 
+
+.title {
+    font-family: $title-font-family;
+    font-size: 20px;
+}
+
+.read-more {
+    margin-top: 10px;
+    color: $primary-color;
+}
+
+#nav-page {
+    margin-top: 2em;
+    display: flex;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#nav-page > div:nth-child(1) {
+    width: 100%;
+    text-align: left;
+}
+
+#nav-page > div:nth-child(2) {
+    width: 100%;
+    text-align: right;
+}
+
+#nav-page > div > a {
+    text-decoration: none;
+    color: $primary-color;
+}
+
+#nav-page > div > a:hover {
+    color: $tertiary-color;
+}
+
+@media screen and (max-width: $mobile-interface-thresold) {
+    #content {
+        padding-left: $horizontal-padding-news - 5%;
+        padding-right: $horizontal-padding-news - 5%;
+    }
+}

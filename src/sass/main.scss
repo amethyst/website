@@ -1,0 +1,14 @@
+@import 'utils';
+
+html,
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+@import 'header';
+@import 'footer';

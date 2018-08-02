@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block title %}{{ config.title }} - Blog{% endblock title %}
+
+{% block css %}/section.css{% endblock css %}
+
+{% block content %}
+    <div id="content">
+        <div id="head">News from Amethyst</div>
+        <div id="container">
+            {% for page in paginator.pages %}
+                <a class="article" href="{{ page.permalink }}">
+                    <div class="title">{{ page.title }}</div>
+                    <small class="date">{{ page.date }}</small>
+                    <br>
+                    <br>
+                    <div class="description">{{ page.description }}</div>
+                    <div class="read-more">Read more...</div>
+                </a>
+            {% endfor %}
+        </div>
+        <div id="nav-page">
+            <div>
+            {% if paginator.previous %}
+                <a href="{{ paginator.previous }}">
+                    <small><i class="fas fa-arrow-left"></i></small> Newer
+                </a>
+            {% endif %}
+            </div>
+            <div>
+            {% if paginator.next %}
+                <a href="{{ paginator.next }}">
+                    Older <small><i class="fas fa-arrow-right"></i></small>
+                </a>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+    <script src="/js/konami.js"></script>
+{% endblock content %}

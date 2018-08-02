@@ -1,0 +1,147 @@
++++
+title = "Amethyst 0.6 has been released!"
+description = "Including better animation, the UI framework, GLTF support and more!"
+date = 2018-01-06
+aliases = ["/2018/01/06/blog.html"]
++++
+> News from `Oct 18, 2017` – `Jan 06 2018`
+
+Happy New Year!  We're happy to announce that we've released Amethyst 0.6.0!
+to [crates.io](https://crates.io)!
+
+There are 106 pull requests in this release.  If you want to see for yourself
+here's a [link][ep]!
+
+[ep]: https://github.com/amethyst/amethyst/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Amerged+merged%3A2017-08-30..2017-12-29
+
+## Announcements
+
+- Amethyst is considering participating in Google's Summer of Code, but we need
+more mentors!  If you'd like to volunteer please let us know on [#412][412].
+
+- We've determined we'll be moving the blog to an "as-needed" basis.  So our
+updates are going to be irregular.  We're never completely sure when we'll be
+ready to write a new post, so we've stopped trying to commit to a timetable.
+
+[412]: https://github.com/amethyst/amethyst/issues/412
+
+## What's cooking on develop?
+
+### Notable additions
+
+A lot of work has happened since the 0.5 release, so only major feature PRs will
+be in this list.  There are many other heroes who worked on this release that
+we don't have room to list here.  Ordered by PR number descending:
+
+- [#489][489] by [@Xaeroxe][xr]: UI text input!  Amethyst can now receive typed
+text, including copy and paste.  One known issue with this is that if the text
+is longer than the field the text won't render properly.  We'll get this fixed
+soon!
+
+- [#480][480] by [@Rhuagh][rh]: Removed the `Engine` structure and replaced its
+usage with the `World` structure.  This changed a number of important function
+signatures so watch out for it when upgrading to 0.6!
+
+- [#475][475] by [@Rhuagh][rh]: Added spherical interpolation to animation.
+This makes our new animation system more robust!
+
+- [#462][462] by [@Xaeroxe][xr]: Use and expose cgmath!  Game dev benefits from
+consistently used and powerful math types, so throughout the engine we now use
+and expose cgmath.
+
+- [#453][453] by [@Rhuagh][rh]: Added the animation system.  You can now animate
+the various properties of LocalTransform!
+
+- [#447][447] by [@minecrawler][mc]: Significantly improved the movement options
+available with our LocalTransform structure.  Thanks!
+
+- [#445][445] by [@torkleyy][tr]: Added asset hot reloading!  Now with this
+turned on any changes you make to art assets will be reflected in the game in
+real-time!
+
+- [#441][441] by [@Xaeroxe][xr]: Added a UI framework!  You can now display
+images and text in your game.
+
+- [#440][440] by [@Rhuagh][rh]: The camera is now a component rather than a
+resource, hooray!
+
+- [#435][435] by [@Rhuagh][rh]: You can now load game scenes from GLTF files.
+Thanks Rhuagh!
+
+- [#411][411] by [@Xaeroxe][xr]: Our renderer now supports BlendTargets.  This
+means you can render things with transparency!  (The built in passes don't do
+this yet.  However the UI pass does use this.)
+
+- [#403][403] by [@Aceeri][ac]: Transform system rewrite, making the system
+simpler and easier to understand.
+
+- [#385][385] by [@Xaeroxe][xr]: Refactor input to be event oriented.  This
+fixes the problems that existed with using input with the fixed_update cycle.
+
+- [#317][317] by [@omni-viral][ov]: Refactor the rendering pipeline to use specs
+data.  A truly heroic effort by omni-viral.  This has made renderer passes much
+faster and easier to write!
+
+[489]: https://github.com/amethyst/amethyst/pull/489
+[480]: https://github.com/amethyst/amethyst/pull/480
+[475]: https://github.com/amethyst/amethyst/pull/475
+[462]: https://github.com/amethyst/amethyst/pull/462
+[453]: https://github.com/amethyst/amethyst/pull/453
+[447]: https://github.com/amethyst/amethyst/pull/447
+[445]: https://github.com/amethyst/amethyst/pull/445
+[441]: https://github.com/amethyst/amethyst/pull/441
+[440]: https://github.com/amethyst/amethyst/pull/440
+[435]: https://github.com/amethyst/amethyst/pull/435
+[411]: https://github.com/amethyst/amethyst/pull/411
+[403]: https://github.com/amethyst/amethyst/pull/403
+[385]: https://github.com/amethyst/amethyst/pull/385
+[317]: https://github.com/amethyst/amethyst/pull/317
+
+### Work in progress
+
+- 2D texture animation is in progress in [#505][505] by [@Xaeroxe][xr].  This
+PR will make 2D game development with Amethyst much easier!
+
+- A rewrite of the renderer in [#463][463] to use the upcoming [gfx hal][hal] is
+going to allow our renderer to support more backends, and generally be easier to
+work with!  Thanks [@omni-viral][ov]!
+
+- [@torkleyy][tr] is currently working on adding logging support to Amethyst in
+[#513][513].  This will make execution paths easier to debug for us if we get
+your logs!
+
+- [@futurepaul][fp] is writing chapter 3 of our Pong Tutorial in [#507][507].
+You can also thank him for writing our first two re-written chapters in the book!
+
+[463]: https://github.com/amethyst/amethyst/pull/463
+[505]: https://github.com/amethyst/amethyst/pull/505
+[507]: https://github.com/amethyst/amethyst/pull/507
+[513]: https://github.com/amethyst/amethyst/pull/513
+[hal]: https://github.com/gfx-rs/gfx/tree/master/src/hal/src
+
+[xr]: https://github.com/Xaeroxe
+[ov]: https://github.com/omni-viral
+[fp]: https://github.com/futurepaul
+[tr]: https://github.com/torkleyy
+[rh]: https://github.com/Rhuagh
+[mc]: https://github.com/minecrawler
+[ac]: https://github.com/Aceeri
+
+### Breaking changes
+
+There have been so many breaking changes since the 0.5 release that any projects
+using 0.5 will likely need to be rewritten in several ways.  We apologize for
+the long delay we've had between releases, and we're looking to improve this.
+
+## Calls for participation
+
+While we don't have any specific calls for participation this post please never
+hesitate to send us a PR if you've got something you want to contribute!  We're
+always happy to have more contributors!
+
+
+If you have any suggestions or ideas for the blog, feel free to voice them
+[on GitHub][gh] or [the Gitter chat][gc].
+
+[gh]: https://github.com/amethyst/website
+[gc]: https://gitter.im/orgs/amethyst/rooms

@@ -1,0 +1,243 @@
+@import 'main';
+#contribute {
+    text-decoration: none;
+    color: $primary-color;
+}
+
+#contribute:hover {
+    color: $tertiary-color;
+}
+
+.info-block {
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
+    padding-top: $vertical-padding;
+    padding-bottom: $vertical-padding;
+    text-align: center;
+}
+
+.tighter-text {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-title {
+    font-size: 48px;
+}
+
+.block-subtitle {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.block-content {
+    font-size: 22px;
+    line-height: 35.2px;
+    vertical-align: middle;
+    flex-shrink: 1.7;
+}
+
+.block-color {
+    background-color: $content-block-color;
+    box-shadow: inset 0 30px 30px -30px rgba(0, 0, 0, 0.35), inset 0 -20px 30px -30px rgba(0, 0, 0, 0.35);
+    color: black;
+}
+
+.block-color a {
+    text-decoration: underline;
+    color: rgb(97, 97, 97);
+}
+
+.block-color a:hover {
+    color: gray;
+}
+
+.block-dark {
+    background-color: $content-block-dark;
+    color: white;
+}
+
+.block-dark a {
+    text-decoration: underline;
+    color: white;
+}
+
+.block-dark a:hover {
+    color: lightgray;
+}
+
+.block-default a {
+    text-decoration: underline;
+    color: rgb(97, 97, 97);
+}
+
+.block-default a:hover {
+    color: gray;
+}
+
+#perf-video {
+    width: 80%;
+}
+
+#welcome {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.block-flex>div:not(:last-child) {
+    margin-right: 10%;
+}
+
+#platform-grid {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(5, auto);
+    grid-auto-flow: column;
+    width: 75%;
+    margin: auto;
+}
+
+#platform-grid>.target {
+    font-size: 5em;
+    color: #333333;
+}
+
+#ios {
+    @include vendor-prefix(user-select, none);
+    font-family: Arial, Helvetica, sans-serif;
+    font-stretch: ultra-condensed;
+}
+
+.double-text-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.screenshot {
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-basis: auto;
+    flex-grow: 2;
+    box-shadow: 10px 10px #C0C0C0;
+}
+
+.no-bottom-margin {
+    margin-bottom: 0px !important;
+}
+
+.no-top-margin {
+    margin-top: 0px !important;
+}
+
+.no-bottom-padding {
+    padding-bottom: 0px !important;
+}
+
+.no-top-padding {
+    padding-top: 0px !important;
+}
+
+.button-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-bar>a:not(:first-child) {
+    margin-left: 15px;
+}
+
+.button-bar>a {
+    @include vendor-prefix(user-select, none);
+    font-size: 1.1rem;
+    padding: 0.15rem 0.9rem;
+    border-radius: 0.25rem;
+    vertical-align: middle;
+    display: inline-block;
+    color: $secondary-color;
+    background-color: white;
+    border: 1px solid $secondary-color;
+    text-decoration: none;
+    align-self: center;
+}
+
+.button-bar>a:hover {
+    background-color: $secondary-color;
+    color: white;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+.fake-link {
+    cursor: pointer;
+}
+
+#bottom-logo {
+    height: 20em;
+    //width: 300px;
+    margin-right: 10%;
+    overflow: hidden;
+}
+
+#get-started-block {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: $mobile-interface-thresold) {
+    #welcome {
+        width: 90%;
+        padding-top: 0em;
+        padding-bottom: 0em;
+    }
+    .block-flex {
+        flex-direction: column;
+    }
+    .block-flex>div:not(:last-child) {
+        margin-right: 0px;
+    }
+    #platform-grid {
+        grid-template-rows: initial;
+        grid-template-columns: initial;
+        grid-auto-flow: initial;
+    }
+    #platform-grid>.target:not(:first-child) {
+        margin-top: 30px;
+    }
+    .button-bar {
+        flex-direction: column;
+    }
+    .button-bar>a:not(:first-child) {
+        margin-top: 15px;
+        margin-left: 0px;
+    }
+    #bottom-logo {
+        height: 8em;
+        margin-bottom: 30px;
+        margin-right: 0px;
+    }
+    #get-started-block {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+    <meta name="author" content="{{ config.extra.author }}">
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="{% block css %}/index.css{% endblock css %}">
+    <link rel="icon" href="/assets/amethyst.svg">
+</head>
+
+<body>
+    {% block header %}
+    <header id="header">
+        <div id="header-bar">
+            <a id="header-home" href="/" class="no-deco">
+                <img id="header-logo" src="/assets/amethyst.svg" alt="Amethyst Logo">
+                <span id="header-title">Amethyst</span>
+            </a>
+            <nav id="header-menu">
+                <a class="header-button no-deco desktop left-icon" href="/doc">
+                    <i class="fas fa-book"></i> Docs</a>
+                <a class="header-button no-deco desktop left-icon" href="/blog">
+                    <i class="far fa-newspaper"></i> News</a>
+                <a class="header-button no-deco desktop left-icon" href="{{ config.extra.github_url }}">
+                    <i class="fab fa-github"></i> GitHub</a>
+                <a class="header-button no-deco desktop left-icon" href="/get-started">
+                    <i class="fas fa-play-circle"></i> Get started</a>
+                <div id="header-burger" class="header-button no-deco" onclick="burgerToggle()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <nav id="header-menu-alt">
+            <a class="header-button-alt no-deco left-icon" href="/get-started">
+                <i class="fas fa-play-circle"></i> Get started</a>
+            <a class="header-button-alt no-deco left-icon" href="/doc">
+                <i class="fas fa-book"></i> Docs</a>
+            <a class="header-button-alt no-deco left-icon" href="/blog">
+                <i class="far fa-newspaper"></i> News</a>
+            <a class="header-button-alt no-deco left-icon" href="{{ config.extra.github_url }}">
+                <i class="fab fa-github"></i> GitHub</a>
+        </nav>
+        <script src="/js/header.js"></script>
+    </header>
+    {% endblock header %} {% block content %}
+    <div id="container">
+        <div class="info-block block-default">
+            <section id="welcome">
+                <span class="block-title">Data-driven game engine written in Rust.</span>
+                <br>
+                <br>
+                <br>
+                <br>
+                <span class="block-content">
+                    Amethyst is a data-driven game engine built for high parallel performance and easy prototyping. It is
+                    <b>still under heavy development and should be used with care</b>, and therefore this webpage is more about
+                    what it will be than what it currently is. We are still lacking important features that will come from
+                    our active development team.
+                    <div class="button-bar">
+                        <a class="fake-link" onclick="learnMore()">
+                            <b>Learn more</b>
+                        </a>
+                    </div>
+                    <b>Contributions to Amethyst are encouraged!
+                        <br>Amethyst is a community project and needs your help to grow.
+                        <br>
+                        <a id="contribute" href="{{ config.extra.github_url_contribution }}">Learn how to get involved.</a>
+                    </b>
+                    <!--<div class="button-bar always-row no-bottom-margin">
+                        <a href="{{ config.extra.reddit_url }}">
+                            Reddit
+                        </a>
+                        <a href="{{ config.extra.discord_invite }}">
+                            Discord
+                        </a>
+                        <a href="{{ config.extra.gitter_url }}">
+                            Gitter
+                        </a>
+                    </div>-->
+                </span>
+            </section>
+        </div>
+        <div id="learn-more" class="info-block block-color">
+            <div class="block-content tighter-text">
+                <span class="block-subtitle">Works seamlessly with both 2D and 3D</span>
+                <br>
+                <br>Amethyst uses gfx-rs to render graphics with OpenGL, and soon Vulkan and Metal. It is meant to be used for
+                2D and 3D, with various utilities for both types of games. It should be beginner friendly but also allow
+                more advanced uses such as custom render passes and GLSL shaders.
+            </div>
+            <br>
+            <section class="block-flex">
+                <div>
+                    <img class="screenshot" src="/assets/2d_example.jpg" alt="Example Screenshot">
+                </div>
+                <div>
+                    <img class="screenshot" src="/assets/3d_example.jpg" alt="Example Screenshot">
+                </div>
+            </section>
+        </div>
+        <div class="info-block block-default">
+            <section id="welcome3">
+                <div class="block-title tighter-text">Built around an Entity Component System architecture.</div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="block-content tighter-text">
+                    Amethyst uses a rigorous
+                    <b>Entity Component System (ECS)</b> architecture to organize game logic. This abstracts away some of the
+                    parallelism work, allowing easier exploitation of multi-threading in games. The ECS is rich in features
+                    and very efficient, as it never does any memory locking while remaining entirely thread-safe.
+                </div>
+            </section>
+        </div>
+        <div class="info-block block-color">
+            <section class="block-flex double-text-section">
+                <div class="block-content">
+                    <span class="block-subtitle">Native performances</span>
+                    <br>
+                    <br>Thanks to the
+                    <a href="https://rust-lang.org/">Rust programming language</a>, Amethyst uses all CPU cores to run its internals and logic. A lot of optimizations
+                    have yet to be done, but the current status is already showing great potential.
+                </div>
+                <div class="block-content">
+                    <span class="block-subtitle">One of the world's fastest ECS</span>
+                    <br>
+                    <br>The ECS implemented in Amethyst is one of the fastest publicly available game engine ECS in the world.
+                    It uses no runtime reflection and can handle millions of components without trouble.
+                </div>
+            </section>
+        </div>
+        <div class="info-block block-default">
+            <section id="welcome5">
+                <div class="block-title tighter-text">Free with very permissive usage.</div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="block-content tighter-text">
+                    Amethyst is open source and free software. You can use, read, modify, distribute its source code under the permissive
+                    <b>MIT and Apache 2.0 licenses</b>, and it is important to us that it remains like so. The strength of the
+                    community keeps Amethyst going forward, through the contributions of
+                    <a href="{{ config.extra.github_url_contributors }}">awesome people</a>. Come visit us on
+                    <a href="{{ config.extra.github_url }}">GitHub</a>!
+                </div>
+            </section>
+        </div>
+        <div class="info-block block-color">
+            <section class="block-flex">
+                <div class="block-content">
+                    <span class="block-subtitle">Write your games in a safe language</span>
+                    <br>
+                    <br>The
+                    <a href="https://rust-lang.org/">Rust programming language</a> will help you make your game fast, prevent most runtime crashes and avoid
+                    common mistakes programmers make. Its nice environment, plentiful libraries and friendly community will
+                    make writing your game a great experience!
+                </div>
+                <div>
+                    <img class="screenshot" src="/assets/rust_example.jpg" alt="Example Screenshot">
+                </div>
+            </section>
+        </div>
+        <div class="info-block block-default">
+            <section id="welcome7">
+                <span class="block-title">Supports many target platforms.</span>
+                <br>
+                <br>
+                <br>
+                <br>
+                <span id="platform-grid">
+                    <i class="fab fa-windows target"></i>
+                    <span>Windows</span>
+                    <i class="fab fa-apple target"></i>
+                    <span>macOS</span>
+                    <i class="fab fa-linux target"></i>
+                    <span>Linux</span>
+                    <div id="ios" class="target">iOS</div>
+                    <span>iOS
+                        <br>Coming soon</span>
+                    <i class="fab fa-android target"></i>
+                    <span>Android
+                        <br>Coming soon</span>
+                </span>
+            </section>
+        </div>
+        <div class="info-block block-color">
+            <section id="get-started-block" class="block-flex">
+                <img id="bottom-logo" src="/assets/amethyst.svg">
+                <div id="get-started-text" class="block-content">
+                    <span class="block-subtitle">Your new adventure awaits</span>
+                    <br>
+                    <br>Amethyst is still under development, but you can start using it today! Because it's dangerous to go alone,
+                    this guide will help you get started with Amethyst.
+                    <div class="button-bar no-bottom-margin">
+                        <a href="/get-started">
+                            <b>Get started</b>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="info-block block-default no-top-padding no-bottom-padding">
+            <div class="button-bar">
+                <a class="fake-link" onclick="scrollUp()">
+                    <b>Scroll back to top</b>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endblock content %} {% block footer %}
+    <footer id="footer">
+        <div id="footer-menu">
+            <div>
+                <div class="footer-title">Project</div>
+                <br>
+                <a href="{{ config.extra.github_url_organization }}">GitHub</a>
+                <br>
+                <a href="{{ config.extra.doc_path }}">Documentation</a>
+                <br>
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+                <div class="footer-title">Community</div>
+                <br>
+                <a href="{{ config.extra.discord_invite }}">Discord</a>
+                <br>
+                <a href="{{ config.extra.reddit_url }}">Subreddit</a>
+                <br>
+                <a href="{{ config.extra.gitter_url }}">Gitter</a>
+            </div>
+        </div>
+        <br>
+        <div id="footer-disclaimer">This website and the Amethyst logo are licensed under a
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+                <b>Creative Commons Attribution-ShareAlike 4.0 License</b>.
+            </a>
+        </div>
+    </footer>
+    {% endblock footer %}
+</body>
+
+</html>

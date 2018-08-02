@@ -1,0 +1,52 @@
+$primary-color: #791DBC;
+$secondary-color: #54167C;
+$tertiary-color: rgb(172, 92, 230);
+$quaternary-color: rgb(240, 218, 255);
+$disabled-color: rgba(100, 100, 100, 0.60);
+$disabled-text-color: rgba(150, 150, 150, 0.75);
+$header-button-color: rgba(161, 161, 161, 0.432);
+$header-button-hover-color: rgba(134, 134, 134, 0.432);
+$content-block-color: #FAFAFA; // #F5A95C or #A2D259 or #FB4A4A
+$content-block-dark: rgba(41, 41, 51, 0.8);
+$color-news-one: rgb(250, 250, 250);
+$color-news-two: rgb(240, 240, 240);
+$master-color: rgb(215, 227, 255);
+$master-title-color: rgb(68, 104, 189);
+$master-button-color: rgb(91, 154, 248);
+$master-button-hover-color: rgb(87, 132, 199);
+$develop-color: rgb(253, 208, 208);
+$develop-title-color: rgb(179, 62, 62);
+$develop-button-color: rgb(231, 112, 112);
+$develop-button-hover-color: rgb(196, 95, 95);
+$footer-color: #1F1F1F;
+$font-family: 'Roboto', sans-serif;
+$title-font-family: 'Rajdhani', sans-serif;
+$code-font-family: 'Source Code Pro', sans-serif;
+$mobile-interface-thresold: 850px;
+$horizontal-padding-header: 10%;
+$horizontal-padding-footer: 30%;
+$horizontal-padding-news: 20%;
+$horizontal-padding: 12%;
+$vertical-padding: 4em;
+
+@mixin vendor-prefix($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+.no-deco {
+    text-decoration: none;
+}
+
+.disabled {
+    cursor: not-allowed;
+    background-color: $disabled-color;
+    color: $disabled-text-color;
+}
+
+.disabled:hover {
+    background-color: $disabled-color;
+}
