@@ -1,4 +1,5 @@
 @import 'utils';
+
 #header {
     .left-icon {
         margin-right: 3px;
@@ -15,6 +16,7 @@
     border-bottom: 1px solid black;
     background-image: url("/assets/header-banner.svg");
     background-size: cover;
+    background-position: left;
     line-height: 50px;
     vertical-align: middle;
     padding-top: 3px;
@@ -22,6 +24,7 @@
     padding-left: $horizontal-padding-header;
     padding-right: $horizontal-padding-header;
     height: 50px;
+    overflow: hidden;
 }
 
 #header-logo {
