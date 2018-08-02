@@ -59,7 +59,6 @@ do
 
     mkdir -p build/book/${branches[$i]}/
     mv -f amethyst/${branches[$i]}/book/book/* build/book/${branches[$i]}/
-    cp -rf amethyst/${branches[$i]}/book/images/ build/book/${branches[$i]}/
 done
 
 #echo "Cleaning up binaries"
