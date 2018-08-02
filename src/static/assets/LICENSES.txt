@@ -1,0 +1,9 @@
+3d_example.png
+==============
+
+puffy 3D model by Thomas Herzog. The source material can be found here: https://gitlab.com/karroffel/puffy-assets
+
+This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
+
+For more information about the license, please see
+https://creativecommons.org/licenses/by-nc/4.0/

@@ -1,0 +1,22 @@
+base_url = "http://amethyst.scrumbles.uk"
+title = "Amethyst"
+description = "Official website of the Amethyst game engine."
+compile_sass = true
+highlight_code = true
+highlight_theme = "monokai"
+generate_rss = true
+
+[extra]
+author = "Moxinilian (Théo Degioanni)"
+website_version = "3.0"
+doc_path = "/doc"
+github_url = "https://github.com/amethyst/amethyst"
+github_url_organization = "https://github.com/amethyst"
+github_url_contribution = "https://github.com/amethyst/amethyst"
+github_url_contributors = "https://github.com/amethyst/amethyst/graphs/contributors"
+github_url_master_examples = "https://github.com/amethyst/amethyst/tree/master/examples"
+github_url_develop_examples = "https://github.com/amethyst/amethyst/tree/develop/examples"
+reddit_url = "https://reddit.com/r/amethyst"
+discord_invite = "https://discord.gg/E2Dd244"
+gitter_url = "https://gitter.im/amethyst/general"
+crates_url = "https://crates.io/crates/amethyst"

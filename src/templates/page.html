@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block title %}{{ config.title }} - {{ page.title }}{% endblock title %}
+
+{% block css %}/article.css{% endblock css %}
+
+{% block content %}
+<div id="content">
+    <div id="title">{{ page.title }}</div>
+    <div id="subtitle">Published on {{ page.date }} {% if page.extra.author %} by {% if page.extra.author_link %}
+        <a href="{{ page.extra.author_link }}">{% endif %}{{ page.extra.author }}{% if page.extra.author_link %}</a>{% endif %}{% endif %}
+    </div>
+    <div id="article-content">{{ page.content | safe }}</div>
+</div>
+{% endblock content %}
