@@ -29,8 +29,8 @@ News from Amethyst                   | `src/content/blog`        | `/blog/`
 Amethyst Book                        | [`amethyst/book/src`][bs] | `/book/`
 Generated API Documentation          | [`amethyst/src/`][ds]     | `/doc/`
 
-[bs]: https://github.com/ebkalderon/amethyst/tree/master/book/src
-[ds]: https://github.com/ebkalderon/amethyst/tree/master/src
+[bs]: https://github.com/amethyst/amethyst/tree/master/book/src
+[ds]: https://github.com/amethyst/amethyst/tree/master/src
 
 ## Building Locally
 
@@ -39,6 +39,15 @@ To generate a local copy of the website, do:
 ```
 $ ./generate.sh
 ```
+
+However, this is a long process as it also generates documentation.
+If you only care about the website itself for tetsing purposes, do:
+
+```
+$ ./quick_build.sh
+```
+
+Please note that this last methods requires you to have [Gutenberg][gb] installed.
 
 The homepage can be found at `build/index.html`.
 
