@@ -61,7 +61,7 @@ Here is what he has to say about the engine:
 
 ## Release Cycles
 
-While we have yet to figure out how we could possibly have a fixed release schedule, we do understand the importance releasing more often.
+While we have yet to figure out how we could possibly have a fixed release schedule, we do understand the importance of releasing more often.
 Therefore, we plan on limiting this release cycle to a time frame of between one and two months, so that you can experience all the new features without needing to use the develop branch.
 
 ## Planned Features for 0.9
