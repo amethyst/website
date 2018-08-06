@@ -3,7 +3,8 @@ title = "Amethyst 0.8 has been released!"
 description = "With a brand new tutorial and a ton of new features, including prefabs, controller support, MP3 audio, localisation and an even better ergonomics!"
 date = 2018-08-05
 +++
-Hello everyone! Amethyst version 0.8 just got released, and with it comes a ton of new stuff!
+Hello everyone! Amethyst version 0.8 just got released, and with it comes a ton of new stuff.
+We would like to give a huge shout out to the team for this massive update, more than 25,000 lines of code added for this new release!
 
 ## Website
 We have a brand new website! You are even looking at it right now.  
