@@ -75,7 +75,7 @@
                     what it will be than what it currently is. We are still lacking important features that will come from
                     our active development team.
                     <div class="button-bar">
-                        <a class="fake-link" onclick="learnMore()">
+                        <a onclick="gotoSmooth('learn-more')">
                             <b>Learn more</b>
                         </a>
                     </div>
@@ -186,19 +186,19 @@
                 <br>
                 <br>
                 <br>
-                <span id="platform-grid">
+                <span class="platform-grid">
                     <i class="fab fa-windows target"></i>
                     <span>Windows</span>
-                    <i class="fab fa-apple target"></i>
+                    <object class="target svg-target" draggable="false" data="/assets/macos-logo.svg"></object>
                     <span>macOS</span>
                     <i class="fab fa-linux target"></i>
                     <span>Linux</span>
-                    <div id="ios" class="target">iOS</div>
-                    <span>iOS
-                        <br>Coming soon</span>
+                    <i class="fas fa-mobile-alt target"></i>
+                    <span>iOS<br>Coming soon</span>
                     <i class="fab fa-android target"></i>
-                    <span>Android
-                        <br>Coming soon</span>
+                    <span>Android<br>Coming soon</span>
+                    <object class="target svg-target" draggable="false" data="/assets/wasm-logo.svg"></object>
+                    <span>WebAssembly<br>Coming soon</span>
                 </span>
             </section>
         </div>
@@ -220,7 +220,7 @@
         </div>
         <div class="info-block block-default no-top-padding no-bottom-padding">
             <div class="button-bar">
-                <a class="fake-link" onclick="scrollUp()">
+                <a onclick="gotoSmooth('header')">
                     <b>Scroll back to top</b>
                 </a>
             </div>

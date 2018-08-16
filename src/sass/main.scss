@@ -10,5 +10,9 @@ body {
     height: 100%;
 }
 
+a {
+    cursor: pointer;
+}
+
 @import 'header';
 @import 'footer';

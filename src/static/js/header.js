@@ -4,14 +4,12 @@ function burgerToggle() {
     burgerState = !burgerState;
 }
 
-function learnMore() {
-    document.getElementById("learn-more").scrollIntoView({
-        behavior: "smooth"
-    });
+function goto(target) {
+    document.getElementById(target).scrollIntoView();
 }
 
-function scrollUp() {
-    document.getElementById("header").scrollIntoView({
+function gotoSmooth(target) {
+    document.getElementById(target).scrollIntoView({
         behavior: "smooth"
     });
 }
