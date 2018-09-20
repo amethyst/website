@@ -63,7 +63,7 @@ git checkout -q $LATEST_TAG
 
 cargo doc --all;
 
-echo "Compiling master branch book"
+echo "Compiling $LATEST_TAG branch book"
 mdbook build book
 
 cd ../../
@@ -86,7 +86,7 @@ do
 
     #cargo doc --all --no-deps;
 
-    echo "Compiling master branch book"
+    echo "Compiling $tag branch book"
     mdbook build book
 
     cd ../../

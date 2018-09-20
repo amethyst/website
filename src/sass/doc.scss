@@ -46,9 +46,9 @@
     background-color: $master-color;
 }
 
-#develop {
-  margin-left: 20px;
-  background-color: $develop-color;
+#latest {
+    margin-left: 20px;
+    background-color: $develop-color;
 }
 
 .branch-title {
@@ -76,24 +76,24 @@
     margin-bottom: 20px;
 }
 
-.button-develop {
-  background-color: $develop-button-color;
+.button-latest {
+    background-color: $latest-button-color;
 }
 
-.button-develop:hover {
-  background-color: $develop-button-hover-color;
+.button-latest:hover {
+    background-color: $latest-button-hover-color;
 }
 
-.develop-title {
-  color: $develop-title-color;
+.latest-title {
+    color: $latest-title-color;
 }
 
-.develop-link {
-  color: $develop-button-hover-color;
+.latest-link {
+    color: $latest-button-hover-color;
 }
 
-.develop-link:hover {
-  color: $develop-button-color;
+.latest-link:hover {
+    color: $latest-button-color;
 }
 
 .button-master {
