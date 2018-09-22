@@ -1,133 +1,71 @@
 @import 'main';
 
 #content {
-    flex: 1 0 auto;
-    padding-left: $horizontal-padding;
-    padding-right: $horizontal-padding;
-    padding-top: $vertical-padding - 1.3em;
-    padding-bottom: $vertical-padding;
+    >div {
+        width: 100%;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        line-height: 2em;
+
+        &:nth-child(even) {
+            background: #f7f8fb;
+        }
+
+        >* {
+            max-width: 400px;
+            padding: 80px 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+
+            .title {
+                font-size: 2em;
+                display: block;
+                margin-bottom: 25px;
+            }
+
+            a {
+                text-decoration: none;
+                color: $primary-color;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: $secondary-color;
+                }
+            }
+
+            ul {
+                padding: 0;
+                list-style: none;
+                margin-top: 30px;
+                margin-bottom: 0;
+
+                li:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
 }
 
-#head {
+.page-title {
     font-size: 40px;
     text-align: center;
-}
 
-#head-desc {
-    margin-top: 10px;
-    width: 75%;
-    font-size: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#container {
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-}
-
-#container > div {
-    padding: 10px;
-    padding-top: 20px;
-    padding-bottom: 25px;
-    width: 50%;
-    border-radius: 10px 10px 10px 10px;
-    text-align: center;
-    /*box-shadow:
-        inset 0 30px 30px -30px rgba(0, 0, 0, 0.35),
-        inset 0 -20px 30px -30px rgba(0, 0, 0, 0.35);*/
-}
-
-#master {
-    margin-right: 20px;
-    background-color: $master-color;
+    .subtitle {
+        margin-top: 35px;
+        font-size: 20px;
+    }
 }
 
 #latest {
-    margin-left: 20px;
-    background-color: $latest-color;
-}
-
-.branch-title {
-    text-align: center;
-    font-size: 30px;
-    font-family: $title-font-family;
-    width: 100%;
-}
-
-.branch-desc {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    text-align: center;
-}
-
-.button {
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-decoration: none;
-    border-radius: 10px 10px 10px 10px;
-    margin-bottom: 20px;
-}
-
-.button-latest {
-    background-color: $latest-button-color;
-}
-
-.button-latest:hover {
-    background-color: $latest-button-hover-color;
-}
-
-.latest-title {
-    color: $latest-title-color;
-}
-
-.latest-link {
-    color: $latest-button-hover-color;
-}
-
-.latest-link:hover {
-    color: $latest-button-color;
-}
-
-.button-master {
-    background-color: $master-button-color;
-}
-
-.button-master:hover {
-    background-color: $master-button-hover-color;
-}
-
-.master-title {
-    color: $master-title-color;
-}
-
-.master-link {
-    color: $master-button-hover-color;
-}
-
-.master-link:hover {
-    color: $master-button-color;
-}
-
-@media screen and (max-width: $mobile-interface-thresold) {    
-    #container {
-        flex-wrap: wrap;
-    }
-
-    #container > div {
-        margin: 0px;
-        margin-bottom: 30px;
-        width: 100%;
-    }
-
-    #head-desc {
-        line-height: 32px;
-    }
+    font-size: 18px;
 }
