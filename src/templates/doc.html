@@ -6,48 +6,37 @@
 
 {% block content %}
 <div id="content">
-    <div id="head">Blue pill or red pill?
-      <div id="head-desc">This webside provides documentation for the master branch and the latest release of Amethyst.</div>
-        </div>
-        <div id="container">
-            <div id="master">
-                <div class="branch-title master-title">master</div>
-                <div class="branch-desc master-title">Stable release for the typical user.</div>
-                <br>
-                <br>
-                <a href="/book/master" class="button button-master">Book</a>
-                <br>
-                <br>
-                <br>
-                <a href="/doc/master/doc/amethyst" class="button button-master">API References</a>
-                <br>
-                <br>
-                <br>
-                <a href="{{ config.extra.github_url_master_examples }}" class="button button-master">Examples</a>
-                <br>
-                <br>
-                <br>
-                <a href="{{ config.extra.github_url }}" class="branch-desc master-link">Available from the GitHub repository</a>
-            </div>
-            <div id="latest">
-              <div class="branch-title latest-title">latest release</div>
-              <div class="branch-desc latest-title">Latest release available on crates.io</div>
-              <br>
-              <br>
-              <a href="/book/latest" class="button button-latest">Book</a>
-              <br>
-              <br>
-              <br>
-              <a href="/doc/latest/doc/amethyst" class="button button-latest">API References</a>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <a href="{{ config.extra.crates_url }}" class="branch-desc latest-link">Available from crates.io</a>
+    <div>
+        <div class="page-title">
+            Documentation
+            <div class="subtitle">
+                We all need it and so do you.
             </div>
         </div>
     </div>
+    <div>
+        <div id="latest">
+            <span class="title">{{ latest_release_tag }}</span>
+            This is the documentation for the latest release you'll find on
+            <a href="{{ config.extra.crates_url }}">crates.io</a>
+            <ul>
+                <li><a href="/book/latest">Read the Book</a></li>
+                <li><a href="/doc/latest/doc/amethyst">Browse the API Reference</a></li>
+                <li><a href="{{ config.extra.github_url_base }}/tree/{{ latest_release_tag }}/examples">View all Examples</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <div id="master">
+            <span class="title">Living on the Edge?</span>
+            If you know what you're doing and want the documentation for the
+            <a href="{{ config.extra.github_url }}">master branch</a>, here's where you'll find it.
+            <ul>
+                <li><a href="/book/master">Read the Book</a></li>
+                <li><a href="/doc/master/doc/amethyst">Browse the API Reference</a></li>
+                <li><a href="{{ config.extra.github_url_master_examples }}">View all Examples</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock content %}

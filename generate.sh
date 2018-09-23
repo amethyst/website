@@ -9,12 +9,12 @@ rm -rf amethyst
 
 echo "Downloading gutenberg"
 curl -L -o gutenberg.tar.gz https://github.com/Keats/gutenberg/releases/download/${gutenberg_release}
-tar -xvf gutenberg.tar.gz -C ./ 
+tar -xvf gutenberg.tar.gz -C ./
 rm gutenberg.tar.gz
 
 echo "Building website from source"
 cd src
-../gutenberg build -o ../build 
+../gutenberg build -o ../build
 cd ..
 rm gutenberg
 
@@ -79,7 +79,7 @@ touch build/doc/latest/VERSION
 echo "$LATEST_TAG" > build/doc/latest/VERSION
 
 cd amethyst/master
-for tag in $(git tag) 
+for tag in $(git tag)
 do
     echo "Checking out tag $tag to build latest docs and book"
     git checkout -q $tag
@@ -100,7 +100,11 @@ do
 
     cd amethyst/master
 done
+cd ../../
 
-# cd ../../
+cd build/
+find . -name "*.html" -type f -exec sed -i 's/##LATEST_RELEASE_TAG##/'"$LATEST_TAG"'/g' '{}' \;
+
+# cd ../
 # echo "Cleaning up binaries"
 # rm -rf build/amethyst/

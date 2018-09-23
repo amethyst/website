@@ -2,7 +2,7 @@
 
 {% block title %}{{ config.title }} - Get started{% endblock title %}
 
-{% block css %}/get-started.css{% endblock css %} 
+{% block css %}/get-started.css{% endblock css %}
 
 {% block content %}
 <div id="content">
@@ -10,13 +10,15 @@
     <div id="title">Hello!</div>
     <div id="subtitle">Thank you for stopping by.</div>
     <p>
-        <a href="/book/master">The book</a> will guide you through your first steps in Amethyst. It will teach you the basics: how the architecture of Amethyst
+        <a href="/book/latest">The book</a> will guide you through your first steps in Amethyst. It will teach you the basics: how the architecture of Amethyst
         works, how to create a new project, and demonstrate some of the most important features of the engine.
     </p>
 
     <p>
-        Then, or alternatively, you can check out <a href="{{ config.extra.github_url_master_examples }}">the Amethyst examples</a> to get a deeper understanding of what an Amethyst project looks like. This will also get you accustomed to the Entity Component System architecture if this concept is
-        new to you.
+        Then, or alternatively, you can check out
+        <a href="{{ config.extra.github_url_base }}/tree/{{ latest_release_tag }}/examples">the Amethyst examples</a>
+        to get a deeper understanding of what an Amethyst project looks like. This will also get you
+        accustomed to the Entity Component System architecture if this concept is new to you.
     </p>
 
     <p>
