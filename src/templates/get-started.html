@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block title %}{{ config.title }} - Get started{% endblock title %}
+
+{% block css %}/get-started.css{% endblock css %}
+
+{% block content %}
+<div id="content">
+    <img id="logo" src="/assets/amethyst.svg">
+    <div id="title">Hello!</div>
+    <div id="subtitle">Thank you for stopping by.</div>
+    <p>
+        <a href="/book/latest">The book</a> will guide you through your first steps in Amethyst. It will teach you the basics: how the architecture of Amethyst
+        works, how to create a new project, and demonstrate some of the most important features of the engine.
+    </p>
+
+    <p>
+        Then, or alternatively, you can check out
+        <a href="{{ config.extra.github_url_base }}/tree/{{ latest_release_tag }}/examples">the Amethyst examples</a>
+        to get a deeper understanding of what an Amethyst project looks like. This will also get you
+        accustomed to the Entity Component System architecture if this concept is new to you.
+    </p>
+
+    <p>
+        In the mean time, if you encounter any issue, have feedback to give or simply want to say hi, you can reach out for the community!
+        You can reach us on <a href="{{ config.extra.reddit_url }}">Reddit</a>, <a href="{{ config.extra.discord_invite }}">Discord</a> or <a href="{{ config.extra.gitter_url }}">Gitter</a>, and we'll be glad to help you out! (we're super nice)
+    </p>
+</div>
+{% endblock content %}

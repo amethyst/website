@@ -5,6 +5,12 @@ language: rust
 rust:
     - stable
 
+branches:
+  only:
+    - staging
+    - trying
+    - master
+
 deploy:
   local_dir: build
   fqdn: www.amethyst.rs
@@ -18,17 +24,13 @@ cache:
   - timeout: 360
   - cargo
   - directories:
-      - src/amethyst/
+      - amethyst
 
 addons:
   apt:
     packages:
       - libasound2-dev
       - cmake
-
-before_install:
-    - gem install jekyll
-    - gem install jekyll-feed
 
 script:
     - ./generate.sh

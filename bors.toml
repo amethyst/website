@@ -1,0 +1,15 @@
+# Test suite must pass on Travis before merging.
+status = [
+    "continuous-integration/travis-ci/push"
+]
+
+# Do not allow pull requests with these labels to be merged.
+block_labels = [
+    "status: postponed",
+    "status: stalled",
+    "status: wontfix",
+    "status: working"
+]
+
+# This feature is rarely useful and more often problematic, so we turn it off.
+delete_merged_branches = false

@@ -2,12 +2,15 @@
 amethyst
 amethyst_dev
 build
+gutenberg
+gutenberg.tar.gz
 Cargo.lock
 cobalt.rs
 mdBook
 /src/target
 /src/doc/
 /src/book/
+/src/public
 /book/
 
 # semantic ui
