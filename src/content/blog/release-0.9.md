@@ -20,12 +20,33 @@ With `0.9` we are introducing a new way to draw sprites on the screen. Drawing a
 
 ##  Networking
 
-	With `0.9`, we have started building a new networking system. The initial work was to implement some basic features on top of UDP. You can see that work [here]( [https://github.com/amethyst/laminar](https://github.com/amethyst/laminar)). With this as our solid foundation, our focus for `0.10` will be on higher-level abstractions, such as automatically syncing entities across clients. The current `amethyst_network` crate is expected to change a great deal in `0.10`. The current contents should be viewed as a proof-of-concept only.
+With `0.9`, we have started building a new networking system. The initial work was to implement some basic features on top of UDP. You can see that work [here]( [https://github.com/amethyst/laminar](https://github.com/amethyst/laminar)). With this as our solid foundation, our focus for `0.10` will be on higher-level abstractions, such as automatically syncing entities across clients. The current `amethyst_network` crate is expected to change a great deal in `0.10`. The current contents should be viewed as a proof-of-concept only.
 
-	In short, we're not quite production-ready yet, but we're getting there!
+In short, we're not quite production-ready yet, but we're getting there!
 
 
-## Editor
+## Experimental Editor Support
+
+Alongside continued development of the engine, members of the community have
+been building out an experimental editor for building Amethyst games. The
+first part of this work is the [amethyst-editor-sync] crate, which provides
+a way for Amethyst games to connect to the editor. This is being built in a
+way to make it possible to experiment with multiple different editors until
+we can determine which technology to use to build the official editor.
+
+The first editor being built by the community is [randomPoison/amethyst-editor],
+which is being build with [Electron]. It currently has support for displaying
+any Component or Resource that implements `Serialize`, and the upcoming 0.3
+release will bring support for tweaking values in the editor and having them
+update within the game.
+
+![The Electron editor](https://raw.githubusercontent.com/randomPoison/amethyst-editor/master/screenshots/pong.gif)
+
+![Edit support](https://cdn.discordapp.com/attachments/484132431411281953/503332493743882240/edit-resources-mvp.gif)
+
+[amethyst-editor-sync]: https://crates.io/crates/amethyst-editor-sync
+[Electron editor]: https://github.com/randomPoison/amethyst-editor
+[Electron]: https://electronjs.org/
 
 
 ## New Convenience Features
@@ -90,8 +111,6 @@ Last release we made a list for planned features. While not all of them made it 
 ## People we <3
 
 We would like to thank all our contributors who were involved in making this release possible:
-
-
 
 *   @azriel91
 *   @Moxinilian
