@@ -152,4 +152,4 @@ We would like to thank all our contributors who were involved in making this rel
 * @virome
 * @Xaeroxe
 
-As well as to everyone who reviewed pull requests, opened issues, participated to the design discussions and requested features!
+As well as everyone who reviewed pull requests, opened issues, participated in the design discussions, and requested features!
