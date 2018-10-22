@@ -77,7 +77,7 @@ There has been a lot of bug fixing and tweaking going on for this release. Here 
 
 *   Flat render gamma should now be fixed in most cases.
 *   Hardware compatibility should now be improved.
-*   glTF scenes no longer has materials swapped around.
+*   glTF scenes no longer have materials swapped around.
 *   glTF node names are now loaded into the `Named` component.
 *   glTF adds the MeshData component to create entities. We plan on adding configuration options for this soon.
 *   Support for progressive JPEG loading was added.
