@@ -80,7 +80,7 @@ There has been a lot of bug fixing and tweaking going on for this release. Here 
 *   glTF scenes no longer has materials swapped around.
 *   glTF node names are now loaded into the `Named` component.
 *   glTF adds the MeshData component to create entities. We plan on adding configuration options for this soon.
-*   Support for progressive Jpeg loading was added.
+*   Support for progressive JPEG loading was added.
 *   Rendering work around for MacOS 10.14.X added.
 *   The mouse hiding feature can now be configured through the `HideCursor` component.
 *   Improved the configurability of the logger. (log level, log to file, etc…)
