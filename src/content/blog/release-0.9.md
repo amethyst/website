@@ -1,12 +1,12 @@
 +++
 title = "Amethyst 0.9 has been released!"
-description = "The Amethyst team is proud to announce our latest release, filled with new features and with massive improvements to the 2D workflow"
-date = 2018-10-21
+description = "The Amethyst team is proud to announce our latest release, filled with new features and with massive improvements to the 2D workflow."
+date = 2018-10-22
 +++
 
 ## The Amethyst team is proud to announce our latest release, filled with new features and with massive improvements to the 2D workflow.
 
-After about 2 months since the last release, version `0.9` of the Amethyst engine is now released on [crates.io](https://crates.io/crates/amethyst)! Due to the length of the contributor list, it will be placed at the end of this post.
+It has been 2 months since the last release, and we are proud to announce that version `0.9` of the Amethyst game engine is now available on [crates.io](https://crates.io/crates/amethyst)! We would like to thank the numerous contributors involved in this release, the full list is available below.
 
 Now, onto the features!
 
@@ -15,12 +15,13 @@ Now, onto the features!
 
 With `0.9` we are introducing a new way to draw sprites on the screen. Drawing a sprite is now as simple as just attaching a `SpriteRender` component to the entity you want to draw. This change also allowed sprite batching to be implemented meaning that you should now see a massive boost in performance when displaying a lot of sprites on the screen.
 
-[100 000 sprites at 60 fps was even confirmed possible!]([https://github.com/cart/amethyst-bunnymark](https://github.com/cart/amethyst-bunnymark))
+[100 000 sprites at 60 fps was even confirmed possible!](https://github.com/cart/amethyst-bunnymark)
 
+We are also introducing new usability features for drawing in a 2D world. One of them is the ability to load spritesheets directly from files. This is done using the serde-compatible RON data format, making it very easy to load big spritesheets and convert them from other sprite sheet formats.
 
 ##  Networking
 
-With `0.9`, we have started building a new networking system. The initial work was to implement some basic features on top of UDP. You can see that work [here]( [https://github.com/amethyst/laminar](https://github.com/amethyst/laminar)). With this as our solid foundation, our focus for `0.10` will be on higher-level abstractions, such as automatically syncing entities across clients. The current `amethyst_network` crate is expected to change a great deal in `0.10`. The current contents should be viewed as a proof-of-concept only.
+With `0.9`, we have started building a new networking system. The initial work was to implement some basic features on top of UDP. You can see that work [here](https://github.com/amethyst/laminar). With this as our solid foundation, our focus for `0.10` will be on higher-level abstractions, such as automatically syncing entities across clients. The current `amethyst_network` crate is expected to change a great deal in `0.10`. The current contents should be viewed as a proof-of-concept only.
 
 In short, we're not quite production-ready yet, but we're getting there!
 
@@ -44,6 +45,7 @@ update within the game.
 
 ![Edit support](https://cdn.discordapp.com/attachments/484132431411281953/503332493743882240/edit-resources-mvp.gif)
 
+[randomPoison/amethyst-editor]: https://github.com/randomPoison/amethyst-editor
 [amethyst-editor-sync]: https://crates.io/crates/amethyst-editor-sync
 [Electron editor]: https://github.com/randomPoison/amethyst-editor
 [Electron]: https://electronjs.org/
@@ -52,8 +54,6 @@ update within the game.
 ## New Convenience Features
 
 This release brings with it a bunch of new convenience features. Here are some of the highlights:
-
-
 
 *   A `Named` component was added to allow entities to carry arbitrary names.
 *   Added `shadow_update` and `shadow_fixed_update` functions to `State` so it stays updated even when paused.
@@ -76,8 +76,6 @@ This release brings with it a bunch of new convenience features. Here are some o
 
 There has been a lot of bug fixing and tweaking going on for this release. Here is a highlight for some of them:
 
-
-
 *   Flat render gamma should now be fixed in most cases.
 *   Hardware compatibility should now be improved.
 *   glTF scenes no longer has materials swapped around.
@@ -90,10 +88,10 @@ There has been a lot of bug fixing and tweaking going on for this release. Here 
 *   `ProgressCounter` now shows loading errors.
 *   Improvements to `TextureMetadata` allows selecting the filtering method. (Nearest, Linear, etc…)
 *   Ui coordinates now go from bottom to top.
-*   Fixed Ui issue with anchors and global positionning.
-*   Fixed Ui issue where events were sometime ignored.
+*   Fixed UI issue with anchors and global positionning.
+*   Fixed UI issue where events were sometime ignored.
 
-For a full list of changes, see [this changelog file]([https://github.com/amethyst/amethyst/blob/master/docs/CHANGELOG.md](https://github.com/amethyst/amethyst/blob/master/docs/CHANGELOG.md))
+For a full list of changes, see [this changelog file](https://github.com/amethyst/amethyst/blob/master/docs/CHANGELOG.md).
 
 
 ## Documentation
