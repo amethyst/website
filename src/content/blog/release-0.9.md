@@ -31,12 +31,11 @@ In short, we're not quite production-ready yet, but we're getting there!
 Alongside continued development of the engine, members of the community have
 been building out an experimental editor for building Amethyst games. The
 first part of this work is the [amethyst-editor-sync] crate, which provides
-a way for Amethyst games to connect to the editor. This is being built in a
-way to make it possible to experiment with multiple different editors until
-we can determine which technology to use to build the official editor.
+a way for Amethyst games to connect to the editor. This is being built in a way that makes it possible to experiment with multiple different editors without committing to one technology.
+Doing so allows us to get practical experience with a variety of GUI technologies so that we can eventually make an informed decision on which one to adopt for the official editor.
 
 The first editor being built by the community is [randomPoison/amethyst-editor],
-which is being build with [Electron]. It currently has support for displaying
+and it is being built with [Electron]. It currently has support for displaying
 any Component or Resource that implements `Serialize`, and the upcoming 0.3
 release will bring support for tweaking values in the editor and having them
 update within the game.
@@ -66,7 +65,7 @@ This release brings with it a bunch of new convenience features. Here are some o
 *   Multi-line text is now supported in the UI.
 *   The new `Hidden` component can now be added to entities in order to temporarily stop rendering of them.
 *   The `Removal` component allows to easily remove a group of entities at once by calling the `exec_removal` function. It can be used in combination with prefabs to switch between scenes and ui menus easily.
-*   The `DestroyAtTime` and `DestroyInTime` components allow destroying entities in a future point in time. The first one specifies the exact time in seconds where the entity should be destroy, and the second one specifies a "time to live" duration.
+*   The `DestroyAtTime` and `DestroyInTime` components allow destroying entities at a future point in time. The first one specifies the exact time in seconds at which the entity should be destroyed, and the second one specifies a "time remaining to live" duration.
 *   TGA image support.
 *   The `Transform` component can be created from the `Vector3` translation.
 *   Support to load native fonts for UiText (and UiButton!), as well as default fonts for text.
@@ -103,7 +102,7 @@ The beginner tutorial has been made more beginner friendly too, with easier to f
 
 ## Previous and new Goals
 
-Last release we made a list for planned features. While not all of them made it in this time you can be sure that we are still working on making them a reality as soon as possible. The major new features of 0.10 are going to be the [new renderer](https://github.com/rustgd/rendy) and migrating to a new math library called [nalgebra](https://nalgebra.org/). If you want to help us make `0.10` even more awesome than this release, feel free to [join our Discord](https://discord.gg/GnP5Whs) and say hi; we are always happy to help new contributors!
+In the previous release post we made a list for planned features that would have landed in this version. While not all of them made it in this time you can be sure that we are still working on making them a reality as soon as possible. The major new features of 0.10 are going to be the [new renderer](https://github.com/rustgd/rendy) and migrating to a new math library called [nalgebra](https://nalgebra.org/). If you want to help us make `0.10` even more awesome than this release, feel free to [join our Discord](https://discord.gg/GnP5Whs) and say hi; we are always happy to help new contributors!
 
 
 ## People we <3
