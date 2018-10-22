@@ -86,7 +86,7 @@ There has been a lot of bug fixing and tweaking going on for this release. Here 
 *   Improved the configurability of the logger. (log level, log to file, etc…)
 *   `ProgressCounter` now shows loading errors.
 *   Improvements to `TextureMetadata` allows selecting the filtering method. (Nearest, Linear, etc…)
-*   Ui coordinates now go from bottom to top.
+*   UI coordinates now go from bottom to top.
 *   Fixed UI issue with anchors and global positionning.
 *   Fixed UI issue where events were sometime ignored.
 
