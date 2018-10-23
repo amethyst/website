@@ -6,7 +6,7 @@ date = 2018-10-22
 
 ## The Amethyst team is proud to announce our latest release, filled with new features and with massive improvements to the 2D workflow.
 
-It has been 2 months since the last release, and we are proud to announce that version `0.9` of the Amethyst game engine is now available on [crates.io](https://crates.io/crates/amethyst)! We would like to thank the numerous contributors involved in this release, the full list is available below.
+It has been 2 months since the last release, and we are proud to announce that version `0.9` of the Amethyst game engine is now available on [crates.io](https://crates.io/crates/amethyst)! We would like to thank the numerous contributors involved in this release; the full list is available below.
 
 Now, onto the features!
 
@@ -64,7 +64,7 @@ This release brings with it a bunch of new convenience features. Here are some o
 *   Text alignment is now supported in the UI.
 *   Multi-line text is now supported in the UI.
 *   The new `Hidden` component can now be added to entities in order to temporarily stop rendering of them.
-*   The `Removal` component allows to easily remove a group of entities at once by calling the `exec_removal` function. It can be used in combination with prefabs to switch between scenes and ui menus easily.
+*   The `Removal` component allows to easily remove a group of entities at once by calling the `exec_removal` function. It can be used in combination with prefabs to switch between scenes and UI menus easily.
 *   The `DestroyAtTime` and `DestroyInTime` components allow destroying entities at a future point in time. The first one specifies the exact time in seconds at which the entity should be destroyed, and the second one specifies a "time remaining to live" duration.
 *   TGA image support.
 *   The `Transform` component can be created from the `Vector3` translation.
@@ -73,7 +73,7 @@ This release brings with it a bunch of new convenience features. Here are some o
 
 ## Some Fixes
 
-There has been a lot of bug fixing and tweaking going on for this release. Here is a highlight for some of them:
+There has been a lot of bug fixing and tweaking going on for this release. Here is a highlight of some of them:
 
 *   Flat render gamma should now be fixed in most cases.
 *   Hardware compatibility should now be improved.
@@ -97,12 +97,12 @@ For a full list of changes, see [this changelog file](https://github.com/amethys
 
 This release, we continued with the trend launched by the 0.8 release: We kept a heavy focus on keeping the documentation up to date and to explain more of the internals of the engine.
 
-The beginner tutorial has been made more beginner friendly too, with easier to follow instructions.
+The beginner tutorial has been made more beginner-friendly too, with easier to follow instructions.
 
 
 ## Previous and new Goals
 
-In the previous release post we made a list for planned features that would have landed in this version. While not all of them made it in this time you can be sure that we are still working on making them a reality as soon as possible. The major new features of 0.10 are going to be the [new renderer](https://github.com/rustgd/rendy) and migrating to a new math library called [nalgebra](https://nalgebra.org/). If you want to help us make `0.10` even more awesome than this release, feel free to [join our Discord](https://discord.gg/GnP5Whs) and say hi; we are always happy to help new contributors!
+In the previous release post we made a list for planned features that would have landed in this version. While not all of them made it in this time you can be sure that we are still working on making them a reality as soon as possible. The major new features of `0.10` are going to be the [new renderer](https://github.com/rustgd/rendy) and migrating to a new math library called [nalgebra](https://nalgebra.org/). If you want to help us make `0.10` even more awesome than this release, feel free to [join our Discord](https://discord.gg/GnP5Whs) and say hi; we are always happy to help new contributors!
 
 
 ## People we <3
