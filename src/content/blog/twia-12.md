@@ -58,8 +58,8 @@ formatting.
 
 Amethyst's math library has been using `cgmath` so far, but we've decided that
 we want to move to Nalgebra. We previously used `cgmath` due
-to both historic and simplicity reasons. Since it's in maintainance
-mode<sup><a href="#fn2" id="r2">[2]</a></sup> now
+to both historic and simplicity reasons. Since it changed into maintainance
+mode<sup><a href="#fn2" id="r2">[2]</a></sup>
 and `nalgebra` has an easier API now, we're doing the migration.
 We think this is an important step for unifying the Rust ecosystem.
 Thanks to [Ellie][ell] for doing [the migration PR][prn]!
@@ -87,7 +87,7 @@ and prefabs in Amethyst; soon we'll no longer have to format them by hand!
 [ron]: https://github.com/ron-rs/ron
 [rof]: https://github.com/Ristarg/ronfmt
 
-Speaking of prefabs.. [Rhuagh][rhu] is working on [a PR][prd] that lets us define
+Speaking of prefabs... [Rhuagh][rhu] is working on [a PR][prd] that lets us define
 new prefabs very easily, with much less boilerplate. With the new macro it will
 be as easy as adding a few derives:
 
@@ -141,7 +141,7 @@ haven't worked on Amethyst before.
 
 Here are seven issues for you to pick from:
 
-* [very easy] [Use the Transform component for all examples][is0]
+* [very easy] [Help us remove some unwraps!][is0]
 * [easy] [Doc improvements][is1] (you can add new suggestions or fix existing)
 * [easy] [Textures are dynamic unconditionally][is2]
 * [moderate] [Lighting / Pass compatibility][is3]
@@ -157,7 +157,7 @@ some more input!
 
 Thank you for helping push the project forward!
 
-[is0]: https://github.com/amethyst/amethyst/issues/1053
+[is0]: https://github.com/amethyst/amethyst/issues/908
 [is1]: https://github.com/amethyst/amethyst/issues/951
 [is2]: https://github.com/amethyst/amethyst/issues/977
 [is3]: https://github.com/amethyst/amethyst/issues/855
@@ -175,4 +175,3 @@ nobody expects a lot of work to happen on it.
 
 [bor]: https://bors.tech/
 [rgd]: https://github.com/rustgd/
-
