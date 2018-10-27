@@ -1,7 +1,7 @@
 +++
 title = "This week in Amethyst 12"
 description = "What happened this week: new CI strategy, tutorial improvements and upcoming features"
-date = 2018-10-24
+date = 2018-10-27
 [extra]
 author = "torkleyy"
 author_link = "https://github.com/torkleyy"
