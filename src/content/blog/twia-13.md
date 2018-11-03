@@ -160,8 +160,10 @@ Scripting, usually associated with programming using a dynamic language to write
 logic, is the typical way to create games with modern engines.
 Amethyst does not yet have this functionality, but we're planning on something
 big. The goal is to create an abstract layer that allows reasonably easy
-addition of more scripting languages. This will allow us to address a much
-bigger audience.
+addition of more scripting languages.
+
+This would allow us to address a much bigger audience because most languages
+could simply be added as an additional backend.
 
 For that, [Moxinilian][mox] wrote an RFC you can see [here][rfs].
 Feedback is very welcome, as well as suggesting more questions that
