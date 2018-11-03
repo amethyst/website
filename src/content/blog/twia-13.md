@@ -40,6 +40,19 @@ to coordinate your work with that.
 [pti]: https://github.com/amethyst/amethyst/issues/506
 [ch5]: https://github.com/amethyst/amethyst/pull/1085
 
+### More lights
+
+Thanks to [karroffel][kar] Amethyst got support for directional lights and spot
+lights in the PBM shader! See [the directional light][pdl] and the
+[spot light][psl] PRs.
+
+![Spot light screenshot][lii]
+
+[kar]: https://github.com/karroffel
+[lii]: https://user-images.githubusercontent.com/5209613/47617278-b7b05800-dac5-11e8-9a55-f523ef51a330.png
+[pdl]: https://github.com/amethyst/amethyst/pull/1074
+[psl]: https://github.com/amethyst/amethyst/pull/1081
+
 ### Added support for deriving prefabs
 
 With [Rhuagh's][rhu] recent feature addition, simple prefab definitions can now
