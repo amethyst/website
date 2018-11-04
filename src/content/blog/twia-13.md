@@ -123,10 +123,10 @@ pub struct SkinnablePrefab {
 This time it's a whole team's work we want to present here - the Networking
 Team.
 
-Amethyst didn’t have any networking until version 0.9.0. We currently have a
-basic implementation, which will be replaced.
+Amethyst didn’t have any networking until version 0.9.0 and we only have a
+basic implementation right now which will be replaced.
 The networking team is planning to make the new API available in the 0.10.0
-release. Game networking is a complex topic that spans many components, so we
+release but because game networking is a complex topic that spans many components, we
 have broken it down into smaller pieces.
 
 > Note: The following assumes some knowledge about networking sockets.
@@ -140,11 +140,12 @@ have broken it down into smaller pieces.
 This will be our semi-reliable UDP-based protocol. We are planning to release
 its first version around November 9th, 2018.
 
-It is considered the lowest level crate and has the following responsibilities:
+It is considered the lowest level networking crate and has the following
+responsibilities:
 
-* Ability to choose the ordering, reliability, and encryption for your packets. 
+* Choosing the ordering, reliability, and encryption for your packets. 
 * Congestion avoidance measures.
-* Packet fragmentation if needed.
+* Fragmentation of packets if needed.
 * Monitor connections for Connect, Disconnect and Timeout events.
 * Pass events and associated information up to the `amethyst_network` crate via
   mpsc channels using the Event abstraction..
@@ -202,8 +203,8 @@ Its responsibilities are
 
 You can see a tracking issue for all the progress [here][til]. Currently there
 is a PR about allowing you to choose different kinds of reliabilities. In
-addition to the functionality, we are including a comprehensive suite of unit,
-integration, and scenario tests. This will aid in preventing regressions and
+addition to the functionality, we are including a comprehensive suite of unit-,
+integration-, and scenario-tests. This will aid in preventing regressions and
 bugs.
 
 ---
