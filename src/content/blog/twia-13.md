@@ -138,11 +138,11 @@ TODO: anything else?
 
 Two big RFCs have been added this week. They are both very general and depend
 on all the valuable input we get from the community. Thank you for all the
-input!
+help!
 
 ### UI RFC
 
-[Jojolepro][joj] wrote up a really big PR listing all kinds of use cases for UI.
+[Jojolepro][joj] wrote up a really big issue listing all kinds of use cases for UI.
 The current UI implementation of Amethyst is very basic and only suitable for
 simple interfaces.
 
