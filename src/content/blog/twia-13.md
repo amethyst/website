@@ -120,19 +120,88 @@ pub struct SkinnablePrefab {
 
 ## What's being worked on currently?
 
-### laminar
+This time it's a whole team's work we want to present here - the Networking
+Team.
 
-TODO
-TODO
-TODO
+Amethyst didn’t have any networking until version 0.9.0. There has been some
+great progress in this field. The networking team is planning to have the first
+usable networking available in the 0.10.0 release. Game networking is a complex
+topic that spans many components, so we have broken it down into smaller pieces.
 
-### rendy - Yet another Vulkan based rendering engine
+> Note: The following assumes some knowledge about networking sockets.
+  We recommend you read [the Wikipedia article][soc] about it in case you're
+  not familiar with sockets.
 
-TODO: should this be here?
+### [`laminar`](https://github.com/amethyst/laminar)
 
----
+This will be our semi-reliable UDP-based protocol. We are planning to release
+its first version around November 9th, 2018.
 
-TODO: anything else?
+It is considered the lowest level crate and has the following responsibilities:
+
+* Ability to choose the ordering, reliability, and encryption for your packets. 
+* Congestion avoidance measures.
+* Packet fragmentation if needed.
+* Monitor connections for Connect, Disconnect and Timeout events.
+* Pass events and associated information up to the `amethyst_network` crate via
+  mpsc channels using the Event abstraction..
+
+### Implementation details
+
+Many of you may wonder why we did not use TCP. This is a complex topic, and not
+one we can cover in this post. In general, the reliability and ordering
+guarantees TCP provides cause severe latency spikes and other performance
+degradations.
+
+If you are interested in this topic, you can read more about that
+[here](https://gafferongames.com/post/udp_vs_tcp/) or in our
+[book](https://github.com/amethyst/laminar/tree/master/docs/md_book).
+
+[Glenn Fiedler (@gafferongames)][gle] describes in a series of [articles][gar]
+how game networking should be done. Our work has been to create a Rust version
+of his library.
+
+[gle]: https://github.com/gafferongames
+[gar]: https://gafferongames.com/
+
+Currently, there are already C/C+ based implementations but there is no
+finished Rust implementation.
+When we began implementing networking, we could not find an existing crate that
+met our needs. There are crates that provide protocols built on UDP, but they
+are oriented towards the needs of non-game applications. 
+
+Rust is an excellent language for fast, reliable network programming because of
+its safety and speed. In particular, the lack of garbage collection and ability
+to write very low level code allows for a level of performance normally seen
+only in C or C++. The work we’ve done on Laminar is available for anyone to use,
+and we hope others in the gaming industry find it useful.
+
+### Current progress: reliability strategy
+
+You can see a tracking issue for all the progress [here][til]. Currently there
+is a PR about allowing you to choose different kinds of reliabilities. In
+addition to the functionality, we are including a comprehensive suite of unit,
+integration, and scenario tests. This will aid in preventing regressions and
+bugs.
+
+[til]: (https://github.com/amethyst/laminar/issues/58)
+
+### Higher-level networking ([`amethyst_network`][anw])
+
+[anw]: https://github.com/amethyst/amethyst/tree/master/amethyst_network
+
+This crate will be part of the Amethyst game engine and provides the API and
+functionality which application developers will use to develop multiplayer
+games.
+
+Its responsibilities are
+
+* Automatic syncing of entity state between hosts.
+* Remote procedure calls.
+* Ensuring integrity of game logic.
+* Providing easy to use systems and components to support networking.
+* Basic congestion avoidance.
+* Server-Client based communication.
 
 ## Interesting discussions
 
