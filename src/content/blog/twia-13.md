@@ -100,7 +100,7 @@ impl<'a> PrefabData<'a> for SkinnablePrefab {
 }
 ```
 
-..is now as easy as:
+...is now as easy as:
 
 ```rust
 /// `PrefabData` for full skinning support
@@ -132,6 +132,8 @@ have broken it down into smaller pieces.
 > Note: The following assumes some knowledge about networking sockets.
   We recommend you read [the Wikipedia article][soc] about it in case you're
   not familiar with sockets.
+
+[soc]: https://en.wikipedia.org/wiki/Network_socket
 
 ### [`laminar`](https://github.com/amethyst/laminar)
 
@@ -165,7 +167,7 @@ of his library.
 [gle]: https://github.com/gafferongames
 [gar]: https://gafferongames.com/
 
-Currently, there are already C/C+ based implementations but there is no
+Currently, there are already C/C++ based implementations but there is no
 finished Rust implementation.
 When we began implementing networking, we could not find an existing crate that
 met our needs. There are crates that provide protocols built on UDP, but they
@@ -175,9 +177,9 @@ Rust is an excellent language for fast, reliable network programming because of
 its safety and speed. In particular, the lack of garbage collection and ability
 to write very low level code allows for a level of performance normally seen
 only in C or C++. The work we’ve done on Laminar is available for anyone to use,
-and we hope others in the gaming industry find it useful.
+and we hope others in the gaming industry will find it useful.
 
-[til]: (https://github.com/amethyst/laminar/issues/58)
+[til]: https://github.com/amethyst/laminar/issues/58
 
 ### Higher-level networking ([`amethyst_network`][anw])
 
