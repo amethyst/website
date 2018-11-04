@@ -123,10 +123,11 @@ pub struct SkinnablePrefab {
 This time it's a whole team's work we want to present here - the Networking
 Team.
 
-Amethyst didn’t have any networking until version 0.9.0. There has been some
-great progress in this field. The networking team is planning to have the first
-usable networking available in the 0.10.0 release. Game networking is a complex
-topic that spans many components, so we have broken it down into smaller pieces.
+Amethyst didn’t have any networking until version 0.9.0. We currently have a
+basic implementation, which will be replaced.
+The networking team is planning to make the new API available in the 0.10.0
+release. Game networking is a complex topic that spans many components, so we
+have broken it down into smaller pieces.
 
 > Note: The following assumes some knowledge about networking sockets.
   We recommend you read [the Wikipedia article][soc] about it in case you're
@@ -176,14 +177,6 @@ to write very low level code allows for a level of performance normally seen
 only in C or C++. The work we’ve done on Laminar is available for anyone to use,
 and we hope others in the gaming industry find it useful.
 
-### Current progress: reliability strategy
-
-You can see a tracking issue for all the progress [here][til]. Currently there
-is a PR about allowing you to choose different kinds of reliabilities. In
-addition to the functionality, we are including a comprehensive suite of unit,
-integration, and scenario tests. This will aid in preventing regressions and
-bugs.
-
 [til]: (https://github.com/amethyst/laminar/issues/58)
 
 ### Higher-level networking ([`amethyst_network`][anw])
@@ -202,6 +195,26 @@ Its responsibilities are
 * Providing easy to use systems and components to support networking.
 * Basic congestion avoidance.
 * Server-Client based communication.
+
+### Current progress: reliability strategy
+
+You can see a tracking issue for all the progress [here][til]. Currently there
+is a PR about allowing you to choose different kinds of reliabilities. In
+addition to the functionality, we are including a comprehensive suite of unit,
+integration, and scenario tests. This will aid in preventing regressions and
+bugs.
+
+---
+
+Thank you to the authors,
+
+* [LucioFranco][lfr],
+* [fhaynes][fha] and
+* [TimonPost][tpo]
+
+[lfr]: https://github.com/LucioFranco
+[fha]: https://github.com/fhaynes
+[tpo]: https://github.com/TimonPost
 
 ## Interesting discussions
 
