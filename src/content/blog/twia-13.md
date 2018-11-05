@@ -283,7 +283,7 @@ appreciated!
 
 Thank you for helping push the project forward!
 
-[is0]: https://github.com/amethyst/laminar/issues/80
+[is0]: https://github.com/amethyst/laminar/issues/72
 [is1]: https://github.com/amethyst/laminar/issues/70
 [is2]: https://github.com/amethyst/amethyst/issues/951
 [is3]: https://github.com/amethyst/amethyst/issues/1091
