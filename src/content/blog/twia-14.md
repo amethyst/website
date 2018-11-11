@@ -72,7 +72,7 @@ You can tweak it using the `SkyboxColor` resource.
 
 [pho]: https://github.com/photex
 
-### Font loading twaks
+### Font loading tweaks
 
 Thank you [jjedelsky][jje] and [DoumanAsh][dou] for making font loading better:
 
