@@ -108,6 +108,26 @@ Check out the PRs [here][prf] and [here][prg].
 [prf]: https://github.com/amethyst/amethyst/pull/1104
 [prg]: https://github.com/amethyst/amethyst/pull/1108
 
+### Default logger more configurable
+
+Amethyst uses the logging library [fern][frn] which has really nice builder-based configuration support.
+A [recent PR][lgc] enables users of Amethyst to configure the default logger with options like
+`level_for()` before starting the logger. Check out the example:
+
+```rust
+let logger = amethyst::Logger::from_config(amethyst::LoggerConfig::default());
+logger.get_dispatch()
+    .level_for("gfx_device_gl", log::LevelFilter::Warn)
+    .level_for("gfx_glyph", log::LevelFilter::Error)
+    .apply();
+```
+
+Thank you for helping us keep our logs clean [qqwa][qqwa]!
+
+[frn]: https://github.com/daboross/fern
+[qqwa]: https://github.com/qqwa
+[lgc]: https://github.com/amethyst/amethyst/pull/1107
+
 ## What's being worked on currently?
 
 The fifth Pong tutorial chapter is very close to being merged. Credit goes
