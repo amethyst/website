@@ -1,6 +1,6 @@
 +++
 title = "This week in Amethyst 14"
-description = "What happened this week: more docs, less boilerplate, better sockets"
+description = "What happened this week: asset loading, skyboxes, fronts, working groups"
 date = 2018-11-11
 [extra]
 author = "torkleyy"
@@ -13,10 +13,10 @@ Rust.
 
 Content of this issue:
 
-* recent changes
-* current work
-* interesting discussions
-* call for participation
+* Recent changes
+* Current work
+* Interesting discussions
+* Call for participation
 
 ## Recent changes
 
@@ -74,7 +74,8 @@ You can tweak it using the `SkyboxColor` resource.
 
 ### Font loading twaks
 
-Thank you [jjedelsky][jje] and [DoumanAsh][dou] for making font loading better.
+Thank you [jjedelsky][jje] and [DoumanAsh][dou] for making font loading better:
+
 We can now
 
 * fall back to the default system font and
@@ -96,10 +97,15 @@ out [the PR][prb] and add some comments in case you notice anything.
 [leo]: https://github.com/Leorii
 [prb]: https://github.com/amethyst/amethyst/pull/1085
 
+There are so many other open PRs, if you're interested, you can check them out
+yourself [here][prs].
+
+[prs]: https://github.com/amethyst/amethyst/pulls
+
 ## Interesting discussions
 
 Although not exactly an Amethyst discussion, there's a thread on
-internals.rust-lang.org that discusses a working group for Rust game
+[internals.rust-lang.org][wgt] that discusses a working group for Rust game
 development.
 
 More features, documentation and stability would be a huge help to Amethyst,
@@ -120,7 +126,11 @@ haven't worked on Amethyst before.
 
 Here are seven issues for you to pick from:
 
-TODO
+* [easy **amethyst/amethyst**] [Split `TimedDestroySystem` up into two systems][is0]
+* [easy | **amethyst/laminar**] [Polish crates (more config options, docs, code coverage)][is1]
+* [moderate | **amethyst/laminar**] [Help writing the book documenting the protocol][is2]
+* [moderate | **amethyst/amethyst**] [Make it easier to display an image][is3]
+* [hard | **amethyst/amethyst**] [Investigate crash related to multisampling][is4]
 
 Please let us know that you're working on an issue using a short comment,
 that way we can avoid duplicate work. Contributing to the discussion is also
@@ -128,15 +138,9 @@ appreciated!
 
 Thank you for helping push the project forward!
 
---- TODO links ---
-
-[is0]: https://github.com/amethyst/laminar/issues/80
-[is1]: https://github.com/amethyst/laminar/issues/70
-[is2]: https://github.com/amethyst/amethyst/issues/951
-[is3]: https://github.com/amethyst/amethyst/issues/1091
-[is4]: https://github.com/amethyst/amethyst/issues/1044
-[is5]: https://github.com/slide-rs/specs/issues/505
-[is6]: https://github.com/amethyst/amethyst/issues/1019
-
---- TODO links ---
+[is0]: https://github.com/amethyst/amethyst/issues/1110 
+[is1]: https://github.com/amethyst/laminar/issues/45
+[is2]: https://github.com/amethyst/laminar/issues/33
+[is3]: https://github.com/amethyst/amethyst/issues/1086
+[is4]: https://github.com/amethyst/amethyst/issues/135
 
