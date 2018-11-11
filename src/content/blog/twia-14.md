@@ -20,6 +20,26 @@ Content of this issue:
 
 ## Recent changes
 
+### Nalgebra migration
+
+[Discussions within Amethyst][nmig] about a migration to nalgebra began in September due to 
+calls by [tomaka][tom] for the Rust game development ecosystem to standardize on 
+a single library for math and linear algebra in his post ["My gamedever wishlist for Rust"][mgw].
+
+Eminent contributor [Ellie][ellie] completed the migration of Amethyst's 
+internal math library from cgmatch to nalgebra in [this PR][prn], marking another
+win for the Rust game development ecosystem and showing Amethyst's commitment to
+the larger community. Thank you Ellie!
+
+With the migration completed, a number of public APIs will change in Amethyst's next release along 
+with updates to examples and documentation. Expect more details on the API changes in a future post.
+
+[ellie]: https://github.com/magnonellie
+[tom]: https://github.com/tomaka
+[prn]: https://github.com/amethyst/amethyst/pull/1066
+[nmig]: https://github.com/amethyst/amethyst/issues/942
+[mgw]: https://users.rust-lang.org/t/my-gamedever-wishlist-for-rust/2859
+
 ### Asset loading helper
 
 Thanks to [Rhuagh][rhu], asset loading is now a bit easier ([PR][pra]).
@@ -88,6 +108,26 @@ Check out the PRs [here][prf] and [here][prg].
 [prf]: https://github.com/amethyst/amethyst/pull/1104
 [prg]: https://github.com/amethyst/amethyst/pull/1108
 
+### Default logger more configurable
+
+Amethyst uses the logging library [fern][frn] which has really nice builder-based configuration support.
+A [recent PR][lgc] enables users of Amethyst to configure the default logger with options like
+`level_for()` before starting the logger. Check out the example:
+
+```rust
+let logger = amethyst::Logger::from_config(amethyst::LoggerConfig::default());
+logger.get_dispatch()
+    .level_for("gfx_device_gl", log::LevelFilter::Warn)
+    .level_for("gfx_glyph", log::LevelFilter::Error)
+    .apply();
+```
+
+Thank you for helping us keep our logs clean [qqwa][qqwa]!
+
+[frn]: https://github.com/daboross/fern
+[qqwa]: https://github.com/qqwa
+[lgc]: https://github.com/amethyst/amethyst/pull/1107
+
 ## What's being worked on currently?
 
 The fifth Pong tutorial chapter is very close to being merged. Credit goes
@@ -124,9 +164,8 @@ We have tasks with different difficulty. Make sure to choose easier ones at
 first, because hard issues can become quite frustrating, especially if you
 haven't worked on Amethyst before.
 
-Here are seven issues for you to pick from:
+Here are four issues for you to pick from:
 
-* [easy **amethyst/amethyst**] [Split `TimedDestroySystem` up into two systems][is0]
 * [easy | **amethyst/laminar**] [Polish crates (more config options, docs, code coverage)][is1]
 * [moderate | **amethyst/laminar**] [Help writing the book documenting the protocol][is2]
 * [moderate | **amethyst/amethyst**] [Make it easier to display an image][is3]
