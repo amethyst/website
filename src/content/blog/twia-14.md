@@ -27,7 +27,7 @@ calls by [tomaka][tom] for the Rust game development ecosystem to standardize on
 a single library for math and linear algebra in his post ["My gamedever wishlist for Rust"][mgw].
 
 Eminent contributor [Ellie][ellie] completed the migration of Amethyst's 
-internal math library from cgmatch to nalgebra in [this PR][prn], marking another
+internal math library from cgmath to nalgebra in [this PR][prn], marking another
 win for the Rust game development ecosystem and showing Amethyst's commitment to
 the larger community. Thank you Ellie!
 
