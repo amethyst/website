@@ -90,7 +90,14 @@ the pipeline yourself. Now, you just need to add
 to a pipeline stage and you get a skybox.
 You can tweak it using the `SkyboxColor` resource.
 
+Here's a screenshot of the game [photex][pho] and [brendanzab][bre] are working
+on (using the new gradient skybox):
+
+![Game screenshot][gsc]
+
 [pho]: https://github.com/photex
+[bre]: https://github.com/brendanzab
+[gsc]: https://user-images.githubusercontent.com/23152057/48365134-559d4880-e6aa-11e8-9b7a-d60b40b4f895.png
 
 ### Font loading tweaks
 
@@ -177,7 +184,6 @@ appreciated!
 
 Thank you for helping push the project forward!
 
-[is0]: https://github.com/amethyst/amethyst/issues/1110 
 [is1]: https://github.com/amethyst/laminar/issues/45
 [is2]: https://github.com/amethyst/laminar/issues/33
 [is3]: https://github.com/amethyst/amethyst/issues/1086
