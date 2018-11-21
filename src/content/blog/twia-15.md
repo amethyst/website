@@ -20,11 +20,11 @@ Content of this issue:
 
 ## Recent changes
 
-* [The new logo by Ellie](1143) has been integrated into the examples.
-* Callback Queue allowing better support for async tasks. [#1125](1125)
-* With the [Laminar](laminar) 0.1.0 release, [it is now integrated](1137) into Amethyst.
-* [The look-at method was fixed](1142).
-* [Rendering 2D images](1153) is now much easier thanks to the changes made by @happenslol, based on the suggestions from [this RFC](rfc5).
+* [The new logo by Ellie][1143] has been integrated into the examples.
+* Callback Queue allowing better support for async tasks. [#1125][1125]
+* With the [Laminar][laminar] 0.1.0 release, [it is now integrated][1137] into Amethyst.
+* [The look-at method was fixed][1142].
+* [Rendering 2D images][1153] is now much easier thanks to the changes made by @happenslol, based on the suggestions from [this RFC][rfc5].
 
 [laminar]: https://github.com/amethyst/laminar
 [1125]: https://github.com/amethyst/amethyst/pull/1125
