@@ -20,23 +20,29 @@ Content of this issue:
 
 ## Recent changes
 
-* [Callback Queue] allowing better support for async tasks. [#1125](https://github.com/amethyst/amethyst/pull/1125)
-* With the Laminar 0.1.0 release, [it is now integrated](https://github.com/amethyst/amethyst/pull/1137) into Amethyst.
-* [The look-at method was fixed](https://github.com/amethyst/amethyst/pull/1142).
-* [The new logo by Ellie](https://github.com/amethyst/amethyst/pull/1143) has been integrated into the examples.
-* [Rendering 2D images](https://github.com/amethyst/amethyst/pull/1153) is now much easier thanks to the changes made by @happenslol, based on the suggestions from [this RFC](https://github.com/amethyst/rfcs/pull/5).
+* [The new logo by Ellie](1143) has been integrated into the examples.
+* Callback Queue allowing better support for async tasks. [#1125](1125)
+* With the [Laminar](laminar) 0.1.0 release, [it is now integrated](1137) into Amethyst.
+* [The look-at method was fixed](1142).
+* [Rendering 2D images](1153) is now much easier thanks to the changes made by @happenslol, based on the suggestions from [this RFC](rfc5).
+
+[laminar]: https://github.com/amethyst/laminar
+[1125]: https://github.com/amethyst/amethyst/pull/1125
+[1137]: https://github.com/amethyst/amethyst/pull/1137
+[1143]: https://github.com/amethyst/amethyst/pull/1143
+[1142]: https://github.com/amethyst/amethyst/pull/1142
+[1153]: https://github.com/amethyst/amethyst/pull/1153
+[rfc5]: https://github.com/amethyst/rfcs/pull/5
 
 ## What's being worked on currently?
 
-* [Pausable Systems][wo1] by @udoprog
-* [Better support for dynamic images][wo2] by @Stoeoef
-* A working group on the ui and rendering refactor has been formed. You can follow the progress in the `#ui` channel on discord.
+* [Pausable Systems][wo1] and how to achieve them within Amethyst by @udoprog
+* [Better support for dynamic images][wo2] by allowing dynamicly sized images to be rendered properly by @Stoeoef
 
 [wo1]: https://github.com/amethyst/amethyst/pull/1146
 [wo2]: https://github.com/amethyst/amethyst/pull/1144
 
-There are so many other open PRs, if you're interested, you can check them out
-yourself [here][prs].
+These are only a few of the items that are being currently worked on. If you're interested you can check out more open PRs [here](prs).
 
 [prs]: https://github.com/amethyst/amethyst/pulls
 
@@ -49,12 +55,8 @@ yourself [here][prs].
 ## Call for participation
 
 We love contributions from the community, so if you see something you'd like
-to work on, don't hesitate! We are going to help you and point you into the
+to work on, don't hesitate! We are going to help you and point you in the
 right direction if something doesn't work out at first.
-
-We have tasks with different difficulty. Make sure to choose easier ones at
-first, because hard issues can become quite frustrating, especially if you
-haven't worked on Amethyst before.
 
 Here are some issues for you to pick from:
 
