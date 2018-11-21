@@ -1,6 +1,6 @@
 +++
 title = "This week in Amethyst 15"
-description = "What happened this week: asset loading, skyboxes, fonts, working groups"
+description = "What happened this week: new logo, laminar integration, pausable systems and more"
 date = 2018-11-18
 [extra]
 author = "jojolepro"
