@@ -22,3 +22,4 @@ The second item is the creation of a dedicated [community forum](https://communi
 
 To mitigate this issue, we set up Discourse-based forums. Discord is still used for casual chat, but the forums have already proven to be much easier to follow. Please try to move to the forum whenever you feel something is becoming a valuable discussion.
 
+We want to thank everyone for their continued support, and we look forward to seeing continued growth for both the community and the project as a whole in 2019!
