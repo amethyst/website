@@ -3,6 +3,9 @@ title = "Amethyst Foundation Created"
 description = "Describes the Amethyst Foundation and new forums"
 date = 2018-11-23
 aliases = ["/2018/11/23/non-profit-announce.html"]
+[extra]
+author = "fhaynes"
+author_link = "https://github.com/fhaynes"
 +++
 
 Hello and welcome to a special edition of This Week in Amethyst! We have some exciting news to share with the community.
@@ -22,4 +25,5 @@ The second item is the creation of a dedicated [community forum](https://communi
 
 To mitigate this issue, we set up Discourse-based forums. Discord is still used for casual chat, but the forums have already proven to be much easier to follow. Please try to move to the forum whenever you feel something is becoming a valuable discussion.
 
+## Thank You
 We want to thank everyone for their continued support, and we look forward to seeing continued growth for both the community and the project as a whole in 2019!
