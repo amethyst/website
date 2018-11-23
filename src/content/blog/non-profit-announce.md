@@ -13,7 +13,7 @@ We are happy to announce the formation of the Amethyst Foundation. It is a non-p
 
 As Amethyst grows and evolves, we will continue to depend on the contributions of volunteers. Until now, we haven’t had a clear way for people to contribute other than by coding; now we do! You can donate directly to the Amethyst Foundation via the form below. We thank you for any contribution you can make!
 
-<script src="https://donorbox.org/widget.js" paypalExpress="true"></script><iframe src="https://donorbox.org/embed/amethyst-founding?amount=10" height="685px" width="100%" style="max-width:500px; min-width:310px; max-height:none!important" seamless="seamless" name="donorbox" frameborder="0" scrolling="no" allowpaymentrequest></iframe>
+<script src="https://donorbox.org/widget.js" paypalExpress="true"></script><iframe src="https://donorbox.org/embed/amethyst-founding?amount=10" height="685px" width="100%" style="max-width:400px; min-width:310px; max-height:none!important" seamless="seamless" name="donorbox" frameborder="0" scrolling="no" allowpaymentrequest></iframe>
 
 You can find additional information and answers to frequently asked questions [here](https://community.amethyst-engine.org/t/amethyst-foundation-faq/), and a list of volunteer positions [here](https://community.amethyst-engine.org/c/help-wanted).
 
