@@ -1,8 +1,7 @@
 +++
 title = "Amethyst Foundation Created"
-description = "Describes the Amethyst Foundation and new forums"
+description = "The Amethyst team has some special announcements. A non-profit foundation has been formed and a new community forums site has been created."
 date = 2018-11-23
-aliases = ["/2018/11/23/non-profit-announce.html"]
 [extra]
 author = "fhaynes"
 author_link = "https://github.com/fhaynes"
