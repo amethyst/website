@@ -7,7 +7,7 @@ author = "fhaynes"
 author_link = "https://github.com/fhaynes"
 +++
 
-Hello and welcome to a special edition of This Week in Amethyst! We have some exciting news to share with the community.
+Hello and welcome to a special update about Amethyst, a data-driven game engine written in Rust!
 
 ## Amethyst Foundation
 
