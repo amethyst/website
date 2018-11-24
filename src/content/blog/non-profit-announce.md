@@ -7,7 +7,9 @@ author = "fhaynes"
 author_link = "https://github.com/fhaynes"
 +++
 
-Hello and welcome to a special update about Amethyst, a data-driven game engine written in Rust!
+Hello and welcome to a special update about Amethyst, a data-driven game engine written in Rust! If you have heard of us, feel free to skip the next paragraph. If not, read on!
+
+Amethyst is a free, open-source, game engine. It is written in Rust with an ECS architecture at its heart. This combination equals fast, safe, and parallelizable. It has been in development for around two years, carried forward by the community that has grown up around it. We are taking the next step and forming an official non-profit dedicated to making this technology available for anyone.
 
 ## Amethyst Foundation
 
