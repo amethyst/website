@@ -198,3 +198,10 @@ We would like to thank all our contributors who were involved in making this rel
 
 As well as everyone who reviewed pull requests, opened issues, participated in the design
 discussions, and requested features!
+
+---
+
+*The Amethyst Foundation is a pending 501(c)(3) non-profit. For details on what this means, or to make a donation, please refer to [this announcement][non-profit]. If you would like to contribute to Amethyst, feel free to [jump right in][contribute].*
+
+[non-profit]: https://www.amethyst.rs/blog/non-profit-announce/
+[contribute]: https://github.com/amethyst/amethyst
