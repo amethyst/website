@@ -41,7 +41,7 @@ Going forward we will be working on integrating these libraries.
 In the meantime, [`amethyst-rhusics`] has been
 updated to support `nalgebra`.
 
-This is of course a breaking changes. To help our users in this transition we've written a
+This is of course a breaking change. To help our users in this transition we've written a
 [`cgmath` to `nalgebra` cheat sheet][cgmath-to-nalgebra].
 
 [rustsim]: https://www.rustsim.org/
@@ -91,12 +91,11 @@ section in the book and the [API documentation][api].
 Amethyst 0.10.0 involves a significant number of changes.
 We can't detail all of them here, but following are some of the more notable ones:
 
-* Out canonical Pong tutorial tutorial has been improved and expanded.
-* We can now draw images without having to define a `SpriteSheet` ([#1153]).
+* Our canonical Pong tutorial tutorial has been improved and expanded.
+* Images can now be drawn without having to define a `SpriteSheet` ([#1153]).
 * `amethyst_ui::get_default_font` now supports loading fonts from the filesystem ([#1108]).
 * It is now easier than ever to build simple prefabs using `#[derive(PrefabData)]` ([#1035]).
-* We’ve been working on laminar for a while and we’re happy to announce that we
-  [released laminar 0.1][laminar].
+* The networking team has been working hard on laminar and it has finally been [released][laminar].
   If you are interested you can check [TWIA 13][twia-13] out where we introduced our work.
 
 For a full list of changes, see the [detailed release notes for 0.10.0][changelog].
@@ -121,7 +120,7 @@ Following is a sneak peak of what the various teams are working on right now.
 * Our community team is currently improving our contribution guidelines, and are trying to drive
   and visualize our donation targets.
 * The networking team is working on their roadmap. If you are interested, have questions, or you
-  just want to be up to date with our work, we recommend that you check out the
+  just want to be up to date with their work, we recommend that you check out the
   [networking forums][networking-forums].
 
 [gfx-rs]: https://github.com/gfx-rs
