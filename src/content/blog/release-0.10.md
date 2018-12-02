@@ -15,12 +15,12 @@ amethyst = "0.10.0"
 
 ## What's in 0.10.0
 
-Amethyst 0.10.0 comes packed with changes, features, ergonomics- and stability improvements.
+Amethyst 0.10.0 comes packed with features, ergonomics, and stability improvements.
 
 ### nalgebra
 
 Previously, Amethyst used the `cgmath` library for its math types.
-In this release, Amethyst has moved to the [nalgebra][nalgebra] library, as the Rust community has
+In this release, Amethyst has moved to the [nalgebra] library, as the Rust community has
 recently rallied behind using it as the [common library for game development][nalgebra-rally].
 
 [nalgebra]: https://www.nalgebra.org/
@@ -33,17 +33,19 @@ As part of this change, we no longer export `amethyst::core::cgmath`, instead yo
 use amethyst::core::nalgebra::{Vector2, Vector3, Matrix4};
 ```
 
-This change paves the way towards using the various [rustsim](https://www.rustsim.org/) libraries.
+This change paves the way towards using the various [rustsim] libraries.
 This is a collection of high-quality libraries, developed and maintained by the broader Rust
 community to perform simulations.
 
 Going forward we will be working on integrating these libraries.
-In the meantime, [`amethyst-rhusics`](https://github.com/amethyst/amethyst-rhusics) has been
+In the meantime, [`amethyst-rhusics`] has been
 updated to support `nalgebra`.
 
 This is of course a breaking changes. To help our users in this transition we've written a
 [`cgmath` to `nalgebra` cheat sheet][cgmath-to-nalgebra].
 
+[rustsim]: https://www.rustsim.org/
+[`amethyst-rhusics`]: https://github.com/amethyst/amethyst-rhusics
 [cgmath-to-nalgebra]: https://www.amethyst.rs/book/latest/appendices/b_migration_notes/cgmath_to_nalgebra.html
 
 ###  Automated Testing Framework
@@ -52,7 +54,7 @@ One of Rust's promoted qualities is fearlessness.
 To uphold this principle, we want to support complete confidence to make changes in games made with Amethyst.
 The `amethyst_test` crate was built for this purpose.
 
-The crate lets you set up a fake Amethyst application, execute specific logic, and run assertions
+This crate lets you set up an Amethyst application, execute specific logic, and run assertions
 on the `World` with minimal boilerplate.
 Here's an example:
 
@@ -63,7 +65,7 @@ pub struct MyResource(pub u32);
 fn system_increases_resource_value_by_one() -> Result<(), amethyst::Error> {
     AmethystApplication::blank()
         .with_setup(|world| world.add_resource(MyResource(0)))
-        .with_system_single(Example, "my_system", &[])
+        .with_system_single(ExampleSystem, "example_system", &[])
         .with_assertion(|world| {
             let my_resource = world.read_resource::<MyResource>();
 
@@ -74,12 +76,12 @@ fn system_increases_resource_value_by_one() -> Result<(), amethyst::Error> {
 }
 ```
 
-This runs the `Example` system in a simplified Amethyst application.
+This runs the `ExampleSystem` in a simplified Amethyst application.
 Unimportant details are hidden, allowing the test to be readable and expressive.
 Best of all, behavioral changes to the system are automatically tested.
 
 For more information, please see the [Testing][testing]
-section in the book and [API documentation][api].
+section in the book and the [API documentation][api].
 
 [testing]: https://www.amethyst.rs/book/latest/testing.html
 [api]: https://www.amethyst.rs/doc/latest/doc/amethyst_test/index.html
