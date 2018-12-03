@@ -92,17 +92,19 @@ Amethyst 0.10.0 involves a significant number of changes.
 We can't detail all of them here, but following are some of the more notable ones:
 
 * Our canonical Pong tutorial tutorial has been improved and expanded.
+* `SimpleState` is further simplified by using default lifetimes ([#1198]).
 * Images can now be drawn without having to define a `SpriteSheet` ([#1153]).
 * `amethyst_ui::get_default_font` now supports loading fonts from the filesystem ([#1108]).
-* It is now easier than ever to build simple prefabs using `#[derive(PrefabData)]` ([#1035]).
+* It is now easier to build simple prefabs using `#[derive(PrefabData)]` ([#1035]).
 * The networking team has been working hard on laminar and it has finally been [released][laminar].
   If you are interested you can check [TWIA 13][twia-13] out where it is introduced.
 
 For a full list of changes, see the [detailed release notes for 0.10.0][changelog].
 
-[#1153]: https://github.com/amethyst/amethyst/pull/1153
-[#1108]: https://github.com/amethyst/amethyst/pull/1108
 [#1035]: https://github.com/amethyst/amethyst/pull/1035
+[#1108]: https://github.com/amethyst/amethyst/pull/1108
+[#1153]: https://github.com/amethyst/amethyst/pull/1153
+[#1198]: https://github.com/amethyst/amethyst/pull/1198
 [changelog]: https://github.com/amethyst/amethyst/blob/master/docs/CHANGELOG.md#0100---2018-12
 [laminar]: https://crates.io/crates/laminar
 [twia-13]: https://www.amethyst.rs/blog/twia-13
