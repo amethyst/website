@@ -96,7 +96,7 @@ We can't detail all of them here, but following are some of the more notable one
 * `amethyst_ui::get_default_font` now supports loading fonts from the filesystem ([#1108]).
 * It is now easier than ever to build simple prefabs using `#[derive(PrefabData)]` ([#1035]).
 * The networking team has been working hard on laminar and it has finally been [released][laminar].
-  If you are interested you can check [TWIA 13][twia-13] out where we introduced our work.
+  If you are interested you can check [TWIA 13][twia-13] out where it is introduced.
 
 For a full list of changes, see the [detailed release notes for 0.10.0][changelog].
 
@@ -122,9 +122,14 @@ Following is a sneak peak of what the various teams are working on right now.
 * The networking team is working on their roadmap. If you are interested, have questions, or you
   just want to be up to date with their work, we recommend that you check out the
   [networking forums][networking-forums].
+* The editor team is building editor prototypes to evaluate different application frameworks.
+  There is currently an [Electron prototype][electron-prototype]; [Azul] and [orbtk] are being looked at as potential alternatives.
 
 [gfx-rs]: https://github.com/gfx-rs
 [networking-forums]: https://community.amethyst-engine.org/c/development/networking
+[electron-prototype]: https://github.com/randomPoison/amethyst-editor
+[Azul]: https://azul.rs/
+[orbtk]: https://github.com/redox-os/orbtk
 
 ## People we 💖
 
