@@ -93,6 +93,7 @@ We can't detail all of them here, but following are some of the more notable one
 
 * Our canonical Pong tutorial tutorial has been improved and expanded.
 * `SimpleState` is further simplified by using default lifetimes ([#1198]).
+* The `DrawSprite` pass has been renamed to `DrawFlat2D` ([#1153]).
 * Images can now be drawn without having to define a `SpriteSheet` ([#1153]).
 * `amethyst_ui::get_default_font` now supports loading fonts from the filesystem ([#1108]).
 * It is now easier to build simple prefabs using `#[derive(PrefabData)]` ([#1035]).
@@ -126,12 +127,15 @@ Following is a sneak peak of what the various teams are working on right now.
   [networking forums][networking-forums].
 * The editor team is building editor prototypes to evaluate different application frameworks.
   There is currently an [Electron prototype][electron-prototype]; [Azul] and [orbtk] are being looked at as potential alternatives.
+* The UI team are chipping away at the [UI RFC][ui-rfc] and investigating [real-time text rendering][realtime-text].
 
 [gfx-rs]: https://github.com/gfx-rs
 [networking-forums]: https://community.amethyst-engine.org/c/development/networking
 [electron-prototype]: https://github.com/randomPoison/amethyst-editor
 [Azul]: https://azul.rs/
 [orbtk]: https://github.com/redox-os/orbtk
+[ui-rfc]: https://github.com/amethyst/amethyst/issues/1072
+[realtime-text]: https://community.amethyst-engine.org/t/lay-of-the-land-text-rendering/164
 
 ## People we 💖
 
