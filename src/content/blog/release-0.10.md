@@ -48,6 +48,10 @@ This is of course a breaking change. To help our users in this transition we've 
 [`amethyst-rhusics`]: https://github.com/amethyst/amethyst-rhusics
 [cgmath-to-nalgebra]: https://www.amethyst.rs/book/latest/appendices/b_migration_notes/cgmath_to_nalgebra.html
 
+### Rust 2018
+
+The Amethyst Foundation team has been working on making sure that the project is up to date with the latest and greatest stable Rust. Rust 1.31 came out on December 6th, and with that release came the 2018 edition of Rust. We're happy to say that with this release, Amethyst has migrated to Rust 2018. The primary change that affects Amethyst is that implicit lifetimes are no longer idiomatic; thus state data should be represented like so: `StateData<'_, GameData<'_, '_>>`. We have some changes on the way to make this more ergonomic, so keep an eye out!
+
 ###  Automated Testing Framework
 
 One of Rust's promoted qualities is fearlessness.
