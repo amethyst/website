@@ -1,7 +1,7 @@
 +++
 title = "Amethyst 0.10.0 has been released!"
 description = "The Amethyst team is happy to announce Amethyst 0.10.0. This release includes a migration to nalgebra, an automated test framework, and many other improvements."
-date = 2018-12-03
+date = 2018-12-08
 +++
 
 The Amethyst team is happy to announce a new version of Amethyst, 0.10.0.
