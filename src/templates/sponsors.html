@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block title %}{{ config.title }} - Sponsors{% endblock title %}
+
+{% block css %}/sponsors.css{% endblock css %}
+
+{% block content %}
+<div id="content">
+  <img id="logo" src="/assets/amethyst.svg">
+  <div id="title">Sponsors</div>
+  <div id="subtitle">Amethyst is supported by its community and the following companies.</div>
+  <p>
+    <a href="https://www.digitalocean.com?utm_medium=opensource&utm_source=amethyst">
+      <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg"
+        width="201px">
+    </a>
+  </p>
+</div>
+{% endblock content %}
