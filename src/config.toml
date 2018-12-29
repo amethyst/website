@@ -18,5 +18,5 @@ github_url_master_examples = "https://github.com/amethyst/amethyst/tree/master/e
 github_url_base = "https://github.com/amethyst/amethyst"
 reddit_url = "https://reddit.com/r/amethyst"
 discord_invite = "https://discord.gg/E2Dd244"
-gitter_url = "https://gitter.im/amethyst/general"
+forum_url = "https://community.amethyst-engine.org/"
 crates_url = "https://crates.io/crates/amethyst"
