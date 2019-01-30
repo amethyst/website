@@ -35,7 +35,7 @@ cargo install-update -a;
 git clone https://github.com/amethyst/amethyst --branch master amethyst/master
 cd amethyst/master
 
-cargo doc --all;
+cargo doc --all > /dev/null;
 
 echo "Compiling master branch book"
 mdbook build book
@@ -61,7 +61,7 @@ LATEST_TAG=$(git describe --abbrev=0 --tags)
 echo "Checking out tag $LATEST_TAG to build latest docs and bogok"
 git checkout -q $LATEST_TAG
 
-cargo doc --all;
+cargo doc --all --no-deps > /dev/null;
 
 echo "Compiling $LATEST_TAG branch book"
 mdbook build book
