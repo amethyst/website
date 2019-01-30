@@ -3,7 +3,7 @@ sudo: required
 language: rust
 
 rust:
-    - nightly
+    - stable
 
 branches:
   only:
