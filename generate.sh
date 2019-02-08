@@ -1,22 +1,22 @@
 #!/bin/bash
 
 # Rebuilds the website, blog, book, and API documentation from scratch.
-gutenberg_release="v0.3.4/gutenberg-v0.3.4-x86_64-unknown-linux-gnu.tar.gz"
+zola_release="v0.5.0/zola-v0.5.0-x86_64-unknown-linux-gnu.tar.gz"
 
 echo "Cleaning up workspace..."
 rm -rf build
 rm -rf amethyst
 
-echo "Downloading gutenberg"
-curl -L -o gutenberg.tar.gz https://github.com/Keats/gutenberg/releases/download/${gutenberg_release}
-tar -xvf gutenberg.tar.gz -C ./
-rm gutenberg.tar.gz
+echo "Downloading zola"
+curl -L -o zola.tar.gz https://github.com/getzola/zola/releases/download/${zola_release}
+tar -xvf zola.tar.gz -C ./
+rm zola.tar.gz
 
 echo "Building website from source"
 cd src
-../gutenberg build -o ../build
+../zola build -o ../build
 cd ..
-rm gutenberg
+rm zola
 
 echo "Deploying the 404 page"
 cp build/404/index.html build/404.html
@@ -35,7 +35,7 @@ cargo install-update -a;
 git clone https://github.com/amethyst/amethyst --branch master amethyst/master
 cd amethyst/master
 
-cargo doc --all --no-deps --quiet
+cargo doc --all;
 
 echo "Compiling master branch book"
 mdbook build book
@@ -61,7 +61,7 @@ LATEST_TAG=$(git describe --abbrev=0 --tags)
 echo "Checking out tag $LATEST_TAG to build latest docs and bogok"
 git checkout -q $LATEST_TAG
 
-cargo doc --all --no-deps --quiet
+cargo doc --all;
 
 echo "Compiling $LATEST_TAG branch book"
 mdbook build book

@@ -1,0 +1,121 @@
+@import 'standard-layout';
+@import 'colors';
+@import 'cards';
+@import 'responsive';
+
+.logos {
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+
+        > span {
+            flex: 1 1;
+            padding-right: 4em;
+
+            @include mobile {
+                padding-right: 0;
+            }
+
+            a {
+                display: block;
+                margin-top: 1em;
+                width: fit-content;
+            }
+
+            > *:first-child {
+                margin-top: 0;
+            }
+
+            > *:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        > img {
+            padding: 2rem;
+            margin: 2rem 0;
+            overflow: visible;
+
+            &.standard {
+                background: $light;
+            }
+
+            &.white {
+                background: $dark;
+            }
+
+            &.filled {
+                @include sunrise();
+            }
+        }
+    }
+}
+
+.section.colors > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    > div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex: 0 1 30%;
+        min-width: 16rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.gradient, .color {
+    color: rgba($light, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1rem;
+
+    &.bright {
+        color: rgba($dark, 0.85);
+    }
+
+    span:last-child {
+        font-size: 0.8em;
+    }
+}
+
+.color {
+    &.deeper-purple { background: $deeper-purple; }
+    &.deep-purple { background: $deep-purple; }
+    &.mid-purple { background: $mid-purple; }
+    &.bright-purple { background: $bright-purple; }
+    &.deeper-plum { background: $deeper-plum; }
+    &.deep-plum { background: $deep-plum; }
+    &.mid-peach { background: $mid-peach; }
+    &.bright-peach { background: $bright-peach; }
+    &.dark { background: $dark; }
+    &.alternative-dark { background: $alternative-dark; }
+    &.light { background: $light; }
+    &.alternative-light { background: $alternative-light; }
+    &.information { background: $information; }
+    &.success { background: $success; }
+    &.warning { background: $warning; }
+    &.error { background: $error; }
+
+    span:last-child {
+        margin-left: 1rem;
+    }
+}
+
+.gradient {
+    height: 8rem;
+    flex-direction: column;
+
+    &.amethyst { @include amethyst(); }
+    &.wine { @include wine(); }
+    &.sunrise { @include sunrise(); }
+    &.sunset { @include sunset(); }
+}

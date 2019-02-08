@@ -1,0 +1,223 @@
+{% extends "_shell.html" %}
+{% import "_logo-macros.html" as logo %}
+
+{% block title %}{{ config.title }} - Branding Guidelines{% endblock title %}
+
+{% block css %}/branding.css{% endblock css %}
+
+{% block content %}
+<div id="content">
+    <div class="page-title">
+        <div>
+            <h1>
+                Amethyst Branding Guidelines
+            </h1>
+            <span class="subtitle">This is how you use our brand</span>
+        </div>
+    </div>
+    <div>
+        <div class="section">
+            <h2>What is This Page?</h2>
+            <p>
+                This page is useful for anyone looking to use Amethyst assets for purposes such as
+                featuring our logo in a news publication or for someone who simply wants to design
+                something that needs to follow Amethyst's branding guidelines.
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="section">
+            <h2>The Name</h2>
+            <p>
+                Amethyst should <b>always</b> be typed out with a capital A and lowercase letters
+                for the rest. Examples of how <b>not</b> to style the name are
+                <code>amethyst</code>, <code>AMETHYST</code> and <code>AmEtHySt</code>.
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="section logos">
+            <h2>Logo</h2>
+            <p>
+                The logo is, contrary to other assets of the Amethyst Foundation, licensed under the
+                <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC-BY-ND 4.0 license</a>
+                and as such you're free to use the logo for any purpose with the limitation that you
+                aren't allowed to modify it. The versions you are allowed to use without explicit
+                permission from the Amethyst Foundation are those listed on this page.
+            </p>
+            <div>
+                <span>
+                    <h3>Light Backgrounds</h3>
+                    <p>
+                        On light backgrounds, the standard logo with the Amethyst gradient should be
+                        used with transparency in the middle section.
+
+                        <a href="/brand/logo-standard.svg" download>Download the standard logo</a>
+                    </p>
+                </span>
+                <img
+                    src="/brand/logo-standard.svg"
+                    alt="The Standard Amethyst Logo"
+                    class="standard card">
+            </div>
+            <div>
+                <span>
+                    <h3>Dark Backgrounds</h3>
+                    <p>
+                        On dark backgrounds, the monochrome white verison of the logo may be used.
+
+                        <a href="/brand/logo-white.svg" download>Download the white logo</a>
+                    </p>
+                </span>
+                <img
+                    src="/brand/logo-white.svg"
+                    alt="The White Amethyst Logo"
+                    class="white card">
+            </div>
+            <div>
+                <span>
+                    <h3>Any Background</h3>
+                    <p>
+                        Alternatively, you can also use the standard gradient logo with the middle
+                        section filled in with white on any background.
+
+                        <a href="/brand/logo-filled.svg" download>Download the filled logo</a>
+                    </p>
+                </span>
+                <img
+                    src="/brand/logo-filled.svg"
+                    alt="The Filled Amethyst Logo"
+                    class="filled card">
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="section colors">
+            <h2>Colors</h2>
+            <div>
+                <div class="card">
+                    <div class="color deeper-purple">
+                        <span>Deeper Purple</span>
+                        <span>#3e1b93</span>
+                    </div>
+                    <div class="color deep-purple">
+                        <span>Deep Purple</span>
+                        <span>#4f29d0</span>
+                    </div>
+                    <div class="color mid-purple">
+                        <span>Mid Purple</span>
+                        <span>#7f41ef</span>
+                    </div>
+                    <div class="color bright-purple bright">
+                        <span>Bright Purple</span>
+                        <span>#dfadff</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="color deeper-plum">
+                        <span>Deeper Plum</span>
+                        <span>#84286f</span>
+                    </div>
+                    <div class="color deep-plum">
+                        <span>Deep Plum</span>
+                        <span>#a84a82</span>
+                    </div>
+                    <div class="color mid-peach bright">
+                        <span>Mid Peach</span>
+                        <span>#f27ea2</span>
+                    </div>
+                    <div class="color bright-peach bright">
+                        <span>Bright Peach</span>
+                        <span>#ffa6a6</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="color dark">
+                        <span>Dark</span>
+                        <span>#282631</span>
+                    </div>
+                    <div class="color alternative-dark">
+                        <span>Alternative Dark</span>
+                        <span>#2e2a39</span>
+                    </div>
+                    <div class="color light bright">
+                        <span>Light</span>
+                        <span>#ffffff</span>
+                    </div>
+                    <div class="color alternative-light bright">
+                        <span>Alternative Light</span>
+                        <span>#fafaff</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="color error bright">
+                        <span>Error</span>
+                        <span>#e56d94</span>
+                    </div>
+                    <div class="color information bright">
+                        <span>Information</span>
+                        <span>#2e2a39</span>
+                    </div>
+                    <div class="color success bright">
+                        <span>Success</span>
+                        <span>#89fb89</span>
+                    </div>
+                    <div class="color warning bright">
+                        <span>Warning</span>
+                        <span>#ffeca0</span>
+                    </div>
+                </div>
+            </div>
+            <h3>Gradients</h3>
+            <div>
+                <div class="gradient amethyst card">
+                    <span>Amethyst</span>
+                    <span>(mid-purple - deep-purple)</span>
+                </div>
+                <div class="gradient wine card">
+                    <span>Wine</span>
+                    <span>(deep-plum - mid-purple)</span>
+                </div>
+                <div class="gradient sunrise card">
+                    <span>Sunrise</span>
+                    <span>(deep-plum - bright-peach)</span>
+                </div>
+                <div class="gradient sunset card">
+                    <span>Sunset</span>
+                    <span>(mid-peach - deep-plum)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="section">
+            <h2>Typography</h2>
+            <p>
+                Headers use
+                <a href="https://fonts.google.com/specimen/Arvo">the Arvo font</a>
+                while body content uses
+                <a href="https://fonts.google.com/specimen/Karla">the Karla font</a>.
+                Primary text uses a color value of <code>rgba(40, 38, 49, 0.85)</code> while
+                secondary text uses <code>rgba(40, 38, 49, 0.65)</code>.
+                All sizes are based off a <code>16px</code> baseline.
+            </p>
+            <span class="h1">Header Level 1 <code>2.4rem</code></span>
+            <span class="h2">Header Level 2 <code>2.0rem</code></span>
+            <span class="h3">Header Level 3 <code>1.5rem</code></span>
+            <span class="h4">Header Level 4 <code>1.3rem</code></span>
+            <span class="h5">Header Level 5 <code>1.2rem</code></span>
+            <span class="h6">Header Level 6 <code>1.1rem</code></span>
+            <span class="subtitle">Subtitle Text <code>1.4rem</code></span>
+            <p class="body1">
+                The body text uses the primary text color and has a size of <code>1.1rem</code>
+                which makes it easily readable to anyone.
+            </p>
+            <p class="body2">
+                There is also a smaller version of the body text which can be used for things
+                that don't require as much attention. It uses the secondary text color and has a
+                size of <code>0.9rem</code>.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

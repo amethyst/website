@@ -133,4 +133,4 @@ If you have any suggestions or ideas for Amethyst or the blog, feel free to voic
 
 [gh]: https://github.com/amethyst/website
 [gc]: https://gitter.im/orgs/amethyst/rooms
-[di]: https://discord.gg/amethyst
+[di]: https://discord.gg/GnP5Whs

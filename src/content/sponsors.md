@@ -1,3 +1,0 @@
-+++
-template = "sponsors.html"
-+++

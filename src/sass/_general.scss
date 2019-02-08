@@ -1,0 +1,42 @@
+@import 'colors';
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    height: 100%;
+
+    > div {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Roboto Mono latin */
+@font-face {
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v5/L0x5DF4xlVMF-BfR8bXMIjhLq38.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+code {
+    display: inline-block;
+}
+
+code, pre {
+    background: $alternative-light;
+    color: rgba($deeper-purple, 0.85);
+    border: 1px solid rgba($deep-purple, 0.2);
+    border-radius: 0.25rem;
+    padding: 0 0.25em;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8em;
+    line-height: 1.5em;
+}

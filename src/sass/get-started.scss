@@ -1,43 +1,43 @@
 @import 'main';
 
-#content {
-    flex: 1 0 auto;
-    width: 50%;
-    padding-top: $vertical-padding - 1.3em;
-    padding-bottom: $vertical-padding;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 20px;
-    line-height: 30px;
-}
+// #content {
+//     flex: 1 0 auto;
+//     width: 50%;
+//     padding-top: $vertical-padding - 1.3em;
+//     padding-bottom: $vertical-padding;
+//     text-align: center;
+//     margin-left: auto;
+//     margin-right: auto;
+//     font-size: 20px;
+//     line-height: 30px;
+// }
 
-#logo {
-    height: 20vh;
-    margin-bottom: 10px;
-}
+// #logo {
+//     height: 20vh;
+//     margin-bottom: 10px;
+// }
 
-#title {
-    font-size: 35px;
-    margin-bottom: 5px;
-}
+// #title {
+//     font-size: 35px;
+//     margin-bottom: 5px;
+// }
 
-#subtitle {
-    font-size: 25px;
-    margin-bottom: 30px;
-}
+// #subtitle {
+//     font-size: 25px;
+//     margin-bottom: 30px;
+// }
 
-#content a {
-    text-decoration: none;
-    color: $primary-color;
-}
+// #content a {
+//     text-decoration: none;
+//     color: $primary-color;
+// }
 
-#content a:hover {
-    color: $tertiary-color;
-}
+// #content a:hover {
+//     color: $tertiary-color;
+// }
 
-@media screen and (max-width: $mobile-interface-thresold) {
-    #content {
-        width: 75%;
-    }
-}
+// @media screen and (max-width: $mobile-interface-thresold) {
+//     #content {
+//         width: 75%;
+//     }
+// }

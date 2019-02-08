@@ -1,0 +1,78 @@
+@import 'standard-layout';
+@import 'cards';
+@import 'colors';
+
+#content {
+    &:before {
+        display: none;
+    }
+
+    > .page-title {
+        position: relative;
+        z-index: 999999;
+        text-align: center;
+        padding: 4rem 0;
+        @include wine();
+
+        > div, section {
+            max-width: 45rem;
+
+            > svg {
+                max-width: 80%;
+                height: auto;
+            }
+
+            > h1 {
+                margin-bottom: -.15em;
+            }
+
+            > a {
+                font-size: 1.5rem;
+                margin: 2rem 2rem;
+                color: white;
+                text-decoration: none;
+                position: relative;
+                display: inline-block;
+                padding-bottom: 0.75rem;
+
+                $underline-size: 0.2rem;
+
+                @include mobile() {
+                    display: block;
+                }
+
+                &:before {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    background: white;
+                    opacity: 0.3;
+                    content: "";
+                    display: block;
+                    border-radius: $underline-size / 2;
+                    width: 1.5rem;
+                    height: $underline-size;
+                    transition: width 0.2s, opacity 0.2s;
+                }
+
+                &:hover:before {
+                    width: 3rem;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.contributors {
+    position: relative;
+    height: 400px;
+
+    > img {
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 0 0.5rem 2rem 0 rgba($deep-purple, 0.2);
+    }
+}

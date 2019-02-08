@@ -1,40 +1,85 @@
-{% extends "index.html" %}
+{% extends "_shell.html" %}
 
-{% block title %}{{ config.title }} - Blog{% endblock title %}
+{% block title %}{{ config.title }} - News about all things Amethyst{% endblock title %}
 
-{% block css %}/section.css{% endblock css %}
+{% block css %}/blog.css{% endblock css %}
 
 {% block content %}
-    <div id="content">
-        <div id="head">News from Amethyst</div>
-        <div id="container">
-            {% for page in paginator.pages %}
-                <a class="article" href="{{ page.permalink }}">
-                    <div class="title">{{ page.title }}</div>
-                    <small class="date">{{ page.date }}</small>
-                    <br>
-                    <br>
-                    <div class="description">{{ page.description }}</div>
-                    <div class="read-more">Read more...</div>
-                </a>
-            {% endfor %}
+
+{% set first_page = paginator.current_index == 1 %}
+{% set start_index = 0 %}
+{% if first_page %}
+    {% set start_index = 1 %}
+{% endif %}
+
+<main id="content">
+    {% if first_page %}
+    <section class="page-title">
+        <div>
+            <h1>News from Amethyst</h1>
         </div>
-        <div id="nav-page">
-            <div>
-            {% if paginator.previous %}
-                <a href="{{ paginator.previous }}">
-                    <small><i class="fas fa-arrow-left"></i></small> Newer
-                </a>
-            {% endif %}
-            </div>
-            <div>
-            {% if paginator.next %}
-                <a href="{{ paginator.next }}">
-                    Older <small><i class="fas fa-arrow-right"></i></small>
-                </a>
-            {% endif %}
-            </div>
+    </section>
+    <section>
+        <div class="latest">
+            <h2>Latest News</h2>
+            {% set page = paginator.pages[0] %}
+            <h3>{{ page.title }}</h3>
+            <p>{{ page.description }}</p>
+            <p><a href="{{ page.permalink }}">Read more</a></p>
+        </div>
+    </section>
+    {% endif %}
+    <section class="articles">
+        {% for page in paginator.pages | slice(start=(start_index)) %}
+            <a href="{{ page.permalink }}">
+                <article>
+                    <div class="date">{{ page.date }}</div>
+                    <h3>{{ page.title }}</h3>
+                    <p>{{ page.description }}</p>
+                </article>
+            </a>
+        {% endfor %}
+    </section>
+    <section>
+        {% if paginator.previous %}
+            <a href="{{ paginator.previous }}">Newer</a>
+        {% endif %}
+        {% if paginator.next %}
+            <a href="{{ paginator.next }}">Older</a>
+        {% endif %}
+    </section>
+</main>
+
+<!-- <div id="content">
+    <div id="head">News from Amethyst</div>
+    <div id="container">
+        {% for page in paginator.pages %}
+            <a class="article" href="{{ page.permalink }}">
+                <div class="title">{{ page.title }}</div>
+                <small class="date">{{ page.date }}</small>
+                <br>
+                <br>
+                <div class="description">{{ page.description }}</div>
+                <div class="read-more">Read more...</div>
+            </a>
+        {% endfor %}
+    </div>
+    <div id="nav-page">
+        <div>
+        {% if paginator.previous %}
+            <a href="{{ paginator.previous }}">
+                <small><i class="fas fa-arrow-left"></i></small> Newer
+            </a>
+        {% endif %}
+        </div>
+        <div>
+        {% if paginator.next %}
+            <a href="{{ paginator.next }}">
+                Older <small><i class="fas fa-arrow-right"></i></small>
+            </a>
+        {% endif %}
         </div>
     </div>
-    <script src="/js/konami.js"></script>
+</div>
+<script src="/js/konami.js"></script> -->
 {% endblock content %}

@@ -8,7 +8,7 @@ We are thrilled to share with you some progress on the development of [the Ameth
 
 ## New teams
 
-As you might have seen [on Discord already](https://discord.gg/amethyst), we've created
+As you might have seen [on Discord already](https://discord.gg/GnP5Whs), we've created
 [a proposal](https://gist.github.com/torkleyy/e89971b1c65a8e261a21220120df443a) for a new structure for teams. We are introducing those changes in order to make contribution to the engine happen faster, most notably with less friction when merging pull requests.
 This proposal introduces a Core team, responsible for the overall management and direction of the project. Its main role will be to handle administrative tasks, such as publishing crates, managing the GitHub organization, and so forth. They will also be handling validation of RFCs chosen by the community to be merged into the engine. We believe that way we can make the engine thrive in a coherent way while making expansion fast and community-driven.
 
@@ -35,7 +35,7 @@ Be sure to check out [the repo](https://github.com/amethyst/laminar) and the
 Thank you fhaynes, TimonPost and LucioFranco for all the work you're putting into this!
 This protocol implementation is specifically designed for the needs of fast-paced games. It will be used by Amethyst's higher-level networking APIs, but is itself independent of the engine which means it's usable in non-Amethyst games, too, so check it out!
 
-More progress is also being made design-wise on [our Discord server](https://discord.gg/amethyst), our main communication channel, and we are welcoming any help!
+More progress is also being made design-wise on [our Discord server](https://discord.gg/GnP5Whs), our main communication channel, and we are welcoming any help!
 
 Networking is not the only field with interesting developments:
 - The 3D renderer is currently [being entirely rewritten](https://github.com/rustgd/rendy) for modern technologies (such as Vulkan/Metal/DirectX12 backends, VR, etc.), more advanced features and generally improved performances. We are looking for additional contributors experienced with 3D graphics, so if you want to get involved, please reach out to us.
@@ -48,4 +48,4 @@ What's next? We're currently working hard to get the next version, 0.9, out. Tha
 to people planning to develop 2D games, since it comes with a ton of sprite rendering improvements. If you want to help with the last remaining bugfixes,
 feel free to go through [the 0.9 milestone](https://github.com/amethyst/amethyst/issues?q=is%3Aopen+is%3Aissue+milestone%3A0.9).
 
-We cannot wait for more progress to be done and are very enthusiastic for the future of the Amethyst engine and the Rust gamedev ecosystem. We hope to see you soon, and as always, if you need any help using the engine, check out [our subreddit](https://reddit.com/r/Amethyst) or [our Discord server](https://discord.gg/amethyst).
+We cannot wait for more progress to be done and are very enthusiastic for the future of the Amethyst engine and the Rust gamedev ecosystem. We hope to see you soon, and as always, if you need any help using the engine, check out [our subreddit](https://reddit.com/r/Amethyst) or [our Discord server](https://discord.gg/GnP5Whs).

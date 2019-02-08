@@ -36,7 +36,7 @@ the work of others or writing a chapter on your own. Please contact us on
 Note that there's already a PR working on chapter 5 [here][ch5], so make sure
 to coordinate your work with that.
 
-[dis]: https://discord.gg/amethyst
+[dis]: https://discord.gg/zy4E52n
 [pti]: https://github.com/amethyst/amethyst/issues/506
 [ch5]: https://github.com/amethyst/amethyst/pull/1085
 
@@ -143,7 +143,7 @@ its first version around November 9th, 2018.
 It is considered the lowest level networking crate and has the following
 responsibilities:
 
-* Choosing the ordering, reliability, and encryption for your packets.
+* Choosing the ordering, reliability, and encryption for your packets. 
 * Congestion avoidance measures.
 * Fragmentation of packets if needed.
 * Monitor connections for Connect, Disconnect and Timeout events.
@@ -172,7 +172,7 @@ Currently, there are already C/C++ based implementations but there is no
 finished Rust implementation.
 When we began implementing networking, we could not find an existing crate that
 met our needs. There are crates that provide protocols built on UDP, but they
-are oriented towards the needs of non-game applications.
+are oriented towards the needs of non-game applications. 
 
 Rust is an excellent language for fast, reliable network programming because of
 its safety and speed. In particular, the lack of garbage collection and ability
@@ -290,3 +290,4 @@ Thank you for helping push the project forward!
 [is4]: https://github.com/amethyst/amethyst/issues/1044
 [is5]: https://github.com/slide-rs/specs/issues/505
 [is6]: https://github.com/amethyst/amethyst/issues/1019
+
