@@ -6,7 +6,7 @@
 [s2]: https://img.shields.io/discord/425678876929163284.svg?logo=discord
 
 [tc]: https://travis-ci.org/amethyst/website
-[di]: https://discord.gg/GnP5Whs
+[di]: https://discord.gg/amethyst
 
 This is the source code for the Amethyst website and blog, accessible from
 either https://amethyst.github.io/website/ or https://www.amethyst.rs/. The HTML
