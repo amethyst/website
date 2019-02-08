@@ -18,6 +18,6 @@ github_url_contributors = "https://github.com/amethyst/amethyst/graphs/contribut
 github_url_master_examples = "https://github.com/amethyst/amethyst/tree/master/examples"
 github_url_base = "https://github.com/amethyst/amethyst"
 reddit_url = "https://reddit.com/r/amethyst"
-discord_invite = "https://discord.gg/E2Dd244"
+discord_invite = "https://discord.gg/amethyst"
 forums_url = "https://community.amethyst-engine.org"
 crates_url = "https://crates.io/crates/amethyst"

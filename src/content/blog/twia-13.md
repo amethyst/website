@@ -36,7 +36,7 @@ the work of others or writing a chapter on your own. Please contact us on
 Note that there's already a PR working on chapter 5 [here][ch5], so make sure
 to coordinate your work with that.
 
-[dis]: https://discord.gg/zy4E52n
+[dis]: https://discord.gg/amethyst
 [pti]: https://github.com/amethyst/amethyst/issues/506
 [ch5]: https://github.com/amethyst/amethyst/pull/1085
 
