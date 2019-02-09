@@ -13,7 +13,7 @@ branches:
 
 deploy:
   local_dir: build
-  fqdn: www.amethyst-engine.org
+  fqdn: www.amethyst.rs
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN # Set in travis-ci.org dashboard
