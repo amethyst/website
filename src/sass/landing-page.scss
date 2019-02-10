@@ -69,12 +69,19 @@
 .sponsors {
     text-align: center;
     padding-top: 2em;
+
     > a {
         display: inline-block;
+        height: 50px;
+
         > img {
-            max-height: 50px;
-            width: 100%;
+            height: 100%;
+            width: auto;
         }
+    }
+
+    a, img {
+        max-height: 50px;
     }
 }
 
