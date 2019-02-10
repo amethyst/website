@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "_shell.html" %}
 
 {% block title %}{{ config.title }} - {{ page.title }}{% endblock title %}
 {% block og_title %}{{ page.title }}{% endblock og_title %}
@@ -15,11 +15,18 @@
 {% endblock additional_meta %}
 
 {% block content %}
-<div id="content">
-    <div id="title">{{ page.title }}</div>
-    <div id="subtitle">Published on {{ page.date }} {% if page.extra.author %} by {% if page.extra.author_link %}
-        <a href="{{ page.extra.author_link }}">{% endif %}{{ page.extra.author }}{% if page.extra.author_link %}</a>{% endif %}{% endif %}
-    </div>
-    <div id="article-content">{{ page.content | safe }}</div>
-</div>
+<main id="content">
+    <section class="page-title">
+        <div>
+            <h1>{{ page.title }}</h1>
+            <span class="subtitle">Published on {{ page.date }} {% if page.extra.author %} by {% if page.extra.author_link %}
+                <a href="{{ page.extra.author_link }}">{% endif %}{{ page.extra.author }}{% if page.extra.author_link %}</a>{% endif %}{% endif %}
+            </span>
+        </div>
+    </section>
+
+    <section class="article-content">
+        {{ page.content | safe }}
+    </section>
+</main>
 {% endblock content %}

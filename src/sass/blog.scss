@@ -1,0 +1,86 @@
+@import 'standard-layout';
+@import 'colors';
+@import 'responsive';
+
+section.articles:first-child {
+    margin-top: 4rem;
+}
+
+.articles {
+    a {
+        position: relative;
+
+        &:not(:last-child) {
+            &:before {
+                position: absolute;
+                content: "";
+                display: block;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 50%;
+                height: 2px;
+                background: $dark;
+                opacity: .2;
+
+                @include mobile {
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        &:hover article h3 {
+            color: $mid-purple;
+
+            &:before {
+                background: $mid-purple;
+                width: 8rem;
+            }
+        }
+
+        article {
+            .date {
+                font-size: .85rem;
+                margin-left: .2rem;
+                color: $alternative-dark;
+                opacity: .6;
+
+                @include mobile {
+                    width: 100%;
+                    margin: 0;
+                    text-align: center;
+                }
+            }
+
+            h3 {
+                margin: 0;
+                color: $deeper-purple;
+                position: relative;
+
+                $underline-size: .3rem;
+
+                &:before {
+                    position: absolute;
+                    bottom: -.7rem;
+                    left: 0;
+                    background: $deeper-purple;
+                    content: "";
+                    display: block;
+                    border-radius: $underline-size / 2;
+                    width: 4.5rem;
+                    height: $underline-size;
+                    transition: width 0.2s, background 0.2s;
+
+                    @include mobile {
+                        margin: 0 auto;
+                        right: 0;
+                    }
+                }
+            }
+
+            p {
+                color: $dark;
+            }
+        }
+    }
+}

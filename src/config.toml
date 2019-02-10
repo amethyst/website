@@ -1,4 +1,4 @@
-base_url = "https://www.amethyst.rs"
+base_url = "https://amethyst.rs"
 title = "Amethyst"
 description = "Official website of the Amethyst game engine."
 compile_sass = true
@@ -7,8 +7,9 @@ highlight_theme = "monokai"
 generate_rss = true
 
 [extra]
-author = "Moxinilian (Théo Degioanni)"
-website_version = "3.0"
+latest_release_tag = "0.10.0"
+author = "Moxinilian (Théo Degioanni), Ellie Fagerberg, doomy (Alexander Lozada)"
+website_version = "4.0"
 doc_path = "/doc"
 github_url = "https://github.com/amethyst/amethyst"
 github_url_organization = "https://github.com/amethyst"
@@ -18,5 +19,5 @@ github_url_master_examples = "https://github.com/amethyst/amethyst/tree/master/e
 github_url_base = "https://github.com/amethyst/amethyst"
 reddit_url = "https://reddit.com/r/amethyst"
 discord_invite = "https://discord.gg/amethyst"
-forum_url = "https://community.amethyst-engine.org/"
+forums_url = "https://community.amethyst-engine.org"
 crates_url = "https://crates.io/crates/amethyst"

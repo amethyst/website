@@ -1,0 +1,69 @@
+/*
+# Amethyst Colors
+
+These colors exist to keep a consistent and nice looking color pattern throughout Amethyst's
+different products. If you need to use colors, you can probably find what you need in here. Don't
+diverge if not absolutely necessary, such as with images.
+
+## Neutral colors
+If you are going to be designing something monochrome, use the colors from the "Neutral" section.
+To your disposal, you have one dark color and two shades of light colors. The alternative light
+color can be used to break a page up in sections without feeling the same throughout.
+
+## Main branding colors
+If you want to make something that highlights the Amethyst brand, you can use the colors from the
+"Main branding" section. These are most commonly used for links but also have other purposes.
+
+## Complementary brand colors
+Because designs usually feel stale if you only utilize one shade of color, we have complementary
+brand colors too at our disposal. These can be used when you just need that extra bit of flare.
+
+## Contrast
+The colors marked as "Light link" and "Dark link" have been checked to be AAA compliant on their
+respective background. DO NOT use any other color for important information.
+*/
+
+// Neutral colors
+$dark: #282631;
+$alternative-dark: #2e2a39;
+$light: #ffffff;
+$alternative-light: #fafaff;
+
+// Main branding colors
+$deeper-purple: #3e1b93;
+$deep-purple: #4f29d0; // Light link
+$mid-purple: #7f41ef;
+$bright-purple: #dfadff; // Dark link
+
+// Complementary brand colors
+$deeper-plum: #84286f; // Light link
+$deep-plum: #a84a82;
+$mid-peach: #f27ea2;
+$bright-peach: #ffa6a6; // Dark link
+
+// Status colors
+$information: #79e0e6;
+$success:#89fb89;
+$warning: #ffeca0;
+$error: #e56d94;
+
+// Gradients
+@mixin amethyst($direction: 45deg) {
+    background: $deep-purple;
+    background: linear-gradient($direction, $mid-purple 0%, $deep-purple 100%);
+}
+
+@mixin wine($direction: 45deg) {
+    background: $deep-plum;
+    background: linear-gradient($direction, $deep-plum 0%, $mid-purple 100%);
+}
+
+@mixin sunrise($direction: 45deg) {
+    background: $mid-peach;
+    background: linear-gradient($direction, $deep-plum 0%, $bright-peach 100%);
+}
+
+@mixin sunset($direction: 45deg) {
+    background: $deep-plum;
+    background: linear-gradient($direction, $mid-peach 0%, $deep-plum 100%);
+}

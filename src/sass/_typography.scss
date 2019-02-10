@@ -1,0 +1,103 @@
+@import 'colors';
+
+/* Arvo latin */
+@font-face {
+    font-family: 'Arvo';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Arvo'), url(https://fonts.gstatic.com/s/arvo/v10/tDbD2oWUg0MKqScQ7Q.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Karla latin */
+@font-face {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Karla'), local('Karla-Regular'), url(https://fonts.gstatic.com/s/karla/v6/qkBbXvYC6trAT7RVLtw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    color: rgba($dark, 0.85);
+    line-height: 1.5em;
+}
+
+body, .body1 {
+    font-size: 1.1rem;
+}
+
+.body2 {
+    font-size: 0.9rem;
+    color: rgba($dark, 0.65);
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .subtitle {
+    font-family: 'Arvo', serif;
+    display: block;
+    margin: 1em 0;
+    font-weight: normal;
+}
+
+h1, .h1 {
+    font-size: 2.4rem;
+    line-height: 1.2em;
+}
+
+h2, .h2 {
+    font-size: 2.0rem;
+    line-height: 1.3em;
+}
+
+h3, .h3 {
+    font-size: 1.5rem;
+    line-height: 1.2em;
+}
+
+h4, .h4 {
+    font-size: 1.3rem;
+    line-height: 1.4em;
+}
+
+h5, .h5 {
+    font-size: 1.2rem;
+    line-height: 1.5em;
+}
+
+h6, .h6 {
+    font-size: 1.1rem;
+    line-height: 1.5em;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    line-height: 1.4em;
+    color: rgba($dark, 0.65);
+}
+
+a {
+    color: $deep-purple;
+    text-decoration: none;
+
+    &:hover {
+        color: $deeper-purple;
+        text-decoration: none;
+    }
+}
+
+.dark {
+    color: rgba($light, 0.95);
+
+    .subtitle {
+        color: rgba($light, 0.7);
+    }
+
+    a {
+        color: $bright-purple;
+
+        &:hover {
+            color: $light;
+        }
+    }
+}

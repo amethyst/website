@@ -1,0 +1,82 @@
+{% extends "_shell.html" %}
+
+{% block title %}{{ config.title }} - Help us Grow by Donating{% endblock title %}
+
+{% block css %}/standard-layout.css{% endblock css %}
+
+{% block content %}
+<script src="https://donorbox.org/widget.js" paypalExpress="true"></script>
+<div id="content">
+    <div class="page-title">
+        <div>
+            <h1>We Need Your Help</h1>
+            <span class="subtitle">Every contribution helps!</span>
+            <iframe
+                src="https://donorbox.org/embed/amethyst-founding?only_donation_meter=true&donation_meter_color=%234f29d0"
+                height="93px"
+                width="100%"
+                seamless="seamless"
+                frameborder="0"
+                scrolling="no">
+            </iframe>
+        </div>
+    </div>
+    <div>
+        <div class="section separated">
+            <div>
+                <iframe
+                    src="https://donorbox.org/embed/amethyst-founding?amount=30&hide_donation_meter=true"
+                    height="555px"
+                    width="100%"
+                    seamless="seamless"
+                    frameborder="0"
+                    scrolling="no"
+                    allowpaymentrequest
+                    style="min-height: 580px;">
+                </iframe>
+            </div>
+            <div>
+                <h2>Thank You!</h2>
+                <p>
+                    First of all, thank you! Amethyst is made up of all volunteers; your support
+                    means a lot to us. All donations go to forwarding the mission of the Amethyst
+                    Foundation; creating a game engine that is fast, reliable, open-source, and
+                    free. Here are some ways we use donations:
+
+                    <ul>
+                        <li>Infrastructure and hosting costs</li>
+                        <li>Purchasing merchandise for events</li>
+                        <li>Travel costs to relevant events</li>
+                        <li>Creation of assets (art, code, design, etc) by an outside contractor if needed</li>
+                        <li>Hiring part-time or full-time developers to work on the engine</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h2>Important Tax Info</h2>
+            <p>
+                Amethyst is a pending 501(c)(3) non-profit. This means we have filed all needed paperwork with the IRS, and are awaiting final approval. This process can take between 3 to 6 months. Until a final determination is made, the IRS allows us to act as a full 501(c)(3). We do not anticipate any issues. More information can be found <a target="_blank" href="https://www.irs.gov/charities-non-profits/charitable-organizations/contributions-to-organization-with-irs-application-pending">on the IRS site</a>.
+            </p>
+                
+            <p>
+                The important thing for you to know is that if the final determination does not grant us 501(c)(3) status, your donation may not be tax-deductible. Should we not be granted this status, we will inform all donors via e-mail.
+            </p>
+        </div>
+    </div>
+    <div>
+        <div>
+            <iframe
+                src="https://donorbox.org/embed/amethyst-founding?only_donor_wall=true"
+                style="width: 100%; min-width:310px;"
+                seamless="seamless"
+                name="donorbox"
+                frameborder="0"
+                scrolling="no">
+            </iframe>
+        </div>
+    </div>
+</div>
+{% endblock content %}

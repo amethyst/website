@@ -1,0 +1,90 @@
+{% set latest_release_tag = "##LATEST_RELEASE_TAG##" %}
+
+{% import "_logo-macros.html" as logo %}
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+    <meta name="author" content="{{ config.extra.author }}">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="{% block og_title %}{{ config.title }}{% endblock og_title %}" />
+    <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock og_description %}">
+    <meta property="og:type" content="{% block og_type %}website{% endblock og_type %}" />
+    {% block current_url %}<meta property="og:url" content="{{ current_url }}" />{% endblock current_url %}
+    <meta property="og:image" content="/brand/logo-standard.svg" />
+    <meta property="og:image:width" content="425">
+    <meta property="og:image:height" content="425">
+    <meta property="og:image:type" content="image/png" />
+    {% block additional_meta %}{% endblock additional_meta %}
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="{% block css %}{% endblock css %}">
+    <link rel="icon" href="/brand/logo-standard.svg">
+    <link
+        rel="search"
+        type="application/opensearchdescription+xml"
+        title="Amethyst Documentation"
+        href="/opensearch.xml">
+</head>
+
+<body>
+    <div>
+        {% block header %}
+        <div class="master-header">
+            <div>
+                <a href="/" class="logo">
+                    {{ logo::emblem(size=35) }}
+                    {{ logo::text(height=20) }}
+                </a>
+                <span class="spacer"></span>
+                <span class="hamburger"></span>
+                <nav>
+                    <a href="/doc"><div>Learn</div></a>
+                    <a href="/blog"><div>News</div></a>
+                    <a href="/contribute"><div>Contribute</div></a>
+                    <a href="/donate"><div>Donate</div></a>
+                </nav>
+            </div>
+            <script src="/js/header.js"></script>
+        </div>
+        {% endblock header %}
+        {% block content %}{% endblock content %}
+        {% block footer %}
+        <div class="master-footer">
+            <div class="nav">
+                <div class="logo">
+                    {{ logo::emblem(size=100, type="white") }}
+                </div>
+                <div>
+                    <div class="h6">Project</div>
+                    <a href="{{ config.extra.github_url_organization }}">GitHub</a>
+                    <a href="{{ config.extra.doc_path }}">Documentation</a>
+                    <a href="/blog">Blog</a>
+                </div>
+                <div>
+                    <div class="h6">Community</div>
+                    <a href="{{ config.extra.discord_invite }}">Discord</a>
+                    <a href="{{ config.extra.forums_url }}">Forums</a>
+                </div>
+                <div>
+                    <div class="h6">Foundation</div>
+                    <a href="/donate">Donate</a>
+                    <a href="/branding">Branding</a>
+                </div>
+            </div>
+        </div>
+        {% endblock footer %}
+    </div>
+</body>
+
+</html>

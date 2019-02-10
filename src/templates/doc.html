@@ -1,42 +1,43 @@
-{% extends "index.html" %}
+{% extends "_shell.html" %}
 
 {% block title %}{{ config.title }} - Docs{% endblock title %}
 
-{% block css %}/doc.css{% endblock css %}
+{% block css %}/standard-layout.css{% endblock css %}
 
 {% block content %}
-<div id="content">
-    <div>
-        <div class="page-title">
-            Documentation
-            <div class="subtitle">
-                We all need it and so do you.
-            </div>
+<main id="content">
+    <section class="page-title">
+        <div>
+            <h1>Documentation</h1>
         </div>
-    </div>
-    <div>
-        <div id="latest">
-            <span class="title">{{ latest_release_tag }}</span>
-            This is the documentation for the latest release you'll find on
-            <a href="{{ config.extra.crates_url }}">crates.io</a>
+    </section>
+    <section>
+        <div class="section">
+            <h2>Latest Stable Version ({{ config.extra.latest_release_tag }})</h2>
+            <p>
+                Here, you can find documentation for the latest release you'll find on
+                <a href="{{ config.extra.crates_url }}">crates.io</a>. This is what you should use for a stable experience.
+            </p>
             <ul>
                 <li><a href="/book/latest">Read the Book</a></li>
                 <li><a href="/doc/latest/doc/amethyst">Browse the API Reference</a></li>
-                <li><a href="{{ config.extra.github_url_base }}/tree/{{ latest_release_tag }}/examples">View all Examples</a></li>
+                <li><a href="{{ config.extra.github_url_base }}/tree/{{ config.extra.latest_release_tag }}/examples">View all Examples</a></li>
             </ul>
         </div>
-    </div>
-    <div>
-        <div id="master">
-            <span class="title">Living on the Edge?</span>
-            If you know what you're doing and want the documentation for the
-            <a href="{{ config.extra.github_url }}">master branch</a>, here's where you'll find it.
+    </section>
+    <section>
+        <div class="section">
+            <h2>Living on the Edge?</h2>
+            <p>
+                If you know what you're doing and want the documentation for the
+                <a href="{{ config.extra.github_url }}">master branch</a>, here's where you'll find it. Keep in mind that this is a living branch, and there will be breaking API changes.
+            </p>
             <ul>
                 <li><a href="/book/master">Read the Book</a></li>
                 <li><a href="/doc/master/doc/amethyst">Browse the API Reference</a></li>
                 <li><a href="{{ config.extra.github_url_master_examples }}">View all Examples</a></li>
             </ul>
         </div>
-    </div>
-</div>
+    </section>
+</main>
 {% endblock content %}
