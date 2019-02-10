@@ -44,7 +44,7 @@ cd src
 cd ..
 rm zola
 
-# Copy the 404 static file to a specific location since Zola has some trouble with 404 pages
+# Copy the 404 static file to a specific location
 echo "Deploying the 404 page"
 cp build/404/index.html build/404.html
 rm -rf build/404
@@ -127,4 +127,9 @@ done
 cd ../../
 
 cd build/
-find . -name "*.html" -type f -exec sed -i 's/##LATEST_RELEASE_TAG##/'"$LATEST_TAG"'/g' '{}' \;
+if [[ "$zola_os" == "apple-darwin" ]]; then
+    # MacOS sed is slightly different 
+    find . -name "*.html" -type f -exec sed -i '.original' -e 's/##LATEST_RELEASE_TAG##/'"$LATEST_TAG"'/g' '{}' \;
+else
+    find . -name "*.html" -type f -exec sed -i 's/##LATEST_RELEASE_TAG##/'"$LATEST_TAG"'/g' '{}' \;
+fi
