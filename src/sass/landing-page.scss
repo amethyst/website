@@ -72,11 +72,12 @@
 
     > a {
         display: inline-block;
-        height: 50px;
+        width: 20rem;
+        max-width: 100%;
 
         > img {
-            height: 100%;
-            width: auto;
+            width: 100%;
+            height: auto;
         }
     }
 
