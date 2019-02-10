@@ -43,3 +43,7 @@ $vertical-padding: 4em;
 .disabled:hover {
     background-color: $disabled-color;
 }
+
+.spacer {
+    flex-grow: 1;
+}

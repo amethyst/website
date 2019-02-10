@@ -1,0 +1,115 @@
+@import 'general';
+@import 'colors';
+@import 'typography';
+@import 'responsive';
+
+@import 'header';
+@import 'footer';
+
+#content {
+    overflow-x: hidden;
+    flex-grow: 1;
+
+    > div, section {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 2rem;
+
+        > * {
+            max-width: 60rem;
+            padding: 4rem 0;
+            width: 100%;
+
+            &.center {
+                text-align: center;
+                max-width: 40rem;
+            }
+        }
+
+        &:nth-child(even) {
+            background: $alternative-light;
+        }
+    }
+}
+
+#content > .page-title {
+    padding: 8rem 2rem 4.5rem 2rem;
+    display: flex;
+    flex-direction: row;
+
+    > * {
+        padding: 0;
+    }
+
+    *:first-child {
+        margin: 0;
+    }
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+#content .section.separated {
+    display: flex;
+    align-items: center;
+
+    $spacing: 8rem;
+
+    &.reverse {
+        flex-direction: row-reverse;
+
+        @include mobile() {
+            flex-direction: column;
+        }
+    }
+
+    &:not(.reverse) > :not(:last-child), &.reverse > :not(:first-child) {
+        margin-right: $spacing;
+
+        @include mobile() {
+            margin-right: 0;
+        }
+    }
+
+    > div {
+        flex: 0 0 calc(50% - #{$spacing / 2});
+
+        > * {
+            margin-top: 0;
+        }
+    }
+
+    img.card {
+        width: 100%;
+    }
+
+    @include mobile() {
+        flex-direction: column;
+
+        > div {
+            flex: 0 0;
+
+            > * {
+                margin-top: unset;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+@include mobile() {
+    #content > .page-title {
+        text-align: center;
+    }
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .subtitle {
+        text-align: center;
+    }
+}

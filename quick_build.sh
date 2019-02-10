@@ -5,5 +5,5 @@ rm -rf build
 
 echo "Building website from source"
 cd src
-gutenberg build -o ../build 
+zola build -o ../build 
 cd ..

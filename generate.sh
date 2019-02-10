@@ -1,27 +1,55 @@
 #!/bin/bash
 
 # Rebuilds the website, blog, book, and API documentation from scratch.
-gutenberg_release="v0.3.4/gutenberg-v0.3.4-x86_64-unknown-linux-gnu.tar.gz"
+# This script assumes you have cargo installed.
 
+# Set the zola version
+zola_version="0.5.1"
+
+# Get the correct release based on the currently running OS
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    zola_os="unknown-linux-gnu"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    zola_os="apple-darwin"
+elif [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
+    # Notify the user that they should use a powershell script
+    echo "Windows is not currently supported. Track this issue here: https://github.com/amethyst/website/issues/142"
+    echo "Exiting."
+    exit 1
+else
+    # OS is not supported.  Notify the user and exit.
+    echo "Your system (${OSTYPE}) is not currently supported.  To add support, consider opening an issue or pull request on the repository: https://github.com/amethyst/website."
+    echo "Exiting."
+    exit 1
+fi
+
+echo "Building site for ${zola_os} with Zola version ${zola_version}."
+zola_release="v${zola_version}/zola-v${zola_version}-x86_64-${zola_os}.tar.gz"
+
+# Delete files that may have been created with a previous build
 echo "Cleaning up workspace..."
 rm -rf build
 rm -rf amethyst
 
-echo "Downloading gutenberg"
-curl -L -o gutenberg.tar.gz https://github.com/Keats/gutenberg/releases/download/${gutenberg_release}
-tar -xvf gutenberg.tar.gz -C ./
-rm gutenberg.tar.gz
+# Download and unpack the Zola binary, then delete the archive
+echo "Downloading zola"
+curl -L -o zola.tar.gz https://github.com/getzola/zola/releases/download/${zola_release}
+tar -xvf zola.tar.gz -C ./
+rm zola.tar.gz
 
+# Go into the `src` directory and use Zola to build our site to the `build` folder
 echo "Building website from source"
 cd src
-../gutenberg build -o ../build
+../zola build -o ../build
 cd ..
-rm gutenberg
+rm zola
 
+# Copy the 404 static file to a specific location
 echo "Deploying the 404 page"
 cp build/404/index.html build/404.html
 rm -rf build/404
 
+# If this is a first run, some folders needed to run this script may need to be created
 echo "Recreating base folders (if needed)"
 mkdir -p build/book/
 mkdir -p build/doc/
@@ -32,9 +60,11 @@ cargo install-update --version || cargo install cargo-update;
 mdbook --version || cargo install mdbook;
 cargo install-update -a;
 
+# Clone the Amethyst repo so docs can be built later
 git clone https://github.com/amethyst/amethyst --branch master amethyst/master
 cd amethyst/master
 
+# Generate cargo documentation without messages, and without building for external dependencies
 cargo doc --all --no-deps --quiet
 
 echo "Compiling master branch book"
@@ -84,16 +114,10 @@ do
     echo "Checking out tag $tag to build latest docs and book"
     git checkout -q $tag
 
-    #cargo doc --all --no-deps;
-
     echo "Compiling $tag branch book"
     mdbook build book
 
     cd ../../
-
-    # echo "Moving latest release documentation and book to /build/"
-    # mkdir -p build/doc/latest/
-    # cp -r amethyst/master/target/doc/ build/doc/latest/
 
     mkdir -p build/book/$tag/
     mv -f amethyst/master/book/book/* build/book/$tag/
@@ -103,8 +127,9 @@ done
 cd ../../
 
 cd build/
-find . -name "*.html" -type f -exec sed -i 's/##LATEST_RELEASE_TAG##/'"$LATEST_TAG"'/g' '{}' \;
-
-# cd ../
-# echo "Cleaning up binaries"
-# rm -rf build/amethyst/
+if [[ "$zola_os" == "apple-darwin" ]]; then
+    # MacOS sed is slightly different 
+    find . -name "*.html" -type f -exec sed -i '.original' -e 's/##LATEST_RELEASE_TAG##/'"$LATEST_TAG"'/g' '{}' \;
+else
+    find . -name "*.html" -type f -exec sed -i 's/##LATEST_RELEASE_TAG##/'"$LATEST_TAG"'/g' '{}' \;
+fi

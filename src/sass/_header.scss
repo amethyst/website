@@ -1,0 +1,188 @@
+@import 'colors';
+@import 'typography';
+@import 'vendor';
+@import 'responsive';
+
+$header-height: 3.5rem;
+
+// HACK: Used to fix initial state for the navigation
+@keyframes transition-fix {
+    0% {opacity: 0;}
+    99% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.master-header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: $header-height;
+    border-bottom: 1px solid rgba($dark, 0.1);
+    background: rgba($light, 0.95);
+    z-index: 10000;
+    @include vendor-prefix(user-select, none);
+
+    >div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        max-width: 60rem;
+        width: 100%;
+        margin: 0 1rem;
+
+        $underline-size: .15rem;
+
+        a {
+            height: 100%;
+            color: rgba($dark, 0.9);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+
+            @include mobile {
+                justify-content: center;
+                font-size: 1.5em;
+
+                &:hover {
+                    color: $deeper-purple;
+                }
+            }
+
+            &:hover > div:before {
+                width: 2rem;
+                opacity: .5;
+            }
+
+            @include desktop {
+                > div {
+                    width: 100%;
+                    position: relative;
+
+                    &:before {
+                        position: absolute;
+                        bottom: -3px;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        background: $deeper-purple;
+                        opacity: 0.3;
+                        content: "";
+                        display: block;
+                        border-radius: $underline-size / 2;
+                        width: 0;
+                        height: $underline-size;
+                        transition: width 0.15s ease-in-out, opacity 0.15s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        >* {
+            display: flex;
+            align-items: center;
+        }
+
+        >.logo {
+            margin: 5px 0;
+            line-height: 100%;
+
+            >.logo-emblem {
+                margin-right: 10px;
+            }
+
+            >.logo-text {
+                position: relative;
+                top: 1px;
+                fill: rgba($dark, 0.8);
+            }
+        }
+
+        >.hamburger {
+            display: none;
+            width: $header-height / 2 - .2rem;
+            height: $header-height / 2 - .2rem;
+            background-image: url("/assets/hamburger.svg");
+            background-size: contain;
+            cursor: pointer;
+
+            @include mobile() {
+                display: block;
+            }
+        }
+
+        >nav {
+            height: 100%;
+
+            >*:not(:last-child) {
+                margin-right: 1.5rem;
+
+                @include mobile() {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+body > div > div:nth-child(2):before {
+    display: block;
+    content: "";
+    height: $header-height;
+}
+
+@include mobile {
+    .master-header > div > nav {
+        position: fixed;
+        top: 0; right: 0; left: 0;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(-100%);
+        transition: transform 0.2s ease-in-out;
+        animation: transition-fix 0.2s;
+        z-index: 1;
+        pointer-events: none;
+
+        >a {
+            padding: 1rem 2rem;
+            width: 100%;
+            // HACK: Since there isn't a container element below these with the background,
+            // you can sometimes get artifacts between the elements without this.
+            margin: -1px 0;
+            z-index: 1;
+            background: $light;
+            // text-align: center;
+
+            &:first-child {
+                padding-top: 20px;
+            }
+
+            &:last-child {
+                padding-bottom: 20px;
+            }
+        }
+
+        &:before {
+            display: block;
+            content: "";
+            position: fixed;
+            width: 100vw;
+            height: 200vh;
+            z-index: 0;
+            background: rgba($dark, 0.8);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        &[open] {
+            transform: translateY(0);
+            pointer-events: all;
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+}
