@@ -4,6 +4,6 @@
 The Amethyst Rustdoc reference for the latest release.
 </Description>
 <InputEncoding>UTF-8</InputEncoding>
-<Image width="16" height="16" type="image/x-icon">https://www.amethyst.rs/assets/amethyst.svg</Image>
+<Image width="16" height="16" type="image/x-icon">/brand/logo-standard.svg</Image>
 <Url type="text/html" method="get" template="https://www.amethyst.rs/doc/latest/doc/amethyst/?search={searchTerms}"/>
 </OpenSearchDescription>

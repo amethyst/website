@@ -66,6 +66,18 @@
     }
 }
 
+.sponsors {
+    text-align: center;
+    padding-top: 2em;
+    > a {
+        display: inline-block;
+        > img {
+            max-height: 50px;
+            width: 100%;
+        }
+    }
+}
+
 .contributors {
     position: relative;
     height: 400px;
