@@ -1,0 +1,17 @@
+{% import "_logo-macros.html" as logo %}
+
+<div>
+    <div class="section {% if class %}{{ class }}{% endif %}">
+        {% if before %} {{ before | safe }} {% endif %}
+        {% if logo %} {{ logo::emblem(size=200) }} {% endif %}
+        <div>
+            {% if title %}<h2>{{ title }}</h2>{% endif %}
+            <p>{{ body | markdown }}</p>
+        </div>
+        {% if image %}
+            <div>
+                <img class="card" src="{{ image }}" {% if alt %} alt="{{ alt }}" {% endif %}>
+            </div>
+        {% endif %}
+    </div>
+</div>
