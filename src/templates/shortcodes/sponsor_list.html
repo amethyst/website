@@ -1,0 +1,15 @@
+<div>
+    <div class="section center">
+        <h2>Sponsors</h2>
+        <p>
+            Amethyst is supported by its community and the following companies:
+            <div class="sponsors">
+                {% for sponsor in config.extra.sponsors %}
+                    <a href="{{ sponsor.link }}">
+                        <img src="{{ sponsor.image }}" alt="{{ sponsor.name }} Logo"/>
+                    </a>
+                {% endfor %}
+            </div>
+        </p>
+    </div>
+</div>
