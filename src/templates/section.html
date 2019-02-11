@@ -19,13 +19,17 @@
             <h1>News from Amethyst</h1>
         </div>
     </section>
-    <section>
+    <section class="articles">
         <div class="latest">
             <h2>Latest News</h2>
             {% set page = paginator.pages[0] %}
-            <h3>{{ page.title }}</h3>
-            <p>{{ page.description }}</p>
-            <p><a href="{{ page.permalink }}">Read more</a></p>
+            <a href="{{ page.permalink }}">
+                <article>
+                    <div class="date">{{ page.date }}</div>
+                    <h3>{{ page.title }}</h3>
+                    <p>{{ page.description }}</p>
+                </article>
+            </a>
         </div>
     </section>
     {% endif %}
@@ -49,38 +53,4 @@
         {% endif %}
     </section>
 </main>
-<script src="/js/konami.js"></script>
-
-<!-- <div id="content">
-    <div id="head">News from Amethyst</div>
-    <div id="container">
-        {% for page in paginator.pages %}
-            <a class="article" href="{{ page.permalink }}">
-                <div class="title">{{ page.title }}</div>
-                <small class="date">{{ page.date }}</small>
-                <br>
-                <br>
-                <div class="description">{{ page.description }}</div>
-                <div class="read-more">Read more...</div>
-            </a>
-        {% endfor %}
-    </div>
-    <div id="nav-page">
-        <div>
-        {% if paginator.previous %}
-            <a href="{{ paginator.previous }}">
-                <small><i class="fas fa-arrow-left"></i></small> Newer
-            </a>
-        {% endif %}
-        </div>
-        <div>
-        {% if paginator.next %}
-            <a href="{{ paginator.next }}">
-                Older <small><i class="fas fa-arrow-right"></i></small>
-            </a>
-        {% endif %}
-        </div>
-    </div>
-</div>
-<script src="/js/konami.js"></script> -->
 {% endblock content %}
