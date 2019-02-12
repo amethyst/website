@@ -14,11 +14,11 @@ Thanks to the [Rust programming language](https://www.rust-lang.org/), Amethyst 
 {% end %}
 
 {% feature(title="Free with very permissive usage") %}
-Amethyst is open source and free software. You can use, read, modify, distribute its source code under the permissive **MIT** and **Apache 2.0 licenses**, and it is important to us that it remains that way. The strength of the community keeps Amethyst going forward, through the contributions of [awesome people](https://github.com/amethyst/amethyst/graphs/contributors). Come visit us on[GitHub](https://github.com/amethyst/amethyst)!
+Amethyst is open source and free software. You can use, read, modify, distribute its source code under the permissive **MIT** and **Apache 2.0 licenses**, and it is important to us that it remains that way. The strength of the community keeps Amethyst going forward, through the contributions of [awesome people](https://github.com/amethyst/amethyst/graphs/contributors). Come visit us on [GitHub](https://github.com/amethyst/amethyst)!
 {% end %}
 
 {{ sponsor_list() }}
 
 {% feature(title="Get Started" logo="true" class="center") %}
-You can easily get started using [our book guide](http://localhost:1111/book/master) which goes through the basics of creating a game using Amethyst. If you need any help on the way, feel free to visit [our community forums](https://community.amethyst-engine.org/) and [our Discord server](https://discord.gg/amethyst)!
+You can easily get started using [our book guide](https://www.amethyst.rs/book/master/) which goes through the basics of creating a game using Amethyst. If you need any help on the way, feel free to visit [our community forums](https://community.amethyst-engine.org/) and [our Discord server](https://discord.gg/amethyst)!
 {% end %}
