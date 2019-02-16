@@ -6,7 +6,7 @@ Amethyst uses a rigorous [Entity Component System (ECS)](https://en.wikipedia.or
 {% end %}
 
 {% feature(title="Built for 2D and 3D" image="/assets/2d_example.jpg" alt="2D Example Screenshot" class="separated reverse") %}
-Amethyst uses [gfx-rs](https://github.com/gfx-rs/gfx") to render graphics with OpenGL, and soon Vulkan and Metal. It is meant to be used for 2D and 3D, with various utilities for both types of games. It should be beginner friendly but also allow more advanced uses such as custom render passes and GLSL shaders. 
+Amethyst uses [gfx-rs](https://github.com/gfx-rs/gfx) to render graphics with OpenGL, and soon Vulkan and Metal. It is meant to be used for 2D and 3D, with various utilities for both types of games. It should be beginner friendly but also allow more advanced uses such as custom render passes and GLSL shaders. 
 {% end %}
 
 {% feature(title="A Stable Foundation" image="/assets/rust_example.jpg" alt="Rust Example Code" class="separated") %}
