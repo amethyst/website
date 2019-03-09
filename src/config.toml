@@ -26,3 +26,8 @@ crates_url = "https://crates.io/crates/amethyst"
 name="DigitalOcean"
 image="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg"
 link="https://www.digitalocean.com/?utm_medium=opensource&utm_source=amethyst"
+
+[[extra.sponsors]]
+name="Embark"
+image="/assets/embark_studios.svg"
+link="https://www.embark-studios.com"
