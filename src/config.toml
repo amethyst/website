@@ -31,3 +31,8 @@ link="https://www.digitalocean.com/?utm_medium=opensource&utm_source=amethyst"
 name="Embark"
 image="/assets/embark_studios.svg"
 link="https://www.embark-studios.com"
+
+[[extra.sponsors]]
+name="Netlify"
+image="/assets/full-logo-light.svg"
+link="https://www.netlify.com"
