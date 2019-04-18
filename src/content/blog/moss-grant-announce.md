@@ -4,7 +4,7 @@ description = "Rust game engine Amethyst has received a grant of $10,000 from Mo
 date = 2019-04-18
 +++
 
-![better-amethyst-wasm-logo|690x237](upload://eqD45Z0rqtQ5hYbL36TsbMLo6J9.png)
+![](https://raw.githubusercontent.com/amethyst/website/master/src/static/assets/amethyst-wasm-logo.png)
 
 It is our great pleasure to announce that Amethyst has been awarded a [MOSS grant](https://www.mozilla.org/en-US/moss/) for the purpose of making Amethyst games run in the browser using WebAssembly.
 
