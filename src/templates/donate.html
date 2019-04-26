@@ -26,7 +26,6 @@
             <div>
                 <iframe
                     src="https://donorbox.org/embed/amethyst-founding?amount=30&hide_donation_meter=true"
-                    height="555px"
                     width="100%"
                     seamless="seamless"
                     frameborder="0"
@@ -38,17 +37,16 @@
             <div>
                 <h2>Thank You!</h2>
                 <p>
-                    First of all, thank you! Amethyst is made up of all volunteers; your support
-                    means a lot to us. All donations go to forwarding the mission of the Amethyst
-                    Foundation; creating a game engine that is fast, reliable, open-source, and
-                    free. Here are some ways we use donations:
+                    First of all, thank you! Your support means a lot to us. All donations go to
+                    forwarding the mission of the Amethyst Foundation: creating a game engine that
+                    is fast, reliable, open-source, and free. Here are some ways we use donations:
 
                     <ul>
                         <li>Infrastructure and hosting costs</li>
                         <li>Purchasing merchandise for events</li>
                         <li>Travel costs to relevant events</li>
                         <li>Creation of assets (art, code, design, etc) by an outside contractor if needed</li>
-                        <li>Hiring part-time or full-time developers to work on the engine</li>
+                        <li>Hiring part-time, full-time or contract developers to work on the engine</li>
                     </ul>
                 </p>
             </div>
@@ -58,7 +56,7 @@
         <div>
             <h2>Important Tax Info</h2>
             <p>
-                Amethyst is a 501(c)(3) non-profit. Your donation will be accompanied with a statement via e-mail you can use for tax purposes in the US.
+                The Amethyst Foundation is a 501(c)(3) non-profit. Your donation will be accompanied with a statement via e-mail you can use for tax purposes in the US.
             </p>
         </div>
     </div>
@@ -74,5 +72,18 @@
             </iframe>
         </div>
     </div>
+
+    <script>
+        // This script handles resizing the DonorBox iframes if their content changes.
+
+        window.addEventListener("message", function(event) {
+            if (event.origin == "https://donorbox.org") {
+                if (event.data.src && event.data.height) {
+                    let box = document.querySelector(`iframe[src="${event.data.src}"]`);
+                    box.height = event.data.height + "px";
+                }
+            }
+        });
+    </script>
 </div>
 {% endblock content %}
