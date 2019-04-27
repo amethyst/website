@@ -1,0 +1,21 @@
+{% extends "_shell.html" %}
+
+{% block title %}{{ config.title }} - See Where We're Going!{% endblock title %}
+
+{% block css %}/contribute.css{% endblock css %}
+
+{% block content %}
+<main id="content">
+    <section class="page-title">
+        <div>
+            <h1>Roadmap</h1>
+        </div>
+    </section>
+
+    <section class="contribute-text">
+        <div class="section separated">
+           {{ page.content | safe }}
+        </div>
+    </section>
+</main>
+{% endblock content %}
