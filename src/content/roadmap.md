@@ -70,7 +70,7 @@ This includes all the highest priority items from all the categories.
 ### Network
 
 - Small 3D FPS Example Game
-- Add Websocket Support to Laminar
+- Add Websocket Support to Amethyst
 
 ### Scripting
 
