@@ -37,7 +37,7 @@ We'll provide more details in the release announcement for 0.11, but a brief sum
 
 ### WASM
 
-On May 1st, work began on making Amethyst run on WASM. This work is being funded by our MOSS Grant from Mozilla Foundation, and will continue throughout the summer. A major part of this will be getting the ECS system we use, [Specs](https://github.com/slide-rs/specs), to work in WASM as well as contributing to [gfx-rs](https://github.com/gfx-rs/gfx).
+On May 1st, work began on making Amethyst run on WASM. This work is being funded by our [MOSS Grant](https://amethyst.rs/blog/moss-grant-announce/) from Mozilla Foundation, and will continue throughout the summer. A major part of this will be getting the ECS system we use, [Specs](https://github.com/slide-rs/specs), to work in WASM as well as contributing to [gfx-rs](https://github.com/gfx-rs/gfx).
 
 ### Evolution Island and More
 
@@ -57,7 +57,7 @@ Any project as complex and ambitious as Amethyst will have growing pains. Throw 
 
 1. No giant monolithic systems that take forever to code. Projects will be decomposed into achievable chunks, designed, and planned so that they can be worked on by more than one person. This is critical in a project with a development team that has a variable amount availability.
 2. Quality as a deliverable. This means we're going to opt for high-quality testing, stability, and regression-free releases over shiny features and development speed. A project such as ours cannot afford to accumulate much tech debt. It results in a bad experience for our users and burning out on our team. 
-3. Dogfooding. We're going to use Amethyst to make small games. Aside from helping us catch bugs and better informing the roadmap, this will give us more empathy with our users. If _we_ can't make something work in Amethyst, or if we have some part of it, odds are that our users will feel similarly. This also has the nice result of producing examples and documentation.
+3. Dogfooding. We're going to use Amethyst to make small games. Aside from helping us catch bugs and better informing the roadmap, this will give us more empathy with our users. If _we_ can't make something work in Amethyst, or if we hate some part of it, odds are that our users will feel similarly. This also has the nice result of producing examples and documentation.
 
 ## That's All
 
