@@ -1,3 +1,9 @@
++++
+title = "Team"
+description = "This is a list of our teams and their members"
+date = 2019-05-01
++++
+
 # Team
 
 Below you can find a roster of the current and former Amethyst Foundation volunteers. As we are a 501(c)(3) non-profit, we have a bit more formal governing structure than a typical open-source project.
