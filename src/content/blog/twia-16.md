@@ -51,9 +51,9 @@ We have one! Sort of! You can see it here: [Roadmap](https://amethyst.rs/roadmap
 
 ## Workflow Changes
 
-Any project as complex and ambitious as Amethyst will have growing pains. Throw in that we are _highly_ diverse geographically and are largely volunteers, and normal obstacles can become very difficult. We're adopting a set of principals that we hope will help us overcome them and be a sustainable, high-quality project.
+Any project as complex and ambitious as Amethyst will have growing pains. Throw in that we are _highly_ diverse geographically and are largely volunteers, and normal obstacles can become very difficult. We're adopting a set of principles that we hope will help us overcome them and be a sustainable, high-quality project.
 
-### Principals
+### Principles
 
 1. No giant monolithic systems that take forever to code. Projects will be decomposed into achievable chunks, designed, and planned so that they can be worked on by more than one person. This is critical in a project with a development team that has a variable amount availability.
 2. Quality as a deliverable. This means we're going to opt for high-quality testing, stability, and regression-free releases over shiny features and development speed. A project such as ours cannot afford to accumulate much tech debt. It results in a bad experience for our users and burning out on our team. 
