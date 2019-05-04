@@ -1,18 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.62 107.62">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #333333;
-      }
-    </style>
-  </defs>
-  <title>web-assembly-icon-white</title>
-  <g id="Layer_2" data-name="Layer 2">
-    <g id="Notch_-_White" data-name="Notch - White">
-      <g id="icon">
-        <polygon class="cls-1" points="79.87 67.39 76.76 81.38 86.44 81.38 82.87 67.39 79.87 67.39"/>
-        <path class="cls-1" d="M66.13,0a5.62,5.62,0,0,1,0,.58A12.34,12.34,0,0,1,53.81,12.92,12.33,12.33,0,0,1,41.47.58a5.62,5.62,0,0,1,0-.58H0V107.62H107.62V0ZM51.38,96.1,46.13,70.17H46L40.39,96.1H33.17L25,58h7.13L37,83.94h.09L42.94,58h6.67l5.28,26.26H55L60.55,58h7L58.46,96.1Zm39.26,0-2.43-8.48H75.4L73.53,96.1H66.36L75.58,58H86.83L98,96.1Z"/>
-      </g>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.6 107.6"><defs><style>.cls-1{fill:#333}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Notch_-_White" data-name="Notch - White"><g id="icon"><path class="cls-1" d="M79.9 67.4l-3.1 14h9.6l-3.5-14h-3z"/><path class="cls-1" d="M66.1 0a5.6 5.6 0 0 1 0 .6 12.3 12.3 0 0 1-12.3 12.3A12.3 12.3 0 0 1 41.5.6a5.6 5.6 0 0 1 0-.6H0v107.6h107.6V0zM51.4 96.1l-5.3-26H46l-5.6 26h-7.2L25 58h7.1L37 84l6-26h6.6L55 84.3h.1L60.5 58h7l-9 38.1zm39.2 0l-2.4-8.5H75.4l-1.9 8.5h-7.1L75.6 58h11.2L98 96.1z"/></g></g></g></svg>
