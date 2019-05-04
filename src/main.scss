@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+@import "~normalize-scss/sass/normalize";
+@import url('https://fonts.googleapis.com/css?family=Arvo|Karla');
+
+@include normalize();
+
+$body-font: 'Karla', sans-serif;
+$body-font-size: 1.1rem;
+
+$heading-font: 'Arvo', serif;
+$heading-1: 2.4rem;
+$heading-2: 2rem;
+$heading-3: 1.5rem;
+$heading-4: 1.3rem;
+$heading-5: 1.2rem;
+$heading-6: 1.1rem;
+
+// Brand colors
+$purple-darker: #3e1b93;
+$purple-dark: #4f29d0;
+$purple: #7f41ef;
+$purple-light: #dfadff;
+
+$plum-dark: #84286f;
+$plum: #a84a82;
+
+$peach: #f27ea2;
+$peach-light: #ffa6a6;
+
+$dark: #282631;
+$dark-alt: #2e2a39;
+
+$light: #ffffff;
+$light-alt: #fafaff;
+
+// Notification colors
+$info: #2e2a39;
+$success: #89fb89;
+$warning: #ffeca0;
+$danger: #e56d94;
+
+// These are overrides for bulma colors.
+// All primary ones are shown even if they have
+// the same name, for verbosity's sake.
+$primary: $purple;
+$info: $info;
+$success: $success;
+$warning: $warning;
+$danger: $danger;
+
+$light: $light;
+$dark: $dark;
+
+$link: $purple;
+$link-invert: $light-alt;
+$link-visited: $plum;
+$link-hover: $purple-dark;
+$link-active: $purple-darker;
+
+$size-1: $heading-1;
+$size-2: $heading-2;
+$size-3: $heading-3;
+$size-4: $heading-4;
+$size-5: $heading-5;
+$size-6: $heading-6;
+
+$body-size: $body-font-size;
+$body-background-color: $light;
+
+$family-primary: $body-font;
+$family-secondary: $heading-font;
+
+// Override bulma heading font
+.is-size-1,
+.is-size-2,
+.is-size-3,
+.is-size-4,
+.is-size-5,
+.is-size-6 {
+    font-family: $heading-font;
+}
+
+@import "~bulma/bulma";
+
+// Gradients
+.is-gradient-amethyst {
+    color: #fff;
+    background: $purple-dark;
+    background: linear-gradient(
+        45deg,
+        $purple 0%,
+        $purple-dark 100%
+    );
+}
+
+.is-gradient-wine {
+    color: #fff;
+    background: $plum;
+    background: linear-gradient(
+        45deg,
+        $plum 0%,
+        $purple 100%
+    );
+}
+
+.is-gradient-sunrise {
+    background: $peach;
+    background: linear-gradient(
+        45deg,
+        $plum 0%,
+        $peach-light 100%
+    );
+}
+
+.is-gradient-sunset {
+    background: $plum;
+    background: linear-gradient(
+        45deg,
+        $peach 0%,
+        $plum 100%
+    );
+}
