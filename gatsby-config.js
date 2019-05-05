@@ -54,7 +54,7 @@ module.exports = {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `amethyst`,
-        accessToken: `process.env.PRISMIC_API_KEY`,
+        accessToken: `${process.env.PRISMIC_API_KEY}`,
         linkResolver,
       },
     },
