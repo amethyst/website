@@ -1,4 +1,5 @@
 const path = require("path")
+const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -15,15 +16,54 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const template = path.resolve("src/templates/page.jsx")
-
-  pages.data.allPrismicPage.edges.forEach(it => {
+  const pageTemplate = path.resolve("src/templates/page.jsx")
+  pages.data.allPrismicPage.edges.forEach(({ node: page }) => {
     createPage({
-      path: `/${it.node.uid}`,
-      component: template,
+      path: `/${page.uid}`,
+      component: pageTemplate,
       context: {
-        uid: it.node.uid,
+        uid: page.uid,
       },
+    })
+  })
+
+  const postsResult = await graphql(`
+    {
+      allPrismicPost(sort: { fields: [first_publication_date], order: DESC }) {
+        edges {
+          node {
+            uid
+          }
+        }
+      }
+    }
+  `)
+
+  const posts = postsResult.data.allPrismicPost.edges
+  const blogTemplate = path.resolve("src/templates/blog.jsx")
+  const postsPerPage = 10
+  const numPages = Math.ceil(posts.length / postsPerPage)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    const currentPage = i + 1
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${currentPage}`,
+      component: blogTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage,
+      },
+    })
+  })
+
+  const postTemplate = path.resolve("src/templates/post.jsx")
+  posts.forEach(({ node: post }) => {
+    createPage({
+      path: `/posts/${post.uid}`,
+      component: postTemplate,
+      context: { uid: post.uid },
     })
   })
 }

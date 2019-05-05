@@ -13,7 +13,7 @@ const NavbarContainer = styled.nav`
   left: 0;
   right: 0;
   top: 0;
-  background-color: rgba(255, 255, 255, .95);
+  background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid rgba(40, 38, 49, 0.1);
   height: 3.5rem;
 
@@ -31,7 +31,7 @@ const NavbarContainer = styled.nav`
     display: flex;
     align-items: center;
     font-size: 1.3rem;
-    color: rgba(40,38,49,0.8);
+    color: rgba(40, 38, 49, 0.8);
 
     ${mobile`
       margin-left: 1rem;
@@ -50,7 +50,7 @@ const Navbar = ({ active }) => {
     allPrismicPage: { edges },
   } = useStaticQuery(graphql`
     query {
-      allPrismicPage {
+      allPrismicPage(sort: { fields: [data___nav_order], order: ASC }) {
         edges {
           node {
             uid
@@ -59,7 +59,6 @@ const Navbar = ({ active }) => {
               page_title {
                 text
               }
-              nav_order
             }
           }
         }
@@ -70,10 +69,7 @@ const Navbar = ({ active }) => {
   const links = edges.map(it => ({
     url: it.node.uid,
     link: it.node.data.link,
-    order: it.node.data.nav_order,
   }))
-
-  links.sort((a, b) => a - b)
 
   return (
     <NavbarContainer>
@@ -104,34 +100,36 @@ const Navbar = ({ active }) => {
 }
 
 const NavLink = styled.li`
-    a {
-      color: rgba(40, 38, 49, 0.9);
-      height: 3.5rem;
-      line-height: 3.5rem;
-      padding: 0 1rem;
+  a {
+    color: rgba(40, 38, 49, 0.9);
+    height: 3.5rem;
+    line-height: 3.5rem;
+    padding: 0 1rem;
 
-      position: relative;
-      display: flex;
-      justify-content: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
 
-      &::before {
-        position: absolute;
-        content: " ";
-        display: block;
-        width: 0;
-        background-color: #7f41ef;
-        height: 4px;
-        bottom: 0.6rem;
-        transition: width 0.2s ease-in-out;
-        border-radius: 4px;
-      }
-
-      &:hover::before {
-        width: 50%;
-      }
+    &::before {
+      position: absolute;
+      content: " ";
+      display: block;
+      width: 0;
+      background-color: #7f41ef;
+      height: 4px;
+      bottom: 0.6rem;
+      transition: width 0.2s ease-in-out;
+      border-radius: 4px;
     }
 
-    ${props => props.active && css`
+    &:hover::before {
+      width: 50%;
+    }
+  }
+
+  ${props =>
+    props.active &&
+    css`
       a::before {
         width: 50%;
       }

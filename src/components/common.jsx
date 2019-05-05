@@ -35,7 +35,7 @@ export const Content = ({ html, className }) => (
 export const Sections = styled.div`
   width: 100%;
 
-  section {
+  .section {
     width: 100%;
     display: flex;
     flex-direction: column;

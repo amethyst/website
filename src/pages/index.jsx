@@ -160,12 +160,14 @@ const SectionImage = styled.div.attrs({
 const Subtitle = styled.span.attrs({
   className: "is-size-4",
 })`
+  text-align: center;
   opacity: 0.7;
 `
 
 const Title = styled.h1.attrs({
   className: "is-size-1",
 })`
+  text-align: center;
   margin: 1rem 0 0.5rem 0;
 `
 

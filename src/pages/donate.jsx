@@ -126,7 +126,7 @@ class DonatePage extends React.Component {
   }
 }
 
-const TitleSection = styled.section.attrs({ className: "section" })`
+const TitleSection = styled.header.attrs({ className: "section" })`
   margin-top: 1.5rem;
 
   h2 {
