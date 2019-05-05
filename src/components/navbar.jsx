@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import styled, { css } from "styled-components"
+import { FaBars, FaTimes } from "react-icons/fa"
 
 import { ContentTube, mobile } from "./common"
 import LogoSvg from "../assets/logo-color.svg"
@@ -23,10 +24,6 @@ const NavbarContainer = styled.nav`
     justify-content: space-between;
   }
 
-  ul {
-    display: flex;
-  }
-
   .logo {
     display: flex;
     align-items: center;
@@ -35,6 +32,10 @@ const NavbarContainer = styled.nav`
 
     ${mobile`
       margin-left: 1rem;
+
+      span {
+        display: none;
+      }
     `}
 
     svg {
@@ -43,6 +44,41 @@ const NavbarContainer = styled.nav`
       margin-right: 0.4rem;
     }
   }
+`
+
+const LinksContainer = styled.ul`
+  display: flex;
+
+  ${mobile`
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      z-index: 2;
+      background-color: #fff;
+
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .15s ease-in;
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        font-size: 2rem;
+        padding: 1.5rem 2rem;
+      }
+
+      ${props =>
+        props.opened &&
+        css`
+          opacity: 1;
+          pointer-events: initial;
+        `}
+    `}
 `
 
 const Navbar = ({ active }) => {
@@ -66,6 +102,8 @@ const Navbar = ({ active }) => {
     }
   `)
 
+  const [opened, setOpened] = useState(false)
+
   const links = edges.map(it => ({
     url: it.node.uid,
     link: it.node.data.link,
@@ -73,13 +111,18 @@ const Navbar = ({ active }) => {
 
   return (
     <NavbarContainer>
+      <Toggle onClick={() => setOpened(!opened)}>
+        {opened && <FaTimes size="1.6em" />}
+        {!opened && <FaBars size="1.6em" />}
+      </Toggle>
+
       <ContentTube>
         <Link className="logo" to="/">
           <LogoSvg />
           <span>Amethyst</span>
         </Link>
 
-        <ul>
+        <LinksContainer opened={opened}>
           <NavLink active={active === "blog"}>
             <Link to="/blog">Blog</Link>
           </NavLink>
@@ -93,11 +136,28 @@ const Navbar = ({ active }) => {
           <NavLink active={active === "donate"}>
             <Link to="/donate">Donate</Link>
           </NavLink>
-        </ul>
+        </LinksContainer>
       </ContentTube>
     </NavbarContainer>
   )
 }
+
+const Toggle = styled.div`
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  color: #222;
+  cursor: pointer;
+
+  ${mobile`
+    opacity: 1;
+    pointer-events: initial;
+  `}
+`
 
 const NavLink = styled.li`
   a {
@@ -117,9 +177,14 @@ const NavLink = styled.li`
       width: 0;
       background-color: #7f41ef;
       height: 4px;
-      bottom: 0.6rem;
+      bottom: .6rem;
       transition: width 0.2s ease-in-out;
       border-radius: 4px;
+
+      ${mobile`
+        height: 8px;
+        bottom: 0rem;
+      `}
     }
 
     &:hover::before {

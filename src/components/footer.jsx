@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import { ContentTube } from "./common"
+import { ContentTube, mobile } from "./common"
 import LogoSvg from "../assets/logo.svg"
 
 const FooterContainer = styled.footer.attrs({
@@ -26,6 +26,11 @@ const Logo = styled.div.attrs({
     height: 100px;
     width: 100px;
   }
+
+  ${mobile`
+    justify-content: center;
+    margin-bottom: 1rem;
+  `}
 `
 
 const Links = styled.div.attrs({
@@ -46,6 +51,10 @@ const Links = styled.div.attrs({
       color: #fff;
     }
   }
+
+  ${mobile`
+    text-align: center;
+  `}
 `
 
 const Footer = () => (
