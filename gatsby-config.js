@@ -1,3 +1,10 @@
+const path = require(`path`)
+require("dotenv").config({ path: `.env` })
+
+const prismicRepo = "amethyst"
+// TODO(happens): Fix this to respect posts and pages
+const linkResolver = ({ node, key, value }) => doc => `/${doc.uid}`
+
 module.exports = {
   plugins: [
     {
@@ -36,8 +43,8 @@ module.exports = {
         name: `The Amethyst Game Engine`,
         short_name: `amethyst.rs`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#7f41ef`,
+        theme_color: `#7f41ef`,
         display: `minimal-ui`,
         icon: `src/assets/logo-filled.svg`,
       },
@@ -47,13 +54,8 @@ module.exports = {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `amethyst`,
-        accessToken: `MC5YTTJYWlJFQUFJYS1nMmt2.77-9DC7vv73vv73vv71ZD--_vVQc77-977-977-9bjHvv73vv73vv73vv702XwXvv73vv71rLF1eJWJi`,
-
-        // See: https://prismic.io/docs/javascript/query-the-api/link-resolving
-        linkResolver: ({ node, key, value }) => doc => {
-          // TODO(happens): Page types
-          return doc.uid
-        },
+        accessToken: `process.env.PRISMIC_API_KEY`,
+        linkResolver,
       },
     },
   ],
