@@ -1,107 +1,248 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 
-import { Page, ContentTube, Content, Sections } from "../components/common"
+import {
+  Page,
+  ContentTube,
+  Content,
+  Sections,
+  Title,
+  mobile,
+} from "../components/common"
+import ScrollDetector from "../components/scroll-detector"
 import Meta from "../components/meta"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 import LogoSvg from "../assets/logo.svg"
+import LogoOutlineSvg from "../assets/logo-outline.svg"
 
 const IndexPage = ({
   data: {
     prismicHome: { data },
+    allPrismicPage: { edges },
   },
-}) => (
-  <Page noPadding>
-    <Meta
-      title={data.page_title.text}
-      author={data.author}
-      description={data.description.text}
-    />
+}) => {
+  const links = edges.map(it => ({
+    url: it.node.uid,
+    link: it.node.data.link,
+  }))
 
-    <Navbar />
-    <Hero>
-      <LogoSvg />
-      <Title>{data.title.text}</Title>
-      <Subtitle>{data.subtitle.text}</Subtitle>
-    </Hero>
+  return (
+    <Page noPadding>
+      <Meta
+        title={data.page_title.text}
+        author={data.author}
+        description={data.description.text}
+      />
 
-    <Sections>
-      {data.sections.map((section, index) => (
-        <section key={index} className="section">
-          <ContentTube>
-            <div className="columns reversed">
-              <SectionContent>
-                <h2 className="is-size-2">{section.section_title.text}</h2>
-                <Content html={section.section_content.html} />
-              </SectionContent>
+      <ScrollDetector render={scrolled => <Navbar hidden={!scrolled} />} />
 
-              <SectionImage>
-                <img src={section.section_image.url} alt="3d" />
-              </SectionImage>
-            </div>
-          </ContentTube>
-        </section>
-      ))}
+      <Hero>
+        <HeroTitle>
+          <LogoMain />
+          <TitleContainer>
+            <Title>{data.title.text}</Title>
+            <Subtitle>{data.subtitle.text}</Subtitle>
+          </TitleContainer>
+        </HeroTitle>
 
-      {data.body.map((slice, index) => {
-        switch (slice.slice_type) {
-          case "plain":
-            return (
-              <section key={index} className="section">
-                <ContentTube>
-                  <SliceTitle>{slice.primary.slice_title.text}</SliceTitle>
-                  <Content html={slice.primary.slice_content.html} />
-                </ContentTube>
-              </section>
-            )
-          case "repeatable_images":
-            return (
-              <section key={index} className="section has-text-centered">
-                <ContentTube>
-                  <SliceTitle>{slice.primary.slice_title.text}</SliceTitle>
+        <HeroMenu>
+          <HeroLink>
+            <Link to="/blog">Blog</Link>
+          </HeroLink>
 
-                  <div className="columns">
-                    <div className="column is-half is-offset-3">
-                      <Content html={slice.primary.slice_intro.html} />
+          {links.map((it, index) => (
+            <HeroLink key={index}>
+              <Link to={`/${it.url}`}>{it.link}</Link>
+            </HeroLink>
+          ))}
+
+          <HeroLink>
+            <Link to="/donate">Donate</Link>
+          </HeroLink>
+        </HeroMenu>
+
+        <LogoOutline />
+        <Swirl />
+      </Hero>
+
+      <Sections>
+        {data.sections.map((section, index) => (
+          <section key={index} className="section">
+            <ContentTube>
+              <div className="columns reversed">
+                <SectionContent>
+                  <h2 className="is-size-2">{section.section_title.text}</h2>
+                  <Content html={section.section_content.html} />
+                </SectionContent>
+
+                <SectionImage>
+                  <img src={section.section_image.url} alt="3d" />
+                </SectionImage>
+              </div>
+            </ContentTube>
+          </section>
+        ))}
+
+        {data.body.map((slice, index) => {
+          switch (slice.slice_type) {
+            case "plain":
+              return (
+                <section key={index} className="section">
+                  <ContentTube>
+                    <SliceTitle>{slice.primary.slice_title.text}</SliceTitle>
+                    <Content html={slice.primary.slice_content.html} />
+                  </ContentTube>
+                </section>
+              )
+            case "repeatable_images":
+              return (
+                <section key={index} className="section has-text-centered">
+                  <ContentTube>
+                    <SliceTitle>{slice.primary.slice_title.text}</SliceTitle>
+
+                    <div className="columns">
+                      <div className="column is-half is-offset-3">
+                        <Content html={slice.primary.slice_intro.html} />
+                      </div>
                     </div>
-                  </div>
 
-                  <ImageList>
-                    {slice.items.map((item, index) => (
-                      <img key={index} src={item.image.url} alt="sponsor" />
-                    ))}
-                  </ImageList>
-                </ContentTube>
-              </section>
-            )
-          case "title_image":
-            return (
-              <section key={index} className="section has-text-centered">
-                <ContentTube>
-                  <img src={slice.primary.title_image.url} alt="example" />
-                  <SliceTitle>{slice.primary.slice_title.text}</SliceTitle>
+                    <ImageList>
+                      {slice.items.map((item, index) => (
+                        <img key={index} src={item.image.url} alt="sponsor" />
+                      ))}
+                    </ImageList>
+                  </ContentTube>
+                </section>
+              )
+            case "title_image":
+              return (
+                <section key={index} className="section has-text-centered">
+                  <ContentTube>
+                    <img src={slice.primary.title_image.url} alt="example" />
+                    <SliceTitle>{slice.primary.slice_title.text}</SliceTitle>
 
-                  <div className="columns">
-                    <div className="column is-half is-offset-3">
-                      <Content html={slice.primary.slice_content.html} />
+                    <div className="columns">
+                      <div className="column is-half is-offset-3">
+                        <Content html={slice.primary.slice_content.html} />
+                      </div>
                     </div>
-                  </div>
-                </ContentTube>
-              </section>
-            )
-          default:
-            break
-        }
+                  </ContentTube>
+                </section>
+              )
+            default:
+              break
+          }
 
-        return <React.Fragment />
-      })}
-    </Sections>
+          return <React.Fragment />
+        })}
+      </Sections>
 
-    <Footer />
-  </Page>
-)
+      <Footer />
+    </Page>
+  )
+}
+
+const HeroTitle = styled.div`
+  display: flex;
+  margin: 4rem 0;
+
+  ${mobile`
+    margin-bottom: 1rem;
+    font-size: .8em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  `}
+`
+
+const Swirl = styled.div`
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  border: 5px solid rgba(0, 0, 0, 0.15);
+  height: 30rem;
+  width: 30rem;
+  top: 0;
+  left: 0;
+  transform: translate(-20%, -20%);
+
+  ${mobile`
+  display: none;
+  `}
+`
+
+const LogoMain = styled(LogoSvg)`
+  z-index: 1;
+  margin-right: 2rem;
+
+  ${mobile`
+  margin-right: 0;
+  `}
+`
+
+const LogoOutline = styled(LogoOutlineSvg)`
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  transform: translateX(20%);
+  color: rgba(0, 0, 0, 0.15);
+
+  svg {
+    fill: currentColor;
+  }
+`
+
+const TitleContainer = styled.div`
+  z-index: 1;
+
+  ${mobile`
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  `}
+`
+
+const HeroMenu = styled.ul`
+  display: flex;
+  font-size: 1.1em;
+  font-weight: bold;
+  z-index: 1;
+
+  ${mobile`
+  max-width: 80vw;
+  flex-direction: column;
+  align-items: center;
+  `}
+`
+
+const HeroLink = styled.li`
+  margin-top: 2rem;
+
+  :not(first-child) {
+    margin-left: 1.6em;
+  }
+
+  ${mobile`
+  margin-left: 0!important;
+  `}
+
+  a {
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    color: #fff;
+    transition: all 0.15s ease-in-out;
+    transition-property: background-color, color;
+
+    :hover {
+      background-color: #fff;
+      color: #7f41ef;
+    }
+  }
+`
 
 const ImageList = styled.div`
   display: flex;
@@ -124,10 +265,12 @@ const SliceTitle = styled.h2.attrs({ className: "is-size-3" })`
 const Hero = styled.header.attrs({
   className: "hero is-gradient-wine is-fullheight",
 })`
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `
 
 const SectionContent = styled.div.attrs({
@@ -162,17 +305,25 @@ const Subtitle = styled.span.attrs({
 })`
   text-align: center;
   opacity: 0.7;
-`
-
-const Title = styled.h1.attrs({
-  className: "is-size-1",
-})`
-  text-align: center;
-  margin: 1rem 0 0.5rem 0;
+  max-width: 80vw;
 `
 
 export const query = graphql`
   query {
+    allPrismicPage(sort: { fields: [data___nav_order], order: ASC }) {
+      edges {
+        node {
+          uid
+          data {
+            link
+            page_title {
+              text
+            }
+          }
+        }
+      }
+    }
+
     prismicHome {
       data {
         title {

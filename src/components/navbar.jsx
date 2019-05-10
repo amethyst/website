@@ -10,7 +10,7 @@ const NavbarContainer = styled.nav`
   position: fixed;
   display: flex;
   justify-content: center;
-  z-index: 1;
+  z-index: 10;
   left: 0;
   right: 0;
   top: 0;
@@ -44,6 +44,14 @@ const NavbarContainer = styled.nav`
       margin-right: 0.4rem;
     }
   }
+
+  transform: translateY(0);
+  transition: all .15s ease-in-out;
+  transition-property: opacity, transform;
+  ${props => props.hidden && css`
+    opacity: 0;
+    transform: translateY(-.5rem);
+  `}
 `
 
 const LinksContainer = styled.ul`
@@ -81,7 +89,7 @@ const LinksContainer = styled.ul`
     `}
 `
 
-const Navbar = ({ active }) => {
+const Navbar = ({ active, hidden }) => {
   const {
     allPrismicPage: { edges },
   } = useStaticQuery(graphql`
@@ -110,7 +118,7 @@ const Navbar = ({ active }) => {
   }))
 
   return (
-    <NavbarContainer>
+    <NavbarContainer hidden={hidden}>
       <Toggle onClick={() => setOpened(!opened)}>
         {opened && <FaTimes size="1.6em" />}
         {!opened && <FaBars size="1.6em" />}

@@ -121,3 +121,8 @@ $family-secondary: $heading-font;
         $plum 100%
     );
 }
+
+::selection {
+    background: rgba(#7F40EF, .8);
+    color: #fff;
+}

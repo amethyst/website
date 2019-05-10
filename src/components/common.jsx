@@ -50,3 +50,31 @@ export const Sections = styled.div`
     }
   }
 `
+
+const TitleBase = ({ className }) => (
+  <h1 className={className}>
+    <span class="main">Amethyst</span>
+    <span class="sub">Game Engine</span>
+  </h1>
+)
+
+export const Title = styled(TitleBase)`
+  font-size: 1.2em;
+
+  position: relative;
+  font-family: "Arvo", sans-serif;
+  padding-bottom: 1.2em;
+  margin-bottom: 0.8rem;
+
+  .main {
+    font-size: 3.2em;
+    font-weight: bold;
+  }
+
+  .sub {
+    font-size: 1.6em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+`
