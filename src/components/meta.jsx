@@ -1,14 +1,29 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
+import { useStaticQuery } from "gatsby"
 
-function Meta({ description, lang, meta, keywords, title, author }) {
+function Meta({ description, lang, meta, keywords, title, author, isHome }) {
+  const {
+    prismicCommon: { data },
+  } = useStaticQuery(graphql`
+    query {
+      prismicCommon {
+        data {
+          page_title_suffix
+        }
+      }
+    }
+  `)
+
+  const pageTitle = isHome ? title : `${title} | ${data.page_title_suffix}`
+
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={pageTitle}
       meta={[
         {
           name: `description`,
@@ -16,7 +31,7 @@ function Meta({ description, lang, meta, keywords, title, author }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: pageTitle,
         },
         {
           property: `og:description`,
@@ -28,15 +43,15 @@ function Meta({ description, lang, meta, keywords, title, author }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: description,
         },
         {
           name: `twitter:creator`,
-          content: "",
+          content: author,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: pageTitle,
         },
         {
           name: `twitter:description`,
@@ -57,6 +72,7 @@ function Meta({ description, lang, meta, keywords, title, author }) {
 }
 
 Meta.defaultProps = {
+  isHome: false,
   lang: `en`,
   meta: [],
   keywords: [],
@@ -64,6 +80,7 @@ Meta.defaultProps = {
 }
 
 Meta.propTypes = {
+  isHome: PropTypes.bool,
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
