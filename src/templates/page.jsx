@@ -2,7 +2,14 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 
-import { Page, Sections, ContentTube, Content } from "../components/common"
+import {
+  Page,
+  Sections,
+  ContentTube,
+  Content,
+  TitleSlice,
+  ContentSlice,
+} from "../components/common"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 import Meta from "../components/meta"
@@ -62,14 +69,6 @@ const PageTemplate = ({
     <Footer />
   </Page>
 )
-
-const TitleSlice = styled.section.attrs({ className: "section" })`
-  padding: 4.5rem 1.5rem;
-`
-
-const ContentSlice = styled.section.attrs({ className: "section" })`
-  padding: 3rem 1.5rem;
-`
 
 export const pageQuery = graphql`
   query PageBySlug($uid: String!) {

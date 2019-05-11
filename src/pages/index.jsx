@@ -34,7 +34,7 @@ const IndexPage = ({
         title={data.page_title.text}
         author={data.author}
         description={data.description.text}
-        isHome={true}
+        isHome
       />
 
       <ScrollDetector render={scrolled => <Navbar hidden={!scrolled} />} />

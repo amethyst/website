@@ -5,6 +5,14 @@ export const mobile = (...args) => css`
     @media (max-width: 1024px) { ${css(...args)} }
 `
 
+export const TitleSlice = styled.section.attrs({ className: "section" })`
+  padding: 4.5rem 1.5rem;
+`
+
+export const ContentSlice = styled.section.attrs({ className: "section" })`
+  padding: 3rem 1.5rem;
+`
+
 export const Page = styled.div`
     display: flex;
     flex-direction: column;

@@ -71,7 +71,7 @@ const Swirl = styled.div`
   bottom: 0;
   position: absolute;
   border-radius: 50%;
-  border: 5px solid rgba(255, 255, 255, .15);
+  border: 5px solid rgba(255, 255, 255, .08);
   width: 1em;
   height: 1em;
 `
@@ -177,7 +177,7 @@ const Footer = () => (
               <Link to="/donate">Donate</Link>
             </li>
             <li>
-              <Link to="/">Branding</Link>
+              <Link to="/brand">Branding</Link>
             </li>
           </ul>
         </Links>
