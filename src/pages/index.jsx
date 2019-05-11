@@ -149,10 +149,7 @@ const HeroTitle = styled.div`
   margin: 4rem 0;
 
   ${mobile`
-    margin-bottom: 1rem;
-    font-size: .8em;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
   `}
 `
@@ -212,9 +209,7 @@ const HeroMenu = styled.ul`
   z-index: 1;
 
   ${mobile`
-  max-width: 80vw;
-  flex-direction: column;
-  align-items: center;
+    display: none;
   `}
 `
 

@@ -14,8 +14,6 @@ const NavbarContainer = styled.nav`
   left: 0;
   right: 0;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(40, 38, 49, 0.1);
   height: 3.5rem;
 
   > * {
@@ -45,12 +43,15 @@ const NavbarContainer = styled.nav`
     }
   }
 
-  transform: translateY(0);
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(40, 38, 49, 0.1);
+
   transition: all .15s ease-in-out;
-  transition-property: opacity, transform;
+  transition-property: background-color, border;
+
   ${props => props.hidden && css`
-    opacity: 0;
-    transform: translateY(-.5rem);
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid rgba(40, 38, 49, 0);
   `}
 `
 
@@ -74,6 +75,9 @@ const LinksContainer = styled.ul`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      height: 100vh;
+      width: 100vw;
 
       li {
         font-size: 2rem;
@@ -119,13 +123,13 @@ const Navbar = ({ active, hidden }) => {
 
   return (
     <NavbarContainer hidden={hidden}>
-      <Toggle onClick={() => setOpened(!opened)}>
+      <Toggle onClick={() => setOpened(!opened)} light={hidden && !opened}>
         {opened && <FaTimes size="1.6em" />}
         {!opened && <FaBars size="1.6em" />}
       </Toggle>
 
-      <ContentTube>
-        <Link className="logo" to="/">
+      <Content hidden={hidden && !opened}>
+        <Link className="logo" to="/" hidden={hidden}>
           <LogoSvg />
           <span>Amethyst</span>
         </Link>
@@ -145,10 +149,27 @@ const Navbar = ({ active, hidden }) => {
             <Link to="/donate">Donate</Link>
           </NavLink>
         </LinksContainer>
-      </ContentTube>
+      </Content>
     </NavbarContainer>
   )
 }
+
+const Content = styled(ContentTube)`
+  opacity: 1;
+  transform: translateY(0);
+
+  transition: all .15s ease-in-out;
+  transition-property: transform, opacity;
+
+  svg {
+    z-index: 11;
+  }
+
+  ${props => props.hidden && css`
+    opacity: 0;
+    transform: translateY(-10px);
+  `}
+`
 
 const Toggle = styled.div`
   opacity: 0;
@@ -164,6 +185,10 @@ const Toggle = styled.div`
   ${mobile`
     opacity: 1;
     pointer-events: initial;
+  `}
+
+  ${props => props.light && css`
+    color: #fff;
   `}
 `
 
