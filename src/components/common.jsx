@@ -61,8 +61,8 @@ export const Sections = styled.div`
 
 const TitleBase = ({ className }) => (
   <h1 className={className}>
-    <span class="main">Amethyst</span>
-    <span class="sub">Game Engine</span>
+    <span className="main">Amethyst</span>
+    <span className="sub">Game Engine</span>
   </h1>
 )
 

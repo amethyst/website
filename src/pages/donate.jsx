@@ -8,13 +8,14 @@ import Footer from "../components/footer"
 import Meta from "../components/meta"
 
 class DonatePage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { height: 0 }
+  }
+
   donorboxListen = event => {
-    if (event.origin === "https://donorbox.org") {
-      if (event.data.src && event.data.height) {
-        let box = document.querySelector(`iframe[src="${event.data.src}"]`)
-        box.height = event.data.height + "px"
-      }
-    }
+    if (event.origin === "https://donorbox.org" && event.data.src && event.data.height)
+        this.setState({ height: event.data.height })
   }
 
   componentDidMount() {
@@ -108,8 +109,9 @@ class DonatePage extends React.Component {
                 title="donorbox-wall"
                 src="https://donorbox.org/embed/amethyst-founding?only_donor_wall=true"
                 style={{
-                  width: "100%",
-                  minWidth: "310px",
+                  width: `100%`,
+                  minWidth: `310px`,
+                  height: `${this.state.height}px`,
                 }}
                 seamless="seamless"
                 name="donorbox"
