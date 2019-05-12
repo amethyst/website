@@ -220,8 +220,10 @@ const NavLink = styled.li`
       `}
     }
 
-    &:hover::before {
-      width: 50%;
+    @media (hover) {
+      &:hover::before {
+        width: 50%;
+      }
     }
   }
 

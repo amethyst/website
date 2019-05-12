@@ -187,7 +187,7 @@ const gradientBoxes = [
   },
   {
     name: "Sunset",
-    fromTo: "mid-peach - deep-purple",
+    fromTo: "mid-peach - deep-plum",
     fromHex: "#f27ea2",
     toHex: "#a84a82",
   },
