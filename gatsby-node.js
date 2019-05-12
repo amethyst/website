@@ -39,12 +39,16 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  console.log(`got ${postsResult.data.allPrismicPost.edges.length} results`)
+
   const posts = postsResult.data.allPrismicPost.edges
   const blogTemplate = path.resolve("src/templates/blog.jsx")
   const postsPerPage = 10
   const numPages = Math.ceil(posts.length / postsPerPage)
 
   Array.from({ length: numPages }).forEach((_, i) => {
+    console.log(`creating page ${i}`)
+
     const currentPage = i + 1
     createPage({
       path: i === 0 ? `/blog` : `/blog/${currentPage}`,

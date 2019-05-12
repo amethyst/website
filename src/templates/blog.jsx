@@ -16,9 +16,9 @@ const BlogTemplate = ({
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
 
-  const prevPage =
-    currentPage - 1 === 1 ? "/blog" : (currentPage - 1).toString()
-  const nextPage = (currentPage + 1).toString()
+  const nextPage =
+    currentPage - 1 === 1 ? "/blog" : `/blog/${currentPage - 1}`
+  const prevPage = `/blog/${currentPage + 1}`
 
   return (
     <Page>
@@ -44,15 +44,15 @@ const BlogTemplate = ({
         ))}
       </Sections>
 
-      {!isFirst && !isLast && (
+      {(!isFirst || !isLast) && (
         <NextPrev>
-          {!isFirst && (
+          {!isLast && (
             <Link to={prevPage} rel="prev">
               ← Previous Page
             </Link>
           )}
 
-          {!isLast && (
+          {!isFirst && (
             <Link to={nextPage} rel="next">
               Next Page →
             </Link>
@@ -67,11 +67,11 @@ const BlogTemplate = ({
 
 const NextPrev = styled.div`
   width: 100%;
-  height: 3rem;
-  line-height: 3rem;
+  height: 5rem;
+  line-height: 5rem;
   text-align: center;
-  background-color: #3e1b93;
-  margin: 3.5rem 0;
+  background-color: #7f41ef;
+  margin: 3.5rem 0 0 0;
 
   a {
     margin: 0 1rem;
