@@ -19,7 +19,7 @@ const PostTemplate = ({
     <Page>
       <Meta
         title={data.post_title.text || ""}
-        author={data.author || ""}
+        author={data.author || "The Amethyst Engine Team"}
         description={data.intro.text || ""}
       />
 
@@ -30,7 +30,18 @@ const PostTemplate = ({
           <ContentTube>
             <h1 className="is-size-1">{data.post_title.text}</h1>
             <span>
-              Published on {date} by {data.author}
+              Published on {date}
+              {data.author_name && (
+                <span>
+                  {" "}by{" "}
+                  <a
+                    href={data.author_link.url}
+                    target={data.author_link.target}
+                  >
+                    {data.author_name}
+                  </a>
+                </span>
+              )}
             </span>
           </ContentTube>
         </Title>
@@ -68,6 +79,11 @@ export const pageQuery = graphql`
         }
         post_content {
           html
+        }
+        author_name
+        author_link {
+          url
+          target
         }
       }
     }
