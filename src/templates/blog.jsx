@@ -38,7 +38,7 @@ const BlogTemplate = ({
             <ContentTube>
               <h2 className="is-size-4">{post.node.data.post_title.text}</h2>
               <Content html={post.node.data.intro.html} />
-              <Link to={`/posts/${post.node.uid}`}>Read&hellip;</Link>
+              <Link to={`/posts/${post.node.uid}`}>Read full post&hellip;</Link>
             </ContentTube>
           </article>
         ))}
