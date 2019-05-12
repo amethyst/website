@@ -111,7 +111,17 @@ const IndexPage = ({
 
                     <ImageList>
                       {slice.items.map((item, index) => (
-                        <img key={index} src={item.image.url} alt="sponsor" />
+                        <div key={index} className="column is-one-third">
+                          <a
+                            href={item.image_link.url}
+                            target={item.image_link.target}
+                          >
+                            <img
+                              src={item.image.url}
+                              alt={`sponsor: ${item.image.alt}`}
+                            />
+                          </a>
+                        </div>
                       ))}
                     </ImageList>
                   </ContentTube>
@@ -240,13 +250,14 @@ const HeroLink = styled.li`
   }
 `
 
-const ImageList = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const ImageList = styled.div.attrs({ className: "columns is-multiline" })`
+  justify-content: center;
 
-  > img {
-    margin-top: 3rem;
+  div.column {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `
 
@@ -370,6 +381,11 @@ export const query = graphql`
             items {
               image {
                 url
+                alt
+              }
+              image_link {
+                url
+                target
               }
             }
             primary {
