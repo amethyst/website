@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { graphql } from "gatsby"
 
 import {
@@ -77,35 +77,53 @@ const BrandPage = ({
             return (
               <React.Fragment key={index}>
                 <ContentSlice>
-                  <ColorTitle>Colors</ColorTitle>
+                  <ContentTube>
+                    <ColorTitle>Colors</ColorTitle>
 
-                <ContentTube>
-                  <div className="columns is-multiline" style={{justifyContent: "center"}}>
-                    {[1, 2, 3, 4].map((color, index) => (
-                      <div class="column is-4">
-                        <ColorBox>
-                          <div style={{ backgroundColor: "#3e1b93" }}>
-                            Deeper Purple <span>#3e1b93</span>
-                          </div>
-                          <div style={{ backgroundColor: "#4f29d0" }}>
-                            Deep Purple <span>#4f29d0</span>
-                          </div>
-                          <div style={{ backgroundColor: "#7f41ef" }}>
-                            Mid Purple <span>#7f41ef</span>
-                          </div>
-                          <div style={{ backgroundColor: "#dfadff" }}>
-                            Bright Purple <span>#dfadff</span>
-                          </div>
-                        </ColorBox>
-                      </div>
-                    ))}
-                  </div>
-                </ContentTube>
+                    <ColorContainer>
+                      {colorBoxes.map((box, boxIndex) => (
+                        <div class="column is-4" key={boxIndex}>
+                          <ColorBox>
+                            {box.map(({ name, hex, text }, colorIndex) => (
+                              <div
+                                style={{ backgroundColor: hex, color: text }}
+                                key={colorIndex}
+                              >
+                                {name} <span>{hex}</span>
+                              </div>
+                            ))}
+                          </ColorBox>
+                        </div>
+                      ))}
+                    </ColorContainer>
+                  </ContentTube>
                 </ContentSlice>
 
                 <ContentSlice>
-                  <h3 className="is-size-3">Gradients</h3>
-                  <div className="columns" />
+                  <ContentTube>
+                    <ColorTitle>Gradients</ColorTitle>
+
+                    <ColorContainer>
+                      {gradientBoxes.map((box, boxIndex) => (
+                        <div class="column is-4" key={boxIndex}>
+                          <ColorBox
+                            single
+                            style={{
+                              background: `linear-gradient(45deg, ${
+                                box.fromHex
+                              } 0%, ${box.toHex} 100%)`,
+                              color: "white",
+                            }}
+                          >
+                            <div>
+                              <span>{box.name}</span>
+                              <span>({box.fromTo})</span>
+                            </div>
+                          </ColorBox>
+                        </div>
+                      ))}
+                    </ColorContainer>
+                  </ContentTube>
                 </ContentSlice>
               </React.Fragment>
             )
@@ -121,7 +139,65 @@ const BrandPage = ({
   </Page>
 )
 
-const ColorTitle = styled.h3.attrs({ className: "is-size-3" })`
+const colorBoxes = [
+  [
+    { name: "Deeper Purple", hex: "#3e1b93", text: "white" },
+    { name: "Deep Purple", hex: "#4f29d0", text: "white" },
+    { name: "Mid Purple", hex: "#7f41ef", text: "white" },
+    { name: "Bright Purple", hex: "#dfadff", text: "white" },
+  ],
+  [
+    { name: "Deeper Plum", hex: "#84286f", text: "white" },
+    { name: "Deep Plum", hex: "#a84a82", text: "white" },
+    { name: "Mid Peach", hex: "#f27ea2", text: "white" },
+    { name: "Bright Peach", hex: "#ffa6a6", text: "white" },
+  ],
+  [
+    { name: "Dark", hex: "#282631", text: "white" },
+    { name: "Alternative Dark", hex: "#2e2a39", text: "white" },
+    { name: "Light", hex: "#ffffff", text: "#282631" },
+    { name: "Alternative Light", hex: "#fafaff", text: "#282631" },
+  ],
+  [
+    { name: "Error", hex: "#e56d94", text: "#282631" },
+    { name: "Information", hex: "#79e0e6", text: "#282631" },
+    { name: "Success", hex: "#89fb89", text: "#282631" },
+    { name: "Warning", hex: "#ffeca0", text: "#282631" },
+  ],
+]
+
+const gradientBoxes = [
+  {
+    name: "Amethyst",
+    fromTo: "mid-purple - deep-purple",
+    fromHex: "#7f41ef",
+    toHex: "#4f29d0",
+  },
+  {
+    name: "Wine",
+    fromTo: "deep-plum - mid-purple",
+    fromHex: "#a84a82",
+    toHex: "#7f41ef",
+  },
+  {
+    name: "Sunrise",
+    fromTo: "deep-plum - bright-peach",
+    fromHex: "#a84a82",
+    toHex: "#ffa6a6",
+  },
+  {
+    name: "Sunset",
+    fromTo: "mid-peach - deep-purple",
+    fromHex: "#f27ea2",
+    toHex: "#a84a82",
+  },
+]
+
+const ColorContainer = styled.div.attrs({ className: "columns is-multiline" })`
+  justify-content: center;
+`
+
+const ColorTitle = styled.h2.attrs({ className: "is-size-2" })`
   margin-bottom: 2rem;
 `
 
@@ -134,18 +210,38 @@ const ColorBox = styled.div`
   border-radius: 12px;
   box-shadow: 0 0.5rem 2rem 0 rgba(79, 41, 208, 0.2);
 
-  div {
-    height: 3rem;
-    line-height: 3rem;
-    padding: 0 1rem;
-    color: white;
-    display: flex;
-    justify-content: space-between;
+  ${props =>
+    !props.single &&
+    css`
+      div {
+        height: 3rem;
+        line-height: 3rem;
+        padding: 0 1rem;
+        color: white;
+        display: flex;
+        justify-content: space-between;
 
-    span {
-      font-size: 0.8em;
-    }
-  }
+        span {
+          font-size: .8em;
+        }
+      }
+    `}
+
+  ${props =>
+    props.single &&
+    css`
+      div {
+        height: 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        span:last-child {
+          font-size: .8em;
+        }
+      }
+    `}
 `
 
 const FileDescription = styled.div.attrs({ className: "column is-7" })`
