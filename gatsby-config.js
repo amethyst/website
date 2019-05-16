@@ -49,13 +49,20 @@ module.exports = {
         icon: `src/assets/logo-filled.svg`,
       },
     },
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `amethyst`,
         accessToken: `${process.env.PRISMIC_API_KEY}`,
         linkResolver,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `${process.env.GOOGLE_ANALYTICS_ID}`,
+        head: true,
       },
     },
   ],
