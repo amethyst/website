@@ -17,12 +17,12 @@ const BlogTemplate = ({
   const isLast = currentPage === numPages
 
   const nextPage =
-    currentPage - 1 === 1 ? "/blog" : `/blog/${currentPage - 1}`
-  const prevPage = `/blog/${currentPage + 1}`
+    currentPage - 1 === 1 ? "/news" : `/news/${currentPage - 1}`
+  const prevPage = `/news/${currentPage + 1}`
 
   return (
     <Page>
-      <Meta title="Blog" author="Me" description="desc" />
+      <Meta title="News" author="The Amethyst Team" description="desc" />
 
       <Navbar active="blog" />
 

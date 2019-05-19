@@ -38,3 +38,6 @@ from = "/docs/master/doc/amethyst/*"
 to = "https://docs-src.amethyst.rs/master/amethyst/:splat"
 status = 301
 
+[[redirects]]
+from = "/blog/*"
+to = "/posts/:splat"

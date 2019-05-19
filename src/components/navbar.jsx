@@ -136,7 +136,7 @@ const Navbar = ({ active, hidden }) => {
 
         <LinksContainer opened={opened}>
           <NavLink active={active === "blog"}>
-            <Link to="/blog">Blog</Link>
+            <Link to="/news">Blog</Link>
           </NavLink>
 
           {links.map((it, index) => (
