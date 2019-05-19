@@ -50,7 +50,7 @@ const IndexPage = ({
 
         <HeroMenu>
           <HeroLink>
-            <Link to="/blog">Blog</Link>
+            <Link to="/news">Blog</Link>
           </HeroLink>
 
           {links.map((it, index) => (
