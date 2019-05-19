@@ -30,7 +30,7 @@ status = 301
 
 [[redirects]]
 from = "/doc/master/doc/*"
-to = "https://docs-src.amethyst.rs/master/*"
+to = "https://docs-src.amethyst.rs/master/:splat"
 status = 301
 
 [[redirects]]
