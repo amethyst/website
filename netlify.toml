@@ -9,13 +9,13 @@ to = "https://book.amethyst.rs/stable/:splat"
 status = 301
 
 [[redirects]]
-from = "/doc/latest/doc/amethyst"
-to = "https://docs-src.amethyst.rs/stable/amethyst/"
+from = "/doc/latest/doc"
+to = "https://docs-src.amethyst.rs/stable/"
 status = 301
 
 [[redirects]]
-from = "/doc/latest/doc/amethyst/*"
-to = "https://docs-src.amethyst.rs/stable/amethyst/:splat"
+from = "/doc/latest/doc/*"
+to = "https://docs-src.amethyst.rs/stable/:splat"
 status = 301
 
 [[redirects]]
@@ -29,13 +29,13 @@ to = "https://book.amethyst.rs/master/:splat"
 status = 301
 
 [[redirects]]
-from = "/doc/master/doc/amethyst"
-to = "https://docs-src.amethyst.rs/master/amethyst/"
+from = "/doc/master/doc/*"
+to = "https://docs-src.amethyst.rs/master/*"
 status = 301
 
 [[redirects]]
-from = "/doc/master/doc/amethyst/*"
-to = "https://docs-src.amethyst.rs/master/amethyst/:splat"
+from = "/doc/master/doc/*"
+to = "https://docs-src.amethyst.rs/master/:splat"
 status = 301
 
 [[redirects]]
