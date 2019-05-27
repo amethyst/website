@@ -10,11 +10,11 @@ import Meta from "../components/meta"
 
 const PostTemplate = ({
   data: {
-    prismicPost: { data },
+    prismicPost: { data, first_publication_date },
   },
 }) => {
-  const date = moment(data.first_publication_date).format("MMM Do YYYY")
-
+  const date = moment(first_publication_date).format("MMM Do YYYY")
+  
   return (
     <Page>
       <Meta
