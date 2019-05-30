@@ -41,3 +41,7 @@ status = 301
 [[redirects]]
 from = "/blog/*"
 to = "/posts/:splat"
+
+[[redirects]]
+from = "/assets/amethyst.svg"
+to = "https://amethyst.cdn.prismic.io/amethyst%2F3fbe7dbd-1352-45f4-b2cf-cfa99f852e0a_logo-filled.svg"
