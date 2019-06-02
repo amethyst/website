@@ -10,10 +10,10 @@ import Meta from "../components/meta"
 
 const PostTemplate = ({
   data: {
-    prismicPost: { data, first_publication_date },
+    prismicPost: { data },
   },
 }) => {
-  const date = moment(first_publication_date).format("MMM Do YYYY")
+  const date = moment(data.published).format("MMM Do YYYY")
   
   return (
     <Page>
@@ -69,8 +69,8 @@ const Article = styled.article.attrs({ className: "section" })`
 export const pageQuery = graphql`
   query PostBySlug($uid: String!) {
     prismicPost(uid: { eq: $uid }) {
-      first_publication_date
       data {
+        published
         post_title {
           text
         }

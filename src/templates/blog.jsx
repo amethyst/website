@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
+import * as moment from "moment"
 
 import { Page, Content, Sections, ContentTube } from "../components/common"
 import Navbar from "../components/navbar"
@@ -36,6 +37,7 @@ const BlogTemplate = ({
         {edges.map((post, index) => (
           <article className="section" key={index}>
             <ContentTube>
+              <DateHeader>{moment(post.node.data.published).format("YYYY/MM/DD")}</DateHeader>
               <h2 className="is-size-4">{post.node.data.post_title.text}</h2>
               <Content html={post.node.data.intro.html} />
               <Link to={`/posts/${post.node.uid}`}>Read full post&hellip;</Link>
@@ -65,6 +67,11 @@ const BlogTemplate = ({
   )
 }
 
+const DateHeader = styled.h3`
+  opacity: .5;
+  font-size: .95em;
+`
+
 const NextPrev = styled.div`
   width: 100%;
   height: 5rem;
@@ -86,7 +93,7 @@ const NextPrev = styled.div`
 export const blogListQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
     allPrismicPost(
-      sort: { fields: [first_publication_date], order: DESC }
+      sort: { fields: [data___published], order: DESC }
       limit: $limit
       skip: $skip
     ) {
@@ -94,6 +101,7 @@ export const blogListQuery = graphql`
         node {
           uid
           data {
+            published
             post_title {
               text
             }
