@@ -29,7 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postsResult = await graphql(`
     {
-      allPrismicPost(sort: { fields: [first_publication_date], order: DESC }) {
+      allPrismicPost(sort: { fields: [data___published], order: DESC }) {
         edges {
           node {
             uid
