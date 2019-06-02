@@ -39,6 +39,14 @@ to = "https://docs-src.amethyst.rs/master/:splat"
 status = 301
 
 [[redirects]]
+from = "/posts/"
+to = "/news/"
+
+[[redirects]]
+from = "/posts"
+to = "/news"
+
+[[redirects]]
 from = "/blog/*"
 to = "/posts/:splat"
 
