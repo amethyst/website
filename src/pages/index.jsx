@@ -20,6 +20,7 @@ import LogoOutlineSvg from "../assets/logo-outline.svg"
 const IndexPage = ({
   data: {
     prismicHome: { data },
+    prismicCommon: common,
     allPrismicPage: { edges },
   },
 }) => {
@@ -27,6 +28,9 @@ const IndexPage = ({
     url: it.node.uid,
     link: it.node.data.link,
   }))
+
+  const newsFlash = common.data.news_flash.text.replace(" ", "")
+  const shouldRenderNewsFlash = newsFlash.length > 0
 
   return (
     <Page noPadding>
@@ -63,6 +67,13 @@ const IndexPage = ({
             <Link to="/donate">Donate</Link>
           </HeroLink>
         </HeroMenu>
+
+        {shouldRenderNewsFlash && (
+          <NewsFlash>
+            <img src={common.data.news_flash_icon.url} alt="news" />
+            <Content html={common.data.news_flash.html} />
+          </NewsFlash>
+        )}
 
         <LogoOutline />
         <Swirl />
@@ -154,6 +165,37 @@ const IndexPage = ({
     </Page>
   )
 }
+
+const NewsFlash = styled.div.attrs({ className: "box" })`
+  width: 30rem;
+  z-index: 1;
+  display: flex;
+  transform: translateY(10rem);
+
+  img {
+    height: 100%;
+    max-height: 100px;
+    max-width: 100px;
+    margin-right: 1rem;
+  }
+
+  ${mobile`
+    position: relative;
+    max-width: 90vw;
+    flex-direction: column;
+    align-items: center;
+    justify-contents: center;
+    transform: none;
+
+    img {
+      opacity: 0.3;
+      position: absolute;
+      height: auto;
+      z-index: 0;
+      width: 5rem;
+    }
+  `}
+`
 
 const HeroTitle = styled.div`
   display: flex;
@@ -327,6 +369,18 @@ export const query = graphql`
               text
             }
           }
+        }
+      }
+    }
+
+    prismicCommon {
+      data {
+        news_flash {
+          html
+          text
+        }
+        news_flash_icon {
+          url
         }
       }
     }
