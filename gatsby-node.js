@@ -17,7 +17,9 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   const pageTemplate = path.resolve("src/templates/page.jsx")
-  pages.data.allPrismicPage.edges.forEach(({ node: page }) => {
+  pages.data.allPrismicPage.edges
+    .filter(({ node: page }) => page.uid !== "team")
+    .forEach(({ node: page }) => {
     createPage({
       path: `/${page.uid}`,
       component: pageTemplate,

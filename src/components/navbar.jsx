@@ -139,7 +139,11 @@ const Navbar = ({ active, hidden }) => {
             <Link to="/news">Blog</Link>
           </NavLink>
 
-          {links.map((it, index) => (
+          <NavLink active={active === "team"}>
+            <Link to="/team">Blog</Link>
+          </NavLink>
+
+          {links.filter(it => it.link!="Team").map((it, index) => (
             <NavLink key={index} active={active === it.url}>
               <Link to={`/${it.url}`}>{it.link}</Link>
             </NavLink>
