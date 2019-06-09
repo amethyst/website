@@ -167,16 +167,19 @@ const IndexPage = ({
 }
 
 const NewsFlash = styled.div.attrs({ className: "box" })`
-  width: 30rem;
+  font-size: 0.85rem;
+  width: 30em;
   z-index: 1;
   display: flex;
   position: absolute;
   bottom: 0;
+  align-items: center;
+  justify-contents: center;
 
   img {
     height: 100%;
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 150px;
+    max-width: 150px;
     margin-right: 1rem;
   }
 
@@ -184,8 +187,6 @@ const NewsFlash = styled.div.attrs({ className: "box" })`
     position: relative;
     max-width: 90vw;
     flex-direction: column;
-    align-items: center;
-    justify-contents: center;
     transform: none;
 
     img {
