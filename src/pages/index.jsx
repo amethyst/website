@@ -199,7 +199,7 @@ const NewsFlash = styled.div.attrs({ className: "box" })`
 
 const HeroTitle = styled.div`
   display: flex;
-  margin: 4rem 0;
+  margin: 4rem 0 2rem 0;
 
   ${mobile`
     flex-direction: column;
