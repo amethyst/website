@@ -170,7 +170,8 @@ const NewsFlash = styled.div.attrs({ className: "box" })`
   width: 30rem;
   z-index: 1;
   display: flex;
-  transform: translateY(10rem);
+  position: absolute;
+  bottom: 0;
 
   img {
     height: 100%;
