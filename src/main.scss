@@ -1,14 +1,15 @@
 @charset "utf-8";
 
 @import "~normalize-scss/sass/normalize";
-@import url('https://fonts.googleapis.com/css?family=Arvo|Karla');
+@import url("https://fonts.googleapis.com/css?family=Arvo");
+@import url("https://rsms.me/inter/inter.css");
 
 @include normalize();
 
-$body-font: 'Karla', sans-serif;
+$body-font: "Inter", sans-serif;
 $body-font-size: 1.1rem;
 
-$heading-font: 'Arvo', serif;
+$heading-font: "Arvo", serif;
 $heading-1: 2.4rem;
 $heading-2: 2rem;
 $heading-3: 1.5rem;
@@ -78,57 +79,52 @@ $family-secondary: $heading-font;
 .is-size-4,
 .is-size-5,
 .is-size-6 {
-    font-family: $heading-font;
+  font-family: $heading-font;
 }
 
 .content {
-    h1, h2, h3, h4, h5, h6 {
-        font-family: $heading-font;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $heading-font;
+  }
 }
 
 @import "~bulma/bulma";
 
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
 // Gradients
 .is-gradient-amethyst {
-    color: #fff;
-    background: $purple-dark;
-    background: linear-gradient(
-        45deg,
-        $purple 0%,
-        $purple-dark 100%
-    );
+  color: #fff;
+  background: $purple-dark;
+  background: linear-gradient(45deg, $purple 0%, $purple-dark 100%);
 }
 
 .is-gradient-wine {
-    color: #fff;
-    background: $plum;
-    background: linear-gradient(
-        45deg,
-        $plum 0%,
-        $purple 100%
-    );
+  color: #fff;
+  background: $plum;
+  background: linear-gradient(45deg, $plum 0%, $purple 100%);
 }
 
 .is-gradient-sunrise {
-    background: $peach;
-    background: linear-gradient(
-        45deg,
-        $plum 0%,
-        $peach-light 100%
-    );
+  background: $peach;
+  background: linear-gradient(45deg, $plum 0%, $peach-light 100%);
 }
 
 .is-gradient-sunset {
-    background: $plum;
-    background: linear-gradient(
-        45deg,
-        $peach 0%,
-        $plum 100%
-    );
+  background: $plum;
+  background: linear-gradient(45deg, $peach 0%, $plum 100%);
 }
 
 ::selection {
-    background: rgba(#7F40EF, .8);
-    color: #fff;
+  background: rgba(#7f40ef, 0.8);
+  color: #fff;
 }
