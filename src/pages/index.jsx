@@ -174,20 +174,18 @@ const NewsFlash = styled.div.attrs({ className: "box" })`
   position: absolute;
   bottom: 0;
   align-items: center;
-  justify-contents: center;
+  justify-content: center;
 
   img {
-    height: 100%;
-    max-height: 150px;
-    max-width: 150px;
+    height: 5em;
+    max-height: 100%;
+    max-width: 5em;
     margin-right: 1rem;
   }
 
   ${mobile`
     position: relative;
     max-width: 90vw;
-    flex-direction: column;
-    transform: none;
 
     img {
       opacity: 0.3;
