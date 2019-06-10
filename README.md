@@ -6,3 +6,7 @@ It's built using [gatsby.js](https://gatsbyjs.org) and [bulma](https://bulma.io)
 ## Development
 
 If you want to run the website locally, just clone the repo, run `npm install` and then `npm start` or `npm run develop` to start the local development server. No environment variables are needed since the prismic repository is public due to our open source plan.
+
+## Docs and Book
+
+The documentation and book have moved out of the website repository and can now be found at the subdomains [docs.amethyst.rs](https://docs.amethyst.rs) and [book.amethyst.rs](https://book.amethyst.rs). If you're interested in how they're built and deployed, you can check out [amethyst-docs-builder](https://github.com/amethyst/amethyst-docs-builder), the service that makes sure they're up to date.
