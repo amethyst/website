@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["BackendVariant",""],["Mesh","Mesh wrapper."],["Texture","Texture wrapper."]],"struct":[["MeshData",""],["TextureData",""]],"trait":[["Backend",""]],"type":[["DefaultBackend",""]]});

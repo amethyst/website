@@ -1,0 +1,441 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Prefabs in Amethyst - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../concepts/state.html"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../concepts/entity_and_component.html"><strong aria-hidden="true">3.2.</strong> Entity and Component</a></li><li><a href="../concepts/resource.html"><strong aria-hidden="true">3.3.</strong> Resource</a></li><li><a href="../concepts/world.html"><strong aria-hidden="true">3.4.</strong> World</a></li><li><a href="../concepts/system.html"><strong aria-hidden="true">3.5.</strong> System</a></li><li><a href="../concepts/dispatcher.html"><strong aria-hidden="true">3.6.</strong> Dispatcher</a></li><li><a href="../concepts/event-channel.html"><strong aria-hidden="true">3.7.</strong> Event Channel</a></li></ol></li><li><a href="../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../pong-tutorial/pong-tutorial-01.html"><strong aria-hidden="true">4.1.</strong> Creating a Window</a></li><li><a href="../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-03.html"><strong aria-hidden="true">4.3.</strong> Moving the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-04.html"><strong aria-hidden="true">4.4.</strong> Making a Ball Move and Bounce</a></li><li><a href="../pong-tutorial/pong-tutorial-05.html"><strong aria-hidden="true">4.5.</strong> Winning Rounds and Keeping Score</a></li><li><a href="../pong-tutorial/contribution.html"><strong aria-hidden="true">4.6.</strong> Call for Contribution</a></li></ol></li><li><a href="../math.html"><strong aria-hidden="true">5.</strong> Math</a></li><li><a href="../assets.html"><strong aria-hidden="true">6.</strong> Assets</a></li><li><ol class="section"><li><a href="../assets/formats.html"><strong aria-hidden="true">6.1.</strong> Formats</a></li><li><a href="../assets/how_to_use_assets.html"><strong aria-hidden="true">6.2.</strong> How to Use Assets</a></li><li><a href="../assets/how_to_define_custom_assets.html"><strong aria-hidden="true">6.3.</strong> How to Define Custom Assets</a></li><li><a href="../assets/how_to_define_custom_formats.html"><strong aria-hidden="true">6.4.</strong> How to Define Custom Formats</a></li></ol></li><li><a href="../prefabs.html"><strong aria-hidden="true">7.</strong> Prefabs</a></li><li><ol class="section"><li><a href="../prefabs/prefabs_in_amethyst.html" class="active"><strong aria-hidden="true">7.1.</strong> Prefabs in Amethyst</a></li><li><a href="../prefabs/how_to_define_prefabs_prelude.html"><strong aria-hidden="true">7.2.</strong> How to Define Prefabs: Prelude</a></li><li><a href="../prefabs/how_to_define_prefabs_simple.html"><strong aria-hidden="true">7.3.</strong> How to Define Prefabs: Simple</a></li><li><a href="../prefabs/how_to_define_prefabs_aggregate.html"><strong aria-hidden="true">7.4.</strong> How to Define Prefabs: Aggregate</a></li><li><a href="../prefabs/how_to_define_prefabs_adapter.html"><strong aria-hidden="true">7.5.</strong> How to Define Prefabs: Adapter</a></li><li><a href="../prefabs/how_to_define_prefabs_asset.html"><strong aria-hidden="true">7.6.</strong> How to Define Prefabs: Asset</a></li><li><a href="../prefabs/how_to_define_prefabs_multi_handle.html"><strong aria-hidden="true">7.7.</strong> How to Define Prefabs: Multi-Handle</a></li><li><a href="../prefabs/prefabs_technical_explanation.html"><strong aria-hidden="true">7.8.</strong> Prefabs Technical Explanation</a></li></ol></li><li><a href="../animation.html"><strong aria-hidden="true">8.</strong> Animation</a></li><li><ol class="section"><li><a href="../animation/interpolation.html"><strong aria-hidden="true">8.1.</strong> Interpolation</a></li><li><a href="../animation/channel.html"><strong aria-hidden="true">8.2.</strong> Channel</a></li><li><a href="../animation/sampler.html"><strong aria-hidden="true">8.3.</strong> Sampler</a></li><li><a href="../animation/definition.html"><strong aria-hidden="true">8.4.</strong> Definition</a></li></ol></li><li><a href="../controlling_system_execution.html"><strong aria-hidden="true">9.</strong> Controlling System Execution</a></li><li><ol class="section"><li><a href="../controlling_system_execution/custom_game_data.html"><strong aria-hidden="true">9.1.</strong> Custom GameData</a></li><li><a href="../controlling_system_execution/state-specific_dispatcher.html"><strong aria-hidden="true">9.2.</strong> State-specific Dispatcher</a></li><li><a href="../controlling_system_execution/pausable_systems.html"><strong aria-hidden="true">9.3.</strong> Pausable Systems</a></li></ol></li><li><a href="../sprites.html"><strong aria-hidden="true">10.</strong> Sprites</a></li><li><ol class="section"><li><a href="../sprites/set_up_the_render_pass.html"><strong aria-hidden="true">10.1.</strong> Set Up The Render Pass</a></li><li><a href="../sprites/load_the_texture.html"><strong aria-hidden="true">10.2.</strong> Load The Texture</a></li><li><a href="../sprites/display_the_texture.html"><strong aria-hidden="true">10.3.</strong> Display The Texture</a></li><li><a href="../sprites/define_the_sprite_sheet.html"><strong aria-hidden="true">10.4.</strong> Define The SpriteSheet</a></li><li><a href="../sprites/sprite_render_component.html"><strong aria-hidden="true">10.5.</strong> SpriteRender Component</a></li><li><a href="../sprites/orthographic_camera.html"><strong aria-hidden="true">10.6.</strong> Orthographic Camera</a></li></ol></li><li><a href="../testing.html"><strong aria-hidden="true">11.</strong> Testing</a></li><li><ol class="section"><li><a href="../testing/test_examples.html"><strong aria-hidden="true">11.1.</strong> Test Examples</a></li></ol></li><li><a href="../glossary.html"><strong aria-hidden="true">12.</strong> Glossary</a></li><li><a href="../appendices/a_config_files.html"><strong aria-hidden="true">13.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">13.1.</strong> Adding an Arena Config</a></li><li><a href="../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">13.2.</strong> Adding a Ball Config</a></li><li><a href="../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">13.3.</strong> Adding Paddle Configs</a></li></ol></li><li><a href="../appendices/b_migration_notes.html"><strong aria-hidden="true">14.</strong> Appendix B: Migration Notes</a></li><li><ol class="section"><li><a href="../appendices/b_migration_notes/cgmath_to_nalgebra.html"><strong aria-hidden="true">14.1.</strong> cgmath to nalgebra</a></li><li><a href="../appendices/b_migration_notes/transform_api_changes.html"><strong aria-hidden="true">14.2.</strong> Transform API Changes</a></li></ol></li><li><a href="../appendices/c_feature_gates.html"><strong aria-hidden="true">15.</strong> Appendix C: Feature Gates</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#prefabs-in-amethyst" id="prefabs-in-amethyst"><h1>Prefabs in Amethyst</h1></a>
+<blockquote>
+<p><strong>Note:</strong> This page assumes you have read and understood <a href="../assets.html">assets</a>.</p>
+</blockquote>
+<p>Many game engines – including Amethyst – treat prefabs as <a href="../assets.html">assets</a>, and so they are usually stored as files and loaded at runtime. After loading the asset(s), prefabs have additional processing to turn them into <a href="https://docs-src.amethyst.rs/stable/specs/trait.Component.html"><code>Component</code></a>s and attach them to entities.</p>
+<a class="header" href="#representation" id="representation"><h2>Representation</h2></a>
+<p>There are two representations of a prefab:</p>
+<ul>
+<li>Stored representation, distributed alongside the application.</li>
+<li>Loaded representation, used at runtime to instantiate entities with components.</li>
+</ul>
+<p>The remainder of this page explains these at a conceptual level; subsequent pages contain guides on how Amethyst applies this at a code level.</p>
+<a class="header" href="#the-basics" id="the-basics"><h3>The Basics</h3></a>
+<blockquote>
+<p><strong>Note:</strong> The prefab examples on this page include the <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/trait.PrefabData.html#impl-PrefabData%3C%27a%3E"><code>PrefabData</code></a> type names. These are written out for clarity. However, as per the RON specification, these are not strictly required.</p>
+</blockquote>
+<p>In its stored form, a prefab is a serialized list of entities and their components that should be instantiated together. To begin, we will look at a simple prefab that attaches a simple component to a single entity. We will use the following <code>Position</code> component:</p>
+<pre><code class="language-rust edition2018 no_run noplaypen"># extern crate amethyst;
+# extern crate derivative;
+# extern crate serde;
+# extern crate specs_derive;
+#
+# use amethyst::{
+#     assets::{Prefab, PrefabData},
+#     derive::PrefabData,
+#     ecs::{
+#         storage::DenseVecStorage,
+#         Component, Entity, WriteStorage,
+#     },
+#     prelude::*,
+#     Error,
+# };
+# use derivative::Derivative;
+# use serde::{Deserialize, Serialize};
+# use specs_derive::Component;
+#
+#[derive(Clone, Copy, Component, Debug, Default, Deserialize, Serialize, PrefabData)]
+#[prefab(Component)]
+# #[serde(deny_unknown_fields)]
+pub struct Position(pub f32, pub f32, pub f32);
+</code></pre>
+<p>The important derives are the <a href="https://docs-src.amethyst.rs/stable/specs/trait.Component.html"><code>Component</code></a> and <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/trait.PrefabData.html#impl-PrefabData%3C%27a%3E"><code>PrefabData</code></a> – <a href="https://docs-src.amethyst.rs/stable/specs/trait.Component.html"><code>Component</code></a> means it can be attached to an entity; <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/trait.PrefabData.html#impl-PrefabData%3C%27a%3E"><code>PrefabData</code></a> means it can be loaded as part of a prefab. The <code>#[prefab(Component)]</code> attribute informs the <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/trait.PrefabData.html#impl-PrefabData%3C%27a%3E"><code>PrefabData</code></a> derive that this type is a <a href="https://docs-src.amethyst.rs/stable/specs/trait.Component.html"><code>Component</code></a>, as opposed to being composed of fields which implement <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/trait.PrefabData.html#impl-PrefabData%3C%27a%3E"><code>PrefabData</code></a>. This will only be important when implementing a custom prefab.</p>
+<p>Here is an example <code>.ron</code> file of a prefab with an entity with a <code>Position</code>:</p>
+<pre><code class="language-rust ignore">#![enable(implicit_some)]
+Prefab(
+    entities: [
+        PrefabEntity(
+            // parent: None // Optional
+            data: Position(1.0, 2.0, 3.0),
+        ),
+    ],
+)
+</code></pre>
+<p>The top level type is a <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/struct.Prefab.html"><code>Prefab</code></a>, and holds a list of <code>entities</code>. These are not the <a href="https://docs-src.amethyst.rs/stable/specs/struct.Entity.html"><code>Entity</code></a> type used at runtime, but the <a href="https://github.com/amethyst/amethyst/blob/v0.10.0/amethyst_assets/src/prefab/mod.rs#L110-L115"><code>PrefabEntity</code></a> type – a template for what <a href="https://docs-src.amethyst.rs/stable/specs/trait.Component.html"><code>Component</code></a>s to attach to entities at runtime. Each of these holds two pieces of information:</p>
+<ul>
+<li>
+<p><code>data</code>: Specifies the <a href="https://docs-src.amethyst.rs/stable/specs/trait.Component.html"><code>Component</code></a>s to attach to the entity.</p>
+<p>This must be a type that implements <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/trait.PrefabData.html#impl-PrefabData%3C%27a%3E"><code>PrefabData</code></a>. When this prefab is instantiated, it will attach a <code>Position</code> component to the entity.</p>
+</li>
+<li>
+<p><code>parent</code>: (Optional) index of this entity's <a href="https://docs-src.amethyst.rs/stable/amethyst_core/transform/components/struct.Parent.html"><code>Parent</code></a> entity. The value is the index of the parent entity which resides within this prefab file.</p>
+</li>
+</ul>
+<p>When we load this prefab, the prefab entity is read as:</p>
+<pre><code class="language-rust ignore">PrefabEntity { parent: None, data: Some(Position(1.0, 2.0, 3.0)) }
+</code></pre>
+<p>Next, we create an entity with the prefab handle, <code>Handle&lt;Prefab&lt;Position&gt;&gt;</code>:</p>
+<table><thead><tr><th> Entity                   </th><th> Handle&lt;Prefab&lt;Position&gt;&gt; </th></tr></thead><tbody>
+<tr><td> Entity(0, Generation(1)) </td><td> Handle { id: 0 }         </td></tr>
+</tbody></table>
+<p>In the background, the <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/struct.PrefabLoaderSystem.html"><code>PrefabLoaderSystem</code></a> will run, and attach the <code>Position</code> component:</p>
+<table><thead><tr><th> Entity                   </th><th> Handle&lt;Prefab&lt;Position&gt;&gt; </th><th> Position                </th></tr></thead><tbody>
+<tr><td> Entity(0, Generation(1)) </td><td> Handle { id: 0 }         </td><td> Position(1.0, 2.0, 3.0) </td></tr>
+</tbody></table>
+<p>This can be seen by running the <code>prefab_basic</code> example from the Amethyst repository:</p>
+<pre><code class="language-bash">cargo run --example prefab_basic
+</code></pre>
+<a class="header" href="#multiple-components" id="multiple-components"><h3>Multiple Components</h3></a>
+<p>If there are multiple components to be attached to the entity, then we need a type that aggregates the <a href="https://docs-src.amethyst.rs/stable/specs/trait.Component.html"><code>Component</code></a>s:</p>
+<pre><code class="language-rust edition2018 no_run noplaypen"># extern crate amethyst;
+# extern crate derivative;
+# extern crate serde;
+# extern crate specs_derive;
+#
+# use amethyst::{
+#     assets::{Prefab, PrefabData, ProgressCounter},
+#     core::Named,
+#     derive::PrefabData,
+#     ecs::{
+#         storage::{DenseVecStorage, VecStorage},
+#         Component, Entity, WriteStorage,
+#     },
+#     prelude::*,
+#     Error,
+# };
+# use derivative::Derivative;
+# use serde::{Deserialize, Serialize};
+# use specs_derive::Component;
+#
+# #[derive(Clone, Copy, Component, Debug, Default, Deserialize, Serialize, PrefabData)]
+# #[prefab(Component)]
+# #[serde(deny_unknown_fields)]
+# pub struct Position(pub f32, pub f32, pub f32);
+#
+#[derive(Debug, Deserialize, Serialize, PrefabData)]
+# #[serde(deny_unknown_fields)]
+pub struct Player {
+    player: Named,
+    position: Position,
+}
+</code></pre>
+<p>Here, the <code>Player</code> type is <strong>not</strong> a <a href="https://docs-src.amethyst.rs/stable/specs/trait.Component.html"><code>Component</code></a>, but it does implement <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/trait.PrefabData.html#impl-PrefabData%3C%27a%3E"><code>PrefabData</code></a>. Each of its fields is a <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/trait.PrefabData.html#impl-PrefabData%3C%27a%3E"><code>PrefabData</code></a> as well as a <a href="https://docs-src.amethyst.rs/stable/specs/trait.Component.html"><code>Component</code></a>.</p>
+<p>The corresponding prefab file is written as follows:</p>
+<pre><code class="language-rust ignore">#![enable(implicit_some)]
+Prefab(
+    entities: [
+        PrefabEntity(
+            data: Player(
+                player: Named(name: &quot;Zero&quot;),
+                position: Position(1.0, 2.0, 3.0),
+            ),
+        ),
+    ],
+)
+</code></pre>
+<p>When an entity is created with this prefab, Amethyst will recurse into each of the prefab data fields – <a href="https://docs-src.amethyst.rs/stable/amethyst_core/struct.Named.html"><code>Named</code></a> and <code>Position</code> – to attach their respective components to the entity.</p>
+<p>Now, when we create an entity with the prefab handle, both components will be attached:</p>
+<table><thead><tr><th> Handle&lt;Prefab&lt;Player&gt;&gt; </th><th> Position                </th><th> Player                 </th></tr></thead><tbody>
+<tr><td> Handle { id: 0 }       </td><td> Position(1.0, 2.0, 3.0) </td><td> Named { name: &quot;Zero&quot; } </td></tr>
+</tbody></table>
+<p>This can be seen by running the <code>prefab_multi</code> example from the Amethyst repository:</p>
+<pre><code class="language-bash">cargo run --example prefab_multi
+</code></pre>
+<a class="header" href="#multiple-entities-different-components" id="multiple-entities-different-components"><h3>Multiple Entities, Different Components</h3></a>
+<p>The next level is to instantiate multiple entities, each with their own set of <a href="https://docs-src.amethyst.rs/stable/specs/trait.Component.html"><code>Component</code></a>s. The current implementation of <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/struct.Prefab.html"><code>Prefab</code></a> requires the <code>data</code> field to be the same type for <em>every</em> <a href="https://github.com/amethyst/amethyst/blob/v0.10.0/amethyst_assets/src/prefab/mod.rs#L110-L115"><code>PrefabEntity</code></a> in the list. This means that to have different types of entity in the same prefab they must be variants of an enum. For instance, a prefab like this:</p>
+<pre><code class="language-rust ignore">#![enable(implicit_some)]
+Prefab(
+    entities: [
+        // Player
+        PrefabEntity(
+            data: Player(
+                player: Named(name: &quot;Zero&quot;),
+                position: Position(1.0, 2.0, 3.0),
+            ),
+        ),
+        // Weapon
+        PrefabEntity(
+            parent: 0,
+            data: Weapon(
+                weapon_type: Sword,
+                position: Position(4.0, 5.0, 6.0),
+            ),
+        ),
+    ],
+)
+</code></pre>
+<p>Could be implemented using an enum like this:</p>
+<pre><code class="language-rust edition2018 no_run noplaypen"># extern crate amethyst;
+# extern crate derivative;
+# extern crate serde;
+# extern crate specs_derive;
+#
+# use amethyst::{
+#     assets::{Prefab, PrefabData, ProgressCounter},
+#     core::Named,
+#     derive::PrefabData,
+#     ecs::{
+#         storage::{DenseVecStorage, VecStorage},
+#         Component, Entity, WriteStorage,
+#     },
+#     prelude::*,
+#     utils::application_root_dir,
+#     Error,
+# };
+# use derivative::Derivative;
+# use serde::{Deserialize, Serialize};
+# use specs_derive::Component;
+#
+# #[derive(Clone, Copy, Component, Debug, Default, Deserialize, Serialize, PrefabData)]
+# #[prefab(Component)]
+# #[serde(deny_unknown_fields)]
+# pub struct Position(pub f32, pub f32, pub f32);
+#
+#[derive(Clone, Copy, Component, Debug, Derivative, Deserialize, Serialize, PrefabData)]
+#[derivative(Default)]
+#[prefab(Component)]
+#[storage(VecStorage)]
+pub enum Weapon {
+    #[derivative(Default)]
+    Axe,
+    Sword,
+}
+
+#[derive(Debug, Deserialize, Serialize, PrefabData)]
+#[serde(deny_unknown_fields)]
+pub enum CustomPrefabData {
+    Player {
+        name: Named,
+        position: Option&lt;Position&gt;,
+    },
+    Weapon {
+        weapon_type: Weapon,
+        position: Option&lt;Position&gt;,
+    },
+}
+
+</code></pre>
+<p>When we run this, we start off by creating one entity:</p>
+<table><thead><tr><th> Entity                   </th><th> Handle&lt;Prefab&lt;CustomPrefabData&gt;&gt;&gt; </th></tr></thead><tbody>
+<tr><td> Entity(0, Generation(1)) </td><td> Handle { id: 0 }                  </td></tr>
+</tbody></table>
+<p>When the <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/struct.PrefabLoaderSystem.html"><code>PrefabLoaderSystem</code></a> runs, this becomes the following:</p>
+<table><thead><tr><th> Entity                   </th><th> Handle&lt;Prefab&lt;CustomPrefabData&gt;&gt;&gt; </th><th> Parent                   </th><th> Position                </th><th> Player                 </th><th> Weapon </th></tr></thead><tbody>
+<tr><td> Entity(0, Generation(1)) </td><td> Handle { id: 0 }                  </td><td> None                     </td><td> Position(1.0, 2.0, 3.0) </td><td> Named { name: &quot;Zero&quot; } </td><td> None   </td></tr>
+<tr><td> Entity(1, Generation(1)) </td><td> None                              </td><td> Entity(0, Generation(1)) </td><td> Position(4.0, 5.0, 6.0) </td><td> None                   </td><td> Sword  </td></tr>
+</tbody></table>
+<ul>
+<li>The entity that the <code>Handle&lt;Prefab&lt;T&gt;&gt;</code> is attached will be augmented with <a href="https://docs-src.amethyst.rs/stable/specs/trait.Component.html"><code>Component</code></a>s from the first <a href="https://github.com/amethyst/amethyst/blob/v0.10.0/amethyst_assets/src/prefab/mod.rs#L110-L115"><code>PrefabEntity</code></a>.</li>
+<li>A new entity is created for subsequent <a href="https://github.com/amethyst/amethyst/blob/v0.10.0/amethyst_assets/src/prefab/mod.rs#L110-L115"><code>PrefabEntity</code></a> entries in the <code>entities</code> list.</li>
+</ul>
+<p>Note that the <code>Weapon</code> has a parent with index <code>0</code>. Let's see what happens when multiple entities are created with this prefab. First, two entities are created with the prefab handle:</p>
+<table><thead><tr><th> Entity                   </th><th> Handle&lt;Prefab&lt;CustomPrefabData&gt;&gt;&gt; </th></tr></thead><tbody>
+<tr><td> Entity(0, Generation(1)) </td><td> Handle { id: 0 }                  </td></tr>
+<tr><td> Entity(1, Generation(1)) </td><td> Handle { id: 0 }                  </td></tr>
+</tbody></table>
+<p>Next, the <a href="https://docs-src.amethyst.rs/stable/amethyst_assets/struct.PrefabLoaderSystem.html"><code>PrefabLoaderSystem</code></a> runs and creates and augments the entities:</p>
+<table><thead><tr><th> Entity                   </th><th> Handle&lt;Prefab&lt;CustomPrefabData&gt;&gt;&gt; </th><th> Parent                   </th><th> Position                </th><th> Player                 </th><th> Weapon </th></tr></thead><tbody>
+<tr><td> Entity(0, Generation(1)) </td><td> Handle { id: 0 }                  </td><td> None                     </td><td> Position(1.0, 2.0, 3.0) </td><td> Named { name: &quot;Zero&quot; } </td><td> None   </td></tr>
+<tr><td> Entity(1, Generation(1)) </td><td> Handle { id: 0 }                  </td><td> None                     </td><td> Position(1.0, 2.0, 3.0) </td><td> Named { name: &quot;Zero&quot; } </td><td> None   </td></tr>
+<tr><td> Entity(2, Generation(1)) </td><td> None                              </td><td> Entity(0, Generation(1)) </td><td> Position(4.0, 5.0, 6.0) </td><td> None                   </td><td> Sword  </td></tr>
+<tr><td> Entity(3, Generation(1)) </td><td> None                              </td><td> Entity(1, Generation(1)) </td><td> Position(4.0, 5.0, 6.0) </td><td> None                   </td><td> Sword  </td></tr>
+</tbody></table>
+<p>The sword entity <code>2</code> has player entity <code>0</code> as its parent, and sword entity <code>3</code> has player entity <code>1</code> as its parent.</p>
+<p>This can be seen by running the <code>prefab_custom</code> example from the Amethyst repository:</p>
+<pre><code class="language-bash">cargo run --example prefab_custom
+</code></pre>
+<hr />
+<p>Phew, that was long! Now that you have an understanding of how prefabs work in Amethyst, the next page covers the technical aspects in more detail.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../prefabs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../prefabs/how_to_define_prefabs_prelude.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../prefabs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../prefabs/how_to_define_prefabs_prelude.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

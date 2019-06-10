@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Tag","Tag component that can be used with a custom type to tag entities for processing"],["TagFinder","Utility lookup for tag components"]]});

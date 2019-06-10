@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["application_dir","Same as `application_root_dir`, but extends the root directory with the given path."],["application_root_dir","Returns the cargo manifest directory when running the executable with cargo or the directory in which the executable resides otherwise, traversing symlinks if necessary."]]});

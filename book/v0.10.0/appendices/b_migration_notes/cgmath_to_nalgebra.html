@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>cgmath to nalgebra - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../../concepts/state.html"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../../concepts/component.html"><strong aria-hidden="true">3.2.</strong> Component</a></li><li><a href="../../concepts/entity.html"><strong aria-hidden="true">3.3.</strong> Entity</a></li><li><a href="../../concepts/resource.html"><strong aria-hidden="true">3.4.</strong> Resource</a></li><li><a href="../../concepts/world.html"><strong aria-hidden="true">3.5.</strong> World</a></li><li><a href="../../concepts/system.html"><strong aria-hidden="true">3.6.</strong> System</a></li><li><a href="../../concepts/dispatcher.html"><strong aria-hidden="true">3.7.</strong> Dispatcher</a></li><li><a href="../../concepts/event-channel.html"><strong aria-hidden="true">3.8.</strong> Event Channel</a></li></ol></li><li><a href="../../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../../pong-tutorial/pong-tutorial-01.html"><strong aria-hidden="true">4.1.</strong> Creating a Window</a></li><li><a href="../../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the Paddles</a></li><li><a href="../../pong-tutorial/pong-tutorial-03.html"><strong aria-hidden="true">4.3.</strong> Moving the Paddles</a></li><li><a href="../../pong-tutorial/pong-tutorial-04.html"><strong aria-hidden="true">4.4.</strong> Making a Ball Move and Bounce</a></li><li><a href="../../pong-tutorial/pong-tutorial-05.html"><strong aria-hidden="true">4.5.</strong> Winning Rounds and Keeping Score</a></li><li><a href="../../pong-tutorial/contribution.html"><strong aria-hidden="true">4.6.</strong> Call for Contribution</a></li></ol></li><li><a href="../../math.html"><strong aria-hidden="true">5.</strong> Math</a></li><li><a href="../../animation.html"><strong aria-hidden="true">6.</strong> Animation</a></li><li><ol class="section"><li><a href="../../animation/interpolation.html"><strong aria-hidden="true">6.1.</strong> Interpolation</a></li><li><a href="../../animation/channel.html"><strong aria-hidden="true">6.2.</strong> Channel</a></li><li><a href="../../animation/sampler.html"><strong aria-hidden="true">6.3.</strong> Sampler</a></li><li><a href="../../animation/definition.html"><strong aria-hidden="true">6.4.</strong> Definition</a></li></ol></li><li><a href="../../game-data.html"><strong aria-hidden="true">7.</strong> Custom GameData</a></li><li><a href="../../sprites.html"><strong aria-hidden="true">8.</strong> Sprites</a></li><li><ol class="section"><li><a href="../../sprites/set_up_the_render_pass.html"><strong aria-hidden="true">8.1.</strong> Set Up The Render Pass</a></li><li><a href="../../sprites/load_the_texture.html"><strong aria-hidden="true">8.2.</strong> Load The Texture</a></li><li><a href="../../sprites/display_the_texture.html"><strong aria-hidden="true">8.3.</strong> Display The Texture</a></li><li><a href="../../sprites/define_the_sprite_sheet.html"><strong aria-hidden="true">8.4.</strong> Define The SpriteSheet</a></li><li><a href="../../sprites/sprite_render_component.html"><strong aria-hidden="true">8.5.</strong> SpriteRender Component</a></li><li><a href="../../sprites/orthographic_camera.html"><strong aria-hidden="true">8.6.</strong> Orthographic Camera</a></li></ol></li><li><a href="../../prefab.html"><strong aria-hidden="true">9.</strong> Prefabs</a></li><li><a href="../../testing.html"><strong aria-hidden="true">10.</strong> Testing</a></li><li><ol class="section"><li><a href="../../testing/test_examples.html"><strong aria-hidden="true">10.1.</strong> Test Examples</a></li></ol></li><li><a href="../../glossary.html"><strong aria-hidden="true">11.</strong> Glossary</a></li><li><a href="../../appendices/a_config_files.html"><strong aria-hidden="true">12.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">12.1.</strong> Adding an Arena Config</a></li><li><a href="../../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">12.2.</strong> Adding a Ball Config</a></li><li><a href="../../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">12.3.</strong> Adding Paddle Configs</a></li></ol></li><li><a href="../../appendices/b_migration_notes.html"><strong aria-hidden="true">13.</strong> Appendix B: Migration Notes</a></li><li><ol class="section"><li><a href="../../appendices/b_migration_notes/cgmath_to_nalgebra.html" class="active"><strong aria-hidden="true">13.1.</strong> cgmath to nalgebra</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#cgmath-to-nalgebra" id="cgmath-to-nalgebra"><h1><code>cgmath</code> to <code>nalgebra</code></h1></a>
+<a class="header" href="#how-to-use" id="how-to-use"><h2>How To Use</h2></a>
+<p>This cheat sheet is split up into the following sections:</p>
+<ul>
+<li><strong>Type Changes:</strong> Previously you used <code>this::Type</code>, now you use <code>another::Thing</code></li>
+<li><strong>Logic Changes:</strong> Previously you had <code>object.method(args)</code>, now you use <code>object.other(stuff)</code></li>
+</ul>
+<p>Most changes will have accompanying explanations and code examples on how to switch.</p>
+<p>This document is by no means exhaustive, so if there is something missing, or if you can clarify any changes, please correct this!</p>
+<p>The text is designed to be searchable, so if you are looking for a specific type or method, please use Ctrl + F: <code>TypeName</code>. If you cannot find it in the document, likely we missed it during writing. Please send us a pull request!</p>
+<a class="header" href="#type-changes" id="type-changes"><h2>Type Changes</h2></a>
+<p>Many types retain the same type name, just under the <code>nalgebra</code> namespace:</p>
+<pre><code class="language-patch">-use amethyst::core::cgmath::{Vector2, Vector3, Matrix4};
++use amethyst::core::nalgebra::{Vector2, Vector3, Matrix4};
+</code></pre>
+<p>We will not list the names of every type with the same simple name, but will try to list the changes for types whose simple names are different:</p>
+<pre><code class="language-patch">-cgmath::Ortho
++nalgebra::Orthographic3
+
+-cgmath::PerspectiveFov
++nalgebra::Perspective3
+</code></pre>
+<a class="header" href="#logic-changes" id="logic-changes"><h2>Logic Changes</h2></a>
+<ul>
+<li>
+<p><code>cgmath</code> to <code>nalgebra</code> functions:</p>
+<pre><code class="language-patch">-Vector3::unit_z()
++Vector3::z()
+
+-matrix4.z.truncate()
++matrix4.column(2).xyz().into()
+
+-matrix4.transform_point(origin)
++matrix4.transform_point(&amp;origin)
+</code></pre>
+</li>
+<li>
+<p><code>amethyst::core::transform::Transform</code></p>
+<ul>
+<li>
+<p>Transformation values are accessed / mutated through accessor methods.</p>
+<pre><code class="language-patch">-transform.translation = Vector3::new(5.0, 2.0, -0.5);
+-transform.scale = Vector3::new(2.0, 2.0, 2.0);
+-transform.rotation = Quaternion::new(1.0, 0.0, 0.0, 0.0);
++transform.set_xyz(5.0, 2.0, -0.5);
++transform.set_scale(2.0, 2.0, 2.0);
++transform.set_rotation(Unit::new_normalize(Quaternion::new(1.0, 0.0, 0.0, 0.0)));
+
+// Translations
+-transform.translation = Vector3::new(0.0, 0.0, 0.0);
++*transform.translation_mut() = Vector3::new(0.0, 0.0, 0.0);
+
+-transform_0.translation - transform_1.translation
++transform_0.translation() - transform_1.translation()
+
+-transform.translation[0] = x;
++transform.set_x(position.x);
+
+-translation.x += 0.1;
+-translation.y -= 0.1;
++transform.translate_x(0.1);
++transform.translate_y(-0.1);
+// or
++transform.translation_mut().x += 0.1;
++transform.translation_mut().y -= 0.1;
+
+-let ball_x = transform.translation[0];
++let ball_x = transform.translation().x;
+
+-transform.set_position(Vector3::new(6.0, 6.0, -6.0));
++transform.set_xyz(6.0, 6.0, -6.0);
+// or
+*transform.translation_mut() = Vector3::new(6.0, 6.0, -6.0);
+
+// Rotations
+-transform.rotation = [1.0, 0.0, 0.0, 0.0].into();
++use amethyst::core::nalgebra::{Quaternion, Unit};
++
++*transform.rotation_mut() = Unit::new_normalize(Quaternion::new(
++    1.0, // w
++    0.0, // x
++    0.0, // y
++    0.0, // z
++));
+
+-use amethyst::core::cgmath::Deg;
+-
+-transform.set_rotation(Deg(75.96), Deg(0.0), Deg(0.0));
++transform.rotate_local(Vector3::x_axis(), 1.3257521);
+
+// Scaling
+-transform.scale = Vector3::new(1.0, 1.0, 1.0);
++*transform.scale_mut() = Vector3::new(1.0, 1.0, 1.0);
+</code></pre>
+</li>
+<li>
+<p><code>amethyst::core::transform::Transform</code> prefabs no longer use labels</p>
+<pre><code class="language-patch"> // scene.ron
+ data: (
+     transform: (
+-        translation: (x: 0.0, y: 0.0, z: -4.0),
+-        rotation: (s: 0.0, v: (x: 0.0, y: 1.0, z: 0.0),),
+-        scale: (x: 4.0, y: 2.0, z: 1.0),
++        translation: (0.0, 0.0, -4.0),
++        rotation: (0.0, 0.0, 1.0, 0.0),
++        scale: (4.0, 2.0, 1.0),
+     ),
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><code>amethyst::renderer::GlobalTransform</code> inverse.</p>
+<pre><code class="language-patch">-global.0.invert()
++global.0.try_inverse()
+</code></pre>
+</li>
+<li>
+<p><code>amethyst::renderer::Pos*</code> fields use <code>nalgebra</code> types instead of arrays.</p>
+<p>Type change:</p>
+<pre><code class="language-patch"> pub struct PosTex {
+-    pub position: [f32; 3],
+-    pub tex_coord: [f32; 2],
++    pub position: Vector3&lt;f32&gt;,
++    pub tex_coord: Vector2&lt;f32&gt;,
+ }
+</code></pre>
+<p>Usage changes:</p>
+<pre><code class="language-patch"> PosTex {
+-    position: [0.0, 0.0, 0.0],
+-    tex_coord: [0.0, 0.0],
++    position: Vector3::new(0.0, 0.0, 0.0),
++    tex_coord: Vector2::new(0.0, 0.0),
+ }
+</code></pre>
+</li>
+<li>
+<p><code>amethyst::core::nalgebra::Matrix4</code> construction.</p>
+<pre><code class="language-patch">-Matrix4::from_translation(Vector3::new(x, y, z))
++Matrix4::new_translation(&amp;Vector3::new(x, y, z))
+
+// OR
+
++use amethyst::core::nalgebra::Translation3;
++
++Translation3::new(x, y, z).to_homogeneous()
+</code></pre>
+</li>
+<li>
+<p><code>UnitQuarternion::rotation_between</code> is right handed, previously they were left handed.</p>
+</li>
+<li>
+<p>Orthographic projection has changed from <code>(left, right, top, bottom)</code> to <code>(left, right, bottom, top)</code>.</p>
+<pre><code class="language-patch"> Projection::orthographic(
+     0.0,           // left
+     ARENA_WIDTH,   // right
+-    ARENA_HEIGHT,  // top
+     0.0,           // bottom
++    ARENA_HEIGHT,  // top
+ )
+
+-use amethyst::core::cgmath::Ortho;
+-
+-Ortho { left, right, top, bottom, near, far }
++use amethyst::core::nalgebra::Orthographic3;
++
++Orthographic3::new(left, right, bottom, top, near, far)
+</code></pre>
+</li>
+<li>
+<p>Perspective projection</p>
+<ul>
+<li>
+<p>Angles are specified in radians:</p>
+<pre><code class="language-patch">use amethyst::renderer::Projection;
+-amethyst::core::cgmath::Deg;
+
+ Projection::perspective(
+     1.33333,
+-    Deg(90.0)
++    std::f32::consts::FRAC_PI_2,
+ )
+</code></pre>
+<pre><code class="language-patch">// scene.ron
+ data: (
+     camera: Perspective((
+         aspect: 1.3,
+-        fovy: Rad (1.0471975512),
++        fovy: 1.0471975512,
+         // ...
+     )),
+ )
+</code></pre>
+</li>
+<li>
+<p>Prefab fields have been renamed:</p>
+<pre><code class="language-patch">// scene.ron
+ data: (
+     camera: Perspective((
+         aspect: 1.3,
+-        fovy: Rad (1.0471975512),
++        fovy: 1.0471975512,
+-        near: 0.1,
+-        far: 2000.0,
++        znear: 0.1,
++        zfar: 2000.0,
+     )),
+ )
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><code>amethyst::renderer::SpotLight</code> angle has changed from degrees to radians.</p>
+<pre><code class="language-patch"> SpotLight {
+-    angle: 60.0,
++    angle: std::f32::consts::FRAC_PI_3,
+     ..
+ }
+</code></pre>
+</li>
+<li>
+<p><code>amethyst::renderer::SunLight</code> angle has changed from degrees to radians.</p>
+<pre><code class="language-patch"> SunLight {
+-    ang_rad: 0.0093,
++    ang_rad: 0.0093_f32.to_radians(),
+     ..
+ }
+</code></pre>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../appendices/b_migration_notes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../appendices/b_migration_notes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

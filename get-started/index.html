@@ -1,0 +1,158 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Official website of the Amethyst game engine.">
+    <meta name="author" content="doomy (Alexander Lozada), Ellie Fagerberg, happens (Hilmar Wiegand) 🎺, Moxinilian (Théo Degioanni)">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="Amethyst" />
+    <meta property="og:description" content="Official website of the Amethyst game engine.">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;amethyst.rs&#x2F;get-started&#x2F;" />
+    <meta property="og:image" content="/brand/logo-filled.png" />
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:type" content="image/png" />
+    
+    <title>Amethyst - Get started</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/get-started.css">
+    <link rel="icon" type="image/svg+xml" href="/brand/logo-filled.svg">
+    <link rel="icon" type="image/png" href="/brand/favicon.png">
+    <link
+        rel="search"
+        type="application/opensearchdescription+xml"
+        title="Amethyst Documentation"
+        href="/opensearch.xml">
+</head>
+
+<body>
+    <div>
+        
+        <div class="master-header">
+            <div>
+                <a href="/" class="logo">
+                    
+    <svg viewBox="0 0 32 32" width="35px" height="35px" class="logo-emblem">
+        <defs>
+            
+            <linearGradient id="logo-standard" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" style="stop-color:#7f41ef;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#4f29d0;stop-opacity:1" />
+            </linearGradient>
+            
+            
+            
+        </defs>
+        <path
+            d="M 15.999998,0.5000067 A 15.499999,15.499999 0 0 0 0.49999975,16 15.499999,15.499999 0 0 0 15.999998,31.499993 15.499999,15.499999 0 0 0 31.5,16 15.499999,15.499999 0 0 0 15.999998,0.5000067 Z m -1.759767,3.050797 3.785159,2.402343 0.636718,4.011704 -1.308593,0.8808573 -1.050784,9.236333 -2.378907,1.066394 -1.582029,-1.998048 -1.087888,-12.1796773 z m 7.935549,4.767572 2.912108,4.0038803 -3.564451,12.687533 -3.750001,-5.585953 -0.859374,0.386722 0.980466,-8.636712 3.232422,-2.1738333 z M 11.140624,18.56252 13.53125,21.576164 13.105468,27.029304 10.80078,26.634759 8.1640612,19.533216 Z m 6.42578,1.585927 3.441408,5.126967 -4.728518,2.298822 -2.607419,-0.447269 0.423827,-5.421884 z"
+            style="fill:url(#logo-standard);" />
+    </svg>
+
+                    
+    <svg viewBox="0 0 148.30099 32" width="92.68811876px" height="20px" class="logo-text">
+        <path d="M 141.53041,24.944 V 0.74797 h 2.67261 v 6.37861 h 4.098 V 9.4785 h -4.098 V 24.944 Z" />
+        <path d="m 134.41814,11.90192 q -0.35636,-2.77956 -4.48998,-2.77956 -4.098,0 -4.098,2.56571 0,1.06906 0.85523,1.6392 0.89087,0.53465 2.20936,0.89086 1.31848,0.35642 2.85078,0.67678 1.56793,0.28499 2.88641,0.85528 1.31849,0.53464 2.17373,1.49663 0.89087,0.96214 0.89087,2.63699 0,2.60135 -1.95992,3.99106 -1.95991,1.35413 -5.30958,1.35413 -3.56348,0 -5.66592,-1.7817 -1.92428,-1.568 -2.06682,-4.09806 h 2.77951 q 0.24943,2.45885 2.77951,3.31406 0.9265,0.285 1.81737,0.285 0.92651,0 1.71047,-0.10679 0.78397,-0.10678 1.5323,-0.39178 1.71047,-0.67678 1.71047,-2.31627 0,-1.10471 -0.89087,-1.67485 -0.85523,-0.60607 -2.17372,-0.96214 -1.31849,-0.39178 -2.88642,-0.67678 -1.5323,-0.32107 -2.85078,-0.85521 -1.31848,-0.53464 -2.20936,-1.46107 -0.85523,-0.92649 -0.85523,-2.5657 0,-2.42313 1.74611,-3.74163 1.78173,-1.35413 5.2383,-1.35413 3.2784,0 5.16704,1.56792 1.56793,1.31849 1.81738,3.49227 z" />
+        <path d="m 110.96796,32 h -2.88642 l 3.24277,-7.30512 -7.2695,-17.56799 h 2.95769 l 5.73719,14.61029 5.84411,-14.61029 h 2.92205 z" />
+        <path d="m 89.169788,3.2e-4 v 9.90646 q 0.962139,-1.28285 2.351895,-2.1737 1.389756,-0.89093 3.171497,-0.89093 1.781732,0 3.064584,0.49929 1.282851,0.49856 2.244986,1.49663 2.20936,2.17371 2.20936,5.73719 V 24.945 H 99.539498 V 14.64655 q 0,-2.45878 -1.38975,-3.91984 -1.389759,-1.46099 -3.59911,-1.46099 -2.24499,0 -3.81292,1.49663 -1.56793,1.53228 -1.56793,3.91984 V 24.945 H 86.497181 V 6.9e-4 Z" />
+        <path d="M 76.763598,24.944 V 0.74797 h 2.672607 v 6.37861 h 4.097998 V 9.4785 H 79.436205 V 24.944 Z" />
+        <path d="m 64.652036,22.80587 c 1.199704,0 2.230142,-0.24964 3.091316,-0.74835 0.861173,-0.49857 1.553082,-1.24721 2.075725,-2.24499 h 2.922051 c -0.617667,1.61539 -1.603565,2.92205 -2.957686,3.91984 -1.330364,0.99778 -3.052711,1.49663 -5.16704,1.49663 -2.684485,0 -4.870084,-0.89085 -6.556796,-2.67263 -1.639199,-1.73423 -2.458799,-3.90793 -2.458799,-6.52111 0,-2.63699 0.783965,-4.8107 2.351894,-6.52119 1.662956,-1.78178 3.824798,-2.67263 6.485527,-2.67263 2.660729,0 4.822571,0.89085 6.485527,2.67263 1.567929,1.71049 2.351894,3.8842 2.351894,6.52119 v 1.06899 H 58.344684 c 0.190054,1.63921 0.843356,2.99335 1.959912,4.06241 1.140312,1.09281 2.589458,1.63921 4.34744,1.63921 z M 64.43823,9.26464 c -1.639199,0 -3.017076,0.51084 -4.133632,1.53228 -1.045287,0.97398 -1.686712,2.24499 -1.924277,3.81292 H 70.49614 C 70.258574,13.04191 69.617148,11.7709 68.571863,10.79692 67.455306,9.7754 66.077429,9.26464 64.43823,9.26464 Z" />
+        <path d="m 28.476073,9.83557 q 1.781738,-2.99335 5.416484,-2.99335 1.781738,0 3.278398,0.96214 1.532295,0.9265 2.387529,2.63699 1.211582,-2.24499 3.777285,-3.20713 1.033408,-0.39178 2.316259,-0.39178 1.318487,0 2.494434,0.53464 1.211582,0.49857 2.138086,1.46099 1.995547,2.13806 1.995547,5.34519 V 24.945 H 49.607487 V 14.25455 q 0,-2.20935 -1.247216,-3.6347 -1.247217,-1.35414 -3.171494,-1.35414 -2.031182,0 -3.385303,1.3185 -1.42539,1.35406 -1.42539,3.70598 V 24.945 H 37.705477 V 14.25455 q 0,-2.20935 -1.247217,-3.6347 -1.247217,-1.35414 -3.171494,-1.35414 -2.031181,0 -3.385303,1.3185 -1.42539,1.35406 -1.42539,3.70598 V 24.945 H 25.803466 V 7.12758 h 2.672607 z" />
+        <path d="M 23.376405,24.944 H 20.41872 L 16.958639,16.72957 H 6.4231365 L 2.9576858,24.944 H 4.409953e-7 L 10.013369,1.35375 h 3.349668 z M 15.925231,14.27079 11.688203,4.13331 7.4565448,14.27079 Z" />
+    </svg>
+
+                </a>
+                <span class="spacer"></span>
+                <span class="hamburger"></span>
+                <nav>
+                    <a href="/doc"><div>Learn</div></a>
+                    <a href="/blog"><div>News</div></a>
+                    <a href="/contribute"><div>Contribute</div></a>
+                    <a href="/donate"><div>Donate</div></a>
+                    <a href="/team"><div>Team</div></a>
+                    <a href="/roadmap"><div>Roadmap</div></a>
+                </nav>
+            </div>
+            <script src="/js/header.js"></script>
+        </div>
+        
+        
+<div id="content">
+    <img id="logo" src="/brand/logo-standard.svg">
+    <div id="title">Hello!</div>
+    <div id="subtitle">Thank you for stopping by.</div>
+    <p>
+        <a href="/book/latest">The book</a> will guide you through your first steps in Amethyst. It will teach you the basics: how the architecture of Amethyst
+        works, how to create a new project, and demonstrate some of the most important features of the engine.
+    </p>
+
+    <p>
+        Then, or alternatively, you can check out
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst/tree/v0.10.0/examples">the Amethyst examples</a>
+        to get a deeper understanding of what an Amethyst project looks like. This will also get you
+        accustomed to the Entity Component System architecture if this concept is new to you.
+    </p>
+
+    <p>
+        In the mean time, if you encounter any issue, have feedback to give or simply want to say hi, you can reach out for the community!
+        You can reach us on <a href="https:&#x2F;&#x2F;reddit.com&#x2F;r&#x2F;amethyst">Reddit</a>, <a href="https:&#x2F;&#x2F;discord.gg&#x2F;amethyst">Discord</a> or <a href="https:&#x2F;&#x2F;community.amethyst-engine.org">our community forums</a>, and we'll be glad to help you out! (we're super nice)
+    </p>
+</div>
+
+        
+        <div class="master-footer">
+            <div class="nav">
+                <div class="logo">
+                    
+    <svg viewBox="0 0 32 32" width="100px" height="100px" class="logo-emblem">
+        <defs>
+            
+            
+            <linearGradient id="logo-white" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#fff;stop-opacity:1" />
+            </linearGradient>
+            
+            
+        </defs>
+        <path
+            d="M 15.999998,0.5000067 A 15.499999,15.499999 0 0 0 0.49999975,16 15.499999,15.499999 0 0 0 15.999998,31.499993 15.499999,15.499999 0 0 0 31.5,16 15.499999,15.499999 0 0 0 15.999998,0.5000067 Z m -1.759767,3.050797 3.785159,2.402343 0.636718,4.011704 -1.308593,0.8808573 -1.050784,9.236333 -2.378907,1.066394 -1.582029,-1.998048 -1.087888,-12.1796773 z m 7.935549,4.767572 2.912108,4.0038803 -3.564451,12.687533 -3.750001,-5.585953 -0.859374,0.386722 0.980466,-8.636712 3.232422,-2.1738333 z M 11.140624,18.56252 13.53125,21.576164 13.105468,27.029304 10.80078,26.634759 8.1640612,19.533216 Z m 6.42578,1.585927 3.441408,5.126967 -4.728518,2.298822 -2.607419,-0.447269 0.423827,-5.421884 z"
+            style="fill:url(#logo-white);" />
+    </svg>
+
+                </div>
+                <div>
+                    <div class="h6">Project</div>
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst">GitHub</a>
+                    <a href="&#x2F;doc">Documentation</a>
+                    <a href="/blog">Blog</a>
+                </div>
+                <div>
+                    <div class="h6">Community</div>
+                    <a href="https:&#x2F;&#x2F;discord.gg&#x2F;amethyst">Discord</a>
+                    <a href="https:&#x2F;&#x2F;community.amethyst-engine.org">Forums</a>
+                </div>
+                <div>
+                    <div class="h6">Foundation</div>
+                    <a href="/donate">Donate</a>
+                    <a href="/branding">Branding</a>
+                </div>
+            </div>
+        </div>
+        
+        <script src="/js/konami.js"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Locale","A loaded locale."],["LocaleFormat","Loads the strings from localisation files."]],"type":[["LocaleHandle","A handle to a locale."]]});

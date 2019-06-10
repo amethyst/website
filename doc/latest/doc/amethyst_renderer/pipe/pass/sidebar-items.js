@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CompiledPass","A compiled pass.  These are created and managed by the `Renderer`.  This should not be used directly outside of the renderer."]],"trait":[["Pass","Structures implementing this provide a renderer pass."],["PassData","Used to fetch data from the game world for rendering in the pass."]]});

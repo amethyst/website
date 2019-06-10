@@ -1,0 +1,352 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="What happened this week: more docs, less boilerplate, better sockets">
+    <meta name="author" content="doomy (Alexander Lozada), Ellie Fagerberg, happens (Hilmar Wiegand) 🎺, Moxinilian (Théo Degioanni)">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="This week in Amethyst 13" />
+    <meta property="og:description" content="What happened this week: more docs, less boilerplate, better sockets">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;amethyst.rs&#x2F;blog&#x2F;twia-13&#x2F;" />
+    <meta property="og:image" content="/brand/logo-filled.png" />
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:type" content="image/png" />
+    
+<meta property="article:published_time" content="2018-11-04" />
+
+    <title>Amethyst - This week in Amethyst 13</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/article.css">
+    <link rel="icon" type="image/svg+xml" href="/brand/logo-filled.svg">
+    <link rel="icon" type="image/png" href="/brand/favicon.png">
+    <link
+        rel="search"
+        type="application/opensearchdescription+xml"
+        title="Amethyst Documentation"
+        href="/opensearch.xml">
+</head>
+
+<body>
+    <div>
+        
+        <div class="master-header">
+            <div>
+                <a href="/" class="logo">
+                    
+    <svg viewBox="0 0 32 32" width="35px" height="35px" class="logo-emblem">
+        <defs>
+            
+            <linearGradient id="logo-standard" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" style="stop-color:#7f41ef;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#4f29d0;stop-opacity:1" />
+            </linearGradient>
+            
+            
+            
+        </defs>
+        <path
+            d="M 15.999998,0.5000067 A 15.499999,15.499999 0 0 0 0.49999975,16 15.499999,15.499999 0 0 0 15.999998,31.499993 15.499999,15.499999 0 0 0 31.5,16 15.499999,15.499999 0 0 0 15.999998,0.5000067 Z m -1.759767,3.050797 3.785159,2.402343 0.636718,4.011704 -1.308593,0.8808573 -1.050784,9.236333 -2.378907,1.066394 -1.582029,-1.998048 -1.087888,-12.1796773 z m 7.935549,4.767572 2.912108,4.0038803 -3.564451,12.687533 -3.750001,-5.585953 -0.859374,0.386722 0.980466,-8.636712 3.232422,-2.1738333 z M 11.140624,18.56252 13.53125,21.576164 13.105468,27.029304 10.80078,26.634759 8.1640612,19.533216 Z m 6.42578,1.585927 3.441408,5.126967 -4.728518,2.298822 -2.607419,-0.447269 0.423827,-5.421884 z"
+            style="fill:url(#logo-standard);" />
+    </svg>
+
+                    
+    <svg viewBox="0 0 148.30099 32" width="92.68811876px" height="20px" class="logo-text">
+        <path d="M 141.53041,24.944 V 0.74797 h 2.67261 v 6.37861 h 4.098 V 9.4785 h -4.098 V 24.944 Z" />
+        <path d="m 134.41814,11.90192 q -0.35636,-2.77956 -4.48998,-2.77956 -4.098,0 -4.098,2.56571 0,1.06906 0.85523,1.6392 0.89087,0.53465 2.20936,0.89086 1.31848,0.35642 2.85078,0.67678 1.56793,0.28499 2.88641,0.85528 1.31849,0.53464 2.17373,1.49663 0.89087,0.96214 0.89087,2.63699 0,2.60135 -1.95992,3.99106 -1.95991,1.35413 -5.30958,1.35413 -3.56348,0 -5.66592,-1.7817 -1.92428,-1.568 -2.06682,-4.09806 h 2.77951 q 0.24943,2.45885 2.77951,3.31406 0.9265,0.285 1.81737,0.285 0.92651,0 1.71047,-0.10679 0.78397,-0.10678 1.5323,-0.39178 1.71047,-0.67678 1.71047,-2.31627 0,-1.10471 -0.89087,-1.67485 -0.85523,-0.60607 -2.17372,-0.96214 -1.31849,-0.39178 -2.88642,-0.67678 -1.5323,-0.32107 -2.85078,-0.85521 -1.31848,-0.53464 -2.20936,-1.46107 -0.85523,-0.92649 -0.85523,-2.5657 0,-2.42313 1.74611,-3.74163 1.78173,-1.35413 5.2383,-1.35413 3.2784,0 5.16704,1.56792 1.56793,1.31849 1.81738,3.49227 z" />
+        <path d="m 110.96796,32 h -2.88642 l 3.24277,-7.30512 -7.2695,-17.56799 h 2.95769 l 5.73719,14.61029 5.84411,-14.61029 h 2.92205 z" />
+        <path d="m 89.169788,3.2e-4 v 9.90646 q 0.962139,-1.28285 2.351895,-2.1737 1.389756,-0.89093 3.171497,-0.89093 1.781732,0 3.064584,0.49929 1.282851,0.49856 2.244986,1.49663 2.20936,2.17371 2.20936,5.73719 V 24.945 H 99.539498 V 14.64655 q 0,-2.45878 -1.38975,-3.91984 -1.389759,-1.46099 -3.59911,-1.46099 -2.24499,0 -3.81292,1.49663 -1.56793,1.53228 -1.56793,3.91984 V 24.945 H 86.497181 V 6.9e-4 Z" />
+        <path d="M 76.763598,24.944 V 0.74797 h 2.672607 v 6.37861 h 4.097998 V 9.4785 H 79.436205 V 24.944 Z" />
+        <path d="m 64.652036,22.80587 c 1.199704,0 2.230142,-0.24964 3.091316,-0.74835 0.861173,-0.49857 1.553082,-1.24721 2.075725,-2.24499 h 2.922051 c -0.617667,1.61539 -1.603565,2.92205 -2.957686,3.91984 -1.330364,0.99778 -3.052711,1.49663 -5.16704,1.49663 -2.684485,0 -4.870084,-0.89085 -6.556796,-2.67263 -1.639199,-1.73423 -2.458799,-3.90793 -2.458799,-6.52111 0,-2.63699 0.783965,-4.8107 2.351894,-6.52119 1.662956,-1.78178 3.824798,-2.67263 6.485527,-2.67263 2.660729,0 4.822571,0.89085 6.485527,2.67263 1.567929,1.71049 2.351894,3.8842 2.351894,6.52119 v 1.06899 H 58.344684 c 0.190054,1.63921 0.843356,2.99335 1.959912,4.06241 1.140312,1.09281 2.589458,1.63921 4.34744,1.63921 z M 64.43823,9.26464 c -1.639199,0 -3.017076,0.51084 -4.133632,1.53228 -1.045287,0.97398 -1.686712,2.24499 -1.924277,3.81292 H 70.49614 C 70.258574,13.04191 69.617148,11.7709 68.571863,10.79692 67.455306,9.7754 66.077429,9.26464 64.43823,9.26464 Z" />
+        <path d="m 28.476073,9.83557 q 1.781738,-2.99335 5.416484,-2.99335 1.781738,0 3.278398,0.96214 1.532295,0.9265 2.387529,2.63699 1.211582,-2.24499 3.777285,-3.20713 1.033408,-0.39178 2.316259,-0.39178 1.318487,0 2.494434,0.53464 1.211582,0.49857 2.138086,1.46099 1.995547,2.13806 1.995547,5.34519 V 24.945 H 49.607487 V 14.25455 q 0,-2.20935 -1.247216,-3.6347 -1.247217,-1.35414 -3.171494,-1.35414 -2.031182,0 -3.385303,1.3185 -1.42539,1.35406 -1.42539,3.70598 V 24.945 H 37.705477 V 14.25455 q 0,-2.20935 -1.247217,-3.6347 -1.247217,-1.35414 -3.171494,-1.35414 -2.031181,0 -3.385303,1.3185 -1.42539,1.35406 -1.42539,3.70598 V 24.945 H 25.803466 V 7.12758 h 2.672607 z" />
+        <path d="M 23.376405,24.944 H 20.41872 L 16.958639,16.72957 H 6.4231365 L 2.9576858,24.944 H 4.409953e-7 L 10.013369,1.35375 h 3.349668 z M 15.925231,14.27079 11.688203,4.13331 7.4565448,14.27079 Z" />
+    </svg>
+
+                </a>
+                <span class="spacer"></span>
+                <span class="hamburger"></span>
+                <nav>
+                    <a href="/doc"><div>Learn</div></a>
+                    <a href="/blog"><div>News</div></a>
+                    <a href="/contribute"><div>Contribute</div></a>
+                    <a href="/donate"><div>Donate</div></a>
+                    <a href="/team"><div>Team</div></a>
+                    <a href="/roadmap"><div>Roadmap</div></a>
+                </nav>
+            </div>
+            <script src="/js/header.js"></script>
+        </div>
+        
+        
+<main id="content">
+    <section class="page-title">
+        <div>
+            <h1>This week in Amethyst 13</h1>
+            <span class="subtitle">Published on 2018-11-04  by 
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;torkleyy">torkleyy</a>
+            </span>
+        </div>
+    </section>
+
+    <section class="article-content">
+        <p>Hello and welcome to the 13th issue of <em>This Week in Amethyst</em>, a blog bringing to
+you the latest changes regarding Amethyst, a data-driven game engine written in
+Rust.</p>
+<p>Content of this issue:</p>
+<ul>
+<li>recent changes</li>
+<li>current work</li>
+<li>interesting discussions</li>
+<li>call for participation</li>
+</ul>
+<h2 id="recent-changes">Recent changes</h2>
+<h3 id="new-chapter-for-the-pong-tutorial">New chapter for the Pong tutorial</h3>
+<p>A fourth chapter has been written for <a href="https://www.amethyst.rs/book/master/pong-tutorial/pong-tutorial-04.html">our Pong tutorial</a> by
+<a href="https://github.com/CBenoit">CBenoit</a>. High quality documentation is very important for our project,
+so thank you for your work!</p>
+<p>There are still a few chapters missing unfortunately. If you're interested to
+help, we'd be very happy about contributions, whether it's just reviewing
+the work of others or writing a chapter on your own. Please contact us on
+<a href="https://discord.gg/amethyst">Discord/#documentation</a> or by commenting on <a href="https://github.com/amethyst/amethyst/issues/506">the GitHub issue</a>.
+Note that there's already a PR working on chapter 5 <a href="https://github.com/amethyst/amethyst/pull/1085">here</a>, so make sure
+to coordinate your work with that.</p>
+<h3 id="more-lights">More lights</h3>
+<p>Thanks to <a href="https://github.com/karroffel">karroffel</a> Amethyst got support for directional lights and spot
+lights in the PBM shader! See <a href="https://github.com/amethyst/amethyst/pull/1074">the directional light</a> and the
+<a href="https://github.com/amethyst/amethyst/pull/1081">spot light</a> PRs.</p>
+<p><img src="https://user-images.githubusercontent.com/5209613/47617278-b7b05800-dac5-11e8-9a55-f523ef51a330.png" alt="Spot light screenshot" /></p>
+<h3 id="added-support-for-deriving-prefabs">Added support for deriving prefabs</h3>
+<p>With <a href="https://github.com/Rhuagh">Rhuagh's</a> recent feature addition, simple prefab definitions can now
+be created using a <code>#[derive(PrefabData)]</code> macro. That means, what previously
+was written as:</p>
+<pre style="background-color:#272822;">
+<span style="color:#75715e;">/// `PrefabData` for full skinning support
+</span><span style="color:#f8f8f2;">#[derive(Clone, Default, Debug, Serialize, Deserialize)]
+</span><span style="color:#f8f8f2;">#[serde(default)]
+</span><span style="color:#f92672;">pub </span><span style="font-style:italic;color:#66d9ef;">struct </span><span style="color:#f8f8f2;">SkinnablePrefab {
+</span><span style="color:#f8f8f2;">    </span><span style="color:#75715e;">/// Place `Skin` on the `Entity`
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f92672;">pub </span><span style="color:#f8f8f2;">skin: Option&lt;SkinPrefab&gt;,
+</span><span style="color:#f8f8f2;">    </span><span style="color:#75715e;">/// Place `Joint` on the `Entity`
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f92672;">pub </span><span style="color:#f8f8f2;">joint: Option&lt;JointPrefab&gt;,
+</span><span style="color:#f8f8f2;">    </span><span style="color:#75715e;">/// Place `JointTransforms` on the `Entity`
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f92672;">pub </span><span style="color:#f8f8f2;">joint_transforms: Option&lt;JointTransformsPrefab&gt;,
+</span><span style="color:#f8f8f2;">}
+</span><span style="color:#f8f8f2;">
+</span><span style="font-style:italic;color:#66d9ef;">impl</span><span style="color:#f8f8f2;">&lt;</span><span style="color:#f92672;">&#39;a</span><span style="color:#f8f8f2;">&gt; PrefabData&lt;</span><span style="color:#f92672;">&#39;a</span><span style="color:#f8f8f2;">&gt; </span><span style="color:#f92672;">for </span><span style="color:#f8f8f2;">SkinnablePrefab {
+</span><span style="color:#f8f8f2;">    </span><span style="font-style:italic;color:#66d9ef;">type </span><span style="color:#f8f8f2;">SystemData </span><span style="color:#f92672;">= </span><span style="color:#f8f8f2;">(
+</span><span style="color:#f8f8f2;">        </span><span style="color:#f92672;">&lt;</span><span style="color:#f8f8f2;">SkinPrefab </span><span style="color:#f92672;">as </span><span style="color:#f8f8f2;">PrefabData&lt;</span><span style="color:#f92672;">&#39;a</span><span style="color:#f8f8f2;">&gt;</span><span style="color:#f92672;">&gt;</span><span style="color:#f8f8f2;">::SystemData,
+</span><span style="color:#f8f8f2;">        </span><span style="color:#f8f8f2;">&lt;JointPrefab </span><span style="color:#f92672;">as </span><span style="color:#f8f8f2;">PrefabData&lt;</span><span style="color:#f92672;">&#39;a</span><span style="color:#f8f8f2;">&gt;&gt;::SystemData,
+</span><span style="color:#f8f8f2;">        </span><span style="color:#f8f8f2;">&lt;JointTransformsPrefab </span><span style="color:#f92672;">as </span><span style="color:#f8f8f2;">PrefabData&lt;</span><span style="color:#f92672;">&#39;a</span><span style="color:#f8f8f2;">&gt;&gt;::SystemData,
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f8f8f2;">);
+</span><span style="color:#f8f8f2;">    </span><span style="font-style:italic;color:#66d9ef;">type </span><span style="color:#f8f8f2;">Result </span><span style="color:#f92672;">= </span><span style="color:#f8f8f2;">();
+</span><span style="color:#f8f8f2;">
+</span><span style="color:#f8f8f2;">    </span><span style="font-style:italic;color:#66d9ef;">fn </span><span style="color:#a6e22e;">add_to_entity</span><span style="color:#f8f8f2;">(
+</span><span style="color:#f8f8f2;">        </span><span style="color:#f92672;">&amp;</span><span style="font-style:italic;color:#fd971f;">self</span><span style="color:#f8f8f2;">,
+</span><span style="color:#f8f8f2;">        </span><span style="font-style:italic;color:#fd971f;">entity</span><span style="color:#f8f8f2;">: Entity,
+</span><span style="color:#f8f8f2;">        </span><span style="font-style:italic;color:#fd971f;">system_data</span><span style="color:#f8f8f2;">: </span><span style="color:#f92672;">&amp;mut </span><span style="font-style:italic;color:#66d9ef;">Self::</span><span style="color:#f8f8f2;">SystemData,
+</span><span style="color:#f8f8f2;">        </span><span style="font-style:italic;color:#fd971f;">entities</span><span style="color:#f8f8f2;">: </span><span style="color:#f92672;">&amp;</span><span style="color:#f8f8f2;">[Entity],
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f8f8f2;">) -&gt; Result&lt;(), PrefabError&gt; {
+</span><span style="color:#f8f8f2;">        </span><span style="color:#f92672;">if </span><span style="font-style:italic;color:#66d9ef;">let Some</span><span style="color:#f8f8f2;">(</span><span style="color:#f92672;">ref</span><span style="color:#f8f8f2;"> prefab) </span><span style="color:#f92672;">= </span><span style="color:#f8f8f2;">self.skin {
+</span><span style="color:#f8f8f2;">            </span><span style="color:#f8f8f2;">prefab.</span><span style="color:#66d9ef;">add_to_entity</span><span style="color:#f8f8f2;">(entity, </span><span style="color:#f92672;">&amp;mut</span><span style="color:#f8f8f2;"> system_data.</span><span style="color:#ae81ff;">0</span><span style="color:#f8f8f2;">, entities)</span><span style="color:#f92672;">?</span><span style="color:#f8f8f2;">;
+</span><span style="color:#f8f8f2;">        </span><span style="color:#f8f8f2;">}
+</span><span style="color:#f8f8f2;">        </span><span style="color:#f92672;">if </span><span style="font-style:italic;color:#66d9ef;">let Some</span><span style="color:#f8f8f2;">(</span><span style="color:#f92672;">ref</span><span style="color:#f8f8f2;"> prefab) </span><span style="color:#f92672;">= </span><span style="color:#f8f8f2;">self.joint {
+</span><span style="color:#f8f8f2;">            </span><span style="color:#f8f8f2;">prefab.</span><span style="color:#66d9ef;">add_to_entity</span><span style="color:#f8f8f2;">(entity, </span><span style="color:#f92672;">&amp;mut</span><span style="color:#f8f8f2;"> system_data.</span><span style="color:#ae81ff;">1</span><span style="color:#f8f8f2;">, entities)</span><span style="color:#f92672;">?</span><span style="color:#f8f8f2;">;
+</span><span style="color:#f8f8f2;">        </span><span style="color:#f8f8f2;">}
+</span><span style="color:#f8f8f2;">        </span><span style="color:#f92672;">if </span><span style="font-style:italic;color:#66d9ef;">let Some</span><span style="color:#f8f8f2;">(</span><span style="color:#f92672;">ref</span><span style="color:#f8f8f2;"> prefab) </span><span style="color:#f92672;">= </span><span style="color:#f8f8f2;">self.joint_transforms {
+</span><span style="color:#f8f8f2;">            </span><span style="color:#f8f8f2;">prefab.</span><span style="color:#66d9ef;">add_to_entity</span><span style="color:#f8f8f2;">(entity, </span><span style="color:#f92672;">&amp;mut</span><span style="color:#f8f8f2;"> system_data.</span><span style="color:#ae81ff;">2</span><span style="color:#f8f8f2;">, entities)</span><span style="color:#f92672;">?</span><span style="color:#f8f8f2;">;
+</span><span style="color:#f8f8f2;">        </span><span style="color:#f8f8f2;">}
+</span><span style="color:#f8f8f2;">        </span><span style="font-style:italic;color:#66d9ef;">Ok</span><span style="color:#f8f8f2;">(())
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f8f8f2;">}
+</span><span style="color:#f8f8f2;">}
+</span></pre>
+<p>...is now as easy as:</p>
+<pre style="background-color:#272822;">
+<span style="color:#75715e;">/// `PrefabData` for full skinning support
+</span><span style="color:#f8f8f2;">#[derive(Clone, Default, Debug, Serialize, Deserialize, PrefabData)]
+</span><span style="color:#f8f8f2;">#[serde(default)]
+</span><span style="color:#f92672;">pub </span><span style="font-style:italic;color:#66d9ef;">struct </span><span style="color:#f8f8f2;">SkinnablePrefab {
+</span><span style="color:#f8f8f2;">    </span><span style="color:#75715e;">/// Place `Skin` on the `Entity`
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f92672;">pub </span><span style="color:#f8f8f2;">skin: Option&lt;SkinPrefab&gt;,
+</span><span style="color:#f8f8f2;">    </span><span style="color:#75715e;">/// Place `Joint` on the `Entity`
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f92672;">pub </span><span style="color:#f8f8f2;">joint: Option&lt;JointPrefab&gt;,
+</span><span style="color:#f8f8f2;">    </span><span style="color:#75715e;">/// Place `JointTransforms` on the `Entity`
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f92672;">pub </span><span style="color:#f8f8f2;">joint_transforms: Option&lt;JointTransformsPrefab&gt;,
+</span><span style="color:#f8f8f2;">}
+</span></pre><h2 id="what-s-being-worked-on-currently">What's being worked on currently?</h2>
+<p>This time it's a whole team's work we want to present here - the Networking
+Team.</p>
+<p>Amethyst didn’t have any networking until version 0.9.0 and we only have a
+basic implementation right now which will be replaced.
+The networking team is planning to make the new API available in the 0.10.0
+release but because game networking is a complex topic that spans many components, we
+have broken it down into smaller pieces.</p>
+<blockquote>
+<p>Note: The following assumes some knowledge about networking sockets.
+We recommend you read <a href="https://en.wikipedia.org/wiki/Network_socket">the Wikipedia article</a> about it in case you're
+not familiar with sockets.</p>
+</blockquote>
+<h3 id="laminar"><a href="https://github.com/amethyst/laminar"><code>laminar</code></a></h3>
+<p>This will be our semi-reliable UDP-based protocol. We are planning to release
+its first version around November 9th, 2018.</p>
+<p>It is considered the lowest level networking crate and has the following
+responsibilities:</p>
+<ul>
+<li>Choosing the ordering, reliability, and encryption for your packets.</li>
+<li>Congestion avoidance measures.</li>
+<li>Fragmentation of packets if needed.</li>
+<li>Monitor connections for Connect, Disconnect and Timeout events.</li>
+<li>Pass events and associated information up to the <code>amethyst_network</code> crate via
+mpsc channels using the Event abstraction..</li>
+</ul>
+<h3 id="implementation-details">Implementation details</h3>
+<p>Many of you may wonder why we did not use TCP. This is a complex topic, and not
+one we can cover in this post. In general, the reliability and ordering
+guarantees TCP provides cause severe latency spikes and other performance
+degradations.</p>
+<p>If you are interested in this topic, you can read more about that
+<a href="https://gafferongames.com/post/udp_vs_tcp/">here</a> or in our
+<a href="https://github.com/amethyst/laminar/tree/master/docs/md_book">book</a>.</p>
+<p><a href="https://github.com/gafferongames">Glenn Fiedler (@gafferongames)</a> describes in a series of <a href="https://gafferongames.com/">articles</a>
+how game networking should be done. Our work has been to create a Rust version
+of his library.</p>
+<p>Currently, there are already C/C++ based implementations but there is no
+finished Rust implementation.
+When we began implementing networking, we could not find an existing crate that
+met our needs. There are crates that provide protocols built on UDP, but they
+are oriented towards the needs of non-game applications.</p>
+<p>Rust is an excellent language for fast, reliable network programming because of
+its safety and speed. In particular, the lack of garbage collection and ability
+to write very low level code allows for a level of performance normally seen
+only in C or C++. The work we’ve done on Laminar is available for anyone to use,
+and we hope others in the gaming industry will find it useful.</p>
+<h3 id="higher-level-networking-amethyst-network">Higher-level networking (<a href="https://github.com/amethyst/amethyst/tree/master/amethyst_network"><code>amethyst_network</code></a>)</h3>
+<p>This crate will be part of the Amethyst game engine and provides the API and
+functionality which application developers will use to develop multiplayer
+games.</p>
+<p>Its responsibilities are</p>
+<ul>
+<li>Automatic syncing of entity state between hosts.</li>
+<li>Remote procedure calls.</li>
+<li>Ensuring integrity of game logic.</li>
+<li>Providing easy to use systems and components to support networking.</li>
+<li>Basic congestion avoidance.</li>
+<li>Server-Client based communication.</li>
+</ul>
+<h3 id="current-progress-reliability-strategy">Current progress: reliability strategy</h3>
+<p>You can see a tracking issue for all the progress <a href="https://github.com/amethyst/laminar/issues/58">here</a>. Currently there
+is a PR about allowing you to choose different kinds of reliabilities. In
+addition to the functionality, we are including a comprehensive suite of unit-,
+integration-, and scenario-tests. This will aid in preventing regressions and
+bugs.</p>
+<hr />
+<p>Thank you to the authors,</p>
+<ul>
+<li><a href="https://github.com/LucioFranco">LucioFranco</a>,</li>
+<li><a href="https://github.com/fhaynes">fhaynes</a> and</li>
+<li><a href="https://github.com/TimonPost">TimonPost</a></li>
+</ul>
+<h2 id="interesting-discussions">Interesting discussions</h2>
+<p>Two big RFCs have been added this week. They are both very general and depend
+on all the valuable input we get from the community. Thank you for all the
+help!</p>
+<h3 id="ui-rfc">UI RFC</h3>
+<p><a href="https://github.com/jojolepro">Jojolepro</a> wrote up a really big issue listing all kinds of use cases for UI.
+The current UI implementation of Amethyst is very basic and only suitable for
+simple interfaces.</p>
+<p>This RFC is still very broad; there are a bunch of topics like layout managers,
+high-level API and UI elements discussed there, so make sure to weigh in if
+you're interested in those things. You can find it <a href="https://github.com/amethyst/amethyst/issues/1072">here</a>.</p>
+<h3 id="scripting-rfc">Scripting RFC</h3>
+<p>Scripting, usually associated with programming using a dynamic language to write
+logic, is the typical way to create games with modern engines.
+Amethyst does not yet have this functionality, but we're planning on something
+big. The goal is to create an abstract layer that allows reasonably easy
+addition of more scripting languages.</p>
+<p>This would allow us to address a much bigger audience because most languages
+could simply be added as an additional backend.</p>
+<p>For that, <a href="https://github.com/Moxinilian">Moxinilian</a> wrote an RFC you can see <a href="https://github.com/amethyst/rfcs/pull/1">here</a>.
+Feedback is very welcome, as well as suggesting more questions that
+<a href="https://github.com/amethyst/rfcs/pull/1">the document</a> should answer.</p>
+<h2 id="call-for-participation">Call for participation</h2>
+<p>We love contributions from the community, so if you see something you'd like
+to work on, don't hesitate! We are going to help you and point you into the
+right direction if something doesn't work out at first.</p>
+<p>We have tasks with different difficulty. Make sure to choose easier ones at
+first, because hard issues can become quite frustrating, especially if you
+haven't worked on Amethyst before.</p>
+<p>Here are seven issues for you to pick from:</p>
+<ul>
+<li>[very easy | <strong>amethyst/laminar</strong>] <a href="https://github.com/amethyst/laminar/issues/72">Deny warnings for approved PRs</a></li>
+<li>[very easy | <strong>amethyst/laminar</strong>] <a href="https://github.com/amethyst/laminar/issues/70">Use new Rust 2018 idioms</a></li>
+<li>[easy | <strong>amethyst/amethyst</strong>] <a href="https://github.com/amethyst/amethyst/issues/951">Doc improvements</a> (you can add new suggestions or fix existing)</li>
+<li>[easy | <strong>amethyst/amethyst</strong>] <a href="https://github.com/amethyst/amethyst/issues/1091">Look for reliable test coverage</a></li>
+<li>[moderate | <strong>amethyst/amethyst</strong>] <a href="https://github.com/amethyst/amethyst/issues/1044">Generate graph of Amethyst API</a></li>
+<li>[moderate | <strong>slide-rs/specs</strong>] <a href="https://github.com/slide-rs/specs/issues/505">Update book chapter about <code>FlaggedStorage</code></a></li>
+<li>[moderate | <strong>amethyst/amethyst</strong>] <a href="https://github.com/amethyst/amethyst/issues/1019">Ideas for managing graphics settings &amp; applying changes</a></li>
+</ul>
+<p>Please let us know that you're working on an issue using a short comment,
+that way we can avoid duplicate work. Contributing to the discussion is also
+appreciated!</p>
+<p>Thank you for helping push the project forward!</p>
+
+    </section>
+</main>
+
+        
+        <div class="master-footer">
+            <div class="nav">
+                <div class="logo">
+                    
+    <svg viewBox="0 0 32 32" width="100px" height="100px" class="logo-emblem">
+        <defs>
+            
+            
+            <linearGradient id="logo-white" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#fff;stop-opacity:1" />
+            </linearGradient>
+            
+            
+        </defs>
+        <path
+            d="M 15.999998,0.5000067 A 15.499999,15.499999 0 0 0 0.49999975,16 15.499999,15.499999 0 0 0 15.999998,31.499993 15.499999,15.499999 0 0 0 31.5,16 15.499999,15.499999 0 0 0 15.999998,0.5000067 Z m -1.759767,3.050797 3.785159,2.402343 0.636718,4.011704 -1.308593,0.8808573 -1.050784,9.236333 -2.378907,1.066394 -1.582029,-1.998048 -1.087888,-12.1796773 z m 7.935549,4.767572 2.912108,4.0038803 -3.564451,12.687533 -3.750001,-5.585953 -0.859374,0.386722 0.980466,-8.636712 3.232422,-2.1738333 z M 11.140624,18.56252 13.53125,21.576164 13.105468,27.029304 10.80078,26.634759 8.1640612,19.533216 Z m 6.42578,1.585927 3.441408,5.126967 -4.728518,2.298822 -2.607419,-0.447269 0.423827,-5.421884 z"
+            style="fill:url(#logo-white);" />
+    </svg>
+
+                </div>
+                <div>
+                    <div class="h6">Project</div>
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst">GitHub</a>
+                    <a href="&#x2F;doc">Documentation</a>
+                    <a href="/blog">Blog</a>
+                </div>
+                <div>
+                    <div class="h6">Community</div>
+                    <a href="https:&#x2F;&#x2F;discord.gg&#x2F;amethyst">Discord</a>
+                    <a href="https:&#x2F;&#x2F;community.amethyst-engine.org">Forums</a>
+                </div>
+                <div>
+                    <div class="h6">Foundation</div>
+                    <a href="/donate">Donate</a>
+                    <a href="/branding">Branding</a>
+                </div>
+            </div>
+        </div>
+        
+        <script src="/js/konami.js"></script>
+    </div>
+</body>
+
+</html>

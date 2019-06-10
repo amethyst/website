@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["default_output","Get the default output, returns none if no outputs are available."],["init_output","Initialize default output"],["outputs","Get a list of outputs available to the system."]],"struct":[["Output","A speaker(s) through which audio can be played."],["OutputIterator","An iterator over outputs"]]});

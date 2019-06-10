@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DirectionalLight",""],["Environment",""],["JointsOffset",""],["Material",""],["PointLight",""],["SkinnedVertexArgs",""],["SpotLight",""],["SpriteArgs",""],["TextureOffset",""],["Tint",""],["VertexArgs",""],["ViewArgs",""]],"trait":[["IntoPod",""]]});

@@ -1,0 +1,684 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>System - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../concepts/state.html"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../concepts/component.html"><strong aria-hidden="true">3.2.</strong> Component</a></li><li><a href="../concepts/entity.html"><strong aria-hidden="true">3.3.</strong> Entity</a></li><li><a href="../concepts/resource.html"><strong aria-hidden="true">3.4.</strong> Resource</a></li><li><a href="../concepts/world.html"><strong aria-hidden="true">3.5.</strong> World</a></li><li><a href="../concepts/system.html" class="active"><strong aria-hidden="true">3.6.</strong> System</a></li><li><a href="../concepts/dispatcher.html"><strong aria-hidden="true">3.7.</strong> Dispatcher</a></li><li><a href="../concepts/event-channel.html"><strong aria-hidden="true">3.8.</strong> Event Channel</a></li></ol></li><li><a href="../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../pong-tutorial/pong-tutorial-01.html"><strong aria-hidden="true">4.1.</strong> Creating a Window</a></li><li><a href="../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-03.html"><strong aria-hidden="true">4.3.</strong> Moving the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-04.html"><strong aria-hidden="true">4.4.</strong> Making a Ball Move and Bounce</a></li><li><a href="../pong-tutorial/pong-tutorial-05.html"><strong aria-hidden="true">4.5.</strong> Winning Rounds and Keeping Score</a></li><li><a href="../pong-tutorial/contribution.html"><strong aria-hidden="true">4.6.</strong> Call for Contribution</a></li></ol></li><li><a href="../math.html"><strong aria-hidden="true">5.</strong> Math</a></li><li><a href="../animation.html"><strong aria-hidden="true">6.</strong> Animation</a></li><li><ol class="section"><li><a href="../animation/interpolation.html"><strong aria-hidden="true">6.1.</strong> Interpolation</a></li><li><a href="../animation/channel.html"><strong aria-hidden="true">6.2.</strong> Channel</a></li><li><a href="../animation/sampler.html"><strong aria-hidden="true">6.3.</strong> Sampler</a></li><li><a href="../animation/definition.html"><strong aria-hidden="true">6.4.</strong> Definition</a></li></ol></li><li><a href="../game-data.html"><strong aria-hidden="true">7.</strong> Custom GameData</a></li><li><a href="../sprites.html"><strong aria-hidden="true">8.</strong> Sprites</a></li><li><ol class="section"><li><a href="../sprites/set_up_the_render_pass.html"><strong aria-hidden="true">8.1.</strong> Set Up The Render Pass</a></li><li><a href="../sprites/load_the_texture.html"><strong aria-hidden="true">8.2.</strong> Load The Texture</a></li><li><a href="../sprites/display_the_texture.html"><strong aria-hidden="true">8.3.</strong> Display The Texture</a></li><li><a href="../sprites/define_the_sprite_sheet.html"><strong aria-hidden="true">8.4.</strong> Define The SpriteSheet</a></li><li><a href="../sprites/sprite_render_component.html"><strong aria-hidden="true">8.5.</strong> SpriteRender Component</a></li><li><a href="../sprites/orthographic_camera.html"><strong aria-hidden="true">8.6.</strong> Orthographic Camera</a></li></ol></li><li><a href="../prefab.html"><strong aria-hidden="true">9.</strong> Prefabs</a></li><li><a href="../testing.html"><strong aria-hidden="true">10.</strong> Testing</a></li><li><ol class="section"><li><a href="../testing/test_examples.html"><strong aria-hidden="true">10.1.</strong> Test Examples</a></li></ol></li><li><a href="../glossary.html"><strong aria-hidden="true">11.</strong> Glossary</a></li><li><a href="../appendices/a_config_files.html"><strong aria-hidden="true">12.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">12.1.</strong> Adding an Arena Config</a></li><li><a href="../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">12.2.</strong> Adding a Ball Config</a></li><li><a href="../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">12.3.</strong> Adding Paddle Configs</a></li></ol></li><li><a href="../appendices/b_migration_notes.html"><strong aria-hidden="true">13.</strong> Appendix B: Migration Notes</a></li><li><ol class="section"><li><a href="../appendices/b_migration_notes/cgmath_to_nalgebra.html"><strong aria-hidden="true">13.1.</strong> cgmath to nalgebra</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#system" id="system"><h1>System</h1></a>
+<a class="header" href="#what-is-a-system" id="what-is-a-system"><h2>What is a <code>System</code>?</h2></a>
+<p>A system is where the logic of the game is executed. In practice, it consists of a struct implementing a function executed on every iteration of the game loop, and taking as an argument data about the game.</p>
+<p>Systems can be seen as a small unit of logic. All systems are run by the engine together (even in parallel when possible), and do a specialized operation on one or a group of entities.</p>
+<a class="header" href="#structure" id="structure"><h2>Structure</h2></a>
+<p>A system struct is a structure implementing the trait <code>amethyst::ecs::System</code>.</p>
+<p>Here is a very simple example implementation:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::System;
+struct MyFirstSystem;
+
+impl&lt;'a&gt; System&lt;'a&gt; for MyFirstSystem {
+    type SystemData = ();
+
+    fn run(&amp;mut self, data: Self::SystemData) {
+        println!(&quot;Hello!&quot;);
+    }
+}
+</code></pre>
+<p>This system will, on every iteration of the game loop, print &quot;Hello!&quot; in the console. This is a pretty boring system as it does not interact at all with the game. Let us spice it up a bit.</p>
+<a class="header" href="#accessing-the-context-of-the-game" id="accessing-the-context-of-the-game"><h2>Accessing the context of the game</h2></a>
+<p>In the definition of a system, the trait requires you to define a type <code>SystemData</code>. This type defines what data the system will be provided with on each call of its <code>run</code> method. <code>SystemData</code> is only meant to carry information accessible to multiple systems. Data local to a system is usually stored in the system's struct itself instead.</p>
+<p>The Amethyst engine provides useful system data types to use in order to access the context of a game. Here are some of the most important ones:</p>
+<ul>
+<li><strong>Read&lt;'a, Resource&gt;</strong> (respectively <strong>Write&lt;'a, Resource&gt;</strong>) allows you to obtain an immutable (respectively mutable) reference to a resource of the type you specify. This is guaranteed to not fail as if the resource is not available, it will give you the <code>Default::default()</code> of your resource.</li>
+<li><strong>ReadExpect&lt;'a, Resource&gt;</strong> (respectively <strong>WriteExpect&lt;'a, Resource&gt;</strong>) is a failable alternative to the previous system data, so that you can use resources that do not implement the <code>Default</code> trait.</li>
+<li><strong>ReadStorage&lt;'a, Component&gt;</strong> (respectively <strong>WriteStorage&lt;'a, Component&gt;</strong>) allows you to obtain an immutable (respectively mutable) reference to the entire storage of a certain <code>Component</code> type.</li>
+<li><strong>Entities&lt;'a&gt;</strong> allows you to create or destroy entities in the context of a system.</li>
+</ul>
+<p>You can then use one, or multiple of them via a tuple.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::{System, Read};
+# use amethyst::core::timing::Time;
+struct MyFirstSystem;
+
+impl&lt;'a&gt; System&lt;'a&gt; for MyFirstSystem {
+    type SystemData = Read&lt;'a, Time&gt;;
+
+    fn run(&amp;mut self, data: Self::SystemData) {
+        println!(&quot;{}&quot;, data.delta_seconds());
+    }
+}
+</code></pre>
+<p>Here, we get the <code>amethyst::core::timing::Time</code> resource to print in the console the time elapsed between two frames. Nice! But that's still a bit boring.</p>
+<a class="header" href="#manipulating-storages" id="manipulating-storages"><h2>Manipulating storages</h2></a>
+<p>Once you have access to a storage, you can use them in different ways.</p>
+<a class="header" href="#getting-a-component-of-a-specific-entity" id="getting-a-component-of-a-specific-entity"><h3>Getting a component of a specific entity</h3></a>
+<p>Sometimes, it can be useful to get a component in the storage for a specific entity. This can easily be done using the <code>get</code> or, for mutable storages, <code>get_mut</code> methods.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::{Entity, System, WriteStorage};
+# use amethyst::core::Transform;
+struct WalkPlayerUp {
+    player: Entity,
+}
+
+impl&lt;'a&gt; System&lt;'a&gt; for WalkPlayerUp {
+    type SystemData = WriteStorage&lt;'a, Transform&gt;;
+
+    fn run(&amp;mut self, mut transforms: Self::SystemData) {
+        transforms.get_mut(self.player).unwrap().translate_y(0.1);
+    }
+}
+</code></pre>
+<p>This system makes the player go up by 0.1 unit every iteration of the game loop! To identify what entity the player is, we stored it beforehand in the system's struct. Then, we get its <code>Transform</code> from the transform storage, and move it along the Y axis by 0.1.</p>
+<blockquote>
+<p>A transform is a very common structure in game development. It represents the position, rotation and scale of an object in the game world. You will use them a lot, as they are what you need to change when you want to move something around in your game.</p>
+</blockquote>
+<p>However, this approach is pretty rare because most of the time you don't know what entity you want to manipulate, and in fact you may want to apply your changes to multiple entities.</p>
+<a class="header" href="#getting-all-entities-with-specific-components" id="getting-all-entities-with-specific-components"><h3>Getting all entities with specific components</h3></a>
+<p>Most of the time, you will want to perform logic on all entities with a specific components, or even all entities with a selection of components.</p>
+<p>This is possible using the <code>join</code> method. You may be familiar with joining operations if you have ever worked with databases. The <code>join</code> method takes multiple storages, and iterates over all entities that have a component in each of those storages.
+It works like an &quot;AND&quot; gate. It will return an iterator containing a tuple of all the requested components if they are <strong>ALL</strong> on the same entity.</p>
+<p>If you join with components A, B and C, only the entities that have <strong>ALL</strong> those components will be considered.</p>
+<p>Needless to say that you can use it with only one storage to iterate over all entities with a specific component.</p>
+<p>Keep in mind that <strong>the <code>join</code> method is only available by importing <code>amethyst::ecs::Join</code></strong>.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::{System, ReadStorage, WriteStorage};
+# use amethyst::core::Transform;
+# struct FallingObject;
+# impl amethyst::ecs::Component for FallingObject {
+#   type Storage = amethyst::ecs::DenseVecStorage&lt;FallingObject&gt;;
+# }
+use amethyst::ecs::Join;
+
+struct MakeObjectsFall;
+
+impl&lt;'a&gt; System&lt;'a&gt; for MakeObjectsFall {
+    type SystemData = (
+        WriteStorage&lt;'a, Transform&gt;,
+        ReadStorage&lt;'a, FallingObject&gt;,
+    );
+
+    fn run(&amp;mut self, (mut transforms, falling): Self::SystemData) {
+        for (mut transform, _) in (&amp;mut transforms, &amp;falling).join() {
+            if transform.translation().y &gt; 0.0 {
+                transform.translate_y(-0.1);
+            }
+        }
+    }
+}
+</code></pre>
+<p>This system will make all entities with both a <code>Transform</code> with a positive y coordinate and a <code>FallingObject</code> tag component fall by 0.1 unit per game loop iteration. Note that as the <code>FallingObject</code> is only here as a tag to restrict the joining operation, we immediately discard it using the <code>_</code> syntax.</p>
+<p>Cool! Now that looks like something we'll actually do in our games!</p>
+<a class="header" href="#getting-entities-that-have-some-components-but-not-others" id="getting-entities-that-have-some-components-but-not-others"><h3>Getting entities that have some components, but not others</h3></a>
+<p>There is a special type of <code>Storage</code> in specs called <code>AntiStorage</code>.
+The not operator (!) turns a Storage into its AntiStorage counterpart, allowing you to iterate over entities that do NOT have this <code>Component</code>.
+It is used like this:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::{System, ReadStorage, WriteStorage};
+# use amethyst::core::Transform;
+# struct FallingObject;
+# impl amethyst::ecs::Component for FallingObject {
+#   type Storage = amethyst::ecs::DenseVecStorage&lt;FallingObject&gt;;
+# }
+use amethyst::ecs::Join;
+
+struct NotFallingObjects;
+
+impl&lt;'a&gt; System&lt;'a&gt; for NotFallingObjects {
+    type SystemData = (
+        WriteStorage&lt;'a, Transform&gt;,
+        ReadStorage&lt;'a, FallingObject&gt;,
+    );
+
+    fn run(&amp;mut self, (mut transforms, falling): Self::SystemData) {
+        for (mut transform, _) in (&amp;mut transforms, !&amp;falling).join() {
+            // If they don't fall, why not make them go up!
+            transform.translate_y(0.1);
+        }
+    }
+}
+</code></pre>
+<a class="header" href="#manipulating-the-structure-of-entities" id="manipulating-the-structure-of-entities"><h2>Manipulating the structure of entities</h2></a>
+<p>It may sometimes be interesting to manipulate the structure of entities in a system, such as creating new ones or modifying the component layout of existing ones. This kind of process is done using the <code>Entities&lt;'a&gt;</code> system data.</p>
+<blockquote>
+<p>Requesting <code>Entities&lt;'a&gt;</code> does not impact performance, as it contains only immutable resources and therefore <a href="./dispatcher.html">does not block the dispatching</a>.</p>
+</blockquote>
+<a class="header" href="#creating-new-entities-in-a-system" id="creating-new-entities-in-a-system"><h3>Creating new entities in a system</h3></a>
+<p>Creating an entity while in the context of a system is very similar to the way one would create an entity using the <code>World</code> struct. The only difference is that one needs to provide mutable storages of all the components they plan to add to the entity.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::{System, WriteStorage, Entities};
+# use amethyst::core::Transform;
+# struct Enemy;
+# impl amethyst::ecs::Component for Enemy {
+#   type Storage = amethyst::ecs::VecStorage&lt;Enemy&gt;;
+# }
+struct SpawnEnemies {
+    counter: u32,
+}
+
+impl&lt;'a&gt; System&lt;'a&gt; for SpawnEnemies {
+    type SystemData = (
+        WriteStorage&lt;'a, Transform&gt;,
+        WriteStorage&lt;'a, Enemy&gt;,
+        Entities&lt;'a&gt;,
+    );
+
+    fn run(&amp;mut self, (mut transforms, mut enemies, entities): Self::SystemData) {
+        self.counter += 1;
+        if self.counter &gt; 200 {
+            entities.build_entity()
+                .with(Transform::default(), &amp;mut transforms)
+                .with(Enemy, &amp;mut enemies)
+                .build();
+            self.counter = 0;
+        }
+    }
+}
+</code></pre>
+<p>This system will spawn a new enemy every 200 game loop iterations.</p>
+<a class="header" href="#removing-an-entity" id="removing-an-entity"><h3>Removing an entity</h3></a>
+<p>Deleting an entity is very easy using <code>Entities&lt;'a&gt;</code>.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::{System, Entities, Entity};
+# struct MySystem { entity: Entity }
+# impl&lt;'a&gt; System&lt;'a&gt; for MySystem {
+#   type SystemData = Entities&lt;'a&gt;;
+#   fn run(&amp;mut self, entities: Self::SystemData) {
+#       let entity = self.entity;
+entities.delete(entity);
+#   }
+# }
+</code></pre>
+<a class="header" href="#iterating-over-components-with-associated-entity" id="iterating-over-components-with-associated-entity"><h3>Iterating over components with associated entity</h3></a>
+<p>Sometimes, when you iterate over components, you may want to also know what entity you are working with. To do that, you can use the joining operation with <code>Entities&lt;'a&gt;</code>.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::{Join, System, Entities, WriteStorage, ReadStorage};
+# use amethyst::core::Transform;
+# struct FallingObject;
+# impl amethyst::ecs::Component for FallingObject {
+#   type Storage = amethyst::ecs::VecStorage&lt;FallingObject&gt;;
+# }
+struct MakeObjectsFall;
+
+impl&lt;'a&gt; System&lt;'a&gt; for MakeObjectsFall {
+    type SystemData = (
+        Entities&lt;'a&gt;,
+        WriteStorage&lt;'a, Transform&gt;,
+        ReadStorage&lt;'a, FallingObject&gt;,
+    );
+
+    fn run(&amp;mut self, (entities, mut transforms, falling): Self::SystemData) {
+        for (e, mut transform, _) in (&amp;*entities, &amp;mut transforms, &amp;falling).join() {
+            if transform.translation().y &gt; 0.0 {
+                transform.translate_y(-0.1);
+            } else {
+                entities.delete(e);
+            }
+        }
+    }
+}
+</code></pre>
+<p>This system does the same thing as the previous <code>MakeObjectsFall</code>, but also cleans up falling objects that reached the ground.</p>
+<a class="header" href="#adding-or-removing-components" id="adding-or-removing-components"><h3>Adding or removing components</h3></a>
+<p>You can also insert or remove components from a specific entity.
+To do that, you need to get a mutable storage of the component you want to modify, and simply do:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::{System, Entities, Entity, WriteStorage};
+# struct MyComponent;
+# impl amethyst::ecs::Component for MyComponent {
+#   type Storage = amethyst::ecs::VecStorage&lt;MyComponent&gt;;
+# }
+# struct MySystem { entity: Entity }
+# impl&lt;'a&gt; System&lt;'a&gt; for MySystem {
+#   type SystemData = WriteStorage&lt;'a, MyComponent&gt;;
+#   fn run(&amp;mut self, mut write_storage: Self::SystemData) {
+#       let entity = self.entity;
+// Add the component
+write_storage.insert(entity, MyComponent);
+
+// Remove the component
+write_storage.remove(entity);
+#   }
+# }
+</code></pre>
+<p>Keep in mind that inserting a component on an entity that already has a component of the same type <strong>will overwrite the previous one</strong>.</p>
+<a class="header" href="#changing-states-through-resources" id="changing-states-through-resources"><h2>Changing states through resources</h2></a>
+<p>In a previous section we talked about <a href="./state.html"><code>States</code></a>, and how they are used to organize your game
+into different logical sections.
+Sometimes we want to trigger a state transition from a system.
+For example, if a player dies we might want to remove their entity and signal to the state machine
+to push a state that shows a &quot;You Died&quot; screen.</p>
+<p>So how can we affect states from systems?
+There are a couple of ways, but this section will detail the easiest one: using a <a href="./resource.html"><code>Resource</code></a>.</p>
+<p>Before that, let's just quickly remind ourselves what a resource is:</p>
+<blockquote>
+<p>A <a href="./resource.html"><code>Resource</code></a> is any type that stores data that you might need for your game AND that is not
+specific to an entity.</p>
+</blockquote>
+<p>The data in a resource is available both to systems and states.
+We can use this to our advantage!</p>
+<p>Let's say you have the following two states:</p>
+<ul>
+<li><code>GameplayState</code>: State in which the game is running.</li>
+<li><code>GameMenuState</code>: State where the game is paused and we interact with a game menu.</li>
+</ul>
+<p>The following example shows how to keep track of which state we are currently in.
+This allows us to do a bit of conditional logic in our systems to determine what to do depending on
+which state is currently active, and manipulating the states by tracking user actions:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+use amethyst::prelude::*;
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+enum CurrentState {
+    MainMenu,
+    Gameplay,
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+enum UserAction {
+    OpenMenu,
+    ResumeGame,
+    Quit,
+}
+
+impl Default for CurrentState {
+    fn default() -&gt; Self {
+        CurrentState::Gameplay
+    }
+}
+
+struct Game {
+    user_action: Option&lt;UserAction&gt;,
+    current_state: CurrentState,
+}
+
+impl Default for Game {
+    fn default() -&gt; Self {
+        Game {
+            user_action: None,
+            current_state: CurrentState::default(),
+        }
+    }
+}
+
+struct GameplayState;
+
+impl SimpleState for GameplayState {
+    fn update(&amp;mut self, data: &amp;mut StateData&lt;'_, GameData&lt;'_, '_&gt;&gt;) -&gt; SimpleTrans {
+        // If the `Game` resource has been set up to go back to the menu, pop
+        // the state so that we go back.
+
+        let mut game = data.world.write_resource::&lt;Game&gt;();
+
+        if let Some(UserAction::OpenMenu) = game.user_action.take() {
+            return Trans::Push(Box::new(GameMenuState));
+        }
+
+        Trans::None
+    }
+
+    fn on_resume(&amp;mut self, mut data: StateData&lt;'_, GameData&lt;'_, '_&gt;&gt;) {
+        // mark that the current state is a gameplay state.
+        data.world.write_resource::&lt;Game&gt;().current_state = CurrentState::Gameplay;
+    }
+}
+
+struct GameMenuState;
+
+impl SimpleState for GameMenuState {
+    fn update(&amp;mut self, data: &amp;mut StateData&lt;'_, GameData&lt;'_, '_&gt;&gt;) -&gt; SimpleTrans {
+        let mut game = data.world.write_resource::&lt;Game&gt;();
+
+        match game.user_action.take() {
+            Some(UserAction::ResumeGame) =&gt; Trans::Pop,
+            Some(UserAction::Quit) =&gt; {
+                // Note: no need to clean up :)
+                Trans::Quit
+            },
+            _ =&gt; Trans::None,
+        }
+    }
+
+    fn on_resume(&amp;mut self, mut data: StateData&lt;'_, GameData&lt;'_, '_&gt;&gt;) {
+        // mark that the current state is a main menu state.
+        data.world.write_resource::&lt;Game&gt;().current_state = CurrentState::MainMenu;
+    }
+}
+</code></pre>
+<p>Let's say we want the player to be able to press escape to enter the menu.
+We modify our input handler to map the <code>open_menu</code> action to <code>Esc</code>, and we write the following
+system:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+#
+# #[derive(Clone, Copy, Debug, PartialEq, Eq)]
+# enum CurrentState {
+#     MainMenu,
+#     Gameplay,
+# }
+#
+# impl Default for CurrentState { fn default() -&gt; Self { CurrentState::Gameplay } }
+#
+# #[derive(Clone, Copy, Debug, PartialEq, Eq)]
+# enum UserAction {
+#     OpenMenu,
+#     ResumeGame,
+#     Quit,
+# }
+#
+# struct Game {
+#     user_action: Option&lt;UserAction&gt;,
+#     current_state: CurrentState,
+# }
+#
+# impl Default for Game {
+#     fn default() -&gt; Self {
+#         Game {
+#             user_action: None,
+#             current_state: CurrentState::default(),
+#         }
+#     }
+# }
+#
+use amethyst::{
+    prelude::*,
+    ecs::{System, prelude::*},
+    input::InputHandler,
+};
+
+struct MyGameplaySystem;
+
+impl&lt;'s&gt; System&lt;'s&gt; for MyGameplaySystem {
+    type SystemData = (
+        Read&lt;'s, InputHandler&lt;String, String&gt;&gt;,
+        Write&lt;'s, Game&gt;,
+    );
+
+    fn run(&amp;mut self, (input, mut game): Self::SystemData) {
+        match game.current_state {
+            CurrentState::Gameplay =&gt; {
+                let open_menu = input
+                    .action_is_down(&quot;open_menu&quot;)
+                    .unwrap_or(false);
+
+                // Toggle the `open_menu` variable to signal the state to
+                // transition.
+                if open_menu {
+                    game.user_action = Some(UserAction::OpenMenu);
+                }
+            }
+            // do nothing for other states.
+            _ =&gt; {}
+        }
+    }
+}
+</code></pre>
+<p>Now whenever you are playing the game and you press the button associated with the <code>open_menu</code>
+action, the <code>GameMenuState</code> will resume and the <code>GameplayState</code> will pause.</p>
+<a class="header" href="#the-systemdata-trait" id="the-systemdata-trait"><h2>The SystemData trait</h2></a>
+<p>While this is rarely useful, it is possible to create custom <code>SystemData</code> types.</p>
+<p>The <code>Dispatcher</code> populates the <code>SystemData</code> on every call of the <code>run</code> method. To do that, your <code>SystemData</code> type must implement the trait <code>amethyst::ecs::SystemData</code> in order to have it be valid.</p>
+<p>This is rather complicated trait to implement, fortunately Amethyst provides a derive macro for it, that can implement the trait to any struct as long as all its fields are <code>SystemData</code>. Most of the time however, you will not even need to implement it at all as you will be using <code>SystemData</code> structs provided by the engine.</p>
+<p>Please note that tuples of structs implementing <code>SystemData</code> are themselves <code>SystemData</code>. This is very useful when you need to request multiple <code>SystemData</code> at once quickly.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# extern crate shred;
+# #[macro_use] extern crate shred_derive;
+#
+# use amethyst::ecs::{ReadStorage, WriteStorage, SystemData, Component, VecStorage, System, Join};
+#
+# struct FooComponent {
+#   stuff: f32,
+# }
+# impl Component for FooComponent {
+#   type Storage = VecStorage&lt;FooComponent&gt;;
+# }
+#
+# struct BarComponent {
+#   stuff: f32,
+# }
+# impl Component for BarComponent {
+#   type Storage = VecStorage&lt;BarComponent&gt;;
+# }
+#
+# #[derive(SystemData)]
+# struct BazSystemData&lt;'a&gt; {
+#  field: ReadStorage&lt;'a, FooComponent&gt;,
+# }
+#
+# impl&lt;'a&gt; BazSystemData&lt;'a&gt; {
+#   fn should_process(&amp;self) -&gt; bool {
+#       true
+#   }
+# }
+#
+#[derive(SystemData)]
+struct MySystemData&lt;'a&gt; {
+    foo: ReadStorage&lt;'a, FooComponent&gt;,
+    bar: WriteStorage&lt;'a, BarComponent&gt;,
+    baz: BazSystemData&lt;'a&gt;,
+}
+
+struct MyFirstSystem;
+
+impl&lt;'a&gt; System&lt;'a&gt; for MyFirstSystem {
+    type SystemData = MySystemData&lt;'a&gt;;
+
+    fn run(&amp;mut self, mut data: Self::SystemData) {
+        if data.baz.should_process() {
+            for (foo, mut bar) in (&amp;data.foo, &amp;mut data.bar).join() {
+                bar.stuff += foo.stuff;
+            }
+        }
+    }
+}
+</code></pre>
+<a class="header" href="#the-setup-method" id="the-setup-method"><h2>The setup method</h2></a>
+<p>Systems have a method called setup which is called a single time, before any of the system runs.
+Here is how to use it:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::{System, Resources, SystemData, Entity};
+# struct MySystem { entity: Entity }
+# impl&lt;'a&gt; System&lt;'a&gt; for MySystem {
+#   type SystemData = ();
+#   fn run(&amp;mut self, _: Self::SystemData) { }
+    fn setup(&amp;mut self, res: &amp;mut Resources) {
+        // Ensures that resources that implement `Default` and are present in your `SystemData` are added to `Resources`.
+        Self::SystemData::setup(res);
+        // Do what you want with `Resources` past this point.
+    }
+# }
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../concepts/world.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../concepts/dispatcher.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../concepts/world.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../concepts/dispatcher.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

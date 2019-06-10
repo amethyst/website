@@ -1,0 +1,1028 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Winning Rounds and Keeping Score - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../concepts/state.html"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../concepts/component.html"><strong aria-hidden="true">3.2.</strong> Component</a></li><li><a href="../concepts/entity.html"><strong aria-hidden="true">3.3.</strong> Entity</a></li><li><a href="../concepts/resource.html"><strong aria-hidden="true">3.4.</strong> Resource</a></li><li><a href="../concepts/world.html"><strong aria-hidden="true">3.5.</strong> World</a></li><li><a href="../concepts/system.html"><strong aria-hidden="true">3.6.</strong> System</a></li><li><a href="../concepts/dispatcher.html"><strong aria-hidden="true">3.7.</strong> Dispatcher</a></li><li><a href="../concepts/event-channel.html"><strong aria-hidden="true">3.8.</strong> Event Channel</a></li></ol></li><li><a href="../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../pong-tutorial/pong-tutorial-01.html"><strong aria-hidden="true">4.1.</strong> Creating a Window</a></li><li><a href="../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-03.html"><strong aria-hidden="true">4.3.</strong> Moving the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-04.html"><strong aria-hidden="true">4.4.</strong> Making a Ball Move and Bounce</a></li><li><a href="../pong-tutorial/pong-tutorial-05.html" class="active"><strong aria-hidden="true">4.5.</strong> Winning Rounds and Keeping Score</a></li><li><a href="../pong-tutorial/contribution.html"><strong aria-hidden="true">4.6.</strong> Call for Contribution</a></li></ol></li><li><a href="../math.html"><strong aria-hidden="true">5.</strong> Math</a></li><li><a href="../animation.html"><strong aria-hidden="true">6.</strong> Animation</a></li><li><ol class="section"><li><a href="../animation/interpolation.html"><strong aria-hidden="true">6.1.</strong> Interpolation</a></li><li><a href="../animation/channel.html"><strong aria-hidden="true">6.2.</strong> Channel</a></li><li><a href="../animation/sampler.html"><strong aria-hidden="true">6.3.</strong> Sampler</a></li><li><a href="../animation/definition.html"><strong aria-hidden="true">6.4.</strong> Definition</a></li></ol></li><li><a href="../game-data.html"><strong aria-hidden="true">7.</strong> Custom GameData</a></li><li><a href="../sprites.html"><strong aria-hidden="true">8.</strong> Sprites</a></li><li><ol class="section"><li><a href="../sprites/set_up_the_render_pass.html"><strong aria-hidden="true">8.1.</strong> Set Up The Render Pass</a></li><li><a href="../sprites/load_the_texture.html"><strong aria-hidden="true">8.2.</strong> Load The Texture</a></li><li><a href="../sprites/display_the_texture.html"><strong aria-hidden="true">8.3.</strong> Display The Texture</a></li><li><a href="../sprites/define_the_sprite_sheet.html"><strong aria-hidden="true">8.4.</strong> Define The SpriteSheet</a></li><li><a href="../sprites/sprite_render_component.html"><strong aria-hidden="true">8.5.</strong> SpriteRender Component</a></li><li><a href="../sprites/orthographic_camera.html"><strong aria-hidden="true">8.6.</strong> Orthographic Camera</a></li></ol></li><li><a href="../prefab.html"><strong aria-hidden="true">9.</strong> Prefabs</a></li><li><a href="../testing.html"><strong aria-hidden="true">10.</strong> Testing</a></li><li><ol class="section"><li><a href="../testing/test_examples.html"><strong aria-hidden="true">10.1.</strong> Test Examples</a></li></ol></li><li><a href="../glossary.html"><strong aria-hidden="true">11.</strong> Glossary</a></li><li><a href="../appendices/a_config_files.html"><strong aria-hidden="true">12.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">12.1.</strong> Adding an Arena Config</a></li><li><a href="../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">12.2.</strong> Adding a Ball Config</a></li><li><a href="../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">12.3.</strong> Adding Paddle Configs</a></li></ol></li><li><a href="../appendices/b_migration_notes.html"><strong aria-hidden="true">13.</strong> Appendix B: Migration Notes</a></li><li><ol class="section"><li><a href="../appendices/b_migration_notes/cgmath_to_nalgebra.html"><strong aria-hidden="true">13.1.</strong> cgmath to nalgebra</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#winning-rounds-and-keeping-score" id="winning-rounds-and-keeping-score"><h1>Winning Rounds and Keeping Score</h1></a>
+<p>Our last chapter ended on a bit of a cliffhanger. What happens when our ball
+reaches the left or right edge of the screen? It just keeps going! 😦</p>
+<p>In this chapter, we'll fix that by putting the ball back into play after it
+leaves either side of the arena. We'll also add a scoreboard and keep track of
+who's winning and losing.</p>
+<a class="header" href="#winning-and-losing-rounds" id="winning-and-losing-rounds"><h2>Winning and Losing Rounds</h2></a>
+<p>So let's fix the big current issue; having a game that only works for one
+round isn't very fun. We'll add a new system that will check if the ball has
+reached either edge of the arena and reset its position and velocity. We'll also
+make a note of who got the point for the round.</p>
+<p>First, we'll add a new module to <code>systems/mod.rs</code></p>
+<pre><code class="language-rust no_run noplaypen ignore">mod winner;
+
+pub use self::winner::WinnerSystem;
+</code></pre>
+<p>Then, we'll create <code>systems/winner.rs</code>:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+#
+# mod pong {
+#     use amethyst::ecs::prelude::*;
+#
+#     pub struct Ball {
+#         pub radius: f32,
+#         pub velocity: [f32; 2],
+#     }
+#     impl Component for Ball {
+#         type Storage = DenseVecStorage&lt;Self&gt;;
+#     }
+#
+#     pub const ARENA_WIDTH: f32 = 100.0;
+# }
+#
+use amethyst::{
+    core::transform::Transform,
+    ecs::prelude::{Join, System, WriteStorage},
+};
+
+use pong::{Ball, ARENA_WIDTH};
+
+pub struct WinnerSystem;
+
+impl&lt;'s&gt; System&lt;'s&gt; for WinnerSystem {
+    type SystemData = (
+        WriteStorage&lt;'s, Ball&gt;,
+        WriteStorage&lt;'s, Transform&gt;,
+    );
+
+    fn run(&amp;mut self, (mut balls, mut locals): Self::SystemData) {
+        for (ball, transform) in (&amp;mut balls, &amp;mut locals).join() {
+            let ball_x = transform.translation().x;
+
+            let did_hit = if ball_x &lt;= ball.radius {
+                // Right player scored on the left side.
+                println!(&quot;Player 2 Scores!&quot;);
+                true
+            } else if ball_x &gt;= ARENA_WIDTH - ball.radius {
+                // Left player scored on the right side.
+                println!(&quot;Player 1 Scores!&quot;);
+                true
+            } else {
+                false
+            };
+
+            if did_hit {
+                ball.velocity[0] = -ball.velocity[0]; // Reverse Direction
+                transform.set_x(ARENA_WIDTH / 2.0); // Reset Position
+            }
+        }
+    }
+}
+#
+# fn main() {}
+</code></pre>
+<p>Here, we're creating a new system, joining on all <code>Entities</code> that have a <code>Ball</code>
+and a <code>Transform</code> component, and then checking each ball to see if it has
+reached either the left or right boundary of the arena. If so, we reverse
+its direction and put it back in the middle of the screen.</p>
+<p>Now, we just need to add our new system to <code>main.rs</code>, and we should be able to
+keep playing after someone scores and log who got the point.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+#
+# use amethyst::{
+#    prelude::*,
+#    core::transform::TransformBundle,
+#    renderer::{
+#        DisplayConfig,
+#        DrawFlat2D,
+#        Pipeline,
+#        RenderBundle,
+#        Stage,
+#    }
+# };
+#
+# mod systems {
+#     use amethyst;
+#     pub struct PaddleSystem;
+#     impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for PaddleSystem {
+#         type SystemData = ();
+#         fn run(&amp;mut self, _: Self::SystemData) { }
+#     }
+#     pub struct MoveBallsSystem;
+#     impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for MoveBallsSystem {
+#         type SystemData = ();
+#         fn run(&amp;mut self, _: Self::SystemData) { }
+#     }
+#     pub struct BounceSystem;
+#     impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for BounceSystem {
+#         type SystemData = ();
+#         fn run(&amp;mut self, _: Self::SystemData) { }
+#     }
+#     pub struct WinnerSystem;
+#     impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for WinnerSystem {
+#         type SystemData = ();
+#         fn run(&amp;mut self, _: Self::SystemData) { }
+#     }
+# }
+#
+# fn main() -&gt; amethyst::Result&lt;()&gt; {
+#
+# let path = &quot;./resources/display_config.ron&quot;;
+# let config = DisplayConfig::load(&amp;path);
+# let pipe = Pipeline::build().with_stage(Stage::with_backbuffer()
+#       .clear_target([0.0, 0.0, 0.0, 1.0], 1.0)
+#       .with_pass(DrawFlat2D::new()),
+# );
+# let input_bundle = amethyst::input::InputBundle::&lt;String, String&gt;::new();
+#
+let game_data = GameDataBuilder::default()
+#    .with_bundle(RenderBundle::new(pipe, Some(config)).with_sprite_sheet_processor())?
+#    .with_bundle(TransformBundle::new())?
+#    .with_bundle(input_bundle)?
+#    .with(systems::PaddleSystem, &quot;paddle_system&quot;, &amp;[&quot;input_system&quot;])
+#    .with(systems::MoveBallsSystem, &quot;ball_system&quot;, &amp;[])
+#    .with(
+#        systems::BounceSystem,
+#        &quot;collision_system&quot;,
+#        &amp;[&quot;paddle_system&quot;, &quot;ball_system&quot;],
+#    )
+    // --snip--
+    .with(systems::WinnerSystem, &quot;winner_system&quot;, &amp;[&quot;ball_system&quot;]);
+#
+# Ok(())
+# }
+</code></pre>
+<a class="header" href="#adding-a-scoreboard" id="adding-a-scoreboard"><h2>Adding a Scoreboard</h2></a>
+<p>We have a pretty functional Pong game now! At this point, the least fun thing
+about the game is just that players have to keep track of the score themselves.
+Our game should be able to do that for us.</p>
+<p>In this section, we'll set up UI rendering for our game and create a scoreboard
+to display our players scores.</p>
+<p>First, let's add the UI rendering in <code>main.rs</code>:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+#
+use amethyst::{
+#     prelude::*,
+#     core::transform::TransformBundle,
+#     renderer::{
+#         DisplayConfig,
+#         DrawFlat2D,
+#         Pipeline,
+#         RenderBundle,
+#         Stage,
+#     },
+    // --snip--
+    ui::{DrawUi, UiBundle},
+};
+#
+# mod systems {
+#     use amethyst;
+#     pub struct PaddleSystem;
+#     impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for PaddleSystem {
+#         type SystemData = ();
+#         fn run(&amp;mut self, _: Self::SystemData) { }
+#     }
+#     pub struct MoveBallsSystem;
+#     impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for MoveBallsSystem {
+#         type SystemData = ();
+#         fn run(&amp;mut self, _: Self::SystemData) { }
+#     }
+#     pub struct BounceSystem;
+#     impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for BounceSystem {
+#         type SystemData = ();
+#         fn run(&amp;mut self, _: Self::SystemData) { }
+#     }
+#     pub struct WinnerSystem;
+#     impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for WinnerSystem {
+#         type SystemData = ();
+#         fn run(&amp;mut self, _: Self::SystemData) { }
+#     }
+# }
+
+fn main() -&gt; amethyst::Result&lt;()&gt; {
+    // --snip--
+
+#     let path = &quot;./resources/display_config.ron&quot;;
+#     let config = DisplayConfig::load(&amp;path);
+    let pipe = Pipeline::build().with_stage(Stage::with_backbuffer()
+          .clear_target([0.0, 0.0, 0.0, 1.0], 1.0)
+          .with_pass(DrawFlat2D::new())
+          .with_pass(DrawUi::new()), // &lt;-- Add me
+    );
+#     let input_bundle = amethyst::input::InputBundle::&lt;String, String&gt;::new();
+#
+    let game_data = GameDataBuilder::default()
+        .with_bundle(RenderBundle::new(pipe, Some(config))
+        .with_sprite_sheet_processor())?
+        .with_bundle(TransformBundle::new())?
+        .with_bundle(input_bundle)?
+        .with_bundle(UiBundle::&lt;String, String&gt;::new())? // &lt;-- Add me
+
+    // --snip--
+#         .with(systems::PaddleSystem, &quot;paddle_system&quot;, &amp;[&quot;input_system&quot;])
+#         .with(systems::MoveBallsSystem, &quot;ball_system&quot;, &amp;[])
+#         .with(
+#             systems::BounceSystem,
+#             &quot;collision_system&quot;,
+#             &amp;[&quot;paddle_system&quot;, &quot;ball_system&quot;],
+#         )
+#         .with(systems::WinnerSystem, &quot;winner_system&quot;, &amp;[&quot;ball_system&quot;]);
+# 
+#     Ok(())
+}
+</code></pre>
+<p>We're adding <code>DrawUi</code> as an additional render pass to our <code>Pipeline</code>, and
+we're also adding the <code>UiBundle</code> to our game data. This allows us to start
+rendering UI visuals to our game in addition to the existing background and
+sprites.</p>
+<p><em>Note</em>: We're using a <code>UiBundle</code> with type <code>&lt;String, String&gt;</code> here because the
+<code>UiBundle</code> needs to know what types our <code>InputHandler</code> is using to map <code>actions</code>
+and <code>axes</code>. So just know that your <code>UiBundle</code> type should match your
+<code>InputHandler</code> type. You can read more about those here: <a href="https://www.amethyst.rs/doc/latest/doc/amethyst_ui/struct.UiBundle.html">UiBundle</a>,
+<a href="https://www.amethyst.rs/doc/latest/doc/amethyst_input/struct.InputHandler.html">InputHandler</a>.</p>
+<p>Now we have everything set up so we can start rendering a scoreboard in our
+game. We'll start by creating some structures in <code>pong.rs</code>:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+#
+use amethyst::{
+#     assets::{AssetStorage, Loader},
+#     core::transform::Transform,
+    // --snip--
+    ecs::prelude::{Component, DenseVecStorage, Entity},
+#     prelude::*,
+#     renderer::{
+#         Camera, Flipped, PngFormat, Projection, SpriteRender,
+#         SpriteSheet, SpriteSheetFormat, SpriteSheetHandle, Texture,
+#         TextureMetadata,
+#     },
+};
+ 
+# pub const ARENA_HEIGHT: f32 = 100.0;
+# pub const ARENA_WIDTH: f32 = 100.0;
+# 
+# pub const PADDLE_HEIGHT: f32 = 16.0;
+# pub const PADDLE_WIDTH: f32 = 4.0;
+# 
+# pub const BALL_VELOCITY_X: f32 = 75.0;
+# pub const BALL_VELOCITY_Y: f32 = 50.0;
+# pub const BALL_RADIUS: f32 = 2.0;
+# 
+# pub struct Pong;
+# 
+# impl SimpleState for Pong {
+#     fn on_start(&amp;mut self, data: StateData&lt;'_, GameData&lt;'_, '_&gt;&gt;) {
+#         let world = data.world;
+# 
+#         // Load the spritesheet necessary to render the graphics.
+#         // `spritesheet` is the layout of the sprites on the image;
+#         // `texture` is the pixel data.
+#         let sprite_sheet_handle = load_sprite_sheet(world);
+# 
+#         initialise_ball(world, sprite_sheet_handle.clone());
+#         initialise_paddles(world, sprite_sheet_handle);
+#         initialise_camera(world);
+#     }
+# }
+# 
+# #[derive(PartialEq, Eq)]
+# pub enum Side {
+#     Left,
+#     Right,
+# }
+# 
+# pub struct Paddle {
+#     pub side: Side,
+#     pub width: f32,
+#     pub height: f32,
+# }
+# 
+# impl Paddle {
+#     fn new(side: Side) -&gt; Paddle {
+#         Paddle {
+#             side: side,
+#             width: 1.0,
+#             height: 1.0,
+#         }
+#     }
+# }
+# 
+# impl Component for Paddle {
+#     type Storage = DenseVecStorage&lt;Self&gt;;
+# }
+# 
+# pub struct Ball {
+#     pub velocity: [f32; 2],
+#     pub radius: f32,
+# }
+# 
+# impl Component for Ball {
+#     type Storage = DenseVecStorage&lt;Self&gt;;
+# }
+#
+/// ScoreBoard contains the actual score data
+#[derive(Default)]
+pub struct ScoreBoard {
+    pub score_left: i32,
+    pub score_right: i32,
+}
+
+/// ScoreText contains the ui text components that display the score
+pub struct ScoreText {
+    pub p1_score: Entity,
+    pub p2_score: Entity,
+}
+
+// --snip--
+# 
+# fn load_sprite_sheet(world: &amp;mut World) -&gt; SpriteSheetHandle {
+#     // Load the sprite sheet necessary to render the graphics.
+#     // The texture is the pixel data
+#     // `sprite_sheet` is the layout of the sprites on the image
+#     // `texture_handle` is a cloneable reference to the texture
+#     let texture_handle = {
+#         let loader = world.read_resource::&lt;Loader&gt;();
+#         let texture_storage = world.read_resource::&lt;AssetStorage&lt;Texture&gt;&gt;();
+#         loader.load(
+#             &quot;texture/pong_spritesheet.png&quot;,
+#             PngFormat,
+#             TextureMetadata::srgb_scale(),
+#             (),
+#             &amp;texture_storage,
+#         )
+#     };
+# 
+#     let loader = world.read_resource::&lt;Loader&gt;();
+#     let sprite_sheet_store = world.read_resource::&lt;AssetStorage&lt;SpriteSheet&gt;&gt;();
+#     loader.load(
+#         &quot;texture/pong_spritesheet.ron&quot;, // Here we load the associated ron file
+#         SpriteSheetFormat,
+#         texture_handle, // We pass it the texture we want it to use
+#         (),
+#         &amp;sprite_sheet_store,
+#     )
+# }
+# 
+# /// Initialise the camera.
+# fn initialise_camera(world: &amp;mut World) {
+#     let mut transform = Transform::default();
+#     transform.set_z(1.0);
+#     world
+#         .create_entity()
+#         .with(Camera::from(Projection::orthographic(
+#             0.0,
+#             ARENA_WIDTH,
+#             ARENA_HEIGHT,
+#             0.0,
+#         ))).with(transform)
+#         .build();
+# }
+# 
+# /// Initialises one paddle on the left, and one paddle on the right.
+# fn initialise_paddles(world: &amp;mut World, sprite_sheet_handle: SpriteSheetHandle) {
+#     let mut left_transform = Transform::default();
+#     let mut right_transform = Transform::default();
+# 
+#     // Correctly position the paddles.
+#     let y = ARENA_HEIGHT / 2.0;
+#     left_transform.set_xyz(PADDLE_WIDTH * 0.5, y, 0.0);
+#     right_transform.set_xyz(ARENA_WIDTH - PADDLE_WIDTH * 0.5, y, 0.0);
+# 
+#     // Assign the sprites for the paddles
+#     let sprite_render = SpriteRender {
+#         sprite_sheet: sprite_sheet_handle.clone(),
+#         sprite_number: 0, // paddle is the first sprite in the sprite_sheet
+#     };
+# 
+#     // Create a left plank entity.
+#     world
+#         .create_entity()
+#         .with(sprite_render.clone())
+#         .with(Paddle::new(Side::Left))
+#         .with(left_transform)
+#         .build();
+# 
+#     // Create right plank entity.
+#     world
+#         .create_entity()
+#         .with(sprite_render.clone())
+#         .with(Flipped::Horizontal)
+#         .with(Paddle::new(Side::Right))
+#         .with(right_transform)
+#         .build();
+# }
+# 
+# /// Initialises one ball in the middle-ish of the arena.
+# fn initialise_ball(world: &amp;mut World, sprite_sheet_handle: SpriteSheetHandle) {
+#     // Create the translation.
+#     let mut local_transform = Transform::default();
+#     local_transform.set_xyz(ARENA_WIDTH / 2.0, ARENA_HEIGHT / 2.0, 0.0);
+# 
+#     // Assign the sprite for the ball
+#     let sprite_render = SpriteRender {
+#         sprite_sheet: sprite_sheet_handle,
+#         sprite_number: 1, // ball is the second sprite on the sprite sheet
+#     };
+# 
+#     world
+#         .create_entity()
+#         .with(sprite_render)
+#         .with(Ball {
+#             radius: BALL_RADIUS,
+#             velocity: [BALL_VELOCITY_X, BALL_VELOCITY_Y],
+#         }).with(local_transform)
+#         .build();
+# }
+</code></pre>
+<blockquote>
+<p>Don't glimpse over the <code>#[derive(Default)]</code> annotation for the <code>ScoreBoard</code> struct!</p>
+</blockquote>
+<p><code>ScoreBoard</code> is just a container that will allow us to keep track of each
+player's score. We'll use this in another module later in this chapter, so we've
+gone ahead and marked it as public (same with <code>ScoreText</code>). <code>ScoreText</code> is also
+a container, but this one holds handles to the UI <code>Entity</code>s that will be
+rendered to the screen. We'll create those next:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+#
+use amethyst::{
+#     assets::{AssetStorage, Loader},
+#     core::transform::Transform,
+#     ecs::prelude::{Component, DenseVecStorage, Entity},
+    // --snip--
+#     prelude::*,
+#     renderer::{
+#         Camera, Flipped, PngFormat, Projection, SpriteRender,
+#         SpriteSheet, SpriteSheetFormat, SpriteSheetHandle, Texture,
+#         TextureMetadata,
+#     },
+    ui::{Anchor, TtfFormat, UiText, UiTransform},
+};
+ 
+# pub const ARENA_HEIGHT: f32 = 100.0;
+# pub const ARENA_WIDTH: f32 = 100.0;
+# 
+# pub const PADDLE_HEIGHT: f32 = 16.0;
+# pub const PADDLE_WIDTH: f32 = 4.0;
+# 
+# pub const BALL_VELOCITY_X: f32 = 75.0;
+# pub const BALL_VELOCITY_Y: f32 = 50.0;
+# pub const BALL_RADIUS: f32 = 2.0;
+# 
+# pub struct Pong;
+# 
+impl SimpleState for Pong {
+    fn on_start(&amp;mut self, data: StateData&lt;'_, GameData&lt;'_, '_&gt;&gt;) {
+#         let world = data.world;
+#
+#         // Load the spritesheet necessary to render the graphics.
+#         // `spritesheet` is the layout of the sprites on the image;
+#         // `texture` is the pixel data.
+#         let sprite_sheet_handle = load_sprite_sheet(world);
+#
+#         initialise_ball(world, sprite_sheet_handle.clone());
+#         initialise_paddles(world, sprite_sheet_handle);
+#         initialise_camera(world);
+        // --snip--
+
+        initialise_scoreboard(world);
+    }
+}
+ 
+# #[derive(PartialEq, Eq)]
+# pub enum Side {
+#     Left,
+#     Right,
+# }
+# 
+# pub struct Paddle {
+#     pub side: Side,
+#     pub width: f32,
+#     pub height: f32,
+# }
+# 
+# impl Paddle {
+#     fn new(side: Side) -&gt; Paddle {
+#         Paddle {
+#             side: side,
+#             width: 1.0,
+#             height: 1.0,
+#         }
+#     }
+# }
+# 
+# impl Component for Paddle {
+#     type Storage = DenseVecStorage&lt;Self&gt;;
+# }
+# 
+# pub struct Ball {
+#     pub velocity: [f32; 2],
+#     pub radius: f32,
+# }
+# 
+# impl Component for Ball {
+#     type Storage = DenseVecStorage&lt;Self&gt;;
+# }
+#
+# /// ScoreBoard contains the actual score data
+# #[derive(Default)]
+# pub struct ScoreBoard {
+#     pub score_left: i32,
+#     pub score_right: i32,
+# }
+#
+# /// ScoreText contains the ui text elements that display the score
+# pub struct ScoreText {
+#     pub p1_score: Entity,
+#     pub p2_score: Entity,
+# }
+#
+# fn load_sprite_sheet(world: &amp;mut World) -&gt; SpriteSheetHandle {
+#     // Load the sprite sheet necessary to render the graphics.
+#     // The texture is the pixel data
+#     // `sprite_sheet` is the layout of the sprites on the image
+#     // `texture_handle` is a cloneable reference to the texture
+#     let texture_handle = {
+#         let loader = world.read_resource::&lt;Loader&gt;();
+#         let texture_storage = world.read_resource::&lt;AssetStorage&lt;Texture&gt;&gt;();
+#         loader.load(
+#             &quot;texture/pong_spritesheet.png&quot;,
+#             PngFormat,
+#             TextureMetadata::srgb_scale(),
+#             (),
+#             &amp;texture_storage,
+#         )
+#     };
+# 
+#     let loader = world.read_resource::&lt;Loader&gt;();
+#     let sprite_sheet_store = world.read_resource::&lt;AssetStorage&lt;SpriteSheet&gt;&gt;();
+#     loader.load(
+#         &quot;texture/pong_spritesheet.ron&quot;, // Here we load the associated ron file
+#         SpriteSheetFormat,
+#         texture_handle, // We pass it the texture we want it to use
+#         (),
+#         &amp;sprite_sheet_store,
+#     )
+# }
+# 
+# /// Initialise the camera.
+# fn initialise_camera(world: &amp;mut World) {
+#     let mut transform = Transform::default();
+#     transform.set_z(1.0);
+#     world
+#         .create_entity()
+#         .with(Camera::from(Projection::orthographic(
+#             0.0,
+#             ARENA_WIDTH,
+#             ARENA_HEIGHT,
+#             0.0,
+#         ))).with(transform)
+#         .build();
+# }
+# 
+# /// Initialises one paddle on the left, and one paddle on the right.
+# fn initialise_paddles(world: &amp;mut World, sprite_sheet_handle: SpriteSheetHandle) {
+#     let mut left_transform = Transform::default();
+#     let mut right_transform = Transform::default();
+# 
+#     // Correctly position the paddles.
+#     let y = ARENA_HEIGHT / 2.0;
+#     left_transform.set_xyz(PADDLE_WIDTH * 0.5, y, 0.0);
+#     right_transform.set_xyz(ARENA_WIDTH - PADDLE_WIDTH * 0.5, y, 0.0);
+# 
+#     // Assign the sprites for the paddles
+#     let sprite_render = SpriteRender {
+#         sprite_sheet: sprite_sheet_handle.clone(),
+#         sprite_number: 0, // paddle is the first sprite in the sprite_sheet
+#     };
+# 
+#     // Create a left plank entity.
+#     world
+#         .create_entity()
+#         .with(sprite_render.clone())
+#         .with(Paddle::new(Side::Left))
+#         .with(left_transform)
+#         .build();
+# 
+#     // Create right plank entity.
+#     world
+#         .create_entity()
+#         .with(sprite_render.clone())
+#         .with(Flipped::Horizontal)
+#         .with(Paddle::new(Side::Right))
+#         .with(right_transform)
+#         .build();
+# }
+# 
+# /// Initialises one ball in the middle-ish of the arena.
+# fn initialise_ball(world: &amp;mut World, sprite_sheet_handle: SpriteSheetHandle) {
+#     // Create the translation.
+#     let mut local_transform = Transform::default();
+#     local_transform.set_xyz(ARENA_WIDTH / 2.0, ARENA_HEIGHT / 2.0, 0.0);
+# 
+#     // Assign the sprite for the ball
+#     let sprite_render = SpriteRender {
+#         sprite_sheet: sprite_sheet_handle,
+#         sprite_number: 1, // ball is the second sprite on the sprite sheet
+#     };
+# 
+#     world
+#         .create_entity()
+#         .with(sprite_render)
+#         .with(Ball {
+#             radius: BALL_RADIUS,
+#             velocity: [BALL_VELOCITY_X, BALL_VELOCITY_Y],
+#         }).with(local_transform)
+#         .build();
+# }
+#
+// --snip--
+
+/// Initialises a ui scoreboard
+fn initialise_scoreboard(world: &amp;mut World) {
+    let font = world.read_resource::&lt;Loader&gt;().load(
+        &quot;font/square.ttf&quot;,
+        TtfFormat,
+        Default::default(),
+        (),
+        &amp;world.read_resource(),
+    );
+    let p1_transform = UiTransform::new(
+        &quot;P1&quot;.to_string(), Anchor::TopMiddle,
+        -50., -50., 1., 200., 50., 0,
+    );
+    let p2_transform = UiTransform::new(
+        &quot;P2&quot;.to_string(), Anchor::TopMiddle,
+        50., -50., 1., 200., 50., 0,
+    );
+
+    let p1_score = world
+        .create_entity()
+        .with(p1_transform)
+        .with(UiText::new(
+            font.clone(),
+            &quot;0&quot;.to_string(),
+            [1., 1., 1., 1.],
+            50.,
+        )).build();
+
+    let p2_score = world
+        .create_entity()
+        .with(p2_transform)
+        .with(UiText::new(
+            font.clone(),
+            &quot;0&quot;.to_string(),
+            [1., 1., 1., 1.],
+            50.,
+        )).build();
+
+    world.add_resource(ScoreText { p1_score, p2_score });
+}
+</code></pre>
+<p>Here, we add some UI imports and create a new <code>initialise_scoreboard</code> function,
+which we'll call in the <code>on_start</code> method of the <code>Pong</code> gamestate.</p>
+<p>Inside <code>initialise_scoreboard</code>, we're first going to load up a font which we've
+saved to <code>font/square.ttf</code> (<a href="https://github.com/amethyst/amethyst/raw/master/examples/assets/font/square.ttf">download</a>) in the app root. We pull
+in the <code>TtfFormat</code> to match this font type, load the font as a resource in the
+world, and then save the handle to a <code>font</code> variable (which we'll use to create
+our <code>UiText</code> components).</p>
+<p>Next, we create a transform for each of our two scores by giving them a unique
+id (<code>P1</code> and <code>P2</code>), a UI <code>Anchor</code> at the top middle of our window, and then
+adjust their global <code>x</code>, <code>y</code>, and <code>z</code> coordinates, <code>width</code>, <code>height</code>, and
+<code>tab-order</code>.</p>
+<p>After creating the <code>font</code> and <code>transform</code>s, we'll create an <code>Entity</code> in the
+world for each of our players' scores, with their <code>transform</code> and a <code>UiText</code>
+component (with a <code>font</code> handle, initial <code>text</code>, <code>color</code>, and <code>font_size</code>).</p>
+<p>Finally, we initialize a <code>ScoreText</code> structure containing each of our UI
+<code>Entity</code>s and add it as a resource to the world so we can access it from our
+<code>System</code>s later.</p>
+<p>If we've done everything right so far, we should see <code>0</code> <code>0</code> at the top of our
+game window. You'll notice that the scores don't update yet when the ball makes
+it to either side, so we'll add that next!</p>
+<a class="header" href="#updating-the-scoreboard" id="updating-the-scoreboard"><h2>Updating the Scoreboard</h2></a>
+<p>All that's left for us to do now is update the UI whenever a player scores a
+point. You'll see just how easy this is with our <code>ECS</code> design. All we have to do
+is modify our <code>WinnerSystem</code> to access the players' scores and update them
+accordingly:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+#
+# mod pong {
+#     use amethyst::ecs::prelude::*;
+#
+#     pub struct Ball {
+#         pub radius: f32,
+#         pub velocity: [f32; 2],
+#     }
+#     impl Component for Ball {
+#         type Storage = DenseVecStorage&lt;Self&gt;;
+#     }
+#
+#     #[derive(Default)]
+#     pub struct ScoreBoard {
+#         pub score_left: i32,
+#         pub score_right: i32,
+#     }
+#
+#     pub struct ScoreText {
+#         pub p1_score: Entity,
+#         pub p2_score: Entity,
+#     }
+#
+#     pub const ARENA_WIDTH: f32 = 100.0;
+# }
+#
+use amethyst::{
+#     core::transform::Transform,
+    // --snip--
+    ecs::prelude::{Join, ReadExpect, System, Write, WriteStorage},
+    ui::UiText,
+};
+
+use pong::{Ball, ScoreBoard, ScoreText, ARENA_WIDTH};
+
+pub struct WinnerSystem;
+
+impl&lt;'s&gt; System&lt;'s&gt; for WinnerSystem {
+    type SystemData = (
+        WriteStorage&lt;'s, Ball&gt;,
+        WriteStorage&lt;'s, Transform&gt;,
+        WriteStorage&lt;'s, UiText&gt;,
+        Write&lt;'s, ScoreBoard&gt;,
+        ReadExpect&lt;'s, ScoreText&gt;,
+    );
+
+    fn run(&amp;mut self, (
+        mut balls,
+        mut locals,
+        mut ui_text,
+        mut scores,
+        score_text
+    ): Self::SystemData) {
+        for (ball, transform) in (&amp;mut balls, &amp;mut locals).join() {
+#             let ball_x = transform.translation().x;
+            // --snip--
+
+            let did_hit = if ball_x &lt;= ball.radius {
+                // Right player scored on the left side.
+                // We top the score at 999 to avoid text overlap.
+                scores.score_right = (scores.score_right + 1)
+                    .min(999);
+
+                if let Some(text) = ui_text.get_mut(score_text.p2_score) {
+                    text.text = scores.score_right.to_string();
+                }
+                true
+            } else if ball_x &gt;= ARENA_WIDTH - ball.radius {
+                // Left player scored on the right side.
+                // We top the score at 999 to avoid text overlap.
+                scores.score_left = (scores.score_left + 1)
+                    .min(999);
+                if let Some(text) = ui_text.get_mut(score_text.p1_score) {
+                    text.text = scores.score_left.to_string();
+                }
+                true
+            } else {
+                false
+            };
+
+            if did_hit {
+#                 ball.velocity[0] = -ball.velocity[0]; // Reverse Direction
+#                 transform.set_x(ARENA_WIDTH / 2.0); // Reset Position
+                // --snip--
+
+                // Print the score board.
+                println!(
+                    &quot;Score: | {:^3} | {:^3} |&quot;,
+                    scores.score_left, scores.score_right
+                );
+            }
+        }
+    }
+}
+#
+# fn main() {}
+</code></pre>
+<p>We've added a fair few changes here, so let's go through them. First, we want to
+be able to read and write our scores, so we add the <code>UiText</code> storage, which
+holds all <code>UiText</code> components, to our <code>SystemData</code>. We'll want to select our
+players' scores from that, so we also add the <code>ScoreText</code> structure which holds
+handles to the <code>UiText</code> components that we want. Finally, we add the
+<code>ScoreBoard</code> resource so we can keep track of the actual score data.</p>
+<p>We're using <code>Write</code> here to pull in the <code>ScoreBoard</code> instead of with
+<code>WriteStorage</code> because we want mutable access to <code>ScoreBoard</code>, which is not a
+collection of components but rather a single resource item. This item is
+strictly required in all cases, but if we wanted it to be optional we could
+use <code>Option&lt;Write&lt;'s, ScoreBoard&gt;&gt;</code> instead.</p>
+<p>We also use <code>ReadExpect</code> to access the <code>ScoreText</code> resource immutably. Again,
+<code>ScoreText</code> is a single resource item rather than a collection of components.
+With <code>ReadExpect</code>, we are asserting that <code>ScoreText</code> must already exist and will
+panic if it does not. We do this instead of just using <code>Read</code> because we are
+manually adding the <code>ScoreText</code> resource to the game in
+<code>pong.rs &gt; initialise_scoreboard</code> instead of having the system create this
+resource for us automatically.</p>
+<p>Inside our <code>run</code> method (after updating the signature to match our <code>SystemData</code>
+changes), we replace the <code>println!</code> statements with code that will update our
+<code>UiText</code> components. We first update the score stored in <code>score_board</code> by
+adding 1 to it and clamping it to not exceed <code>999</code> (mostly because we don't want
+our scores to overlap each other in the window). Then, we use the <code>UiText</code>
+<code>Entity</code> handle that we stored in our <code>ScoreText</code> resource to get a mutable
+reference to our <code>UiText</code> component. Lastly, we set the text of the <code>UiText</code>
+component to the player's score, after converting it to a string.</p>
+<a class="header" href="#summary" id="summary"><h2>Summary</h2></a>
+<p>And that's it! Our game now keeps track of the score for us and displays it at
+the top of our window.</p>
+<p><img src="../images/pong_tutorial/pong_05.png" alt="Pong Game with Scores" /></p>
+<p>Now don't go just yet, because in the next chapter, we'll make our Pong game
+even better by adding sound effects and even some music!</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../pong-tutorial/pong-tutorial-04.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../pong-tutorial/contribution.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../pong-tutorial/pong-tutorial-04.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../pong-tutorial/contribution.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

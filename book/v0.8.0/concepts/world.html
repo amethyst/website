@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>World - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../concepts/state.html"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../concepts/component.html"><strong aria-hidden="true">3.2.</strong> Component</a></li><li><a href="../concepts/entity.html"><strong aria-hidden="true">3.3.</strong> Entity</a></li><li><a href="../concepts/resource.html"><strong aria-hidden="true">3.4.</strong> Resource</a></li><li><a href="../concepts/world.html" class="active"><strong aria-hidden="true">3.5.</strong> World</a></li><li><a href="../concepts/system.html"><strong aria-hidden="true">3.6.</strong> System</a></li><li><a href="../concepts/dispatcher.html"><strong aria-hidden="true">3.7.</strong> Dispatcher</a></li><li><a href="../concepts/event-channel.html"><strong aria-hidden="true">3.8.</strong> Event Channel</a></li></ol></li><li><a href="../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../pong-tutorial/pong-tutorial-01.html"><strong aria-hidden="true">4.1.</strong> Opening (and closing!) a window</a></li><li><a href="../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-03.html"><strong aria-hidden="true">4.3.</strong> Moving the paddles</a></li></ol></li><li><a href="../animation.html"><strong aria-hidden="true">5.</strong> Animation</a></li><li><ol class="section"><li><a href="../animation/interpolation.html"><strong aria-hidden="true">5.1.</strong> Interpolation</a></li><li><a href="../animation/channel.html"><strong aria-hidden="true">5.2.</strong> Channel</a></li><li><a href="../animation/sampler.html"><strong aria-hidden="true">5.3.</strong> Sampler</a></li><li><a href="../animation/definition.html"><strong aria-hidden="true">5.4.</strong> Definition</a></li></ol></li><li><a href="../game-data.html"><strong aria-hidden="true">6.</strong> Custom GameData</a></li><li><a href="../glossary.html"><strong aria-hidden="true">7.</strong> Glossary</a></li><li><a href="../appendices/a_config_files.html"><strong aria-hidden="true">8.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">8.1.</strong> Adding an Arena Config</a></li><li><a href="../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">8.2.</strong> Adding a Ball Config</a></li><li><a href="../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">8.3.</strong> Adding Paddle Configs</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#world" id="world"><h1>World</h1></a>
+<a class="header" href="#what-is-a-world" id="what-is-a-world"><h2>What is a world?</h2></a>
+<p>A world is just a holder for <code>Resources</code>, with some helper functions that make your life easier.
+This chapter will showcase those functions and their usage.</p>
+<a class="header" href="#adding-a-resource" id="adding-a-resource"><h2>Adding a resource</h2></a>
+<pre><pre class="playpen"><code class="language-rust norun">use amethyst::ecs::World;
+
+// A simple struct with no data.
+struct MyResource;
+
+fn main() {
+    // We create a new `World` instance.
+    let mut world = World::new();
+    
+    // We create our resource.
+    let my = MyResource;
+    
+    // We add the resource to the world.
+    world.add_resource(my);
+}
+</code></pre></pre>
+<a class="header" href="#fetching-a-resource" id="fetching-a-resource"><h2>Fetching a resource</h2></a>
+<p>Here's how to fetch a read-only resource. Be aware that this method panics if the resource isn't inserted into <code>Resources</code>.</p>
+<pre><code class="language-rust ignore">    let my = world.read_resource::&lt;MyResource&gt;();
+</code></pre>
+<p>If you are not sure that the resource will be present, use the methods available on <code>Resources</code>, as shown in the resource chapter.</p>
+<pre><code class="language-rust ignore">    let my = world.res.entry::&lt;MyResource&gt;().or_insert_with(|| MyResource);
+</code></pre>
+<a class="header" href="#modifying-a-resource" id="modifying-a-resource"><h2>Modifying a resource</h2></a>
+<pre><code class="language-rust ignore">    let mut my = world.write_resource::&lt;MyResource&gt;();
+</code></pre>
+<a class="header" href="#creating-entities" id="creating-entities"><h2>Creating entities</h2></a>
+<p>You first start by creating the entity builder.
+Then, you can add components to your entity.
+Finally, you call the build() method on the entity builder to get the actual entity.</p>
+<pre><code class="language-rust ignore">    let mut entity_builder = world.create_entity();
+    entity_builder = entity_builder.with(MyComponent);
+    let my_entity = entity_builder.build();
+</code></pre>
+<p>Shorter version:</p>
+<pre><code class="language-rust ignore">    let my_entity = world
+       .create_entity()
+       .with(MyComponent)
+       .build();
+</code></pre>
+<p>Internally, the <code>World</code> interacts with <code>EntitiesRes</code>, which is a resource holding the entities inside of <code>Resources</code>.</p>
+<a class="header" href="#accessing-a-component" id="accessing-a-component"><h2>Accessing a <code>Component</code></h2></a>
+<pre><code class="language-rust ignore">    // Create an `Entity` with `MyComponent`.
+    // `World` will implicitly write to the component's storage in `Resources`.
+    let my_entity = world.create_entity().with(MyComponent).build();
+    
+    // Get a ReadStorage&lt;MyComponent&gt;
+    let storage = world.read_storage::&lt;MyComponent&gt;();
+    
+    // Get the actual component from the storage.
+    let my = storage.get(&amp;my_entity).expect(&quot;Failed to get component for entity: {:?}&quot;, my_entity);
+</code></pre>
+<a class="header" href="#modifying-a-component" id="modifying-a-component"><h2>Modifying a <code>Component</code></h2></a>
+<p>This is almost the same as accessing a component:</p>
+<pre><code class="language-rust ignore">    let my_entity = world.create_entity().with(MyComponent).build();
+    let mut storage = world.write_storage::&lt;MyComponent&gt;();
+    let mut my = storage.get_mut(&amp;my_entity).expect(&quot;Failed to get component for entity: {:?}&quot;, my_entity);
+</code></pre>
+<a class="header" href="#getting-all-entities" id="getting-all-entities"><h2>Getting all entities</h2></a>
+<p>It is pretty rare to use this, but can be useful in some occasions.</p>
+<pre><code class="language-rust ignore">    // Returns `EntitiesRes`
+    let entities = world.entities();
+</code></pre>
+<a class="header" href="#delete-an-entity" id="delete-an-entity"><h2>Delete an entity</h2></a>
+<p>Single:</p>
+<pre><code class="language-rust ignore">    world.delete_entity(my_entity).expect(&quot;Failed to delete entity. Was it already removed?&quot;);
+</code></pre>
+<p>Multiple:</p>
+<pre><code class="language-rust ignore">    world.delete_entities(entity_vec.as_slice()).expect(&quot;Failed to delete entities from specified list.&quot;);
+</code></pre>
+<p>All:</p>
+<pre><code class="language-rust ignore">    world.delete_all().expect(&quot;Failed to delete all entities.&quot;);
+</code></pre>
+<a class="header" href="#check-if-the-entity-was-deleted" id="check-if-the-entity-was-deleted"><h2>Check if the entity was deleted</h2></a>
+<pre><code class="language-rust ignore">    // Returns true if the entity was **not** deleted.
+    let is_alive = world.is_alive(&amp;my_entity);
+</code></pre>
+<a class="header" href="#exec" id="exec"><h2>Exec</h2></a>
+<p><strong>This is just to show that this feature exists. It is normal to not understand what it does until you read the system chapter</strong></p>
+<p>Sometimes, you will want to create an entity where you need to fetch resources to create the correct components for it.
+There is a function that acts as a shorthand for this:</p>
+<pre><code class="language-rust ignore">    world
+        .exec(|mut data: SomeSystemData| {
+            data.do_something();
+        })
+    .expect(&quot;Error creating SpriteRender for paddles&quot;);
+</code></pre>
+<p>We will talk about what <code>SystemData</code> is in the system chapter.</p>
+<a class="header" href="#more" id="more"><h2>More</h2></a>
+<p>Because of an implementation detail, for the world to be updated you need to call <code>state_data.data.update(&amp;state_data.world)</code> inside of the state update method.
+If you do not do this, the world will not update and the game will look like it froze.
+If you have a bug where nothing happens at all, this is the first thing you should check!</p>
+<p><em>NOTE: This will no longer be necessary in future release 0.9 of Amethyst.</em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../concepts/resource.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../concepts/system.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../concepts/resource.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../concepts/system.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

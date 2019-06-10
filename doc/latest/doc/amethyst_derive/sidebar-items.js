@@ -1,0 +1,1 @@
+initSidebarItems({"derive":[["EventReader",""],["PrefabData","Deriving a `Prefab` requires that `amethyst::ecs::Entity` and `amethyst:assets::{PrefabData, PrefabError, ProgressCounter}` are imported and visible in the current scope. This is due to how Rust macros work."]]});

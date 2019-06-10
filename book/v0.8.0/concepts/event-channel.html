@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Event Channel - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../concepts/state.html"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../concepts/component.html"><strong aria-hidden="true">3.2.</strong> Component</a></li><li><a href="../concepts/entity.html"><strong aria-hidden="true">3.3.</strong> Entity</a></li><li><a href="../concepts/resource.html"><strong aria-hidden="true">3.4.</strong> Resource</a></li><li><a href="../concepts/world.html"><strong aria-hidden="true">3.5.</strong> World</a></li><li><a href="../concepts/system.html"><strong aria-hidden="true">3.6.</strong> System</a></li><li><a href="../concepts/dispatcher.html"><strong aria-hidden="true">3.7.</strong> Dispatcher</a></li><li><a href="../concepts/event-channel.html" class="active"><strong aria-hidden="true">3.8.</strong> Event Channel</a></li></ol></li><li><a href="../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../pong-tutorial/pong-tutorial-01.html"><strong aria-hidden="true">4.1.</strong> Opening (and closing!) a window</a></li><li><a href="../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-03.html"><strong aria-hidden="true">4.3.</strong> Moving the paddles</a></li></ol></li><li><a href="../animation.html"><strong aria-hidden="true">5.</strong> Animation</a></li><li><ol class="section"><li><a href="../animation/interpolation.html"><strong aria-hidden="true">5.1.</strong> Interpolation</a></li><li><a href="../animation/channel.html"><strong aria-hidden="true">5.2.</strong> Channel</a></li><li><a href="../animation/sampler.html"><strong aria-hidden="true">5.3.</strong> Sampler</a></li><li><a href="../animation/definition.html"><strong aria-hidden="true">5.4.</strong> Definition</a></li></ol></li><li><a href="../game-data.html"><strong aria-hidden="true">6.</strong> Custom GameData</a></li><li><a href="../glossary.html"><strong aria-hidden="true">7.</strong> Glossary</a></li><li><a href="../appendices/a_config_files.html"><strong aria-hidden="true">8.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">8.1.</strong> Adding an Arena Config</a></li><li><a href="../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">8.2.</strong> Adding a Ball Config</a></li><li><a href="../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">8.3.</strong> Adding Paddle Configs</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#event-channel" id="event-channel"><h1>Event Channel</h1></a>
+<p>This chapter will be easier than the previous ones.</p>
+<p>While it is not essential to understand it to use amethyst, it can make your life much much easier in a lot of situations where using only data would make your code too complex.</p>
+<a class="header" href="#what-is-an-event-channel" id="what-is-an-event-channel"><h2>What is an event channel?</h2></a>
+<p>An <code>EventChannel</code> acts like a queue for any type that is <code>Send + Sync + 'static</code>.</p>
+<p>It is a single producer/multiple receiver queue. This means that it works best when used with only a single &quot;thing&quot; (usually a system) producing events.
+In most cases, the <code>EventChannel</code> should be stored in a global resource for ease of access. More on this later.</p>
+<a class="header" href="#creating-an-event-channel" id="creating-an-event-channel"><h2>Creating an event channel</h2></a>
+<p>Super simple!</p>
+<pre><code class="language-rust ignore">    // In the following examples, we are going to use `MyEvent` values as events.
+    #[derive(Debug)]
+    pub enum MyEvent{
+        A,
+        B,
+    }
+    
+    let mut channel = EventChannel::&lt;MyEvent&gt;::new();
+</code></pre>
+<a class="header" href="#writing-events-to-the-event-channel" id="writing-events-to-the-event-channel"><h2>Writing events to the event channel</h2></a>
+<p>Single:</p>
+<pre><code class="language-rust ignore">    channel.single_write(MyEvent::A);
+</code></pre>
+<p>Multiple:</p>
+<pre><code class="language-rust ignore">    channel.iter_write(vec![MyEvent::A, MyEvent::A, MyEvent::B].iter());
+</code></pre>
+<a class="header" href="#reading-events" id="reading-events"><h2>Reading events</h2></a>
+<p>This is the part where it becomes tricky.
+To be able to track where each of the receiver's reading is at, the <code>EventChannel</code> needs to be aware of their presence.
+This is done by registering a <code>ReaderId</code>.</p>
+<pre><code class="language-rust ignore">    let mut reader = channel.register_reader();
+</code></pre>
+<p>Then, when you want to read the events:</p>
+<pre><code class="language-rust ignore">    for event in channel.read_event(&amp;mut reader){
+        // The type of the event is inferred from the generic type
+        // we assigned to the `EventChannel&lt;MyEvent&gt;` earlier when creating it.
+        println!(&quot;Received event value of: {:?}&quot;, event);
+    }
+</code></pre>
+<p>Note that you only need to have a read access to the channel when reading events.
+It is the <code>ReaderId</code> that needs to be mutable to keep track of where your last read was.</p>
+<a class="header" href="#patterns" id="patterns"><h2>Patterns</h2></a>
+<p>When using the event channel, we usually re-use the same pattern over and over again to maximize parallelism.
+It goes as follow:</p>
+<p>Create the event channel and add it to to the world during <code>State</code> creation:</p>
+<pre><code class="language-rust ignore">world.add_resource(
+    EventChannel::&lt;MyEvent&gt;::new(),
+);
+</code></pre>
+<p><em>Note: You can also derive <code>Default</code>, this way you don't have to manually create your resource and add it. Resources implementing <code>Default</code> are automatically added to <code>Resources</code> when a <code>System</code> uses them (<code>Read</code> or <code>Write</code> in <code>SystemData</code>).</em></p>
+<p>In the <strong>producer</strong> <code>System</code>, get a mutable reference to your resource:</p>
+<pre><code class="language-rust ignore">type SystemData = Write&lt;'a, EventChannel&lt;MyEvent&gt;&gt;;
+</code></pre>
+<p>In the <strong>receiver</strong> <code>System</code>s, you need to store the <code>ReaderId</code> somewhere.</p>
+<pre><code class="language-rust ignore">struct ReceiverSystem {
+    // The type inside of ReaderId should be the type of the event you are using.
+    reader: Option&lt;ReaderId&lt;MyEvent&gt;&gt;,
+}
+</code></pre>
+<p>and you also need to get read access:</p>
+<pre><code class="language-rust ignore">    type SystemData = Read&lt;'a, EventChannel&lt;MyEvent&gt;&gt;;
+</code></pre>
+<p>Then, in the <code>System</code>'s setup method:</p>
+<pre><code class="language-rust ignore">    // IMPORTANT: You need to setup your system data BEFORE you try to fetch the resource. Especially if you plan use `Default` to create your resource.
+    Self::SystemData::setup(&amp;mut res);
+    self.reader = Some(res.fetch_mut::&lt;EventChannel&lt;MyEvent&gt;&gt;().unwrap().register_reader());
+</code></pre>
+<p>Finally, you can read events from your <code>System</code>.</p>
+<pre><code class="language-rust ignore">    fn run (&amp;mut self, my_event_channel: Self::SystemData) {
+        for event in &amp;my_event_channel.read(&amp;mut self.reader) {
+            info!(&quot;Received an event: {:?}&quot;, event);
+        }
+    }
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../concepts/dispatcher.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../pong-tutorial.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../concepts/dispatcher.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../pong-tutorial.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

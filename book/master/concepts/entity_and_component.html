@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Entity and Component - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../concepts/state.html"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../concepts/entity_and_component.html" class="active"><strong aria-hidden="true">3.2.</strong> Entity and Component</a></li><li><a href="../concepts/resource.html"><strong aria-hidden="true">3.3.</strong> Resource</a></li><li><a href="../concepts/world.html"><strong aria-hidden="true">3.4.</strong> World</a></li><li><a href="../concepts/system.html"><strong aria-hidden="true">3.5.</strong> System</a></li><li><a href="../concepts/dispatcher.html"><strong aria-hidden="true">3.6.</strong> Dispatcher</a></li><li><a href="../concepts/event-channel.html"><strong aria-hidden="true">3.7.</strong> Event Channel</a></li></ol></li><li><a href="../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../pong-tutorial/pong-tutorial-01.html"><strong aria-hidden="true">4.1.</strong> Creating a Window</a></li><li><a href="../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-03.html"><strong aria-hidden="true">4.3.</strong> Moving the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-04.html"><strong aria-hidden="true">4.4.</strong> Making a Ball Move and Bounce</a></li><li><a href="../pong-tutorial/pong-tutorial-05.html"><strong aria-hidden="true">4.5.</strong> Winning Rounds and Keeping Score</a></li><li><a href="../pong-tutorial/contribution.html"><strong aria-hidden="true">4.6.</strong> Call for Contribution</a></li></ol></li><li><a href="../math.html"><strong aria-hidden="true">5.</strong> Math</a></li><li><a href="../assets.html"><strong aria-hidden="true">6.</strong> Assets</a></li><li><ol class="section"><li><a href="../assets/formats.html"><strong aria-hidden="true">6.1.</strong> Formats</a></li><li><a href="../assets/how_to_use_assets.html"><strong aria-hidden="true">6.2.</strong> How to Use Assets</a></li><li><a href="../assets/how_to_define_custom_assets.html"><strong aria-hidden="true">6.3.</strong> How to Define Custom Assets</a></li><li><a href="../assets/how_to_define_custom_formats.html"><strong aria-hidden="true">6.4.</strong> How to Define Custom Formats</a></li></ol></li><li><a href="../prefabs.html"><strong aria-hidden="true">7.</strong> Prefabs</a></li><li><ol class="section"><li><a href="../prefabs/prefabs_in_amethyst.html"><strong aria-hidden="true">7.1.</strong> Prefabs in Amethyst</a></li><li><a href="../prefabs/how_to_define_prefabs_prelude.html"><strong aria-hidden="true">7.2.</strong> How to Define Prefabs: Prelude</a></li><li><a href="../prefabs/how_to_define_prefabs_simple.html"><strong aria-hidden="true">7.3.</strong> How to Define Prefabs: Simple</a></li><li><a href="../prefabs/how_to_define_prefabs_aggregate.html"><strong aria-hidden="true">7.4.</strong> How to Define Prefabs: Aggregate</a></li><li><a href="../prefabs/how_to_define_prefabs_adapter.html"><strong aria-hidden="true">7.5.</strong> How to Define Prefabs: Adapter</a></li><li><a href="../prefabs/how_to_define_prefabs_asset.html"><strong aria-hidden="true">7.6.</strong> How to Define Prefabs: Asset</a></li><li><a href="../prefabs/how_to_define_prefabs_multi_handle.html"><strong aria-hidden="true">7.7.</strong> How to Define Prefabs: Multi-Handle</a></li><li><a href="../prefabs/prefabs_technical_explanation.html"><strong aria-hidden="true">7.8.</strong> Prefabs Technical Explanation</a></li></ol></li><li><a href="../animation.html"><strong aria-hidden="true">8.</strong> Animation</a></li><li><ol class="section"><li><a href="../animation/interpolation.html"><strong aria-hidden="true">8.1.</strong> Interpolation</a></li><li><a href="../animation/channel.html"><strong aria-hidden="true">8.2.</strong> Channel</a></li><li><a href="../animation/sampler.html"><strong aria-hidden="true">8.3.</strong> Sampler</a></li><li><a href="../animation/definition.html"><strong aria-hidden="true">8.4.</strong> Definition</a></li></ol></li><li><a href="../controlling_system_execution.html"><strong aria-hidden="true">9.</strong> Controlling System Execution</a></li><li><ol class="section"><li><a href="../controlling_system_execution/custom_game_data.html"><strong aria-hidden="true">9.1.</strong> Custom GameData</a></li><li><a href="../controlling_system_execution/state-specific_dispatcher.html"><strong aria-hidden="true">9.2.</strong> State-specific Dispatcher</a></li><li><a href="../controlling_system_execution/pausable_systems.html"><strong aria-hidden="true">9.3.</strong> Pausable Systems</a></li></ol></li><li><a href="../sprites.html"><strong aria-hidden="true">10.</strong> Sprites</a></li><li><ol class="section"><li><a href="../sprites/set_up_the_render_pass.html"><strong aria-hidden="true">10.1.</strong> Set Up The Render Pass</a></li><li><a href="../sprites/load_the_texture.html"><strong aria-hidden="true">10.2.</strong> Load The Texture</a></li><li><a href="../sprites/display_the_texture.html"><strong aria-hidden="true">10.3.</strong> Display The Texture</a></li><li><a href="../sprites/define_the_sprite_sheet.html"><strong aria-hidden="true">10.4.</strong> Define The SpriteSheet</a></li><li><a href="../sprites/sprite_render_component.html"><strong aria-hidden="true">10.5.</strong> SpriteRender Component</a></li><li><a href="../sprites/orthographic_camera.html"><strong aria-hidden="true">10.6.</strong> Orthographic Camera</a></li></ol></li><li><a href="../testing.html"><strong aria-hidden="true">11.</strong> Testing</a></li><li><ol class="section"><li><a href="../testing/test_examples.html"><strong aria-hidden="true">11.1.</strong> Test Examples</a></li></ol></li><li><a href="../glossary.html"><strong aria-hidden="true">12.</strong> Glossary</a></li><li><a href="../appendices/a_config_files.html"><strong aria-hidden="true">13.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">13.1.</strong> Adding an Arena Config</a></li><li><a href="../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">13.2.</strong> Adding a Ball Config</a></li><li><a href="../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">13.3.</strong> Adding Paddle Configs</a></li></ol></li><li><a href="../appendices/b_migration_notes.html"><strong aria-hidden="true">14.</strong> Appendix B: Migration Notes</a></li><li><ol class="section"><li><a href="../appendices/b_migration_notes/cgmath_to_nalgebra.html"><strong aria-hidden="true">14.1.</strong> cgmath to nalgebra</a></li><li><a href="../appendices/b_migration_notes/transform_api_changes.html"><strong aria-hidden="true">14.2.</strong> Transform API Changes</a></li></ol></li><li><a href="../appendices/c_feature_gates.html"><strong aria-hidden="true">15.</strong> Appendix C: Feature Gates</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#entity-and-component" id="entity-and-component"><h1>Entity and Component</h1></a>
+<a class="header" href="#what-are-entity-and-component" id="what-are-entity-and-component"><h2>What are <code>Entity</code> and <code>Component</code>?</h2></a>
+<p>An <code>Entity</code> represents a single object in your world. <code>Component</code> represents one aspect of an object. For example, a bottle of water has a shape, a volume, a color and is made of a material (usually plastic). In this example, the bottle is the entity, and the properties are components.</p>
+<a class="header" href="#entity-and-component-in-amethyst" id="entity-and-component-in-amethyst"><h2>Entity and Component in Amethyst</h2></a>
+<p>In an inheritance design, entity usually contains components. All the data and methods related to an entity are stored within. However, in the ECS design, entity is just a general purpose object. In fact, the implementation of <code>Entity</code> in Amethyst is simply:</p>
+<pre><code class="language-rust ignore">struct Entity(u32, Generation);
+</code></pre>
+<p>where u32 is the id of the entity and generation is used to check if the entity has been deleted.</p>
+<p><code>Entity</code>s are stored in a special container <code>EntitiesRes</code>. Whereas the data associated with the entities are grouped into components and stored in the designated storages.</p>
+<p>Consider an example where you have three objects: two bottles and a person.</p>
+<table><thead><tr><th align="center">  object  </th><th align="center">   x   </th><th align="center">   y   </th><th align="center">   shape  </th><th align="center">  color  </th><th align="center">   name  </th></tr></thead><tbody>
+<tr><td align="center"> Bottle A </td><td align="center"> 150.0 </td><td align="center"> 202.1 </td><td align="center">  &quot;round&quot; </td><td align="center">  &quot;red&quot;  </td><td align="center">         </td></tr>
+<tr><td align="center"> Bottle B </td><td align="center"> 570.0 </td><td align="center"> 122.0 </td><td align="center"> &quot;square&quot; </td><td align="center"> &quot;white&quot; </td><td align="center">         </td></tr>
+<tr><td align="center"> Person C </td><td align="center"> 100.5 </td><td align="center"> 300.8 </td><td align="center">          </td><td align="center">         </td><td align="center"> &quot;Peter&quot; </td></tr>
+</tbody></table>
+<p>We can separate bottle's properties into <code>PositionComponent</code> and <code>BottleComponent</code>, and person's properties into <code>PositionComponent</code> and <code>PersonComponent</code>. Here's an illustration of how the three objects would be stored.</p>
+<p><img src="../images/concepts/component_and_entity.svg" alt="How entity and components are stored" /></p>
+<p>As you could see from the graph, entities do not store data. Nor do they know any information about their components. They serve the purpose of object identification and tracking object existence. The component storage stores all the data and their connection to entities.</p>
+<p>If you are familiar with relational databases, this organization looks quite similar to the tables in a database, where entity id serves as the key in each table. In fact, you can even join components or entities like joining tables. For example, to update the position of all the persons, you will need to join the <code>PersonComponent</code> and the <code>PositionComponent</code>.</p>
+<a class="header" href="#entitiesres" id="entitiesres"><h2>EntitiesRes</h2></a>
+<p>Even though the structure of the entity is pretty simple, entity manipulation is very sophisticated and crucial to game performance. This is why entities are handled exclusively by the struct <code>EntitiesRes</code>. <code>EntitiesRes</code> provides two ways for creating/deleting entities:</p>
+<ul>
+<li>Immediate creation/deletion, used for game setup or clean up.</li>
+<li>Lazy creation/deletion, used in the game play state. It updates entities in batch at the end of each game loop. This is also referred to as atomic creation/deletion.</li>
+</ul>
+<p>You will see how these methods are used in later chapters.</p>
+<a class="header" href="#declaring-a-component" id="declaring-a-component"><h2>Declaring a component</h2></a>
+<p>To declare a component, you first declare the relevant underlying data:</p>
+<pre><code class="language-rust edition2018 no_run noplaypen"># extern crate amethyst;
+# use amethyst::core::math::{Isometry3, Vector3};
+
+/// This `Component` describes the shape of an `Entity`
+enum Shape {
+    Sphere { radius: f32 },
+    Cuboid { height: f32, width: f32, depth: f32 },
+}
+
+/// This `Component` describes the transform of an `Entity`
+pub struct Transform {
+    /// Translation + rotation value
+    iso: Isometry3&lt;f32&gt;,
+    /// Scale vector
+    scale: Vector3&lt;f32&gt;,
+}
+</code></pre>
+<p>and then you implement the <code>Component</code> trait for them:</p>
+<pre><code class="language-rust edition2018 no_run noplaypen"># extern crate amethyst;
+# struct Shape;
+# struct Transform;
+use amethyst::ecs::{Component, DenseVecStorage, FlaggedStorage};
+
+impl Component for Shape {
+    type Storage = DenseVecStorage&lt;Self&gt;;
+}
+
+impl Component for Transform {
+    type Storage = FlaggedStorage&lt;Self, DenseVecStorage&lt;Self&gt;&gt;;
+}
+</code></pre>
+<p>The storage type will determine how you store the component, but it will not initialize the storage. Storage is initialized when you register a component in <code>World</code> or when you use that component in a <code>System</code>.</p>
+<a class="header" href="#storages" id="storages"><h2>Storages</h2></a>
+<p>There are a few storage strategies for different usage scenarios. The most commonly used types are <code>DenseVecStorage</code>, <code>VecStorage</code> and <code>FlaggedStorage</code>.</p>
+<ul>
+<li><code>DenseVecStorage</code>: Elements are stored in a contiguous vector. No empty space is left between <code>Component</code>s, allowing a lowered memory usage for big components.</li>
+<li><code>VecStorage</code>: Elements are stored into a sparse array. The entity id is the same as the index of component. If your component is small (&lt;= 16 bytes) or is carried by most entities, this is preferable over <code>DenseVecStorage</code>.</li>
+<li><code>FlaggedStorage</code>: Used to keep track of changes of a component. Useful for caching purposes.</li>
+</ul>
+<p><img src="../images/concepts/component_and_entity_densevecstorage.svg" alt="DenseVecStorage" /></p>
+<p><img src="../images/concepts/component_and_entity_vecstorage.svg" alt="VecStorage" /></p>
+<p>For more information, see the <a href="https://docs.rs/specs/latest/specs/storage/index.html">specs storage reference</a>
+and the <a href="https://slide-rs.github.io/specs/05_storages.html">&quot;Storages&quot; section</a> of the specs book.</p>
+<p>There are a bunch more storages, and deciding which one is the best isn't trivial and should be done based on careful benchmarking. A general rule is: if your component is used in over 30% of entities, use <code>VecStorage</code>. If you don't know which one you should use, <code>DenseVecStorage</code> is a good default. It will need more memory than <code>VecStorage</code> for pointer-sized components, but it will perform well for most scenarios.</p>
+<a class="header" href="#tags" id="tags"><h2>Tags</h2></a>
+<p>Components can also be used to &quot;tag&quot; entities.
+The usual way to do it is to create an empty struct, and implement <code>Component</code> using <code>NullStorage</code> as the <code>Storage</code> type for it.
+Null storage means that it is not going to take memory space to store those components.</p>
+<p>You will learn how to use those tag components in the System chapter.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../concepts/state.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../concepts/resource.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../concepts/state.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../concepts/resource.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["grab_cursor","Grab the cursor to prevent it from going outside the screen."],["hide_cursor","Hide the cursor, so it's invisible while playing."],["release_cursor","Set the cursor back to normal/visible."],["set_mouse_cursor","Sets the mouse cursor icon."]]});

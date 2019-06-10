@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Define The SpriteSheet - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../concepts/state.html"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../concepts/component.html"><strong aria-hidden="true">3.2.</strong> Component</a></li><li><a href="../concepts/entity.html"><strong aria-hidden="true">3.3.</strong> Entity</a></li><li><a href="../concepts/resource.html"><strong aria-hidden="true">3.4.</strong> Resource</a></li><li><a href="../concepts/world.html"><strong aria-hidden="true">3.5.</strong> World</a></li><li><a href="../concepts/system.html"><strong aria-hidden="true">3.6.</strong> System</a></li><li><a href="../concepts/dispatcher.html"><strong aria-hidden="true">3.7.</strong> Dispatcher</a></li><li><a href="../concepts/event-channel.html"><strong aria-hidden="true">3.8.</strong> Event Channel</a></li></ol></li><li><a href="../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../pong-tutorial/pong-tutorial-01.html"><strong aria-hidden="true">4.1.</strong> Creating a Window</a></li><li><a href="../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-03.html"><strong aria-hidden="true">4.3.</strong> Moving the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-04.html"><strong aria-hidden="true">4.4.</strong> Making a Ball Move and Bounce</a></li><li><a href="../pong-tutorial/pong-tutorial-05.html"><strong aria-hidden="true">4.5.</strong> Winning Rounds and Keeping Score</a></li><li><a href="../pong-tutorial/contribution.html"><strong aria-hidden="true">4.6.</strong> Call for Contribution</a></li></ol></li><li><a href="../math.html"><strong aria-hidden="true">5.</strong> Math</a></li><li><a href="../animation.html"><strong aria-hidden="true">6.</strong> Animation</a></li><li><ol class="section"><li><a href="../animation/interpolation.html"><strong aria-hidden="true">6.1.</strong> Interpolation</a></li><li><a href="../animation/channel.html"><strong aria-hidden="true">6.2.</strong> Channel</a></li><li><a href="../animation/sampler.html"><strong aria-hidden="true">6.3.</strong> Sampler</a></li><li><a href="../animation/definition.html"><strong aria-hidden="true">6.4.</strong> Definition</a></li></ol></li><li><a href="../game-data.html"><strong aria-hidden="true">7.</strong> Custom GameData</a></li><li><a href="../sprites.html"><strong aria-hidden="true">8.</strong> Sprites</a></li><li><ol class="section"><li><a href="../sprites/set_up_the_render_pass.html"><strong aria-hidden="true">8.1.</strong> Set Up The Render Pass</a></li><li><a href="../sprites/load_the_texture.html"><strong aria-hidden="true">8.2.</strong> Load The Texture</a></li><li><a href="../sprites/display_the_texture.html"><strong aria-hidden="true">8.3.</strong> Display The Texture</a></li><li><a href="../sprites/define_the_sprite_sheet.html" class="active"><strong aria-hidden="true">8.4.</strong> Define The SpriteSheet</a></li><li><a href="../sprites/sprite_render_component.html"><strong aria-hidden="true">8.5.</strong> SpriteRender Component</a></li><li><a href="../sprites/orthographic_camera.html"><strong aria-hidden="true">8.6.</strong> Orthographic Camera</a></li></ol></li><li><a href="../prefab.html"><strong aria-hidden="true">9.</strong> Prefabs</a></li><li><a href="../testing.html"><strong aria-hidden="true">10.</strong> Testing</a></li><li><ol class="section"><li><a href="../testing/test_examples.html"><strong aria-hidden="true">10.1.</strong> Test Examples</a></li></ol></li><li><a href="../glossary.html"><strong aria-hidden="true">11.</strong> Glossary</a></li><li><a href="../appendices/a_config_files.html"><strong aria-hidden="true">12.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">12.1.</strong> Adding an Arena Config</a></li><li><a href="../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">12.2.</strong> Adding a Ball Config</a></li><li><a href="../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">12.3.</strong> Adding Paddle Configs</a></li></ol></li><li><a href="../appendices/b_migration_notes.html"><strong aria-hidden="true">13.</strong> Appendix B: Migration Notes</a></li><li><ol class="section"><li><a href="../appendices/b_migration_notes/cgmath_to_nalgebra.html"><strong aria-hidden="true">13.1.</strong> cgmath to nalgebra</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#define-the-spritesheet" id="define-the-spritesheet"><h1>Define The <code>SpriteSheet</code></h1></a>
+<p>With the texture loaded, Amethyst still needs to know <em>where the sprites are</em> on the image.
+There are two ways to load a sprite sheet definition: from a file or from code.</p>
+<a class="header" href="#load-the-sheet-from-a-file" id="load-the-sheet-from-a-file"><h2>Load the sheet from a file</h2></a>
+<p>The easiest way to load your sprites is to use a sprite sheet definition ron file.
+Here is an example of such a definition file:</p>
+<pre><code class="language-text ignore">(
+    // Width of the sprite sheet
+    spritesheet_width: 48,
+    // Height of the sprite sheet
+    spritesheet_height: 16,
+    // List of sprites the sheet holds
+    sprites: [
+        (
+            // Horizontal position of the sprite in the sprite sheet
+            x: 0,
+            // Vertical position of the sprite in the sprite sheet
+            y: 0,
+            // Width of the sprite
+            width: 16,
+            // Height of the sprite
+            height: 16,
+            // Number of pixels to shift the sprite to the left and down relative to the entity holding it when rendering
+            offsets: Some((0.0, 0.0)), // This is optional and defaults to (0.0, 0.0)
+        ),
+        (
+            x: 16,
+            y: 0,
+            width: 32,
+            height: 16,
+        ),
+        // etc...
+    ],
+)
+</code></pre>
+<p><code>offsets: Some((0.0, 0.0)),</code> can be replaced by <code>offsets: (0.0, 0.0),</code> if the line <code>#![enable(implicit_some)]</code> is added at the top of the definition file.</p>
+<p>Then, you can load it using the texture handle of the sheet's image you loaded earlier:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::assets::{Loader, AssetStorage};
+# use amethyst::renderer::{SpriteSheetFormat, SpriteSheet, TextureHandle};
+#
+# fn load_texture() -&gt; TextureHandle {
+#    unimplemented!()
+# }
+#
+# fn load_sprite_sheet() {
+#   let world = amethyst::ecs::World::new(); // Normally, you would use Amethyst's world
+#   let loader = world.read_resource::&lt;Loader&gt;();
+#   let texture_handle = load_texture();
+#   let spritesheet_storage = world.read_resource::&lt;AssetStorage&lt;SpriteSheet&gt;&gt;();
+let spritesheet_handle = loader.load(
+    &quot;my_spritesheet.ron&quot;,
+    SpriteSheetFormat,
+    texture_handle,
+    (),
+    &amp;spritesheet_storage,
+);
+# }
+</code></pre>
+<p>This will get you the <code>SpriteSheetHandle</code> you will then use to draw the sprites.</p>
+<a class="header" href="#load-the-sheet-from-code" id="load-the-sheet-from-code"><h2>Load the sheet from code</h2></a>
+<p>While it is not the recommended way, it is also possible to manually build your sheet with code.</p>
+<p>Importantly, <strong>we use pixel coordinates as well as texture coordinates</strong> to define the sprite layout. Pixel coordinates indicate the dimensions of the sprite to draw on screen; texture coordinates indicate which part of the image contains the sprite, and are expressed as a proportion of the image.</p>
+<p>The following table lists the differences between the coordinate systems:</p>
+<table><thead><tr><th> Pixel coordinates                     </th><th> Texture coordinates                       </th></tr></thead><tbody>
+<tr><td> Begin at the top left of the image    </td><td> Begin at the bottom left of the image     </td></tr>
+<tr><td> Increase to the right and down        </td><td> Increase to the right and up              </td></tr>
+<tr><td> Range from 0 to (width or height - 1) </td><td> Range from 0.0 to 1.0                     </td></tr>
+<tr><td> Use pixel values at exact coordinates </td><td> Takes average value of surrounding pixels </td></tr>
+</tbody></table>
+<p>In Amethyst, pixel dimensions and texture coordinates are stored in the <code>Sprite</code> struct. Since texture coordinates can be derived from pixel coordinates, Amethyst provides the <code>Sprite::from_pixel_values</code> function to create a <code>Sprite</code>.</p>
+<p>The following snippet shows you how to naively define a <code>SpriteSheet</code>. In a real application, you would typically use the sprite sheet from file feature, which is much more convenient.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+use amethyst::renderer::{Sprite, SpriteSheet, TextureCoordinates, TextureHandle};
+
+/// Returns a `SpriteSheet`.
+///
+/// # Parameters
+///
+/// * `texture`: Handle of the texture.
+pub fn load_sprite_sheet(texture: TextureHandle) -&gt; SpriteSheet {
+    let sprite_count = 1; // number of sprites
+    let mut sprites = Vec::with_capacity(sprite_count);
+
+    let image_w = 100;
+    let image_h = 20;
+    let sprite_w = 10;
+    let sprite_h = 10;
+
+    // Here we are loading the 5th sprite on the bottom row.
+    let offset_x = 50; // 5th sprite * 10 pixel sprite width
+    let offset_y = 10; // Second row (1) * 10 pixel sprite height
+    let offsets = [5.0; 2]; // Align the sprite with the middle of the entity.
+
+    let sprite = Sprite::from_pixel_values(
+        image_w, image_h, sprite_w, sprite_h, offset_x, offset_y, offsets,
+    );
+    sprites.push(sprite);
+
+    SpriteSheet {
+        texture,
+        sprites,
+    }
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../sprites/display_the_texture.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../sprites/sprite_render_component.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../sprites/display_the_texture.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../sprites/sprite_render_component.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["MaterialPrefab","`PrefabData` for loading `Material`s"]]});

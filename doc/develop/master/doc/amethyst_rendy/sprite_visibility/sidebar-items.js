@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SpriteVisibility","Resource for controlling what entities should be rendered, and whether to draw them ordered or not, which is useful for transparent surfaces."],["SpriteVisibilitySortingSystem","Determines what entities to be drawn. Will also sort transparent entities back to front based on position on the Z axis."]]});

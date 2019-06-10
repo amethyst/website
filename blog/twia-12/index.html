@@ -1,0 +1,266 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="What happened this week: new CI strategy, tutorial improvements and upcoming features">
+    <meta name="author" content="doomy (Alexander Lozada), Ellie Fagerberg, happens (Hilmar Wiegand) 🎺, Moxinilian (Théo Degioanni)">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="This week in Amethyst 12" />
+    <meta property="og:description" content="What happened this week: new CI strategy, tutorial improvements and upcoming features">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;amethyst.rs&#x2F;blog&#x2F;twia-12&#x2F;" />
+    <meta property="og:image" content="/brand/logo-filled.png" />
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:type" content="image/png" />
+    
+<meta property="article:published_time" content="2018-10-27" />
+
+    <title>Amethyst - This week in Amethyst 12</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/article.css">
+    <link rel="icon" type="image/svg+xml" href="/brand/logo-filled.svg">
+    <link rel="icon" type="image/png" href="/brand/favicon.png">
+    <link
+        rel="search"
+        type="application/opensearchdescription+xml"
+        title="Amethyst Documentation"
+        href="/opensearch.xml">
+</head>
+
+<body>
+    <div>
+        
+        <div class="master-header">
+            <div>
+                <a href="/" class="logo">
+                    
+    <svg viewBox="0 0 32 32" width="35px" height="35px" class="logo-emblem">
+        <defs>
+            
+            <linearGradient id="logo-standard" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" style="stop-color:#7f41ef;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#4f29d0;stop-opacity:1" />
+            </linearGradient>
+            
+            
+            
+        </defs>
+        <path
+            d="M 15.999998,0.5000067 A 15.499999,15.499999 0 0 0 0.49999975,16 15.499999,15.499999 0 0 0 15.999998,31.499993 15.499999,15.499999 0 0 0 31.5,16 15.499999,15.499999 0 0 0 15.999998,0.5000067 Z m -1.759767,3.050797 3.785159,2.402343 0.636718,4.011704 -1.308593,0.8808573 -1.050784,9.236333 -2.378907,1.066394 -1.582029,-1.998048 -1.087888,-12.1796773 z m 7.935549,4.767572 2.912108,4.0038803 -3.564451,12.687533 -3.750001,-5.585953 -0.859374,0.386722 0.980466,-8.636712 3.232422,-2.1738333 z M 11.140624,18.56252 13.53125,21.576164 13.105468,27.029304 10.80078,26.634759 8.1640612,19.533216 Z m 6.42578,1.585927 3.441408,5.126967 -4.728518,2.298822 -2.607419,-0.447269 0.423827,-5.421884 z"
+            style="fill:url(#logo-standard);" />
+    </svg>
+
+                    
+    <svg viewBox="0 0 148.30099 32" width="92.68811876px" height="20px" class="logo-text">
+        <path d="M 141.53041,24.944 V 0.74797 h 2.67261 v 6.37861 h 4.098 V 9.4785 h -4.098 V 24.944 Z" />
+        <path d="m 134.41814,11.90192 q -0.35636,-2.77956 -4.48998,-2.77956 -4.098,0 -4.098,2.56571 0,1.06906 0.85523,1.6392 0.89087,0.53465 2.20936,0.89086 1.31848,0.35642 2.85078,0.67678 1.56793,0.28499 2.88641,0.85528 1.31849,0.53464 2.17373,1.49663 0.89087,0.96214 0.89087,2.63699 0,2.60135 -1.95992,3.99106 -1.95991,1.35413 -5.30958,1.35413 -3.56348,0 -5.66592,-1.7817 -1.92428,-1.568 -2.06682,-4.09806 h 2.77951 q 0.24943,2.45885 2.77951,3.31406 0.9265,0.285 1.81737,0.285 0.92651,0 1.71047,-0.10679 0.78397,-0.10678 1.5323,-0.39178 1.71047,-0.67678 1.71047,-2.31627 0,-1.10471 -0.89087,-1.67485 -0.85523,-0.60607 -2.17372,-0.96214 -1.31849,-0.39178 -2.88642,-0.67678 -1.5323,-0.32107 -2.85078,-0.85521 -1.31848,-0.53464 -2.20936,-1.46107 -0.85523,-0.92649 -0.85523,-2.5657 0,-2.42313 1.74611,-3.74163 1.78173,-1.35413 5.2383,-1.35413 3.2784,0 5.16704,1.56792 1.56793,1.31849 1.81738,3.49227 z" />
+        <path d="m 110.96796,32 h -2.88642 l 3.24277,-7.30512 -7.2695,-17.56799 h 2.95769 l 5.73719,14.61029 5.84411,-14.61029 h 2.92205 z" />
+        <path d="m 89.169788,3.2e-4 v 9.90646 q 0.962139,-1.28285 2.351895,-2.1737 1.389756,-0.89093 3.171497,-0.89093 1.781732,0 3.064584,0.49929 1.282851,0.49856 2.244986,1.49663 2.20936,2.17371 2.20936,5.73719 V 24.945 H 99.539498 V 14.64655 q 0,-2.45878 -1.38975,-3.91984 -1.389759,-1.46099 -3.59911,-1.46099 -2.24499,0 -3.81292,1.49663 -1.56793,1.53228 -1.56793,3.91984 V 24.945 H 86.497181 V 6.9e-4 Z" />
+        <path d="M 76.763598,24.944 V 0.74797 h 2.672607 v 6.37861 h 4.097998 V 9.4785 H 79.436205 V 24.944 Z" />
+        <path d="m 64.652036,22.80587 c 1.199704,0 2.230142,-0.24964 3.091316,-0.74835 0.861173,-0.49857 1.553082,-1.24721 2.075725,-2.24499 h 2.922051 c -0.617667,1.61539 -1.603565,2.92205 -2.957686,3.91984 -1.330364,0.99778 -3.052711,1.49663 -5.16704,1.49663 -2.684485,0 -4.870084,-0.89085 -6.556796,-2.67263 -1.639199,-1.73423 -2.458799,-3.90793 -2.458799,-6.52111 0,-2.63699 0.783965,-4.8107 2.351894,-6.52119 1.662956,-1.78178 3.824798,-2.67263 6.485527,-2.67263 2.660729,0 4.822571,0.89085 6.485527,2.67263 1.567929,1.71049 2.351894,3.8842 2.351894,6.52119 v 1.06899 H 58.344684 c 0.190054,1.63921 0.843356,2.99335 1.959912,4.06241 1.140312,1.09281 2.589458,1.63921 4.34744,1.63921 z M 64.43823,9.26464 c -1.639199,0 -3.017076,0.51084 -4.133632,1.53228 -1.045287,0.97398 -1.686712,2.24499 -1.924277,3.81292 H 70.49614 C 70.258574,13.04191 69.617148,11.7709 68.571863,10.79692 67.455306,9.7754 66.077429,9.26464 64.43823,9.26464 Z" />
+        <path d="m 28.476073,9.83557 q 1.781738,-2.99335 5.416484,-2.99335 1.781738,0 3.278398,0.96214 1.532295,0.9265 2.387529,2.63699 1.211582,-2.24499 3.777285,-3.20713 1.033408,-0.39178 2.316259,-0.39178 1.318487,0 2.494434,0.53464 1.211582,0.49857 2.138086,1.46099 1.995547,2.13806 1.995547,5.34519 V 24.945 H 49.607487 V 14.25455 q 0,-2.20935 -1.247216,-3.6347 -1.247217,-1.35414 -3.171494,-1.35414 -2.031182,0 -3.385303,1.3185 -1.42539,1.35406 -1.42539,3.70598 V 24.945 H 37.705477 V 14.25455 q 0,-2.20935 -1.247217,-3.6347 -1.247217,-1.35414 -3.171494,-1.35414 -2.031181,0 -3.385303,1.3185 -1.42539,1.35406 -1.42539,3.70598 V 24.945 H 25.803466 V 7.12758 h 2.672607 z" />
+        <path d="M 23.376405,24.944 H 20.41872 L 16.958639,16.72957 H 6.4231365 L 2.9576858,24.944 H 4.409953e-7 L 10.013369,1.35375 h 3.349668 z M 15.925231,14.27079 11.688203,4.13331 7.4565448,14.27079 Z" />
+    </svg>
+
+                </a>
+                <span class="spacer"></span>
+                <span class="hamburger"></span>
+                <nav>
+                    <a href="/doc"><div>Learn</div></a>
+                    <a href="/blog"><div>News</div></a>
+                    <a href="/contribute"><div>Contribute</div></a>
+                    <a href="/donate"><div>Donate</div></a>
+                    <a href="/team"><div>Team</div></a>
+                    <a href="/roadmap"><div>Roadmap</div></a>
+                </nav>
+            </div>
+            <script src="/js/header.js"></script>
+        </div>
+        
+        
+<main id="content">
+    <section class="page-title">
+        <div>
+            <h1>This week in Amethyst 12</h1>
+            <span class="subtitle">Published on 2018-10-27  by 
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;torkleyy">torkleyy</a>
+            </span>
+        </div>
+    </section>
+
+    <section class="article-content">
+        <p>Hello and welcome to the 12th issue of <em>This Week in Amethyst</em>, a blog bringing to
+you the latest changes regarding Amethyst, a data-driven game engine written in
+Rust.</p>
+<p>We're very proud of the fast growing activity on our project! Given the wide
+interest from the community, we figured it's time to continue
+<em>This Week in Amethyst</em>. We'd like to go with the following structure from now
+on:</p>
+<ul>
+<li>important recent changes</li>
+<li>chosen ongoing issues / PRs with high importance and / or activity</li>
+<li>call for participation</li>
+</ul>
+<p>A list of new contributors, issues and PRs will no longer be included. New
+contributors will be listed in release posts; issues and PRs have gotten far
+too many to list them all here.</p>
+<h2 id="new-ci-strategy">New CI strategy</h2>
+<p>CI is crucially important for any project, even more so for the big ones. That
+said, Travis and AppVeyor have been causing us issues for a long time now,
+blocking effective work on the engine due to long build times. While Travis
+did generally work better than AppVeyor, it cannot handle the massive workload
+that Amethyst generates with all the PRs and staging
+builds<sup><a href="#fn1" id="r1">[1]</a></sup>.</p>
+<p>After an insane amount of research and experimentation, <a href="https://github.com/magnanellie">Ellie</a> has come
+up with a big first step to improve the situation, implemented by
+<a href="https://github.com/amethyst/amethyst/pull/1047">this PR</a>. These are the changes in short:</p>
+<ul>
+<li>use <a href="https://concourse-ci.org/">Concourse</a> as a first pass for building PRs for Linux and showing
+its status</li>
+<li>thanks to Travis' new Windows support, Travis can now be used to build for all
+three platforms; it will now be used by
+bors<sup><a href="#fn1" id="r1">[1]</a></sup>, as a final check before merging
+the PR into master</li>
+<li>AppVeyor has been dropped entirely</li>
+</ul>
+<p>This way, Travis has less workload and is only needed when a PR is merged.
+By using Concourse we not only avoid blocking our merging pipeline, but we
+now also have dedicated status reports for tests, book tests and correct
+formatting.</p>
+<h2 id="what-s-being-worked-on-currently">What's being worked on currently?</h2>
+<p>Amethyst's math library has been using <code>cgmath</code> so far, but we've decided that
+we want to move to Nalgebra. We previously used <code>cgmath</code> due
+to both historic and simplicity reasons. Since it changed into maintainance
+mode<sup><a href="#fn2" id="r2">[2]</a></sup>
+and <code>nalgebra</code> has an easier API now, we're doing the migration.
+We think this is an important step for unifying the Rust ecosystem.
+Thanks to <a href="https://github.com/magnanellie">Ellie</a> for doing <a href="https://github.com/amethyst/amethyst/pull/1066">the migration PR</a>!</p>
+<p>The transition to Nalgebra in Amethyst &amp; its <a href="https://github.com/amethyst/amethyst-rhusics">rhusics bridge</a> is going to
+be the focus for this release. Meanwhile, <a href="https://github.com/Rhuagh">Rhuagh</a> and <a href="https://github.com/sebcrozet">sebcrozet</a>
+are working on <a href="https://github.com/rustsim/nphysics-ecs">better ECS support</a> for <a href="https://github.com/rustsim/nphysics"><code>nphysics</code></a> (work hasn't
+started on the nphysics-ecs repo just yet, but it's planned for this weekend).</p>
+<p>In other news, <a href="https://github.com/Ristarg">Yuurai</a> is working on a formatting tool for <a href="https://github.com/ron-rs/ron">RON files</a>!
+You can find the repo <a href="https://github.com/Ristarg/ronfmt">here</a>, but note that it's still very experimental.
+This will make our lives a lot easier since RON files are used for configuration
+and prefabs in Amethyst; soon we'll no longer have to format them by hand!</p>
+<p>Speaking of prefabs... <a href="https://github.com/Rhuagh">Rhuagh</a> is working on <a href="https://github.com/amethyst/amethyst/pull/1035">a PR</a> that lets us define
+new prefabs very easily, with much less boilerplate. With the new macro it will
+be as easy as adding a few derives:</p>
+<pre style="background-color:#272822;">
+<span style="color:#f8f8f2;">#[derive(Default, Deserialize, Serialize, PrefabData)]
+</span><span style="color:#f8f8f2;">#[serde(default)]
+</span><span style="font-style:italic;color:#66d9ef;">struct </span><span style="color:#f8f8f2;">ScenePrefabData {
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f8f8f2;">transform: Option&lt;Transform&gt;,
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f8f8f2;">gltf: Option&lt;AssetPrefab&lt;GltfSceneAsset, GltfSceneFormat&gt;&gt;,
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f8f8f2;">camera: Option&lt;CameraPrefab&gt;,
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f8f8f2;">light: Option&lt;LightPrefab&gt;,
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f8f8f2;">tag: Option&lt;Tag&lt;AnimationMarker&gt;&gt;,
+</span><span style="color:#f8f8f2;">    </span><span style="color:#f8f8f2;">fly_tag: Option&lt;ControlTagPrefab&gt;,
+</span><span style="color:#f8f8f2;">}
+</span></pre><h2 id="interesting-discussions">Interesting discussions</h2>
+<p>There's one RFC chosen to be presented here,
+&quot;Std I/O driven application (aka <code>amethyst_commands</code>)&quot; (<a href="https://github.com/amethyst/amethyst/issues/999">link</a>).</p>
+<p>This RFC, written by <a href="https://github.com/azriel91">azriel</a>, is part of a bigger topic, runtime
+modification of the game and control of its behavior. This is required for
+many things like the editor, networking, modding, scripting, etc. Make sure
+to weigh in if you have any ideas regarding these topics! We're hoping that
+we can find a way to make all of that possible with as few APIs as possible.</p>
+<p>The RFC specifically is based on code <a href="https://github.com/azriel91">azriel</a> has already implemented for
+<a href="https://azriel.im/will/">their own game</a>. Here's a little proof of concept they posted a while ago,
+so you can get an idea what this is about:</p>
+<div class="youtube">
+    <iframe src="https://www.youtube.com/embed/jpk2MTeWz3w" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
+</div>
+<p>We're happy to get some input from you!</p>
+<h2 id="call-for-participation">Call for participation</h2>
+<p>We love contributions from the community, so if you see something you'd like
+to work on, don't hesitate! We are going to help you and point you into the
+right direction if something doesn't work out at first.</p>
+<p>We have tasks with different difficulty. Make sure to choose easier ones at
+first, because hard issues can become quite frustrating, especially if you
+haven't worked on Amethyst before.</p>
+<p>Here are seven issues for you to pick from:</p>
+<ul>
+<li>[very easy] <a href="https://github.com/amethyst/amethyst/issues/908">Help us remove some unwraps!</a></li>
+<li>[easy] <a href="https://github.com/amethyst/amethyst/issues/951">Doc improvements</a> (you can add new suggestions or fix existing)</li>
+<li>[easy] <a href="https://github.com/amethyst/amethyst/issues/977">Textures are dynamic unconditionally</a></li>
+<li>[moderate] <a href="https://github.com/amethyst/amethyst/issues/855">Lighting / Pass compatibility</a></li>
+<li>[moderate] <a href="https://github.com/amethyst/amethyst/issues/1044">Create architectural overview of Amethyst</a> (can be auto-
+generated)</li>
+<li>[moderate] <a href="https://github.com/amethyst/amethyst/issues/637">Write animation tutorial for the book</a></li>
+<li>[moderate] <a href="https://github.com/amethyst/amethyst/issues/1019">Managing graphics settings &amp; applying changes</a></li>
+</ul>
+<p>Please let us know that you're working on an issue using a short comment,
+that way we can avoid duplicate work. Also note that you can help by
+contributing to the discussion; especially the last issue can really use
+some more input!</p>
+<p>Thank you for helping push the project forward!</p>
+<p><a href="#r1" id="fn1">[1]</a> <a href="https://bors.tech/">bors</a> is a GitHub bot that merges our PRs and makes
+sure they're compatible with the latest master by using a &quot;staging&quot; branch.
+You can read more about that on <a href="https://bors.tech/">their website</a>.</p>
+<p><a href="#r2" id="fn2">[2]</a> <code>cgmath</code> has been moved into <a href="https://github.com/rustgd/">rustgd</a> and is not
+having a lot of activity. If there is a PR, it's going to be merged, but
+nobody expects a lot of work to happen on it.</p>
+
+    </section>
+</main>
+
+        
+        <div class="master-footer">
+            <div class="nav">
+                <div class="logo">
+                    
+    <svg viewBox="0 0 32 32" width="100px" height="100px" class="logo-emblem">
+        <defs>
+            
+            
+            <linearGradient id="logo-white" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#fff;stop-opacity:1" />
+            </linearGradient>
+            
+            
+        </defs>
+        <path
+            d="M 15.999998,0.5000067 A 15.499999,15.499999 0 0 0 0.49999975,16 15.499999,15.499999 0 0 0 15.999998,31.499993 15.499999,15.499999 0 0 0 31.5,16 15.499999,15.499999 0 0 0 15.999998,0.5000067 Z m -1.759767,3.050797 3.785159,2.402343 0.636718,4.011704 -1.308593,0.8808573 -1.050784,9.236333 -2.378907,1.066394 -1.582029,-1.998048 -1.087888,-12.1796773 z m 7.935549,4.767572 2.912108,4.0038803 -3.564451,12.687533 -3.750001,-5.585953 -0.859374,0.386722 0.980466,-8.636712 3.232422,-2.1738333 z M 11.140624,18.56252 13.53125,21.576164 13.105468,27.029304 10.80078,26.634759 8.1640612,19.533216 Z m 6.42578,1.585927 3.441408,5.126967 -4.728518,2.298822 -2.607419,-0.447269 0.423827,-5.421884 z"
+            style="fill:url(#logo-white);" />
+    </svg>
+
+                </div>
+                <div>
+                    <div class="h6">Project</div>
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst">GitHub</a>
+                    <a href="&#x2F;doc">Documentation</a>
+                    <a href="/blog">Blog</a>
+                </div>
+                <div>
+                    <div class="h6">Community</div>
+                    <a href="https:&#x2F;&#x2F;discord.gg&#x2F;amethyst">Discord</a>
+                    <a href="https:&#x2F;&#x2F;community.amethyst-engine.org">Forums</a>
+                </div>
+                <div>
+                    <div class="h6">Foundation</div>
+                    <a href="/donate">Donate</a>
+                    <a href="/branding">Branding</a>
+                </div>
+            </div>
+        </div>
+        
+        <script src="/js/konami.js"></script>
+    </div>
+</body>
+
+</html>

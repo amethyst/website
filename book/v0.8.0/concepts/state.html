@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>State - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../concepts/state.html" class="active"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../concepts/component.html"><strong aria-hidden="true">3.2.</strong> Component</a></li><li><a href="../concepts/entity.html"><strong aria-hidden="true">3.3.</strong> Entity</a></li><li><a href="../concepts/resource.html"><strong aria-hidden="true">3.4.</strong> Resource</a></li><li><a href="../concepts/world.html"><strong aria-hidden="true">3.5.</strong> World</a></li><li><a href="../concepts/system.html"><strong aria-hidden="true">3.6.</strong> System</a></li><li><a href="../concepts/dispatcher.html"><strong aria-hidden="true">3.7.</strong> Dispatcher</a></li><li><a href="../concepts/event-channel.html"><strong aria-hidden="true">3.8.</strong> Event Channel</a></li></ol></li><li><a href="../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../pong-tutorial/pong-tutorial-01.html"><strong aria-hidden="true">4.1.</strong> Opening (and closing!) a window</a></li><li><a href="../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-03.html"><strong aria-hidden="true">4.3.</strong> Moving the paddles</a></li></ol></li><li><a href="../animation.html"><strong aria-hidden="true">5.</strong> Animation</a></li><li><ol class="section"><li><a href="../animation/interpolation.html"><strong aria-hidden="true">5.1.</strong> Interpolation</a></li><li><a href="../animation/channel.html"><strong aria-hidden="true">5.2.</strong> Channel</a></li><li><a href="../animation/sampler.html"><strong aria-hidden="true">5.3.</strong> Sampler</a></li><li><a href="../animation/definition.html"><strong aria-hidden="true">5.4.</strong> Definition</a></li></ol></li><li><a href="../game-data.html"><strong aria-hidden="true">6.</strong> Custom GameData</a></li><li><a href="../glossary.html"><strong aria-hidden="true">7.</strong> Glossary</a></li><li><a href="../appendices/a_config_files.html"><strong aria-hidden="true">8.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">8.1.</strong> Adding an Arena Config</a></li><li><a href="../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">8.2.</strong> Adding a Ball Config</a></li><li><a href="../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">8.3.</strong> Adding Paddle Configs</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#state" id="state"><h1>State</h1></a>
+<a class="header" href="#what-is-a-state" id="what-is-a-state"><h2>What is a state?</h2></a>
+<p>The word &quot;state&quot; can mean at lot of different things in computer science.
+In the case of amethyst, it is used to represent the &quot;game stage&quot;.</p>
+<p>A game stage is a <em>general</em> and <em>global</em> section of the game.</p>
+<a class="header" href="#example" id="example"><h2>Example</h2></a>
+<p>Let's go with an example.
+You are making a pong game.</p>
+<ul>
+<li>When the user opens up the game, it first loads all the assets and shows a loading screen.</li>
+<li>Then, the main menu shows up, asking you if you want to start a game in single or multiplayer.</li>
+<li>Once you select an option, the game displays the paddles and the ball and starts playing.</li>
+<li>By pressing escape, you can toggle the &quot;pause&quot; menu.</li>
+<li>Once the score limit is reached, a result screen is shown with a button to go back to the main menu.</li>
+</ul>
+<p>All of these can be divided in different states:</p>
+<ul>
+<li>LoadingState</li>
+<li>MainMenuState</li>
+<li>GameplayState</li>
+<li>PauseState</li>
+<li>ResultState</li>
+</ul>
+<p>While you could effectively insert all the game's logic into a single state <code>GameState</code>,
+dividing it in multiple parts makes it much easier to reason about and maintain.</p>
+<a class="header" href="#state-manager" id="state-manager"><h2>State Manager</h2></a>
+<p>Amethyst has a built-in state manager, which allows easily switching between different <code>State</code>s.
+It is based on the concept of a pushdown-automaton, which is a combination of a Stack and a State Machine.</p>
+<a class="header" href="#stack" id="stack"><h3>Stack</h3></a>
+<p>The stack concept makes it so you can &quot;push&quot; <code>State</code>s on top of each other.</p>
+<p>If we take the pong example of earlier, you can push the <code>PauseState</code> over the <code>GameplayState</code>.</p>
+<p>When you want to go out of pause, you pop the <code>PauseState</code> out of the stack and you are back into the <code>GameplayState</code>, just as you left it.</p>
+<a class="header" href="#state-machine" id="state-machine"><h3>State Machine</h3></a>
+<p>The concept of State Machine can be pretty complex, but here I will only explain the basics of it.
+The State Machine is usually composed of two elements: Transitions and Events.</p>
+<p>Transitions are simply the &quot;switching&quot; between two states.</p>
+<p>For example, from <code>LoadingState</code>, go to state <code>MainMenuState</code>.</p>
+<p>Amethyst has multiple types of transitions.</p>
+<ul>
+<li>You can Push a <code>State</code> over another.</li>
+<li>You can also Switch a <code>State</code>, which replaces the current <code>State</code> by a new one.</li>
+</ul>
+<p>Events are what trigger the transitions. In the case of amethyst, it is the different methods called on the <code>State</code>. Continue reading to learn about them.</p>
+<a class="header" href="#life-cycle" id="life-cycle"><h2>Life Cycle</h2></a>
+<p><code>State</code> are only valid for a certain period of time, during which a lot of things can occur.
+A <code>State</code> contains methods that reflect the most commons of those events:</p>
+<ul>
+<li>on_start: When the state is added to the stack, this method is called.</li>
+<li>on_stop: When it is removed from the stack, this method is called.</li>
+<li>on_pause: When a <code>State</code> is pushed over the current one, the current one is paused.</li>
+<li>on_resume: When the <code>State</code> that was pushed over the current <code>State</code> is popped, the current one resumes.</li>
+<li>handle_event: Allows easily handling events, like the window closing or a key being pressed.</li>
+<li>fixed_update: This method is called at a fixed time interval (default 1/60th second).</li>
+<li>update: This method is called as often as possible by the engine.</li>
+</ul>
+<p><strong>IMPORTANT: In order to have the game working, you NEED to implement the <code>update</code> method and have it call <code>data.data.update(&amp;mut data.world)</code>. This is an implementation detail and will no longer be necessary in future release 0.9 of Amethyst. For more information, read the &quot;More&quot; section at the end of the world chapter <a href="./world.html#more">here</a>.</strong></p>
+<a class="header" href="#game-data" id="game-data"><h2>Game Data</h2></a>
+<p><code>State</code>s can have arbitrary data associated with them.
+If you need to store data that is tightly coupled to your <code>State</code>, the classic way is to put it in the <code>State</code>'s struct.</p>
+<p><code>State</code>s also have internal data, which is any type T.
+In most cases, the two following are the most used: <code>()</code> and <code>GameData</code>.</p>
+<p><code>()</code> means that there is no data associated with this <code>State</code>. This is usually used for tests and not for actual games.
+<code>GameData</code> is the de-facto standard. It is a struct containing a <code>Dispatcher</code> (which will be discussed later).</p>
+<p>When calling your <code>State</code>'s methods, the engine will pass a <code>StateData</code> struct which contains both the <code>World</code> (which will also be discussed later) and the Game Data type that you choosed.</p>
+<a class="header" href="#code" id="code"><h2>Code</h2></a>
+<p>Yes! Its finally time to get some code in here!</p>
+<p>Here will just be a small code snippet that shows the basics of <code>State</code>'s usage.
+For more advanced examples, see the following pong tutorial.</p>
+<a class="header" href="#creating-a-state" id="creating-a-state"><h3>Creating a State</h3></a>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+extern crate amethyst;
+use amethyst::{GameData, State, StateData};
+
+struct GameplayState {
+    /// The `State`-local data. Usually you will not have anything.
+    /// In this case, we have the number of players here.
+    player_count: u8,
+}
+
+impl&lt;'a,'b&gt; State&lt;GameData&lt;'a,'b&gt;&gt; for GameplayState {
+    fn on_start(&amp;mut self, _data: StateData&lt;GameData&lt;'a,'b&gt;&gt;) {
+        println!(&quot;Number of players: {}&quot;, self.player_count);
+    }
+}
+#}</code></pre></pre>
+<p>That's a lot of code, indeed!</p>
+<p>We first declare the <code>State</code>'s struct.</p>
+<p>In this case, we give it some data: player_count as byte.</p>
+<p>Then, we implement the <code>State</code> trait for our <code>GameplayState</code>, and we specify that we want to have the <code>GameData</code> internal data.</p>
+<a class="header" href="#switching-state" id="switching-state"><h3>Switching State</h3></a>
+<p>Now, if we want to change to a second state, how do we do it?</p>
+<p>Well, we'll need to use one of the methods that return the <code>Trans</code> type.</p>
+<p>Those are:</p>
+<ul>
+<li>handle_event</li>
+<li>fixed_update</li>
+<li>update</li>
+</ul>
+<p>Let's use handle_event to go to the <code>PausedState</code> and come back by pressing the &quot;Escape&quot; key.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+extern crate amethyst;
+use amethyst::{State, StateData, Trans};
+use amethyst::renderer::{Event, VirtualKeyCode};
+
+struct GameplayState;
+struct PausedState;
+
+// This time around, we are using () instead of GameData, because we don't have any `System`s.
+// `System`s will be covered later in this book.
+impl State&lt;()&gt; for GameplayState {
+    fn handle_event(&amp;mut self, _data: StateData&lt;()&gt;, event: Event) -&gt; Trans&lt;()&gt; {
+        if is_key_down(&amp;event, VirtualKeyCode::Escape) {
+            // Pause the game by going to the `PausedState`.
+            return Trans::Push(Box::new(PausedState));
+        }
+        // Escape isn't pressed, so we stay in this `State`.
+        Trans::None
+    }
+}
+
+impl State&lt;()&gt; for PausedState {
+    fn handle_event(&amp;mut self, _data: StateData&lt;()&gt;, event: Event) -&gt; Trans&lt;()&gt; {
+        if is_key_down(&amp;event, VirtualKeyCode::Escape) {
+            // Go back to the `GameplayState`.
+            return Trans::Pop;
+        }
+        // Escape isn't pressed, so we stay in this `State`.
+        Trans::None
+    }
+}
+
+#}</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../concepts/intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../concepts/component.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../concepts/intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../concepts/component.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

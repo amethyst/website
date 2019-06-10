@@ -1,0 +1,517 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li><a href="getting_started/automatic_setup.html"><strong aria-hidden="true">2.1.</strong> Automatic Setup</a></li><li><a href="getting_started/manual_cargo_setup.html"><strong aria-hidden="true">2.2.</strong> Manual Setup With Cargo</a></li><li><a href="getting_started/hello_world.html"><strong aria-hidden="true">2.3.</strong> Hello, World!</a></li></ol></li><li><a href="simple_application.html"><strong aria-hidden="true">3.</strong> A Simple Application</a></li><li><a href="glossary.html"><strong aria-hidden="true">4.</strong> Glossary</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title"></h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><img src="./images/amethyst_thumb.png" alt="Logo" width="96px" style="float:left;margin-right:15px"/></p>
+<a class="header" href="#the-amethyst-engine" id="the-amethyst-engine"><h1>The Amethyst Engine</h1></a>
+<blockquote>
+<p>Note: This project is a <em>work in progress</em> and is very incomplete. Pardon the
+dust!</p>
+</blockquote>
+<p>Howdy! This book will teach you everything you need to know about building video
+games and interactive simulations with the Amethyst game engine. This engine is
+written entirely in <a href="https://www.rust-lang.org/">Rust</a>, a safe and fast systems programming language,
+and sports a clean and modern design. More correctly, though, Amethyst is
+actually a suite of separate libraries and tools that collectively make up a
+game engine.</p>
+<p>Amethyst is free and open source software, distributed under a dual license of <a href="https://github.com/amethyst/amethyst/blob/master/LICENSE-MIT">MIT</a>
+and <a href="https://github.com/amethyst/amethyst/blob/master/LICENSE-APACHE">Apache</a>. This means that the engine is given to you at no cost
+and its source code is completely yours to tinker with. The code is available on
+<a href="https://github.com/amethyst/amethyst">GitHub</a>. Contributions and feature requests are welcome!</p>
+<p>This book is split into seven sections. This page is the first. The others are:</p>
+<ul>
+<li><a href="./getting_started.html">Getting Started</a> – Prepare your computer for Amethyst development.</li>
+<li><a href="./simple_application.html">A Simple Application</a> – Build a basic pong game in Rust.</li>
+<li>Effective Amethyst – Learn how to write complex games and applications.</li>
+<li>Scripting – Jump into scripted development with <a href="https://www.ruby-lang.org/">Ruby</a>.</li>
+<li><a href="./glossary.html">Glossary</a> - Defines special terms used throughout the book.</li>
+<li>Bibliography – Read the works that influenced the design.</li>
+</ul>
+<p>Read the crate-level <a href="https://www.amethyst.rs/doc/master/amethyst/">API documentation</a> for more details.</p>
+<a class="header" href="#why-are-you-building-this" id="why-are-you-building-this"><h2>Why are you building this?</h2></a>
+<p>I've worked with a few game engines over the years, namely <a href="http://unity3d.com/">Unity</a> and the
+<a href="https://www.unrealengine.com/">Unreal Development Kit</a>, and both are pretty solid solutions if you want to
+build a quality game. But each have their own pros and cons that you have to
+weigh before using them, especially in regards to performance and scalability.</p>
+<p>One engine I've always admired as a programmer but never had a chance to play
+with is the <a href="http://twvideo01.ubm-us.net/o1/vault/gdc2012/slides/Programming%20Track/Persson_Tobias_Flexible_Rendering.pdf.pdf">Bitsquid Engine</a> (now called <a href="http://stingrayengine.com/">Autodesk Stingray</a>). It's
+fast, forward-thinking, highly parallel, and data-driven. It seems like a
+wonderful platform for rapid prototyping. I've wanted to play around with a
+Bitsquid-like engine for a while, but I couldn't find any open-source
+equivalents out there. Most of those I did find stuck to outdated design
+patterns and lacked the multi-core scalability I was looking for. So I set out
+to write my own.</p>
+<p>In short, I am writing Amethyst to scratch three of my own itches:</p>
+<ol>
+<li>Teach myself Rust, game development, and computer graphics in their purest
+form, rather than through the lens of a particular game engine.</li>
+<li>Write a modular, parallel, data-oriented, and data-driven engine suited for
+rapid prototyping that demands (a little) less boilerplate from the user.</li>
+<li>Build a toolset that splits up the traditional &quot;mega-editor&quot; into several
+<a href="https://github.com/ebkalderon/amethyst_tools">small but well-integrated tools</a>, adhering to the <a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix philosophy</a>.</li>
+</ol>
+<a class="header" href="#contributing" id="contributing"><h2>Contributing</h2></a>
+<p>The Markdown source files from which this book is generated can be found
+<a href="https://github.com/amethyst/amethyst/tree/master/book/src">on GitHub</a>. Pull requests are welcome!</p>
+<a class="header" href="#getting-started" id="getting-started"><h1>Getting Started</h1></a>
+<p>These instructions will help you set up a working Amethyst game development
+environment. Then we'll test this environment by compiling a simple &quot;Hello,
+World&quot; application.</p>
+<p>Amethyst should compile hassle-free on any platform properly supported by the
+Rust compiler. Here are the system requirements (they're pretty modest):</p>
+<ul>
+<li>Minimum:
+<ul>
+<li>CPU: 1GHz, the more cores the better</li>
+<li>RAM: 512 MiB</li>
+<li>HDD: 17 MiB free disk space</li>
+<li>OS: Windows Vista and newer, Linux, BSD, Mac OS X</li>
+<li>Rust: Nightly (1.6.0 or newer)</li>
+</ul>
+</li>
+<li>Renderer Backends:
+<ul>
+<li>OpenGL 4.0 or newer</li>
+</ul>
+</li>
+</ul>
+<a class="header" href="#setting-up" id="setting-up"><h2>Setting Up</h2></a>
+<blockquote>
+<p>Note: This guide assumes you have nightly Rust and Cargo installed, and also
+have a working Internet connection.
+Please take care of these prerequisites first before proceeding.
+See <a href="https://www.rustup.rs/">rustup</a> for handling multiple rust toolchains.</p>
+</blockquote>
+<p>There are two ways to get started working with Amethyst:</p>
+<ol>
+<li><a href="./getting_started/automatic_setup.html">Use the Amethyst CLI tool to generate a new game project</a>.</li>
+<li><a href="./getting_started/manual_cargo_setup.html">Create the Cargo crate and the &quot;resources&quot; folder structure yourself</a>.</li>
+</ol>
+<p>Since we're just getting started, it's fastest and highly recommended to use
+<a href="https://github.com/amethyst/tools/tree/master/src/cli">Amethyst CLI</a>, which is included in the <a href="https://github.com/amethyst/tools">amethyst_tools</a> crate. If
+you're of the intrepid type, you may go the vanilla Cargo route if you wish.</p>
+<a class="header" href="#automatic-setup-using-the-cli-tool" id="automatic-setup-using-the-cli-tool"><h1>Automatic Setup Using The CLI Tool</h1></a>
+<p>An easy way to set up Amethyst and manage your project is with the
+<a href="https://github.com/amethyst/tools">amethyst_tools</a> crate. If you want to set up a game project in Cargo by
+hand, follow along with <a href="./getting_started/manual_cargo_setup.html">the next section</a> instead.</p>
+<p>To install the toolchain and generate a new project with the CLI tool, follow
+along in your terminal:</p>
+<pre><code>$ cargo install amethyst_tools
+$ amethyst new hello_world
+</code></pre>
+<p>That's it! You should now have a customized Cargo project set up in a directory
+called &quot;hello_world&quot;. <code>cd</code> into it, and you should find the following file
+structure:</p>
+<ul>
+<li><strong>hello_world</strong>/
+<ul>
+<li><strong>resources</strong>/
+<ul>
+<li>Lots of junk...</li>
+</ul>
+</li>
+<li><strong>src</strong>/
+<ul>
+<li>main.rs</li>
+</ul>
+</li>
+<li>Cargo.toml</li>
+</ul>
+</li>
+</ul>
+<p>You're all set! Skip forward to <a href="./getting_started/hello_world.html">section 2.3</a> to see your setup in action.</p>
+<a class="header" href="#manual-setup-with-cargo" id="manual-setup-with-cargo"><h1>Manual Setup With Cargo</h1></a>
+<p>For those of you who prefer working with Cargo directly, like any other Rust
+project, you can. However, since this is just a &quot;Hello, World&quot; program, I would
+strongly recommend using the <a href="./getting_started/automatic_setup.html">Amethyst CLI tool</a> instead. It will save you
+a whole lot of time.</p>
+<a class="header" href="#from-cratesio" id="from-cratesio"><h3>From Crates.io</h3></a>
+<p>Create a new Rust executable project with <code>cargo new --bin hello_world</code> and add
+the following lines to your &quot;Cargo.toml&quot;:</p>
+<pre><code class="language-toml">[dependencies]
+amethyst = &quot;*&quot;
+</code></pre>
+<a class="header" href="#from-git-via-cargo" id="from-git-via-cargo"><h3>From Git via cargo</h3></a>
+<p>If you don't want to get Amethyst from Crates.io but directly from the
+Git repository, you can add the following lines to your &quot;Cargo.toml&quot;:</p>
+<pre><code class="language-toml">[dependencies]
+amethyst = { git = &quot;https://github.com/amethyst/amethyst.git&quot; }
+</code></pre>
+<p>See the <a href="http://doc.crates.io/specifying-dependencies.html#specifying-dependencies-from-git-repositories">crates guide</a> for more information on the Cargo manifest file.</p>
+<a class="header" href="#from-git-via-clone" id="from-git-via-clone"><h3>From Git via clone</h3></a>
+<p>Instead of using the above, you can also clone the entire SDK from the
+Git repository. Once you're done, create a new Cargo project and <code>cd</code> into it.</p>
+<pre><code>$ git clone https://github.com/amethyst/amethyst.git
+$ cargo new --bin hello_world
+$ cd hello_world
+</code></pre>
+<p>In your &quot;Cargo.toml&quot; manifest, add the local <code>amethyst</code> crate and its sub-crates
+as dependencies:</p>
+<pre><code class="language-toml">[dependencies.amethyst]
+path = &quot;../path/to/amethyst/&quot;
+</code></pre>
+<a class="header" href="#resources-folder" id="resources-folder"><h2>Resources Folder</h2></a>
+<p>Every Amethyst game project must have a top-level folder called &quot;resources&quot;.
+This is where your game assets are stored. In your project's root folder, create
+the following folder structure:</p>
+<ul>
+<li><strong>resources</strong>/
+<ul>
+<li><strong>entities</strong>/</li>
+<li><strong>prefabs</strong>/</li>
+<li>config.yml</li>
+<li>input.yml</li>
+</ul>
+</li>
+</ul>
+<p>And in the &quot;config.yml&quot; file, copy and paste this YAML configuration:</p>
+<pre><code class="language-yaml">---
+logging:
+    file_path: &quot;hello_world.log&quot;
+    output_verbosity: medium
+    logging_verbosity: debug 
+
+display:
+    brightness: 1.0
+    fullscreen: false
+    resolution: [1024, 768]
+</code></pre>
+<p>The &quot;input.yml&quot; file, which normally holds key binding data, can be left blank
+since this is a simple application with no user interaction.</p>
+<a class="header" href="#all-set" id="all-set"><h2>All Set!</h2></a>
+<p>Whew, we're done! Let's move on and write our first
+<a href="./getting_started/hello_world.html">&quot;Hello, World&quot; program</a>.</p>
+<a class="header" href="#hello-world" id="hello-world"><h1>Hello, World!</h1></a>
+<p>Now, we will commence our journey in writing Amethyst applications with the
+obligatory &quot;Hello, World&quot; program! In your crate's &quot;main.rs&quot; file, type out or
+copy and paste the following code:</p>
+<pre><pre class="playpen"><code class="language-rust">extern crate amethyst;
+
+use amethyst::engine::{Application, State, Trans};
+use amethyst::context::{Context, Config};
+use amethyst::ecs::World;
+
+struct HelloWorld;
+
+impl State for HelloWorld {
+    fn on_start(&amp;mut self, _: &amp;mut Context, _: &amp;mut World) {
+        println!(&quot;Game started!&quot;);
+    }
+
+    fn update(&amp;mut self, _: &amp;mut Context, _: &amp;mut World) -&gt; Trans {
+        println!(&quot;Hello from Amethyst!&quot;);
+        Trans::Quit
+    }
+
+    fn on_stop(&amp;mut self, _: &amp;mut Context, _: &amp;mut World) {
+        println!(&quot;Game stopped!&quot;);
+    }
+}
+
+fn main() {
+    let config = Config::default();
+    let context = Context::new(config);
+    let mut game = Application::build(HelloWorld, context).done();
+    game.run();
+}
+</code></pre></pre>
+<p>Then, compile and run the code with <code>cargo run</code>,
+or <code>amethyst run</code> if you have the <a href="./getting_started/automatic_setup.html">CLI tool installed</a>.</p>
+<p>You should see the following output print to your terminal:</p>
+<pre><code>Game started!
+Hello from Amethyst!
+Game stopped!
+</code></pre>
+<p>If instead you see <code>error: use of unstable library feature</code> then make sure
+you're using the <a href="https://doc.rust-lang.org/book/release-channels.html">nightly release</a> of Rust. You can use <a href="https://www.rustup.rs">rustup</a> to
+install stable and nightly Rust side-by-side.</p>
+<p>Congratulations! You have successfully written your first Amethyst application.</p>
+<a class="header" href="#what-did-i-just-do" id="what-did-i-just-do"><h2>What did I just do?</h2></a>
+<p>Whoa, that went by too fast. Let's slow down a bit and break down this example
+program into bite-sized chunks. What we did is create a basic Rust crate that
+hooks into the Amethyst game engine, prints some text, and then signals to the
+engine to quit.</p>
+<p>Amethyst operates like a state machine. Each Amethyst application has one or
+more states, each of which roughly correspond to a &quot;screen&quot; seen in a game (e.g.
+main menu, loading screen, in-game, inventory menu, credits). You control when
+Amethyst should switch states and what happens every time you do. In our &quot;Hello,
+World&quot; example, the logic flows like this:</p>
+<ol>
+<li>Initialize the program.</li>
+<li>Create engine with <code>HelloWorld</code> as the initial state.</li>
+<li>Start the engine.
+<ol>
+<li>Enter the <code>HelloWorld</code> state.</li>
+<li>On the first frame, print &quot;Hello from Amethyst!&quot;, and signal to the engine
+to quit.</li>
+<li>Leave the <code>HelloWorld</code> State.</li>
+</ol>
+</li>
+<li>Shut the engine down.</li>
+<li>Quit the program.</li>
+</ol>
+<a class="header" href="#can-i-make-a-game-yet" id="can-i-make-a-game-yet"><h2>Can I make a game yet?</h2></a>
+<p>This program isn't very useful on its own, but if everything compiles correctly,
+then your environment is set up correctly and you can start working on the fun
+stuff! Follow along in <a href="./simple_application.html">the next section</a> to see how I implement a simple
+Pong clone in Amethyst.</p>
+<a class="header" href="#writing-a-simple-application" id="writing-a-simple-application"><h1>Writing a Simple Application</h1></a>
+<p>In this section, I'll walk you through implementing a simple 3D Pong clone using
+Amethyst. You will learn a bit more about game states and also basic
+entity-component-system game design and we will apply those concepts and build
+a little toy game. Hopefully by the end of this section, you will have gotten
+the hang of working with Amethyst.</p>
+<a class="header" href="#glossary" id="glossary"><h1>Glossary</h1></a>
+<a class="header" href="#data-driven-design" id="data-driven-design"><h2>Data-driven design</h2></a>
+<p>Describes a program that has its logic defined largely in data rather than in
+compiled code. Ideally, this would permit the user to edit their code and
+resources using offline tools and have the program hot-reload the changes at
+run-time for instant feedback without the need for recompilation. The bare
+minimum qualification for a data-driven program is the ability to read external
+content (text files, scripts, byte streams) and mutate its behavior accordingly.</p>
+<a class="header" href="#data-oriented-programming" id="data-oriented-programming"><h2>Data-oriented programming</h2></a>
+<p>Not to be confused with data-driven design, data-oriented programming is a
+programming paradigm, like object-oriented programming (OOP) or procedural
+programming. Where OOP focuses on modeling a problem in terms of interacting
+objects, and procedural programming tries to model a problem in terms of
+sequential or recursive steps or procedures, data-oriented programming shifts
+the focus towards the data being operated on: the data type, its memory layout,
+how it will be processed. Software written in a data-oriented manner tends
+toward high-throughput pipelining, modularity, separation of concerns, and
+massive parallelism. If architected correctly, data-oriented software can be
+very cache-friendly and easy to scale on systems with multiple cores.</p>
+<blockquote>
+<p>Note: Data-oriented programming does not necessarily imply that a program is
+data-driven. Data-driven behavior can be implemented with any programming
+approach you like.</p>
+</blockquote>
+<a class="header" href="#entity-component-system-ecs-model" id="entity-component-system-ecs-model"><h2>Entity-component-system (ECS) model</h2></a>
+<p>Describes a game programming design pattern invented as a reaction to the
+deep-rooted problems with using <em>inheritance</em> (is-a relationship) to represent
+game objects, including the <a href="https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem">deadly diamond of death</a> and <a href="https://en.wikipedia.org/wiki/God_object">god objects</a>.
+The inheritance-based approach was especially common in the game industry during
+the 1990's and early 2000's.</p>
+<p>This alternative model makes use of <em>composition</em> (has-a relationship) instead
+of inheritance to represent objects in the game world, flattening the hierarchy
+and eliminating the problems above, while increasing flexibility. The holistic
+ECS approach is broken into three key pieces:</p>
+<ol>
+<li><em>Entity</em>: Represents a single object in the game world. Has no functionality
+on its own. The world owns a collection of entities (either in a flat list or
+a hierarchy). Each entity has a unique identifier or name, for the sake of
+ease of use.</li>
+<li><em>Component</em>: A plain-old-data structure that describes a certain trait an
+entity can have. Can be &quot;attached&quot; to entities to grant them certain
+abilities, e.g. a <code>Light</code> component contains parameters to make an entity
+glow, or a <code>Collidable</code> component can grant an entity collision detection
+properties. These components <em>do not</em> have any logic. They contain only data.</li>
+<li><em>System</em>: This is where the magic happens! Systems are centralized game engine
+subsystems that perform a specific function, such as rendering, physics, audio,
+etc. Every frame, they process each entity in the game world looking for
+components that are relevant to them, reading their contents, and performing
+actions. For example, a <code>Rendering</code> system could search for all entities that have
+<code>Light</code>, <code>Mesh</code>, or <code>Emitter</code> components and draw them to the screen.</li>
+</ol>
+<p>This approach could potentially be stretched to fit the model-view-controller
+(MVC) paradigm popular in GUI and Web development circles: entities and
+components together represent the model, and systems represent either views
+(<code>Rendering</code>, <code>Audio</code>) or controllers (<code>Input</code>, <code>AI</code>, <code>Physics</code>), depending on
+their purpose.</p>
+<p>Another great advantage of the ECS model is the ability to rapidly prototype
+a game simply by describing objects' characteristics in terms of creating
+entities and attaching components to them, with very little game code involved.
+And all of this data can be easily serialized or de-serialized into a
+human-friendly plain text format like <a href="http://www.yaml.org/">YAML</a> (what we use) or <a href="http://www.json.org/">JSON</a>.</p>
+<p>For more detailed explanations of entity-component-system designs, please
+<a href="https://www.reddit.com/r/rust/comments/43p2fq/this_week_in_amethyst_3/czkc4hj">see this great post on Reddit</a> and <a href="http://gamedev.stackexchange.com/questions/31473/what-is-the-role-of-systems-in-a-component-based-entity-architecture/31491#31491">this Stack Overflow answer</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

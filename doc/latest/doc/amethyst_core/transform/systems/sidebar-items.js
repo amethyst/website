@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TransformSystem","Handles updating `GlobalTransform` components based on the `Transform` component and parents."]]});

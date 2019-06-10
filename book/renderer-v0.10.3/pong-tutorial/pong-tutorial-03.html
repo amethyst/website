@@ -1,0 +1,554 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Moving the Paddles - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../concepts/state.html"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../concepts/component.html"><strong aria-hidden="true">3.2.</strong> Component</a></li><li><a href="../concepts/entity.html"><strong aria-hidden="true">3.3.</strong> Entity</a></li><li><a href="../concepts/resource.html"><strong aria-hidden="true">3.4.</strong> Resource</a></li><li><a href="../concepts/world.html"><strong aria-hidden="true">3.5.</strong> World</a></li><li><a href="../concepts/system.html"><strong aria-hidden="true">3.6.</strong> System</a></li><li><a href="../concepts/dispatcher.html"><strong aria-hidden="true">3.7.</strong> Dispatcher</a></li><li><a href="../concepts/event-channel.html"><strong aria-hidden="true">3.8.</strong> Event Channel</a></li></ol></li><li><a href="../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../pong-tutorial/pong-tutorial-01.html"><strong aria-hidden="true">4.1.</strong> Creating a Window</a></li><li><a href="../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-03.html" class="active"><strong aria-hidden="true">4.3.</strong> Moving the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-04.html"><strong aria-hidden="true">4.4.</strong> Making a Ball Move and Bounce</a></li><li><a href="../pong-tutorial/pong-tutorial-05.html"><strong aria-hidden="true">4.5.</strong> Winning Rounds and Keeping Score</a></li><li><a href="../pong-tutorial/contribution.html"><strong aria-hidden="true">4.6.</strong> Call for Contribution</a></li></ol></li><li><a href="../math.html"><strong aria-hidden="true">5.</strong> Math</a></li><li><a href="../animation.html"><strong aria-hidden="true">6.</strong> Animation</a></li><li><ol class="section"><li><a href="../animation/interpolation.html"><strong aria-hidden="true">6.1.</strong> Interpolation</a></li><li><a href="../animation/channel.html"><strong aria-hidden="true">6.2.</strong> Channel</a></li><li><a href="../animation/sampler.html"><strong aria-hidden="true">6.3.</strong> Sampler</a></li><li><a href="../animation/definition.html"><strong aria-hidden="true">6.4.</strong> Definition</a></li></ol></li><li><a href="../game-data.html"><strong aria-hidden="true">7.</strong> Custom GameData</a></li><li><a href="../sprites.html"><strong aria-hidden="true">8.</strong> Sprites</a></li><li><ol class="section"><li><a href="../sprites/set_up_the_render_pass.html"><strong aria-hidden="true">8.1.</strong> Set Up The Render Pass</a></li><li><a href="../sprites/load_the_texture.html"><strong aria-hidden="true">8.2.</strong> Load The Texture</a></li><li><a href="../sprites/display_the_texture.html"><strong aria-hidden="true">8.3.</strong> Display The Texture</a></li><li><a href="../sprites/define_the_sprite_sheet.html"><strong aria-hidden="true">8.4.</strong> Define The SpriteSheet</a></li><li><a href="../sprites/sprite_render_component.html"><strong aria-hidden="true">8.5.</strong> SpriteRender Component</a></li><li><a href="../sprites/orthographic_camera.html"><strong aria-hidden="true">8.6.</strong> Orthographic Camera</a></li></ol></li><li><a href="../prefab.html"><strong aria-hidden="true">9.</strong> Prefabs</a></li><li><a href="../testing.html"><strong aria-hidden="true">10.</strong> Testing</a></li><li><ol class="section"><li><a href="../testing/test_examples.html"><strong aria-hidden="true">10.1.</strong> Test Examples</a></li></ol></li><li><a href="../glossary.html"><strong aria-hidden="true">11.</strong> Glossary</a></li><li><a href="../appendices/a_config_files.html"><strong aria-hidden="true">12.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">12.1.</strong> Adding an Arena Config</a></li><li><a href="../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">12.2.</strong> Adding a Ball Config</a></li><li><a href="../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">12.3.</strong> Adding Paddle Configs</a></li></ol></li><li><a href="../appendices/b_migration_notes.html"><strong aria-hidden="true">13.</strong> Appendix B: Migration Notes</a></li><li><ol class="section"><li><a href="../appendices/b_migration_notes/cgmath_to_nalgebra.html"><strong aria-hidden="true">13.1.</strong> cgmath to nalgebra</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#moving-the-paddles" id="moving-the-paddles"><h1>Moving the paddles</h1></a>
+<p>In the previous chapter, we learned about the relationship between entities and
+components, and how they represent the &quot;things&quot; in our games. This chapter
+introduces Systems - the S in &quot;ECS&quot;. Systems are objects that represent
+operations over entities, or more specifically, combinations of components.
+Let's add a system that moves the paddles based on user input.</p>
+<p>A system is nothing more than a function that runs once each frame and
+potentially makes some changes to components. If you've used other game
+engines, this probably sounds familiar: Unity engine calls these objects
+<code>MonoBehaviour</code>s and Unreal engine calls them <code>Actor</code>s, but these all represent
+the same basic idea.</p>
+<p>Systems in specs/Amethyst are slightly different. Rather than describe the
+behavior of a single instance (e.g., a single enemy in your game), they describe
+the behavior of all components of a specific type (all enemies). This makes
+your code more modular, easier to test, and makes it run faster.</p>
+<p>Let's get started.</p>
+<a class="header" href="#capturing-user-input" id="capturing-user-input"><h2>Capturing user input</h2></a>
+<p>To capture user input, we'll need to introduce a few more files to our game.
+Let's start by creating a resource file under the <code>resources</code> directory of our
+project, called <code>bindings_config.ron</code>, which will contain a RON representation
+of the <a href="https://www.amethyst.rs/doc/latest/doc/amethyst_input/struct.Bindings.html">amethyst_input::Bindings</a> struct:</p>
+<pre><code class="language-ron ignore">(
+  axes: {
+    &quot;left_paddle&quot;: Emulated(pos: Key(W), neg: Key(S)),
+    &quot;right_paddle&quot;: Emulated(pos: Key(Up), neg: Key(Down)),
+  },
+  actions: {},
+)
+</code></pre>
+<p>In Amethyst, inputs can either be axes (a range that represents an analog
+controller stick or relates two buttons as opposite ends of a range), or actions
+(also known as scalar input - a button that is either pressed or not).
+In this file, we're creating the inputs to move each paddle up (<code>pos:</code>) or down
+(<code>neg:</code>) on the vertical axis: <strong>W</strong> and <strong>S</strong> for the left paddle, and the <strong>Up</strong>
+and <strong>Down</strong> arrow keys for the right paddle.
+We name them <code>&quot;left_paddle&quot;</code> and <code>&quot;right_paddle&quot;</code>, which will allow us to
+refer to them by name in the code when we will need to read their respective values
+to update positions.</p>
+<p>Next, we'll add an <code>InputBundle</code> to the game's <code>Application</code> object, that
+contains an <code>InputHandler</code> system which captures inputs, and maps them to the
+axes we defined. Let's make the following changes to <code>main.rs</code>.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::prelude::*;
+# use amethyst::core::transform::TransformBundle;
+# use amethyst::utils::application_dir;
+# use amethyst::renderer::{DisplayConfig, DrawFlat, Event, Pipeline,
+#                        PosTex, RenderBundle, Stage, VirtualKeyCode};
+# macro_rules! env { ($x:expr) =&gt; (&quot;&quot;) }
+# fn main() -&gt; amethyst::Result&lt;()&gt; {
+use amethyst::input::InputBundle;
+
+let binding_path = application_dir(&quot;resources/bindings_config.ron&quot;)?;
+
+let input_bundle = InputBundle::&lt;String, String&gt;::new()
+    .with_bindings_from_file(binding_path)?;
+
+# let path = &quot;./resources/display_config.ron&quot;;
+# let config = DisplayConfig::load(&amp;path);
+# let pipe = Pipeline::build().with_stage(Stage::with_backbuffer()
+#       .clear_target([0.0, 0.0, 0.0, 1.0], 1.0)
+#       .with_pass(DrawFlat::&lt;PosTex&gt;::new()),
+# );
+# struct Pong;
+# impl SimpleState for Pong { }
+let game_data = GameDataBuilder::default()
+    .with_bundle(RenderBundle::new(pipe, Some(config)).with_sprite_sheet_processor())?
+    .with_bundle(TransformBundle::new())?
+    .with_bundle(input_bundle)?;
+let mut game = Application::new(&quot;./&quot;, Pong, game_data)?;
+game.run();
+# Ok(())
+# }
+</code></pre>
+<p>For <code>InputBundle&lt;String, String&gt;</code>, the parameter types correspond respectively to
+the type of the <code>axes</code> names and <code>actions</code> names in the <code>bindings_config.ron</code> file
+(e.g., <code>&quot;left_paddle&quot;</code> is a String).</p>
+<p>At this point, we're ready to write a system that reads input from the
+<code>InputHandler</code>, and moves the paddles accordingly. First, we'll create a
+directory called <code>systems</code> under <code>src</code> to hold all our systems. We'll use a
+module to collect and export each of our systems to the rest of the
+application. Here's our <code>mod.rs</code> for <code>src/systems</code>:</p>
+<pre><code class="language-rust ignore">mod paddle;
+
+pub use self::paddle::PaddleSystem;
+</code></pre>
+<p>We're finally ready to implement the <code>PaddleSystem</code> in <code>systems/paddle.rs</code>:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+#
+# mod pong {
+#     use amethyst::ecs::prelude::*;
+#
+#     pub enum Side {
+#       Left,
+#       Right,
+#     }
+#     pub struct Paddle {
+#       pub side: Side,
+#     }
+#     impl Component for Paddle {
+#       type Storage = VecStorage&lt;Self&gt;;
+#     }
+#
+#     pub const ARENA_HEIGHT: f32 = 100.0;
+#     pub const PADDLE_HEIGHT: f32 = 16.0;
+# }
+#
+use amethyst::core::Transform;
+use amethyst::ecs::{Join, Read, ReadStorage, System, WriteStorage};
+use amethyst::input::InputHandler;
+
+// You'll have to mark PADDLE_HEIGHT as public in pong.rs
+use pong::{Paddle, Side, ARENA_HEIGHT, PADDLE_HEIGHT};
+
+pub struct PaddleSystem;
+
+impl&lt;'s&gt; System&lt;'s&gt; for PaddleSystem {
+  type SystemData = (
+    WriteStorage&lt;'s, Transform&gt;,
+    ReadStorage&lt;'s, Paddle&gt;,
+    Read&lt;'s, InputHandler&lt;String, String&gt;&gt;,
+  );
+
+  fn run(&amp;mut self, (mut transforms, paddles, input): Self::SystemData) {
+    for (paddle, transform) in (&amp;paddles, &amp;mut transforms).join() {
+      let movement = match paddle.side {
+        Side::Left =&gt; input.axis_value(&quot;left_paddle&quot;),
+        Side::Right =&gt; input.axis_value(&quot;right_paddle&quot;),
+      };
+      if let Some(mv_amount) = movement {
+        if mv_amount != 0.0 {
+          let side_name = match paddle.side {
+            Side::Left =&gt; &quot;left&quot;,
+            Side::Right =&gt; &quot;right&quot;,
+          };
+          println!(&quot;Side {:?} moving {}&quot;, side_name, mv_amount);
+        }
+      }
+    }
+  }
+}
+#
+# fn main() {}
+</code></pre>
+<p>Alright, there's quite a bit going on here!</p>
+<p>We create a unit struct <code>PaddleSystem</code>, and implement the <code>System</code> trait for it
+with the lifetime of the components on which it operates.
+Inside the implementation, we define the data the system operates on in the
+<code>SystemData</code> tuple: <code>WriteStorage</code>, <code>ReadStorage</code>, and <code>Read</code>. More
+specifically, the generic types we've used here tell us that the <code>PaddleSystem</code>
+mutates <code>Transform</code> components, <code>WriteStorage&lt;'s, Transform&gt;</code>, it
+reads <code>Paddle</code> components, <code>ReadStorage&lt;'s, Paddle&gt;</code>, and also accesses the
+<code>InputHandler&lt;String, String&gt;</code> resource we created earlier, using the <code>Read</code>
+structure.</p>
+<blockquote>
+<p>For <code>InputHandler&lt;String, String&gt;</code>, make sure the parameter types are the same
+as those used to create the <code>InputBundle</code> earlier.</p>
+</blockquote>
+<p>Now that we have access to the storages of the components we want, we can iterate
+over them. We perform a join operation between the <code>Transform</code> and <code>Paddle</code>
+storages. This will iterate over all entities that have both a <code>Paddle</code>
+and <code>Transform</code> attached to them, and give us access to the actual components,
+immutably for the <code>Paddle</code> and mutably for the <code>Transform</code>.</p>
+<blockquote>
+<p>There are many other ways to use storages. For example, you can use them to get
+a reference to the component of a specific type held by an entity, or simply
+iterate over them without joining. However in practice, your most common use will
+be to join over multiple storages as it is rare to have a system affect
+only one specific component.</p>
+</blockquote>
+<blockquote>
+<p>Please also note that it is possible to join over storages using multiple threads
+by using <code>par_join</code> instead of <code>join</code>, but here the overhead introduced is not
+worth the gain offered by parallelism.</p>
+</blockquote>
+<p>Let's add this system to our <code>GameDataBuilder</code> in <code>main.rs</code>:</p>
+<pre><code class="language-rust no_run noplaypen">mod systems; // Import the module
+// --snip--
+
+# extern crate amethyst;
+# use amethyst::prelude::*;
+# use amethyst::core::transform::TransformBundle;
+# use amethyst::renderer::{DisplayConfig, DrawFlat, Pipeline,
+#                        PosTex, RenderBundle, Stage};
+fn main() -&gt; amethyst::Result&lt;()&gt; {
+// --snip--
+
+# let path = &quot;./resources/display_config.ron&quot;;
+# let config = DisplayConfig::load(&amp;path);
+# let pipe = Pipeline::build().with_stage(Stage::with_backbuffer()
+#       .clear_target([0.0, 0.0, 0.0, 1.0], 1.0)
+#       .with_pass(DrawFlat::&lt;PosTex&gt;::new()),
+# );
+# mod systems {
+# use amethyst;
+# pub struct PaddleSystem;
+# impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for PaddleSystem {
+# type SystemData = ();
+# fn run(&amp;mut self, _: Self::SystemData) { }
+# }
+# }
+# let input_bundle = amethyst::input::InputBundle::&lt;String, String&gt;::new();
+  let game_data = GameDataBuilder::default()
+      .with_bundle(RenderBundle::new(pipe, Some(config)).with_sprite_sheet_processor())?
+      .with_bundle(TransformBundle::new())?
+      .with_bundle(input_bundle)?
+      .with(systems::PaddleSystem, &quot;paddle_system&quot;, &amp;[&quot;input_system&quot;]); // Add this line
+# Ok(())
+}
+</code></pre>
+<p>Take a look at the <code>with</code> method call. Here, we're not adding a bundle, we're adding
+a system alone. We provide an instance of the system, a string representing its name
+and a list of dependencies. The dependencies are the names of the systems that
+must be ran before our newly added system. Here, we require the <code>input_system</code> to be
+ran as we will use the user's input to move the paddles, so we need to have this
+data be prepared. The <code>input_system</code> key itself is defined in the standard InputBundle.</p>
+<a class="header" href="#modifying-the-transform" id="modifying-the-transform"><h2>Modifying the transform</h2></a>
+<p>If we run the game now, we'll see the console print our keypresses. Let's
+make it update the position of the paddle. To do this, we'll modify the y
+component of the transform's translation.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::core::Transform;
+# use amethyst::ecs::{Join, Read, ReadStorage, System, WriteStorage};
+# use amethyst::input::InputHandler;
+# enum Side {
+#   Left,
+#   Right,
+# }
+# pub struct Paddle {
+#   side: Side,
+# }
+# impl amethyst::ecs::Component for Paddle {
+#   type Storage = amethyst::ecs::VecStorage&lt;Paddle&gt;;
+# }
+# pub struct PaddleSystem;
+# impl&lt;'s&gt; System&lt;'s&gt; for PaddleSystem {
+#  type SystemData = (
+#    WriteStorage&lt;'s, Transform&gt;,
+#    ReadStorage&lt;'s, Paddle&gt;,
+#    Read&lt;'s, InputHandler&lt;String, String&gt;&gt;,
+#  );
+  fn run(&amp;mut self, (mut transforms, paddles, input): Self::SystemData) {
+    for (paddle, mut transform) in (&amp;paddles, &amp;mut transforms).join() {
+      let movement = match paddle.side {
+        Side::Left =&gt; input.axis_value(&quot;left_paddle&quot;),
+        Side::Right =&gt; input.axis_value(&quot;right_paddle&quot;),
+      };
+      if let Some(mv_amount) = movement {
+        let scaled_amount = 1.2 * mv_amount as f32;
+        transform.translate_y(scaled_amount);
+      }
+    }
+  }
+# }
+</code></pre>
+<p>This is our first attempt at moving the paddles: we take the movement, and
+scale it by some factor to make the motion seem smooth. In a real game, we
+would use the time elapsed between frames to determine how far to move the
+paddle, so that the behavior of the game would not be tied to the game's
+framerate. Amethyst provides you with <a href="https://www.amethyst.rs/doc/master/doc/amethyst_core/timing/struct.Time.html"><code>amethyst::core::timing::Time</code></a>
+for that purpose, but for now current approach should suffice.
+If you run the game now, you'll notice the paddles are able to &quot;fall&quot; off the edges of the game area.</p>
+<p>To fix this, we need to limit the paddle's movement to the arena border with
+a minimum and maximum value. But as the anchor point of the paddle is in
+the middle of the sprite, we also need to offset that limit by half the height
+of the sprite for the paddles not to go halfway out of the screen.
+Therefore, we will clamp the <strong>y</strong> value of the transform from
+<code>ARENA_HEIGHT - PADDLE_HEIGHT * 0.5</code> (the top of the arena minus the offset)
+to <code>PADDLE_HEIGHT * 0.5</code> (the bottom of the arena plus the offset).</p>
+<p>Our run function should now look something like this:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::core::Transform;
+# use amethyst::ecs::{Join, Read, ReadStorage, System, WriteStorage};
+# use amethyst::input::InputHandler;
+# const PADDLE_HEIGHT: f32 = 16.0;
+# const PADDLE_WIDTH: f32 = 4.0;
+# const ARENA_HEIGHT: f32 = 100.0;
+# const ARENA_WIDTH: f32 = 100.0;
+# enum Side {
+#   Left,
+#   Right,
+# }
+# pub struct Paddle {
+#   side: Side,
+# }
+# impl amethyst::ecs::Component for Paddle {
+#   type Storage = amethyst::ecs::VecStorage&lt;Paddle&gt;;
+# }
+# pub struct PaddleSystem;
+# impl&lt;'s&gt; System&lt;'s&gt; for PaddleSystem {
+#  type SystemData = (
+#    WriteStorage&lt;'s, Transform&gt;,
+#    ReadStorage&lt;'s, Paddle&gt;,
+#    Read&lt;'s, InputHandler&lt;String, String&gt;&gt;,
+#  );
+  fn run(&amp;mut self, (mut transforms, paddles, input): Self::SystemData) {
+    for (paddle, mut transform) in (&amp;paddles, &amp;mut transforms).join() {
+      let movement = match paddle.side {
+        Side::Left =&gt; input.axis_value(&quot;left_paddle&quot;),
+        Side::Right =&gt; input.axis_value(&quot;right_paddle&quot;),
+      };
+      if let Some(mv_amount) = movement {
+        let scaled_amount = 1.2 * mv_amount as f32;
+        let paddle_y = transform.translation().y;
+        transform.set_y(
+            (paddle_y + scaled_amount)
+                .min(ARENA_HEIGHT - PADDLE_HEIGHT * 0.5)
+                .max(PADDLE_HEIGHT * 0.5),
+        );
+      }
+    }
+  }
+# }
+</code></pre>
+<a class="header" href="#automatic-set-up-of-resources-by-system" id="automatic-set-up-of-resources-by-system"><h2>Automatic set up of resources by system.</h2></a>
+<p>You might remember that we had troubles because Amethyst requires us
+to <code>register</code> storage for <code>Paddle</code> before we could use it.</p>
+<p>Now that we have a system in place that uses the <code>Paddle</code> component,
+we no longer need to manually register it with the <code>world</code>: the system
+will take care of that for us, as well as set up the storage.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::prelude::*;
+# use amethyst::renderer::{TextureHandle, SpriteSheetHandle};
+# use amethyst::ecs::World;
+# struct Paddle;
+# impl amethyst::ecs::Component for Paddle {
+#   type Storage = amethyst::ecs::VecStorage&lt;Paddle&gt;;
+# }
+# fn initialise_paddles(world: &amp;mut World, spritesheet: SpriteSheetHandle) { }
+# fn initialise_camera(world: &amp;mut World) { }
+# fn load_sprite_sheet(world: &amp;mut World) -&gt; SpriteSheetHandle { unimplemented!() }
+# struct MyState;
+# impl SimpleState for MyState {
+fn on_start(&amp;mut self, data: StateData&lt;'_, GameData&lt;'_, '_&gt;&gt;) {
+    let world = data.world;
+
+    // Load the spritesheet necessary to render the graphics.
+    let sprite_sheet_handle = load_sprite_sheet(world);
+
+    world.register::&lt;Paddle&gt;(); // &lt;&lt;-- No longer needed
+
+    initialise_paddles(world, sprite_sheet_handle);
+    initialise_camera(world);
+}
+# }
+</code></pre>
+<a class="header" href="#summary" id="summary"><h2>Summary</h2></a>
+<p>In this chapter, we added an input handler to our game, so that we
+could capture keypresses. We then created a system that would interpret these
+keypresses, and move our game's paddles accordingly. In the next chapter, we'll
+explore another key concept in real-time games: time. We'll make our game aware
+of time, and add a ball for our paddles to bounce back and forth.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../pong-tutorial/pong-tutorial-02.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../pong-tutorial/pong-tutorial-04.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../pong-tutorial/pong-tutorial-02.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../pong-tutorial/pong-tutorial-04.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

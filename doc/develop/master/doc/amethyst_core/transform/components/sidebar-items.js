@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["HierarchyEvent","Hierarchy events."]],"struct":[["Parent","Component for defining a parent entity."],["Transform","Local position, rotation, and scale (from parent if it exists)."]],"type":[["ParentHierarchy","An alias to tie `specs-hierarchy` `Hierarchy` structure to our `Parent` component."]]});

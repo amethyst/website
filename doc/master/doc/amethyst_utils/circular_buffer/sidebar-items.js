@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CircularBuffer","A CircularBuffer that drops the oldest element inserted when full. # Example"]]});

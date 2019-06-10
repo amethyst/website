@@ -1,0 +1,542 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Making a Ball Move and Bounce - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../concepts/state.html"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../concepts/component.html"><strong aria-hidden="true">3.2.</strong> Component</a></li><li><a href="../concepts/entity.html"><strong aria-hidden="true">3.3.</strong> Entity</a></li><li><a href="../concepts/resource.html"><strong aria-hidden="true">3.4.</strong> Resource</a></li><li><a href="../concepts/world.html"><strong aria-hidden="true">3.5.</strong> World</a></li><li><a href="../concepts/system.html"><strong aria-hidden="true">3.6.</strong> System</a></li><li><a href="../concepts/dispatcher.html"><strong aria-hidden="true">3.7.</strong> Dispatcher</a></li><li><a href="../concepts/event-channel.html"><strong aria-hidden="true">3.8.</strong> Event Channel</a></li></ol></li><li><a href="../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../pong-tutorial/pong-tutorial-01.html"><strong aria-hidden="true">4.1.</strong> Creating a Window</a></li><li><a href="../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-03.html"><strong aria-hidden="true">4.3.</strong> Moving the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-04.html" class="active"><strong aria-hidden="true">4.4.</strong> Making a Ball Move and Bounce</a></li><li><a href="../pong-tutorial/pong-tutorial-05.html"><strong aria-hidden="true">4.5.</strong> Winning Rounds and Keeping Score</a></li><li><a href="../pong-tutorial/contribution.html"><strong aria-hidden="true">4.6.</strong> Call for Contribution</a></li></ol></li><li><a href="../math.html"><strong aria-hidden="true">5.</strong> Math</a></li><li><a href="../animation.html"><strong aria-hidden="true">6.</strong> Animation</a></li><li><ol class="section"><li><a href="../animation/interpolation.html"><strong aria-hidden="true">6.1.</strong> Interpolation</a></li><li><a href="../animation/channel.html"><strong aria-hidden="true">6.2.</strong> Channel</a></li><li><a href="../animation/sampler.html"><strong aria-hidden="true">6.3.</strong> Sampler</a></li><li><a href="../animation/definition.html"><strong aria-hidden="true">6.4.</strong> Definition</a></li></ol></li><li><a href="../game-data.html"><strong aria-hidden="true">7.</strong> Custom GameData</a></li><li><a href="../sprites.html"><strong aria-hidden="true">8.</strong> Sprites</a></li><li><ol class="section"><li><a href="../sprites/set_up_the_render_pass.html"><strong aria-hidden="true">8.1.</strong> Set Up The Render Pass</a></li><li><a href="../sprites/load_the_texture.html"><strong aria-hidden="true">8.2.</strong> Load The Texture</a></li><li><a href="../sprites/display_the_texture.html"><strong aria-hidden="true">8.3.</strong> Display The Texture</a></li><li><a href="../sprites/define_the_sprite_sheet.html"><strong aria-hidden="true">8.4.</strong> Define The SpriteSheet</a></li><li><a href="../sprites/sprite_render_component.html"><strong aria-hidden="true">8.5.</strong> SpriteRender Component</a></li><li><a href="../sprites/orthographic_camera.html"><strong aria-hidden="true">8.6.</strong> Orthographic Camera</a></li></ol></li><li><a href="../prefab.html"><strong aria-hidden="true">9.</strong> Prefabs</a></li><li><a href="../testing.html"><strong aria-hidden="true">10.</strong> Testing</a></li><li><ol class="section"><li><a href="../testing/test_examples.html"><strong aria-hidden="true">10.1.</strong> Test Examples</a></li></ol></li><li><a href="../glossary.html"><strong aria-hidden="true">11.</strong> Glossary</a></li><li><a href="../appendices/a_config_files.html"><strong aria-hidden="true">12.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">12.1.</strong> Adding an Arena Config</a></li><li><a href="../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">12.2.</strong> Adding a Ball Config</a></li><li><a href="../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">12.3.</strong> Adding Paddle Configs</a></li></ol></li><li><a href="../appendices/b_migration_notes.html"><strong aria-hidden="true">13.</strong> Appendix B: Migration Notes</a></li><li><ol class="section"><li><a href="../appendices/b_migration_notes/cgmath_to_nalgebra.html"><strong aria-hidden="true">13.1.</strong> cgmath to nalgebra</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#making-a-ball-move-and-bounce" id="making-a-ball-move-and-bounce"><h1>Making a ball move and bounce</h1></a>
+<p>In the previous chapter, we learned how to capture user input
+to make things move on the screen by creating a <code>System</code> ourselves.
+This chapter will reuse all the knowledge we acquired through the
+previous chapters to add a new object to our game: a ball that moves
+and bounces around!</p>
+<p>First, let's define some other useful constants for this chapter in <code>pong.rs</code>:</p>
+<pre><code class="language-rust no_run noplaypen">pub const BALL_VELOCITY_X: f32 = 75.0;
+pub const BALL_VELOCITY_Y: f32 = 50.0;
+pub const BALL_RADIUS: f32 = 2.0;
+</code></pre>
+<p>This could also be done by using an external config file. This is
+especially useful when you want to edit values a lot. Here, we're
+keeping it simple.</p>
+<a class="header" href="#create-our-next-component-the-ball-component" id="create-our-next-component-the-ball-component"><h2>Create our next Component: The ball Component!</h2></a>
+<p>In <code>pong.rs</code>, let's create the <code>Ball</code> Component.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::prelude::{Component, DenseVecStorage};
+pub struct Ball {
+    pub velocity: [f32; 2],
+    pub radius: f32,
+}
+
+impl Component for Ball {
+    type Storage = DenseVecStorage&lt;Self&gt;;
+}
+</code></pre>
+<p>A ball has a velocity and a radius, so we store that information in the component.</p>
+<p>Then let's add a <code>initialise_ball</code> function the same way we wrote the
+<code>initialise_paddles</code> function.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::prelude::*;
+# use amethyst::assets::{Loader, AssetStorage};
+# use amethyst::renderer::{Texture, PngFormat, TextureHandle, SpriteRender,
+#                          TextureCoordinates, Sprite, SpriteSheet, SpriteSheetHandle, TextureMetadata};
+# use amethyst::ecs::World;
+# use amethyst::core::transform::Transform;
+# use amethyst::ecs::prelude::{Component, DenseVecStorage};
+# pub struct Ball {
+#    pub velocity: [f32; 2],
+#    pub radius: f32,
+# }
+# impl Component for Ball {
+#    type Storage = DenseVecStorage&lt;Self&gt;;
+# }
+# const PADDLE_HEIGHT: f32 = 16.0;
+# const PADDLE_WIDTH: f32 = 4.0;
+# const SPRITESHEET_SIZE: (f32, f32) = (8.0, 16.0);
+# const BALL_RADIUS: f32 = 2.0;
+# const BALL_VELOCITY_X: f32 = 75.0;
+# const BALL_VELOCITY_Y: f32 = 50.0;
+# const ARENA_HEIGHT: f32 = 100.0;
+# const ARENA_WIDTH: f32 = 100.0;
+/// Initialises one ball in the middle-ish of the arena.
+fn initialise_ball(world: &amp;mut World, sprite_sheet_handle: SpriteSheetHandle) {
+    // Create the translation.
+    let mut local_transform = Transform::default();
+    local_transform.set_xyz(ARENA_WIDTH / 2.0, ARENA_HEIGHT / 2.0, 0.0);
+
+    // Assign the sprite for the ball
+    let sprite_render = SpriteRender {
+        sprite_sheet: sprite_sheet_handle,
+        sprite_number: 1, // ball is the second sprite on the sprite sheet
+    };
+
+    world
+        .create_entity()
+        .with(sprite_render)
+        .with(Ball {
+            radius: BALL_RADIUS,
+            velocity: [BALL_VELOCITY_X, BALL_VELOCITY_Y],
+        })
+        .with(local_transform)
+        .build();
+}
+</code></pre>
+<p>In <a href="pong-tutorial-02.html#drawing">a previous chapter</a> we saw how to load a sprite sheet
+and get things drawn on the screen. Remember sprite sheet information
+is stored in <code>pong_spritesheet.ron</code>, and the ball sprite was the
+second one, whose index is <code>1</code>.</p>
+<p>Finally, let's make sure the code is working as intended by updating the <code>on_start</code> method:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::prelude::*;
+# use amethyst::renderer::{TextureHandle, SpriteSheetHandle};
+# use amethyst::ecs::World;
+# struct Paddle;
+# impl amethyst::ecs::Component for Paddle {
+#   type Storage = amethyst::ecs::VecStorage&lt;Self&gt;;
+# }
+# struct Ball;
+# impl amethyst::ecs::Component for Ball {
+#   type Storage = amethyst::ecs::VecStorage&lt;Self&gt;;
+# }
+# fn initialise_ball(world: &amp;mut World, sprite_sheet_handle: SpriteSheetHandle) { }
+# fn initialise_paddles(world: &amp;mut World, spritesheet: SpriteSheetHandle) { }
+# fn initialise_camera(world: &amp;mut World) { }
+# fn load_sprite_sheet(world: &amp;mut World) -&gt; SpriteSheetHandle { unimplemented!() }
+# struct MyState;
+# impl SimpleState for MyState {
+fn on_start(&amp;mut self, data: StateData&lt;'_, GameData&lt;'_, '_&gt;&gt;) {
+    let world = data.world;
+
+    // Load the spritesheet necessary to render the graphics.
+    let sprite_sheet_handle = load_sprite_sheet(world);
+
+    world.register::&lt;Ball&gt;(); // &lt;- add this line temporarily
+
+    initialise_ball(world, sprite_sheet_handle.clone()); // &lt;- add this line
+    initialise_paddles(world, sprite_sheet_handle);
+    initialise_camera(world);
+}
+# }
+</code></pre>
+<p>Don't forget to call <code>clone</code> on <code>sprite_sheet_handle</code> because <code>initialise_paddles</code> and
+<code>initialise_ball</code> <em>consume</em> the handle.</p>
+<p>By running the game now, you should be able to see the two paddles and the ball
+in the center. In the next section, we're going to make this ball actually move!</p>
+<a class="header" href="#create-systems-to-make-the-ball-move" id="create-systems-to-make-the-ball-move"><h2>Create systems to make the ball move</h2></a>
+<p>We're now ready to implement the <code>MoveBallsSystem</code> in <code>systems/move_balls.rs</code>:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::prelude::{Component, DenseVecStorage};
+#
+# mod pong {
+#     use amethyst::ecs::prelude::*;
+#
+#     pub struct Ball {
+#        pub velocity: [f32; 2],
+#        pub radius: f32,
+#     }
+#     impl Component for Ball {
+#        type Storage = DenseVecStorage&lt;Self&gt;;
+#     }
+# }
+#
+use amethyst::{
+    core::timing::Time,
+    core::transform::Transform,
+    ecs::prelude::{Join, Read, ReadStorage, System, WriteStorage},
+};
+
+use pong::Ball;
+
+pub struct MoveBallsSystem;
+
+impl&lt;'s&gt; System&lt;'s&gt; for MoveBallsSystem {
+    type SystemData = (
+        ReadStorage&lt;'s, Ball&gt;,
+        WriteStorage&lt;'s, Transform&gt;,
+        Read&lt;'s, Time&gt;,
+    );
+
+    fn run(&amp;mut self, (balls, mut locals, time): Self::SystemData) {
+        // Move every ball according to its speed, and the time passed.
+        for (ball, local) in (&amp;balls, &amp;mut locals).join() {
+            local.translate_x(ball.velocity[0] * time.delta_seconds());
+            local.translate_y(ball.velocity[1] * time.delta_seconds());
+        }
+    }
+}
+#
+# fn main() {}
+</code></pre>
+<p>This system is responsible for moving all balls according to their speed and
+the elapsed time. Notice how the <code>join()</code> method is used to iterate over all
+ball entities. Here we only have one ball, but if we ever need multiple, the
+system will handle them out of the box.
+In this system, we also want <em>framerate independence</em>.
+That is, no matter the framerate, all objects move with the same speed.
+To achieve that, a <code>delta time</code> since last frame is used.
+This is commonly known as <a href="https://en.wikipedia.org/wiki/Delta_timing"><code>delta timing</code></a>.
+As you can see in the snippet, to gain access to time passed since the last frame,
+you need to use <a href="https://www.amethyst.rs/doc/master/doc/amethyst_core/timing/struct.Time.html"><code>amethyst::core::timing::Time</code></a>, a commonly used
+resource. It has a method called <code>delta_seconds</code> that does exactly what we want.</p>
+<p>Now that our ball can move, let's implement a new System:
+<code>BounceSystem</code> in <code>systems/bounce.rs</code>.
+It will be responsible for detecting collisions between balls and
+paddles, as well as balls and the top and bottom edges of the arena.
+If a collision is detected, the ball bounces off. This is done
+by negating the velocity of the <code>Ball</code> component on the <code>x</code> or <code>y</code> axis.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::ecs::prelude::{Component, DenseVecStorage};
+#
+# mod pong {
+#     use amethyst::ecs::prelude::*;
+#
+#     pub struct Ball {
+#        pub velocity: [f32; 2],
+#        pub radius: f32,
+#     }
+#     impl Component for Ball {
+#        type Storage = DenseVecStorage&lt;Self&gt;;
+#     }
+#
+#     #[derive(PartialEq, Eq)]
+#     pub enum Side {
+#       Left,
+#       Right,
+#     }
+#
+#     pub struct Paddle {
+#       pub side: Side,
+#       pub width: f32,
+#       pub height: f32,
+#     }
+#     impl Component for Paddle {
+#       type Storage = VecStorage&lt;Self&gt;;
+#     }
+#
+#     pub const ARENA_HEIGHT: f32 = 100.0;
+# }
+#
+use amethyst::{
+    core::transform::Transform,
+    ecs::prelude::{Join, ReadStorage, System, WriteStorage},
+};
+
+use pong::{Ball, Side, Paddle, ARENA_HEIGHT};
+
+pub struct BounceSystem;
+
+impl&lt;'s&gt; System&lt;'s&gt; for BounceSystem {
+    type SystemData = (
+        WriteStorage&lt;'s, Ball&gt;,
+        ReadStorage&lt;'s, Paddle&gt;,
+        ReadStorage&lt;'s, Transform&gt;,
+    );
+
+    fn run(&amp;mut self, (mut balls, paddles, transforms): Self::SystemData) {
+        // Check whether a ball collided, and bounce off accordingly.
+        //
+        // We also check for the velocity of the ball every time, to prevent multiple collisions
+        // from occurring.
+        for (ball, transform) in (&amp;mut balls, &amp;transforms).join() {
+            let ball_x = transform.translation().x;
+            let ball_y = transform.translation().y;
+
+            // Bounce at the top or the bottom of the arena.
+            if ball_y &gt;= ARENA_HEIGHT - ball.radius &amp;&amp; ball.velocity[1] &gt; 0.0 {
+                ball.velocity[1] = -ball.velocity[1];
+            } else if ball_y &lt;= ball.radius &amp;&amp; ball.velocity[1] &lt; 0.0 {
+                ball.velocity[1] = -ball.velocity[1];
+            }
+
+            // Bounce at the paddles.
+            for (paddle, paddle_transform) in (&amp;paddles, &amp;transforms).join() {
+                let paddle_x = paddle_transform.translation().x - paddle.width * 0.5;
+                let paddle_y = paddle_transform.translation().y - paddle.height * 0.5;
+
+                // To determine whether the ball has collided with a paddle, we create a larger
+                // rectangle around the current one, by subtracting the ball radius from the
+                // lowest coordinates, and adding the ball radius to the highest ones. The ball
+                // is then within the paddle if its centre is within the larger wrapper
+                // rectangle.
+                if point_in_rect(
+                    ball_x,
+                    ball_y,
+                    paddle_x - ball.radius,
+                    paddle_y - ball.radius,
+                    paddle_x + paddle.width + ball.radius,
+                    paddle_y + paddle.height + ball.radius,
+                ) {
+                    if paddle.side == Side::Left &amp;&amp; ball.velocity[0] &lt; 0.0 {
+                        ball.velocity[0] = -ball.velocity[0];
+                    } else if paddle.side == Side::Right &amp;&amp; ball.velocity[0] &gt; 0.0 {
+                        ball.velocity[0] = -ball.velocity[0];
+                    }
+                }
+            }
+        }
+    }
+}
+
+// A point is in a box when its coordinates are smaller or equal than the top
+// right and larger or equal than the bottom left.
+fn point_in_rect(x: f32, y: f32, left: f32, bottom: f32, right: f32, top: f32) -&gt; bool {
+    x &gt;= left &amp;&amp; x &lt;= right &amp;&amp; y &gt;= bottom &amp;&amp; y &lt;= top
+}
+#
+# fn main() {}
+</code></pre>
+<p>The following image illustrates how collisions with paddles are checked.</p>
+<p><img src="../images/pong_tutorial/pong_paddle_collision.png" alt="Collision explanotary drawing" /></p>
+<p>Also, don't forget to add <code>mod move_balls</code> and <code>mod bounce</code> in <code>systems/mod.rs</code>
+as well as adding our new systems to the game data:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::prelude::*;
+# use amethyst::core::transform::TransformBundle;
+# use amethyst::renderer::{DisplayConfig, DrawFlat, Pipeline,
+#                        PosTex, RenderBundle, Stage};
+# fn main() -&gt; amethyst::Result&lt;()&gt; {
+# let path = &quot;./resources/display_config.ron&quot;;
+# let config = DisplayConfig::load(&amp;path);
+# let pipe = Pipeline::build().with_stage(Stage::with_backbuffer()
+#       .clear_target([0.0, 0.0, 0.0, 1.0], 1.0)
+#       .with_pass(DrawFlat::&lt;PosTex&gt;::new()),
+# );
+# mod systems {
+# use amethyst;
+# pub struct PaddleSystem;
+# impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for PaddleSystem {
+# type SystemData = ();
+# fn run(&amp;mut self, _: Self::SystemData) { }
+# }
+# pub struct MoveBallsSystem;
+# impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for MoveBallsSystem {
+# type SystemData = ();
+# fn run(&amp;mut self, _: Self::SystemData) { }
+# }
+# pub struct BounceSystem;
+# impl&lt;'a&gt; amethyst::ecs::System&lt;'a&gt; for BounceSystem {
+# type SystemData = ();
+# fn run(&amp;mut self, _: Self::SystemData) { }
+# }
+# }
+# let input_bundle = amethyst::input::InputBundle::&lt;String, String&gt;::new();
+let game_data = GameDataBuilder::default()
+#    .with_bundle(RenderBundle::new(pipe, Some(config)).with_sprite_sheet_processor())?
+#    .with_bundle(TransformBundle::new())?
+#    .with_bundle(input_bundle)?
+#    .with(systems::PaddleSystem, &quot;paddle_system&quot;, &amp;[&quot;input_system&quot;])
+    // ...other systems...
+    .with(systems::MoveBallsSystem, &quot;ball_system&quot;, &amp;[])
+    .with(
+        systems::BounceSystem,
+        &quot;collision_system&quot;,
+        &amp;[&quot;paddle_system&quot;, &quot;ball_system&quot;],
+    );
+# Ok(())
+# }
+</code></pre>
+<p>You should now have a ball moving and bouncing off paddles and off the top
+and bottom of the screen. However, you will quickly notice that if the ball
+goes out of the screen on the right or the left, it never comes back
+and the game is over...</p>
+<a class="header" href="#summary" id="summary"><h2>Summary</h2></a>
+<p>In this chapter, we finally added a ball to our game. As always, the full code
+is available under the <code>pong_tutorial_04</code> example in the Amethyst repository.
+In the next chapter, we'll add a system checking when a player loses the game,
+and add a scoring system!</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../pong-tutorial/pong-tutorial-03.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../pong-tutorial/pong-tutorial-05.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../pong-tutorial/pong-tutorial-03.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../pong-tutorial/pong-tutorial-05.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

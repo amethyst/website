@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Creating a Window - Amethyst Documentation</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting-started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><a href="../concepts/intro.html"><strong aria-hidden="true">3.</strong> Concepts</a></li><li><ol class="section"><li><a href="../concepts/state.html"><strong aria-hidden="true">3.1.</strong> State</a></li><li><a href="../concepts/component.html"><strong aria-hidden="true">3.2.</strong> Component</a></li><li><a href="../concepts/entity.html"><strong aria-hidden="true">3.3.</strong> Entity</a></li><li><a href="../concepts/resource.html"><strong aria-hidden="true">3.4.</strong> Resource</a></li><li><a href="../concepts/world.html"><strong aria-hidden="true">3.5.</strong> World</a></li><li><a href="../concepts/system.html"><strong aria-hidden="true">3.6.</strong> System</a></li><li><a href="../concepts/dispatcher.html"><strong aria-hidden="true">3.7.</strong> Dispatcher</a></li><li><a href="../concepts/event-channel.html"><strong aria-hidden="true">3.8.</strong> Event Channel</a></li></ol></li><li><a href="../pong-tutorial.html"><strong aria-hidden="true">4.</strong> Pong Tutorial</a></li><li><ol class="section"><li><a href="../pong-tutorial/pong-tutorial-01.html" class="active"><strong aria-hidden="true">4.1.</strong> Creating a Window</a></li><li><a href="../pong-tutorial/pong-tutorial-02.html"><strong aria-hidden="true">4.2.</strong> Drawing the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-03.html"><strong aria-hidden="true">4.3.</strong> Moving the Paddles</a></li><li><a href="../pong-tutorial/pong-tutorial-04.html"><strong aria-hidden="true">4.4.</strong> Making a Ball Move and Bounce</a></li><li><a href="../pong-tutorial/pong-tutorial-05.html"><strong aria-hidden="true">4.5.</strong> Winning Rounds and Keeping Score</a></li><li><a href="../pong-tutorial/contribution.html"><strong aria-hidden="true">4.6.</strong> Call for Contribution</a></li></ol></li><li><a href="../math.html"><strong aria-hidden="true">5.</strong> Math</a></li><li><a href="../animation.html"><strong aria-hidden="true">6.</strong> Animation</a></li><li><ol class="section"><li><a href="../animation/interpolation.html"><strong aria-hidden="true">6.1.</strong> Interpolation</a></li><li><a href="../animation/channel.html"><strong aria-hidden="true">6.2.</strong> Channel</a></li><li><a href="../animation/sampler.html"><strong aria-hidden="true">6.3.</strong> Sampler</a></li><li><a href="../animation/definition.html"><strong aria-hidden="true">6.4.</strong> Definition</a></li></ol></li><li><a href="../game-data.html"><strong aria-hidden="true">7.</strong> Custom GameData</a></li><li><a href="../sprites.html"><strong aria-hidden="true">8.</strong> Sprites</a></li><li><ol class="section"><li><a href="../sprites/set_up_the_render_pass.html"><strong aria-hidden="true">8.1.</strong> Set Up The Render Pass</a></li><li><a href="../sprites/load_the_texture.html"><strong aria-hidden="true">8.2.</strong> Load The Texture</a></li><li><a href="../sprites/display_the_texture.html"><strong aria-hidden="true">8.3.</strong> Display The Texture</a></li><li><a href="../sprites/define_the_sprite_sheet.html"><strong aria-hidden="true">8.4.</strong> Define The SpriteSheet</a></li><li><a href="../sprites/sprite_render_component.html"><strong aria-hidden="true">8.5.</strong> SpriteRender Component</a></li><li><a href="../sprites/orthographic_camera.html"><strong aria-hidden="true">8.6.</strong> Orthographic Camera</a></li></ol></li><li><a href="../prefab.html"><strong aria-hidden="true">9.</strong> Prefabs</a></li><li><a href="../testing.html"><strong aria-hidden="true">10.</strong> Testing</a></li><li><ol class="section"><li><a href="../testing/test_examples.html"><strong aria-hidden="true">10.1.</strong> Test Examples</a></li></ol></li><li><a href="../glossary.html"><strong aria-hidden="true">11.</strong> Glossary</a></li><li><a href="../appendices/a_config_files.html"><strong aria-hidden="true">12.</strong> Appendix A: Config Files</a></li><li><ol class="section"><li><a href="../appendices/a_config_files/arena_config.html"><strong aria-hidden="true">12.1.</strong> Adding an Arena Config</a></li><li><a href="../appendices/a_config_files/ball_config.html"><strong aria-hidden="true">12.2.</strong> Adding a Ball Config</a></li><li><a href="../appendices/a_config_files/paddle_configs.html"><strong aria-hidden="true">12.3.</strong> Adding Paddle Configs</a></li></ol></li><li><a href="../appendices/b_migration_notes.html"><strong aria-hidden="true">13.</strong> Appendix B: Migration Notes</a></li><li><ol class="section"><li><a href="../appendices/b_migration_notes/cgmath_to_nalgebra.html"><strong aria-hidden="true">13.1.</strong> cgmath to nalgebra</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Amethyst Documentation</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#creating-a-window" id="creating-a-window"><h1>Creating a window</h1></a>
+<p>Let's start a new project:</p>
+<p><code>amethyst new pong</code></p>
+<p>If you run this project with <code>cargo run</code>, you'll end up with a window titled
+&quot;pong&quot; that renders a really delightful shade of green. If you're having trouble
+getting the project to run, double check the <a href="../getting-started.html">Getting Started</a> guide.</p>
+<p>We've created and opened a window, so we're basically done! But let's write this
+functionality ourselves so we're sure we know what's going on. Close the window
+we just opened before reading on.</p>
+<p><strong>In <code>src</code> there's a <code>main.rs</code> file. Delete everything in that file, then
+add these imports:</strong></p>
+<pre><code class="language-rust no_run noplaypen">extern crate amethyst;
+
+use amethyst::prelude::*;
+use amethyst::renderer::{DisplayConfig, DrawFlat2D, Event, Pipeline,
+                         RenderBundle, Stage, VirtualKeyCode};
+</code></pre>
+<p>We'll be learning more about these as we go through this tutorial. The prelude
+includes the basic (and most important) types like <code>Application</code>, <code>World</code>, and
+<code>State</code>.</p>
+<p>Now we create our core game struct:</p>
+<pre><code class="language-rust no_run noplaypen">pub struct Pong;
+</code></pre>
+<p>We'll be implementing the <a href="https://www.amethyst.rs/doc/master/doc/amethyst/prelude/trait.SimpleState.html"><code>SimpleState</code></a> trait on this struct, which is used by
+Amethyst's state machine to start, stop, and update the game. But for now we'll
+just implement two methods:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::input::{is_close_requested, is_key_down};
+# use amethyst::prelude::*;
+# use amethyst::renderer::{DisplayConfig, DrawFlat, Pipeline,
+#                          PosTex, RenderBundle, Stage};
+# struct Pong;
+impl SimpleState for Pong {
+}
+</code></pre>
+<p>The <code>SimpleState</code> already implements a bunch of stuff for us, like the <code>update</code>
+and <code>handle_event</code> methods that you would have to implement yourself were you
+using just a regular <code>State</code>. In particular, the default implementation for
+<code>handle_event</code> returns <code>Trans::Quit</code> when a close signal is received
+from your operating system, like when you press the close button in your graphical
+environment. This allows the application to quit as needed. The default
+implementation for <code>update</code> then just returns <code>Trans::None</code>, signifying that
+nothing is supposed to happen.</p>
+<p>Now that we know we can quit, let's add some code to actually get things
+started! We'll start with our <code>main</code> function, and we'll have it return a
+<code>Result</code> so that we can use <code>?</code>. This will allow us to automatically exit
+if any errors occur during setup.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::prelude::*;
+fn main() -&gt; amethyst::Result&lt;()&gt; {
+
+    // We'll put the rest of the code here.
+
+    Ok(())
+}
+</code></pre>
+<p>Inside <code>main()</code> we first start the amethyst logger with a default <code>LoggerConfig</code>
+so we can see errors, warnings and debug messages while the program is running.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::prelude::*;
+# fn main() -&gt; amethyst::Result&lt;()&gt; {
+amethyst::start_logger(Default::default());
+# Ok(())
+# }
+</code></pre>
+<p>After the logger is started, we need to create a <code>DisplayConfig</code> to store
+the configuration for our game's display. We can either define the configuration in
+our code, or better yet load it from a file. The latter approach is handier, as
+it allows us to change configuration (e.g, the display size) without having to
+recompile our game every time.</p>
+<p>Starting the project with <code>amethyst new</code> should have automatically generated
+<code>DisplayConfig</code> data in <code>resources/display_config.ron</code>.
+If you created the project manually, go ahead and create those now.</p>
+<p>In either case, open <code>display_config.ron</code> and change its contents to the following:</p>
+<pre><code class="language-rust ignore">(
+  title: &quot;Pong!&quot;,
+  dimensions: Some((500, 500)),
+  max_dimensions: None,
+  min_dimensions: None,
+  fullscreen: false,
+  multisampling: 0,
+  visibility: true,
+  vsync: true,
+)
+</code></pre>
+<blockquote>
+<p>If you have never run into Rusty Object Notation before (or RON for short),
+it is a data storage format that mirrors Rust's syntax. Here, the
+data represents the <a href="https://www.amethyst.rs/doc/master/doc/amethyst_renderer/struct.DisplayConfig.html"><code>DisplayConfig</code></a> struct. If you want to
+learn more abour the RON syntax, you can visit the <a href="https://github.com/ron-rs/ron">official repository</a>.</p>
+</blockquote>
+<p>This will set the default window dimensions to 500 x 500, and make the title bar
+say &quot;Pong!&quot; instead of the sad, lowercase default of &quot;pong&quot;.</p>
+<p>In <code>main()</code> in <code>main.rs</code>, we will load the configuration from the file:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::prelude::*;
+# use amethyst::renderer::DisplayConfig;
+# fn main() {
+use amethyst::utils::application_root_dir;
+
+let path = format!(&quot;{}/resources/display_config.ron&quot;, application_root_dir());
+
+let config = DisplayConfig::load(&amp;path);
+# }
+</code></pre>
+<p>Now, let's copy and paste some rendering code so we can keep moving.
+We'll cover rendering in more depth later in this tutorial.</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::renderer::{Pipeline, DrawFlat, PosTex, Stage, DrawFlat2D};
+# fn main() {
+let pipe = Pipeline::build()
+    .with_stage(
+        Stage::with_backbuffer()
+            .clear_target([0.0, 0.0, 0.0, 1.0], 1.0)
+            .with_pass(DrawFlat2D::new()),
+    );
+# }
+</code></pre>
+<p>The important thing to know right now is that this renders a black background.
+If you want a different color you can tweak the RGBA values inside the
+<code>.clear_target</code> method. Values range from 0.0 to 1.0, so to get that cool green
+color we started with back then, for instance, you can try
+<code>[0.00196, 0.23726, 0.21765, 1.0]</code>.</p>
+<p>Now let's pack everything up and run it:</p>
+<pre><code class="language-rust no_run noplaypen"># extern crate amethyst;
+# use amethyst::prelude::*;
+# use amethyst::renderer::{DisplayConfig, DrawFlat2D, Pipeline,
+#                        RenderBundle, Stage};
+# fn main() -&gt; amethyst::Result&lt;()&gt; {
+# let path = &quot;./resources/display_config.ron&quot;;
+# let config = DisplayConfig::load(&amp;path);
+# struct Pong;
+# impl SimpleState for Pong { }
+let pipe = Pipeline::build()
+    .with_stage(
+#        Stage::with_backbuffer()
+#          .clear_target([0.0, 0.0, 0.0, 1.0], 1.0)
+#          .with_pass(DrawFlat2D::new()),
+    // --snip--
+    );
+
+let game_data = GameDataBuilder::default()
+    .with_bundle(
+      RenderBundle::new(pipe, Some(config))
+        .with_sprite_sheet_processor()
+    )?;
+
+let mut game = Application::new(&quot;./&quot;, Pong, game_data)?;
+
+game.run();
+# Ok(())
+# }
+</code></pre>
+<p>We've discovered Amethyst's root object: <a href="https://www.amethyst.rs/doc/master/doc/amethyst/struct.Application.html">Application</a>. It binds the OS
+event loop, state machines, timers and other core components in a central place.
+Here we're creating a new <code>RenderBundle</code>, adding the <code>Pipeline</code> we created,
+along with our config, and building. There is also a helper function
+<code>with_basic_renderer</code> on <code>GameDataBuilder</code> that you can use to create your
+<code>Pipeline</code> and <code>RenderBundle</code>, that performs most of the actions above. This
+function is used in the full <code>pong</code> example in the <code>Amethyst</code> repository.</p>
+<p>Then we call <code>.run()</code> on <code>game</code> which begins the gameloop. The game will
+continue to run until our <code>SimpleState</code> returns <code>Trans::Quit</code>, or when all states
+have been popped off the state machine's stack.</p>
+<p>Success! Now we should be able to compile and run this code and get a window.
+It should look something like this:</p>
+<p><img src="../images/pong_tutorial/pong_01.png" alt="Step one" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../pong-tutorial.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../pong-tutorial/pong-tutorial-02.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../pong-tutorial.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../pong-tutorial/pong-tutorial-02.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

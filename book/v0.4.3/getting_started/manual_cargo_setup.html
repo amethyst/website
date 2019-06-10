@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Manual Setup With Cargo - </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><a href="../getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li><a href="../getting_started/automatic_setup.html"><strong aria-hidden="true">2.1.</strong> Automatic Setup</a></li><li><a href="../getting_started/manual_cargo_setup.html" class="active"><strong aria-hidden="true">2.2.</strong> Manual Setup With Cargo</a></li><li><a href="../getting_started/hello_world.html"><strong aria-hidden="true">2.3.</strong> Hello, World!</a></li></ol></li><li><a href="../simple_application.html"><strong aria-hidden="true">3.</strong> A Simple Application</a></li><li><a href="../glossary.html"><strong aria-hidden="true">4.</strong> Glossary</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title"></h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#manual-setup-with-cargo" id="manual-setup-with-cargo"><h1>Manual Setup With Cargo</h1></a>
+<p>For those of you who prefer working with Cargo directly, like any other Rust
+project, you can. However, since this is just a &quot;Hello, World&quot; program, I would
+strongly recommend using the <a href="./getting_started/automatic_setup.html">Amethyst CLI tool</a> instead. It will save you
+a whole lot of time.</p>
+<a class="header" href="#from-cratesio" id="from-cratesio"><h3>From Crates.io</h3></a>
+<p>Create a new Rust executable project with <code>cargo new --bin hello_world</code> and add
+the following lines to your &quot;Cargo.toml&quot;:</p>
+<pre><code class="language-toml">[dependencies]
+amethyst = &quot;*&quot;
+</code></pre>
+<a class="header" href="#from-git-via-cargo" id="from-git-via-cargo"><h3>From Git via cargo</h3></a>
+<p>If you don't want to get Amethyst from Crates.io but directly from the
+Git repository, you can add the following lines to your &quot;Cargo.toml&quot;:</p>
+<pre><code class="language-toml">[dependencies]
+amethyst = { git = &quot;https://github.com/amethyst/amethyst.git&quot; }
+</code></pre>
+<p>See the <a href="http://doc.crates.io/specifying-dependencies.html#specifying-dependencies-from-git-repositories">crates guide</a> for more information on the Cargo manifest file.</p>
+<a class="header" href="#from-git-via-clone" id="from-git-via-clone"><h3>From Git via clone</h3></a>
+<p>Instead of using the above, you can also clone the entire SDK from the
+Git repository. Once you're done, create a new Cargo project and <code>cd</code> into it.</p>
+<pre><code>$ git clone https://github.com/amethyst/amethyst.git
+$ cargo new --bin hello_world
+$ cd hello_world
+</code></pre>
+<p>In your &quot;Cargo.toml&quot; manifest, add the local <code>amethyst</code> crate and its sub-crates
+as dependencies:</p>
+<pre><code class="language-toml">[dependencies.amethyst]
+path = &quot;../path/to/amethyst/&quot;
+</code></pre>
+<a class="header" href="#resources-folder" id="resources-folder"><h2>Resources Folder</h2></a>
+<p>Every Amethyst game project must have a top-level folder called &quot;resources&quot;.
+This is where your game assets are stored. In your project's root folder, create
+the following folder structure:</p>
+<ul>
+<li><strong>resources</strong>/
+<ul>
+<li><strong>entities</strong>/</li>
+<li><strong>prefabs</strong>/</li>
+<li>config.yml</li>
+<li>input.yml</li>
+</ul>
+</li>
+</ul>
+<p>And in the &quot;config.yml&quot; file, copy and paste this YAML configuration:</p>
+<pre><code class="language-yaml">---
+logging:
+    file_path: &quot;hello_world.log&quot;
+    output_verbosity: medium
+    logging_verbosity: debug 
+
+display:
+    brightness: 1.0
+    fullscreen: false
+    resolution: [1024, 768]
+</code></pre>
+<p>The &quot;input.yml&quot; file, which normally holds key binding data, can be left blank
+since this is a simple application with no user interaction.</p>
+<a class="header" href="#all-set" id="all-set"><h2>All Set!</h2></a>
+<p>Whew, we're done! Let's move on and write our first
+<a href="./getting_started/hello_world.html">&quot;Hello, World&quot; program</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../getting_started/automatic_setup.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../getting_started/hello_world.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../getting_started/automatic_setup.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../getting_started/hello_world.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

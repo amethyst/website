@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["mesh",""],["mtl",""],["texture",""]],"struct":[["GraphicsPrefab","`PrefabData` for loading graphics, ie `Mesh` + `Material`"]]});
