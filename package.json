@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "amethyst-rs",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Official amethyst website hosted at amethyst.rs",
+  "version": "1.0",
+  "author": "Hilmar Wiegand <me@hwgnd.de>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "bulma": "^0.7.4",
@@ -42,16 +42,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write src/**/*.{js,jsx,html}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "serve": "gatsby serve"
   }
 }
