@@ -29,7 +29,7 @@ const IndexPage = ({
     link: it.node.data.link,
   }))
 
-  const newsFlash = common.data.news_flash.text.replace(" ", "")
+  const newsFlash = common.data.news_flash.text.trim()
   const shouldRenderNewsFlash = newsFlash.length > 0
 
   return (
@@ -40,9 +40,7 @@ const IndexPage = ({
         description={data.description.text}
         isHome
       />
-
       <ScrollDetector render={scrolled => <Navbar hidden={!scrolled} />} />
-
       <Hero>
         <HeroTitle>
           <LogoMain />
@@ -78,7 +76,6 @@ const IndexPage = ({
         <LogoOutline />
         <Swirl />
       </Hero>
-
       <Sections>
         {data.sections.map((section, index) => (
           <section key={index} className="section">
@@ -160,7 +157,6 @@ const IndexPage = ({
           return <React.Fragment />
         })}
       </Sections>
-
       <Footer />
     </Page>
   )
