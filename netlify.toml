@@ -53,3 +53,16 @@ to = "/posts/:splat"
 [[redirects]]
 from = "/assets/amethyst.svg"
 to = "https://amethyst.cdn.prismic.io/amethyst%2F3fbe7dbd-1352-45f4-b2cf-cfa99f852e0a_logo-filled.svg"
+
+[[redirects]]
+from = "/brand/logo-standard.svg"
+to = "https://amethyst.cdn.prismic.io/amethyst%2F3fbe7dbd-1352-45f4-b2cf-cfa99f852e0a_logo-filled.svg"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+	cache-control = '''
+	max-age=0,
+	no-cache,
+	must-revalidate'''
+    pragma = "no-cache"
