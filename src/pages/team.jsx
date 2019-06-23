@@ -1,6 +1,10 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { graphql } from "gatsby"
+import { take, skip } from "../util"
+import { mobile } from "../components/common"
+
+import { FaGithub, FaHome } from "react-icons/fa"
 
 import {
   Page,
@@ -43,92 +47,99 @@ const TeamPage = ({
 
       <ContentSlice>
         <ContentTube>
-          <div className="columns">
-            <div className="column is-7">
-              <div className="columns is-multiline">
-                {data.trusted_contributors.map((it, index) => (
-                  <ListItem key={index} className="column is-3">
-                    <ProfilePicture src={it.trusted_contributor_avatar.url} />
+          <Contributors className="columns is-multiline">
+            {take(data.trusted_contributors, 4).map((it, index) => (
+              <Contributor key={index} data={it} />
+            ))}
 
-                    <ProfileDescription>
-                      <h3>{it.trusted_contributor_name.text}</h3>
-                      <Content html={it.trusted_contributor_description.html} />
-                    </ProfileDescription>
-                  </ListItem>
-                ))}
-              </div>
-            </div>
-
-            <div className="column is-5">
+            <div className="column is-4 text">
               <Content html={data.trusted_contributors_intro.html} />
             </div>
-          </div>
+
+            {skip(data.trusted_contributors, 4).map((it, index) => (
+              <Contributor key={index} data={it} />
+            ))}
+          </Contributors>
         </ContentTube>
       </ContentSlice>
 
       <ContentSlice>
         <ContentTube>
-          <SubTeams className="columns">
-            <Content
-              className="column is-5 text"
-              html={data.members_text.html}
-            />
+          <div class="columns">
+            <Content className="column is-half" html={data.members_text.html} />
+          </div>
 
-            <div className="column is-7 teams">
-              {data.body.map((slice, sliceIndex) => {
-                switch (slice.slice_type) {
-                  case "sub_team":
-                    return (
-                      <SubTeam
-                        key={sliceIndex}
-                        className="columns is-multiline"
-                      >
+          <div>
+            {data.body.map((slice, sliceIndex) => {
+              switch (slice.slice_type) {
+                case "sub_team":
+                  return (
+                    <SubTeam key={sliceIndex}>
+                      <div className="name">
                         <h2>{slice.primary.team_name.text}</h2>
+                      </div>
 
+                      <div className="members columns is-multiline">
                         {slice.items.map((it, index) => (
-                          <ListItem key={index} className="column is-3">
+                          <ListItem key={index} className="column is-2">
                             <ProfilePicture src={it.team_member_avatar.url} />
 
                             <ProfileDescription>
                               <h3>{it.team_member_name.text}</h3>
-                              <Content html={it.team_member_description.html} />
+                              {(it.github_link || it.website_link) && (
+                                <ProfileLinks>
+                                  {it.github_link && (
+                                    <a
+                                      href={it.github_link.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      <FaGithub size="1.4em" />
+                                    </a>
+                                  )}
+                                  {it.website_link && (
+                                    <a
+                                      href={it.website_link.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      <FaHome size="1.4em" />
+                                    </a>
+                                  )}
+                                </ProfileLinks>
+                              )}
                             </ProfileDescription>
                           </ListItem>
                         ))}
-                      </SubTeam>
-                    )
-                    break
-                  default:
-                    break
-                }
-              })}
-            </div>
-          </SubTeams>
+                      </div>
+                    </SubTeam>
+                  )
+                default:
+                  return <React.Fragment />
+              }
+            })}
+          </div>
         </ContentTube>
       </ContentSlice>
 
       <ContentSlice>
         <ContentTube>
-          <div className="columns">
-            <div className="column is-7">
-              <div className="columns is-multiline">
-                {data.directors.map((it, index) => (
-                  <ListItem key={index} className="column is-3">
-                    <ProfilePicture src={it.director_avatar.url} />
+          <Directors className="columns is-multiline">
+            {data.directors.map((it, index) => (
+              <ListItem key={index} className="column is-2">
+                <ProfilePicture src={it.director_avatar.url} />
 
-                    <ProfileDescription>
-                      <h3>{it.director_name.text}</h3>
-                      <Content html={it.director_description.html} />
-                    </ProfileDescription>
-                  </ListItem>
-                ))}
-              </div>
-            </div>
+                <ProfileDescription>
+                  <h3>{it.director_name.text}</h3>
+                  <Content html={it.director_description.html} />
+                </ProfileDescription>
+              </ListItem>
+            ))}
 
-            <div className="column is-5">
+            <div className="column text">
               <Content html={data.directors_text.html} />
             </div>
-          </div>
+          </Directors>
         </ContentTube>
       </ContentSlice>
 
@@ -156,39 +167,65 @@ const TeamPage = ({
   </Page>
 )
 
-const SubTeams = styled.div`
-  margin: 0 -0.8rem 0 -0.8rem;
-  height: 40rem;
+const Directors = styled.div`
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ${mobile`
+    display: flex;
+    flex-direction: column;
+
+    .text {
+      order: -1;
+    }
+  `}
+`
+
+const Contributors = styled.div`
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ${mobile`
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
 
   .text {
+    order: -1;
   }
-
-  .teams {
-    margin-top: -1.8rem;
-  }
+`}
 `
 
-const SubTeam = styled.div`
-  border-radius: 12px;
-  border: 4px solid #7f41ef;
-  margin: 3.8rem 0.8rem 0.8rem 0.8rem;
-  padding: 0.2rem;
-  position: relative;
-  flex-grow: 1;
-  flex-wrap: wrap;
+const Contributor = ({ data }) => (
+  <ListItem className="column is-2">
+    <ProfilePicture
+      src={data.trusted_contributor_avatar.url}
+      alt={data.trusted_contributor_name.text}
+    />
 
-  > h2 {
-    position: absolute;
-    color: #7f41ef;
-    font-weight: 800;
-    font-size: 1.1rem;
-    top: -2.5rem;
-    left: 0rem;
-    font-family: "Arvo", sans-serif;
-  }
-`
+    <ProfileDescription>
+      <h3>{data.trusted_contributor_name.text}</h3>
+      {data.github_link && (
+        <ProfileLinks>
+          <a
+            href={data.github_link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub size="1.4em" />
+          </a>
+        </ProfileLinks>
+      )}
+    </ProfileDescription>
+  </ListItem>
+)
 
 const ListItem = styled.div`
   display: flex;
@@ -196,31 +233,76 @@ const ListItem = styled.div`
   align-items: center;
   justify-content: center;
   padding: 1.3rem;
+
+  ${mobile`
+    flex-direction: row;
+  `}
 `
 
 const ProfileDescription = styled.div`
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-
   text-align: center;
+  flex: 1;
 
   h3 {
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     font-weight: 800;
+    line-height: 1.2;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
   }
 
-  > div {
-    font-size: 0.8em;
-  }
+  ${mobile`
+    margin-top: 0;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+  `}
 `
 
 const ProfilePicture = styled.img`
   width: 100%;
+  max-width: 150px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+`
+
+const ProfileLinks = styled.div`
+  margin-top: 0.25rem;
+
+  > a {
+    margin: 0 0.25rem;
+    transition: opacity 0.1s linear;
+    color: #000;
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+`
+
+const SubTeam = styled.div`
+  margin-bottom: 3rem;
+
+  .name {
+    width: 100%;
+    font-size: 1.3rem;
+    font-family: "Arvo", serif;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    color: #7f41ef;
+  }
+
+  .members {
+    border: 4px solid #7f41ef;
+    border-radius: 10px;
+    padding: 0 1rem;
+  }
 `
 
 export const query = graphql`
@@ -281,8 +363,8 @@ export const query = graphql`
           trusted_contributor_name {
             text
           }
-          trusted_contributor_description {
-            html
+          github_link {
+            url
           }
         }
         body {
@@ -300,8 +382,11 @@ export const query = graphql`
               team_member_name {
                 text
               }
-              team_member_description {
-                html
+              github_link {
+                url
+              }
+              website_link {
+                url
               }
             }
           }

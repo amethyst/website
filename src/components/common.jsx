@@ -2,7 +2,9 @@ import React from "react"
 import styled, { css } from "styled-components"
 
 export const mobile = (...args) => css`
-    @media (max-width: 1024px) { ${css(...args)} }
+  @media (max-width: 1024px) {
+    ${css(...args)}
+  }
 `
 
 export const TitleSlice = styled.section.attrs({ className: "section" })`
@@ -14,30 +16,32 @@ export const ContentSlice = styled.section.attrs({ className: "section" })`
 `
 
 export const Page = styled.div`
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  margin-top: 3.5rem;
 
-    ${props => props.noPadding && css`
-        margin-top: 0;
+  ${props =>
+    props.noPadding &&
+    css`
+      margin-top: 0;
     `}
 `
 
 export const ContentTube = styled.div`
-    width: 60rem;
+  width: 60rem;
 
-    ${mobile`
+  ${mobile`
         width: 100%;
     `}
 `
 
 export const Content = ({ html, className }) => (
-    <div
-        className={`content ${className || ""}`}
-        dangerouslySetInnerHTML={{ __html: html }}
-    />
+  <div
+    className={`content ${className || ""}`}
+    dangerouslySetInnerHTML={{ __html: html }}
+  />
 )
 
 export const Sections = styled.div`
