@@ -47,19 +47,19 @@ const TeamPage = ({
 
       <ContentSlice>
         <ContentTube>
-          <Contributors className="columns is-multiline">
-            {take(data.trusted_contributors, 4).map((it, index) => (
-              <Contributor key={index} data={it} />
-            ))}
-
+          <ListContainer className="columns is-multiline">
             <div className="column is-4 text">
               <Content html={data.trusted_contributors_intro.html} />
             </div>
 
-            {skip(data.trusted_contributors, 4).map((it, index) => (
-              <Contributor key={index} data={it} />
+            {take(data.trusted_contributors, 4).map((it, index) => (
+              <Contributor key={index} data={it} className="before-text" />
             ))}
-          </Contributors>
+
+            {skip(data.trusted_contributors, 4).map((it, index) => (
+              <Contributor key={index} data={it} className="after-text" />
+            ))}
+          </ListContainer>
         </ContentTube>
       </ContentSlice>
 
@@ -124,9 +124,13 @@ const TeamPage = ({
 
       <ContentSlice>
         <ContentTube>
-          <Directors className="columns is-multiline">
+          <ListContainer className="columns is-multiline">
+            <div className="column text">
+              <Content html={data.directors_text.html} />
+            </div>
+
             {data.directors.map((it, index) => (
-              <ListItem key={index} className="column is-2">
+              <ListItem key={index} className="column is-2 before-text">
                 <ProfilePicture src={it.director_avatar.url} />
 
                 <ProfileDescription>
@@ -135,11 +139,7 @@ const TeamPage = ({
                 </ProfileDescription>
               </ListItem>
             ))}
-
-            <div className="column text">
-              <Content html={data.directors_text.html} />
-            </div>
-          </Directors>
+          </ListContainer>
         </ContentTube>
       </ContentSlice>
 
@@ -167,44 +167,26 @@ const TeamPage = ({
   </Page>
 )
 
-const Directors = styled.div`
+const ListContainer = styled.div`
+  .before-text {
+    order: 0;
+  }
+
   .text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    order: 1;
   }
 
-  ${mobile`
-    display: flex;
-    flex-direction: column;
-
-    .text {
-      order: -1;
-    }
-  `}
+  .after-text {
+    order: 2;
+  }
 `
 
-const Contributors = styled.div`
-  .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  ${mobile`
-  display: flex;
-  flex-direction: column;
-
-  .text {
-    order: -1;
-  }
-`}
-`
-
-const Contributor = ({ data }) => (
-  <ListItem className="column is-2">
+const Contributor = ({ data, className }) => (
+  <ListItem className={`column is-2 ${className || ""}`}>
     <ProfilePicture
       src={data.trusted_contributor_avatar.url}
       alt={data.trusted_contributor_name.text}
