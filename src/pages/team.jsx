@@ -264,8 +264,8 @@ const ProfileDescription = styled.div`
 `
 
 const ProfilePicture = styled.img`
-  width: 100%;
-  max-width: 150px;
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
 `
