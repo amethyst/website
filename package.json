@@ -2,7 +2,7 @@
   "name": "amethyst-rs",
   "private": true,
   "description": "Official amethyst website hosted at amethyst.rs",
-  "version": "1.0",
+  "version": "1.0.0",
   "author": "Hilmar Wiegand <me@hwgnd.de>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -42,6 +42,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx,html}",
     "start": "npm run develop",
     "serve": "gatsby serve"
