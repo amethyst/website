@@ -57,6 +57,20 @@ const PageTemplate = ({
                 </ContentTube>
               </ContentSlice>
             )
+          case "content_columns":
+            return (
+              <ContentSlice key={index}>
+                <ContentTube>
+                  <div className="columns">
+                    {slice.items.map((item, itemIndex) => (
+                      <div className="column" key={itemIndex}>
+                        <Content html={item.content.html} />
+                      </div>
+                    ))}
+                  </div>
+                </ContentTube>
+              </ContentSlice>
+            )
           default:
             break
         }
@@ -94,6 +108,14 @@ export const pageQuery = graphql`
           ... on PrismicPageBodyContent {
             slice_type
             primary {
+              content {
+                html
+              }
+            }
+          }
+          ... on PrismicPageBodyContentColumns {
+            slice_type
+            items {
               content {
                 html
               }
