@@ -14,7 +14,7 @@ const PostTemplate = ({
   },
 }) => {
   const date = moment(data.published).format("MMM Do YYYY")
-  
+
   return (
     <Page>
       <Meta
@@ -33,7 +33,8 @@ const PostTemplate = ({
               Published on {date}
               {data.author_name && (
                 <span>
-                  {" "}by{" "}
+                  {" "}
+                  by{" "}
                   <a
                     href={data.author_link.url}
                     target={data.author_link.target}

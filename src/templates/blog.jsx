@@ -17,8 +17,7 @@ const BlogTemplate = ({
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
 
-  const nextPage =
-    currentPage - 1 === 1 ? "/news" : `/news/${currentPage - 1}`
+  const nextPage = currentPage - 1 === 1 ? "/news" : `/news/${currentPage - 1}`
   const prevPage = `/news/${currentPage + 1}`
 
   return (
@@ -37,7 +36,9 @@ const BlogTemplate = ({
         {edges.map((post, index) => (
           <article className="section" key={index}>
             <ContentTube>
-              <DateHeader>{moment(post.node.data.published).format("YYYY/MM/DD")}</DateHeader>
+              <DateHeader>
+                {moment(post.node.data.published).format("YYYY/MM/DD")}
+              </DateHeader>
               <h2 className="is-size-4">{post.node.data.post_title.text}</h2>
               <Content html={post.node.data.intro.html} />
               <Link to={`/posts/${post.node.uid}`}>Read full post&hellip;</Link>
@@ -68,8 +69,8 @@ const BlogTemplate = ({
 }
 
 const DateHeader = styled.h3`
-  opacity: .5;
-  font-size: .95em;
+  opacity: 0.5;
+  font-size: 0.95em;
 `
 
 const NextPrev = styled.div`

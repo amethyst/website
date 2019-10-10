@@ -109,9 +109,7 @@ const BrandPage = ({
                           <ColorBox
                             single
                             style={{
-                              background: `linear-gradient(45deg, ${
-                                box.fromHex
-                              } 0%, ${box.toHex} 100%)`,
+                              background: `linear-gradient(45deg, ${box.fromHex} 0%, ${box.toHex} 100%)`,
                               color: "white",
                             }}
                           >
@@ -222,7 +220,7 @@ const ColorBox = styled.div`
         justify-content: space-between;
 
         span {
-          font-size: .8em;
+          font-size: 0.8em;
         }
       }
     `}
@@ -238,7 +236,7 @@ const ColorBox = styled.div`
         align-items: center;
 
         span:last-child {
-          font-size: .8em;
+          font-size: 0.8em;
         }
       }
     `}
