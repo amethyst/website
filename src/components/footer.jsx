@@ -111,7 +111,7 @@ const LogoContainer = styled.div.attrs({
 })`
   display: flex;
   align-items: center;
-  font-size: .5rem;
+  font-size: 0.5rem;
   color: #fff;
   margin-right: 4rem;
 

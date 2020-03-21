@@ -46,13 +46,15 @@ const NavbarContainer = styled.nav`
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid rgba(40, 38, 49, 0.1);
 
-  transition: all .15s ease-in-out;
+  transition: all 0.15s ease-in-out;
   transition-property: background-color, border;
 
-  ${props => props.hidden && css`
-    background-color: rgba(255, 255, 255, 0);
-    border-bottom: 1px solid rgba(40, 38, 49, 0);
-  `}
+  ${props =>
+    props.hidden &&
+    css`
+      background-color: rgba(255, 255, 255, 0);
+      border-bottom: 1px solid rgba(40, 38, 49, 0);
+    `}
 `
 
 const LinksContainer = styled.ul`
@@ -158,17 +160,19 @@ const Content = styled(ContentTube)`
   opacity: 1;
   transform: translateY(0);
 
-  transition: all .15s ease-in-out;
+  transition: all 0.15s ease-in-out;
   transition-property: transform, opacity;
 
   svg {
     z-index: 11;
   }
 
-  ${props => props.hidden && css`
-    opacity: 0;
-    transform: translateY(-10px);
-  `}
+  ${props =>
+    props.hidden &&
+    css`
+      opacity: 0;
+      transform: translateY(-10px);
+    `}
 `
 
 const Toggle = styled.div`
@@ -187,9 +191,11 @@ const Toggle = styled.div`
     pointer-events: initial;
   `}
 
-  ${props => props.light && css`
-    color: #fff;
-  `}
+  ${props =>
+    props.light &&
+    css`
+      color: #fff;
+    `}
 `
 
 const NavLink = styled.li`
@@ -210,7 +216,7 @@ const NavLink = styled.li`
       width: 0;
       background-color: #7f41ef;
       height: 4px;
-      bottom: .6rem;
+      bottom: 0.6rem;
       transition: width 0.2s ease-in-out;
       border-radius: 4px;
 

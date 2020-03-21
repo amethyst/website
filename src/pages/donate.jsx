@@ -14,8 +14,12 @@ class DonatePage extends React.Component {
   }
 
   donorboxListen = event => {
-    if (event.origin === "https://donorbox.org" && event.data.src && event.data.height)
-        this.setState({ height: event.data.height })
+    if (
+      event.origin === "https://donorbox.org" &&
+      event.data.src &&
+      event.data.height
+    )
+      this.setState({ height: event.data.height })
   }
 
   componentDidMount() {
