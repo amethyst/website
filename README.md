@@ -1,3 +1,5 @@
+# ⚠️ This repo is now deprecated, a new setup and design is on the way! ⚠️
+
 # amethyst.rs website
 
 This project contains the official amethyst website, deployed at [amethyst.rs](https://amethyst.rs) and [amethyst-engine.org](https://amethyst-engine.org).  
